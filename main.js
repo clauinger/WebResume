@@ -11,7 +11,7 @@ const {
 const page1TemplateRowsDefault = ['128px', 'auto' , 'auto', 'auto', 'auto']
 
 const page1RowHeights = window.getComputedStyle(page1).gridTemplateRows.split(' ').map(rowHt => Number(rowHt.split('px')[0]))
-// log(page1RowHeights)
+
 const page2RowHeights = window.getComputedStyle(page2).gridTemplateRows.split(' ').map(rowHt => Number(rowHt.split('px')[0]))
 
 const page1TemplateRowsForPrint = [...page1TemplateRowsDefault]
@@ -39,10 +39,8 @@ window.verifyDeviceAsMobileOrTablet = function() {
 function getGridElementsPosition(index) {
   const gridEl = document.getElementById("grid");
 
-  // our indexes are zero-based but gridColumns are 1-based, so subtract 1
   let offset = Number(window.getComputedStyle(gridEl.children[0]).gridColumnStart) - 1; 
 
-  // if we haven't specified the first child's grid column, then there is no offset
   if (isNaN(offset)) {
     offset = 0;
   }
@@ -51,7 +49,6 @@ function getGridElementsPosition(index) {
   const rowPosition = Math.floor((index + offset) / colCount);
   const colPosition = (index + offset) % colCount;
 
-  //Return an object with properties row and column
   return { row: rowPosition, column: colPosition };
 }
 
@@ -123,15 +120,19 @@ const toggleToggleExpandHide = (ToggleExpandButton, rowSpan = 1)=>{
     templateRowsDefault = page2TemplateRowsDefault
     templateRows = page2TemplateRows
   }
-  const ToggleExpandButtonContainer = ToggleExpandButton.parentElement
-  const ToggleExpandButtonContainerHeight = ToggleExpandButtonContainer.getBoundingClientRect().height
+  const toggleExpandButtonContainer = ToggleExpandButton.parentElement
+  const toggleExpandButtonContainerHeight = toggleExpandButtonContainer.getBoundingClientRect().height
   const toOpen = ToggleExpandButton.className === 'fas fa-arrow-down'
 
-  const iconY = ToggleExpandButtonContainer.getBoundingClientRect().y + ToggleExpandButtonContainerHeight
+  const iconY = toggleExpandButtonContainer.getBoundingClientRect().y + toggleExpandButtonContainerHeight
+  log(toggleExpandButtonContainerHeight)
   const parentY = ToggleExpandButton.parentElement.parentElement.getBoundingClientRect().y
+
   const dist = Math.round( iconY - parentY)
 
-  const templateRowsClone = [...templateRows]
+  
+
+  // const templateRowsClone = [...templateRows]
 
   if(toOpen){ 
     ToggleExpandButton.className = 'fas fa-arrow-up'
@@ -145,14 +146,18 @@ const toggleToggleExpandHide = (ToggleExpandButton, rowSpan = 1)=>{
     shadowEffectElement.hidden = true
   } else {
     //* SHOW SHADOW EFFECT
-    shadowEffectElement.style.transform = `translateY(${dist - ToggleExpandButtonContainerHeight}px)`
-    ToggleExpandButton.className = 'fas fa-arrow-down'
     shadowEffectElement.hidden = false
-
+    const shadowOffsetY = dist - shadowEffectElement.getBoundingClientRect().height
+    // log()
+    shadowEffectElement.style.transform = `translateY(${shadowOffsetY}px)`
+    ToggleExpandButton.className = 'fas fa-arrow-down'
+    
+ 
     rowIndex.forEach((index,i)=>{
       const isTopCell = i === 0
       const collapeHeight = isTopCell ? 0 : 1
-      templateRows[index] = isTopCell? (dist + 20) + 'px' : collapeHeight + 'px'
+      // templateRows[index] = isTopCell? (dist + 20) + 'px' : collapeHeight + 'px'
+      templateRows[index] = isTopCell? dist + 'px' : collapeHeight + 'px'
     })
     const str = templateRows.join(" ")
 
@@ -275,7 +280,6 @@ function showContactBubble(){
   }
   contactContainer.style.marginLeft = '5px'
   
-  //setTimeout(myFunction, 300);
   let id = setInterval(leftBalloonShow, 8);
   function delay(){
     
