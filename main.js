@@ -34,6 +34,10 @@ window.verifyDeviceAsMobileOrTablet = function() {
   return check;
 };
 
+//** SCROLL TO TOP OF PAGE ON LOAD */
+// window.onbeforeunload = function () { log(999999)
+//   window.scrollTo(0, 0);
+// }
 
 //** GET GRID POSITION */
 function getGridElementsPosition(index) {
@@ -148,7 +152,6 @@ const toggleToggleExpandHide = (ToggleExpandButton, rowSpan = 1)=>{
     //* SHOW SHADOW EFFECT
     shadowEffectElement.hidden = false
     const shadowOffsetY = dist - shadowEffectElement.getBoundingClientRect().height
-    // log()
     shadowEffectElement.style.transform = `translateY(${shadowOffsetY}px)`
     ToggleExpandButton.className = 'fas fa-arrow-down'
     
@@ -168,7 +171,7 @@ const toggleToggleExpandHide = (ToggleExpandButton, rowSpan = 1)=>{
 
 
 
-function animateFold(page, rowIndex, closeDistannce){
+function animateFold(page, rowIndex, closeDistannce){ 
   const toClose = closeDistannce !== undefined
   const templateRows = function(){
     if(page === page1)return page1TemplateRows
@@ -241,78 +244,22 @@ notableToggleExpand.addEventListener('mousedown',()=>{
 
 
 contactToggleExpand.addEventListener('mousedown',()=>{ 
-
   const toOpen = contactToggleExpand.className === 'fas fa-arrow-right'
   if(toOpen){ 
-    showContactBubble()
     contactToggleExpand.className = 'fas fa-arrow-left'
+     addressContainer.className = 'show'
   } else { 
-    hideContactBubble()
     contactToggleExpand.className = 'fas fa-arrow-right'
+    log(addressContainer.className)
+    addressContainer.className = 'hide'
   }
 })
 
-let contactContainer
-
-function showContactBubble(){  
-  if(!contactContainer){
-    contactContainer = document.createElement('div')
-    contactContainer.className = 'contactBubble'
-    contactContainer.style.position = 'absolute'
-    contactContainer.style.backgroundColor = 'rgba(255,255,255,.7)'
-    contactContainer.style.padding = '3px'
-    contactContainer.style.left = '10px'
-    contactContainer.style.top = '.25em'
-    // contactContainer.style.marginLeft = '13px' 
-    contactContainer.style.borderRadius = '10px'
-
-    heading.append(contactContainer)
-
-    const elements = addressCell.getElementsByClassName('addressText')
-    for (let index = 0; index < elements.length; index++) {
-      const element = elements[index];
-      const copyElement = document.createElement('p')
-      copyElement.style.margin = '0'
-      copyElement.style.fontSize = 'small'
-      copyElement.textContent = element.textContent
-      contactContainer.append(copyElement)
-    }
-  }
-  contactContainer.style.marginLeft = '5px'
-  
-  let id = setInterval(leftBalloonShow, 8);
-  function delay(){
-    
-  }
-  let scale = 0
-  let x = 10
-  function leftBalloonShow(){
-    if(scale === 10){
-      clearInterval(id)
-    }
-    contactContainer.style.transform = `scale(${scale / 10})`
-    // log(scale)
-    x--
-    scale++
-  }
-
-}
-
-function hideContactBubble(){ 
-  if(!contactContainer)return
-  contactContainer.style.marginLeft = '-500px'
-}
-
-
 document.addEventListener('DOMContentLoaded', function() {
-  if(window.verifyDeviceAsMobileOrTablet()){ 
+  if(window.isMobileDevice()){ 
     setTimeout(collapseAll, 300);
   }
 }, false)
-
-
-
-
 
 function collapseAll(){
   [summaryToggleExpand, experienceToggleExpand, 

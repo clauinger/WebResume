@@ -1,5 +1,5 @@
 :root {
-  --highLight-color: red; /* rgba(95, 158, 160, 0.393);*/
+  --highLight-color: rgba(95, 158, 160, 0.393)
 
   --side-bar-color :  rgb(154, 141, 141);
   --gap-small-format : 1px;
@@ -8,13 +8,15 @@
 
   --sidebar-background : linear-gradient(90deg, rgb(152, 139, 139) 0%, rgb(167, 159, 159) 50%, rgb(186, 177, 177) 100%);
 
-  /* --name-background  : rgb(135, 120, 120); */
   --name-background  : linear-gradient(0deg, rgb(150, 143, 143) 0%, rgb(138, 129, 129) 100%); 
   --condenced-format-left-column : 115px ;
   --condenced-format-column-layout : var(--condenced-format-left-column) 1fr;
-  --arrow-color : rgb(240, 239, 239);
+
+  --large-format-left-column : 185px;
+  --arrow-color : white;
   --employer-name-background : rgba(100, 155, 160, 0.3);
-  --arrow-hover-color : rgb(0, 0, 0);
+  --arrow-hover-color : white;
+  --arrow-z-index : 20;
 }
 
 html, body {
@@ -31,9 +33,11 @@ html, body {
 
 .shadowEffect {
   height: 12px;
-  width: 100%;
+  width: 100vw;
   position: absolute;
-  opacity: .7;
+  left: 0;
+  pointer-events: none;
+  opacity: .3;
   border-bottom: solid 1px; 
   background-image: linear-gradient(to top, rgba(0, 0, 0, .5)20%,  rgba(0, 0, 0, 0)90% , rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
 }
@@ -41,7 +45,7 @@ html, body {
 #page1 {
   display: grid;
   width: auto;
-  grid-template-columns: 185px 1fr;
+  grid-template-columns: var(--large-format-left-column) 1fr;
   grid-template-rows: 128px auto auto auto 1fr;
   gap: var(--gap-large-format);
   background: var(--gap-background);
@@ -62,7 +66,6 @@ html, body {
 }
 
 .rightMargin {
-  background-color: orange;
   padding-right: 20px;
 }
 
@@ -103,7 +106,6 @@ img {
 #sample2 img {
   margin-top: -200px;
   width: 100%;
-  /* min-width: 350px; */
   object-position: 10% -260px;
   object-position: left bottom;
 }
@@ -111,8 +113,6 @@ img {
 
 
 .leftSideBar {
-  /* background-color: rgb(150, 150, 150); */
-  /* background-color: var( --side-bar-color); */
   background: var(--sidebar-background);
   height: 100%;
 }
@@ -145,7 +145,6 @@ img {
 
 .listItem {
   margin-bottom: .5em;
-  /* margin-right: 20px; */
 }
 
 ul {
@@ -166,12 +165,12 @@ ul {
   color: rgb(67, 67, 67);
   white-space: nowrap;
   z-index: 1;
-
+  opacity: inherit;
 }
 
 
 
-#addressCell {
+#addressContainer {
   height: auto;
   border: none;
   bottom: 0;
@@ -179,7 +178,6 @@ ul {
   width: 100%;
   pointer-events: none;
   padding-top: 24px;
-  /* position: absolute; */
 }
 
 
@@ -206,6 +204,15 @@ ul {
   margin: 0;
   min-height: 23px;
   justify-self: right;
+}
+
+#addressSlideOut{
+  position: absolute;
+  top: .5em;
+  width: auto;
+  height: auto;
+  background: white;
+
 }
 
 #githubContainer {
@@ -242,7 +249,7 @@ ul {
 #page2 {
   display: grid;
   width: auto;
-  grid-template-columns: 185px 1fr;
+  grid-template-columns: var(--large-format-left-column) 1fr;
   grid-template-rows: auto auto auto auto auto;
   gap: var(--gap-large-format);
   margin-bottom: 30px;
@@ -298,18 +305,20 @@ ul {
 
 
 .arrowContainer {
-   text-align: right;
+   height: 1em;
 }
 
 
 .fa-arrow-up {
   color: var(--arrow-color);
   margin: auto;
+  position: absolute;
+  left: calc( var(--large-format-left-column) - 1em);
   animation-name: animateArrowMoveUp;
   animation-duration: 0.5s;
   -webkit-transform: translateY(1em);
   -ms-transform: translateY(1em);
-  transform: translateY(1em);
+  transform: translateY( 1em);
 
 }
 
@@ -341,12 +350,11 @@ ul {
 .fa-arrow-down {
   color: var(--arrow-color);
   margin: auto;
-  /* background: brown; */
   animation-name: animateArrowMoveDown;
   animation-duration: 0.5s;
-  -webkit-transform: translateY(4px)  ;
-  -ms-transform: translateY(4px) ;
-  transform: translateY(4px);
+  position: absolute;
+  left: calc( var(--large-format-left-column) - 1em);
+  z-index: var(--arrow-z-index);
 }
 
 
@@ -363,9 +371,7 @@ ul {
     -ms-transform: translateY(-5px) ;
     transform: translateY(-5px);
   }
-
   100% {
-
   }
 }
 
@@ -380,16 +386,12 @@ ul {
   -ms-transform: translateY(-1.25em);
   transform: translateY(-1.25em);
 }
+
 .fa-arrow-right {
   color: var(--arrow-color);
-  /* color: white; */
   margin: auto;
-  /* background-color: blue; */
   animation-name: animateArrowMoveRight;
   animation-duration: 0.2s;
-  -webkit-transform: translateX(-1em);
-  -ms-transform: translateX(-1em);
-  transform: translateX(-1em);
 }
 
 @keyframes animateArrowMoveRight{
@@ -400,62 +402,58 @@ ul {
   }
 
   50%   {
-    -webkit-transform: translateX(-1em);
-    -ms-transform: translateX(-1em);
-    transform: translateX(-1em);
   }
 
   100% {
-    -webkit-transform: translateX(-1em);
-    -ms-transform: translateX(-1em);
-    transform: translateX(-1em);
   }
 }
 
 .fa-arrow-left {
   color: white;
-  text-shadow: 0 3px  black;
   animation-name: animateArrowMoveLeft;
   animation-duration: 0.2s;
+  -webkit-transform:  translateX(calc(2px + 1em));
+  -ms-transform: translateX(calc(2px + 1em));
+  transform: translateX(calc(2px + 1em));
 }
 
 
 
 @keyframes animateArrowMoveLeft{
   0%   {
-    -webkit-transform: translateX(-1em) scaleX(-1);
-    -ms-transform: translateX(-1em)  scaleX(-1);
-    transform: translateX(-1em) scaleX(-1);
+    -webkit-transform: translateX(1em) scaleX(-1);
+    -ms-transform: translateX(1em)  scaleX(-1);
+    transform: translateX(1em) scaleX(-1);
   }
 
   100% {
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
+    -webkit-transform: translateX(1em);
+    -ms-transform: translateX(1em);
+    transform: translateX(1em);
   }
 }
 
 .fa-arrow-right:hover {
   color: var(--arrow-hover-color);
-  font-size: 17px;
+  font-size: 18px;
 }
 
 .fa-arrow-left:hover {
   color: var(--arrow-hover-color);
-  font-size: 17px;
-  text-shadow: 0 3px  black;
+  font-size: 18px;
 }
 
 .fa-arrow-up:hover {
   color: var(--arrow-hover-color);
   font-size: 18px;
-
-  /* border-bottom: dashed 1px black; */
+  -webkit-transform: translateY(calc(1em - 3px));
+  -ms-transform: translateY(calc(1em - 3px));
+  transform: translateY( calc(1em - 3px));
 }
 
 .fa-arrow-down:hover {
   color:var(--arrow-hover-color);
-  font-size: 18px;
+  font-size: 19px;
 
 
 }
@@ -479,7 +477,24 @@ ul {
   display: none;
 }
 
+.hide{
+  margin-left: 0px;
+}
+.show{
+  margin-left: 0;
+}
+
 @media (max-width: 550px) {
+
+  
+
+
+  .fa-arrow-up{
+    left: calc( var(--condenced-format-left-column) - 1em);
+  }
+  .fa-arrow-down{
+    left: calc( var(--condenced-format-left-column) - 1em);
+  }
   #summaryToggleExpandContainer{
     display: inherit;
   }
@@ -497,14 +512,61 @@ ul {
     display: block;
   }
 
- 
-
   #contactShow {
     display: inline;
   }
-
+  #githubContainer {
+    color: black;
+    width: 100%;
+    min-height: 23px;
+    background: rgba(100, 0, 0, 0.0);
+    pointer-events: auto;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: -5px;
+  }
   .addressText {
-    opacity: 0;
+    text-align: left;
+    font-size: 12px;
+    margin-left: .5em;
+  }
+  #addressContainer {
+    position: absolute;
+    top: 18px;
+    left: calc(var(--condenced-format-left-column) + 1em);
+    background: white;
+    width: 150px;
+    height: calc(5 * 1em);
+    display: flex;
+    flex-direction: column;
+    padding-top: 4px;
+    border-radius: 10px;
+    z-index: 2;
+  }
+  .show{
+    margin-left: 0px;
+    animation-name: animateShow;
+    animation-duration: 0.2s;
+    overflow: hidden;
+  }
+
+  @keyframes animateShow {
+    0%   {
+      width : 10px;
+      height : 1em;
+    }
+  
+
+  
+    100% {
+      width : 150px;
+    }
+  }
+
+
+  .hide{
+    border: solid;
+    margin-left: -300px;
   }
 
   .leftMargin {
@@ -536,9 +598,7 @@ ul {
     grid-template-columns: 115px 1fr;
   }
   #portfolioBackground{
-
     bottom: -160px;
-
   }
 }
 
@@ -574,7 +634,7 @@ ul {
     padding-right: 0;
   }
 
-  #addressCell {
+  #addressContainer {
     padding-top: 5px;
   }
 

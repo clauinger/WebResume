@@ -24,7 +24,7 @@
         </i>
         </div>
 
-        <div id='addressCell'>
+        <div id='addressContainer' class = 'hide' >
           
           <p class='addressText'>844 2nd St., Apt D,</p>
           <p class='addressText'>Santa Monica, CA 90403</p>
@@ -42,6 +42,7 @@
     <div class='cell topMargin rightMargin'>
       <div id='heading' style='position: relative;'>
         <img src="pics/meth_gpum4.jpg" alt="">
+        <div id='addressSlideOut'></div>
         <div id='myName'>Christopher Lauinger</div>
       </div>
     </div>
@@ -49,8 +50,10 @@
       <div class='leftSideBar full'>
         <div class='subjectLabel'>Summary</div>
 
-        <div class = 'arrowContainer'>
-            <i id='summaryToggleExpand' class="fas fa-arrow-up"></i>
+        <div id='summaryToggleExpandContainer' class = 'arrowContainer' >
+
+            <i id='summaryToggleExpand' class="fas fa-arrow-up" ></i>
+
         </div>
 
       </div>
@@ -178,11 +181,11 @@
       <div id='heading' style='position: relative;'>
         <img id = 'portfolioBackground' src="pics/Seewoon.png" alt="">
         <ul class='portfolioList'>
-          <li> <a href="https://tinyurl.com/yk489mta">Sewoon Towers </a> </li>
-          <li> <a href="https://tinyurl.com/y74994er">Grosse Point United Methodest Church</a> </li>
-          <li> <a href="https://tinyurl.com/52mjk7w">U-Dong Mixed Use </a> </li>
-          <li> <a href="https://tinyurl.com/93dtsrue">Chipotle</a> </li> 
-          <li> <a href="https://tinyurl.com/hus2b29h">Varius Projects</a> </li> 
+          <li> <a href="https://tinyurl.com/yk489mta" onclick="return confirm('Open Sewoon Towers Presentation')">Sewoon Towers  </a> </li>
+          <li> <a href="https://tinyurl.com/y74994er" onclick="return confirm('Open Grosse Point United Methodest Church Presentation')">Grosse Point United Methodest Church</a> </li>
+          <li> <a href="https://tinyurl.com/52mjk7w"  onclick="return confirm('Open U-Dong Mixed Use Presentation')">U-Dong Mixed Use </a> </li>
+          <li> <a href="https://tinyurl.com/93dtsrue" onclick="return confirm('Open Chipotle Portfolio')">Chipotle</a> </li> 
+          <li> <a href="https://tinyurl.com/hus2b29h" onclick="return confirm('Open Varius Project Portfolio')">Varius Projects</a> </li> 
         </ul>
       </div>
     </div>
@@ -202,12 +205,12 @@
 
       <div class='employer'>
         <p class='employerName'>Howard Laks Architects,<br> Santa Monica, California</p>
-        <p class='jobTitle'>Senior Architect <br> 3/2017 to 3/2020</p>
+        <p class='jobTitle'>Project Architect <br> 3/2017 to 3/2020</p>
       </div>
       <ul class= 'role'>
         <li > Construction administration </li>
         <li > Schematic design </li>
-        <li > Job captain </li>
+        <li > Consultaint coordination </li>
       </ul>
 
       <div class='employer'>
