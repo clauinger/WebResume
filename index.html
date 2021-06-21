@@ -2,64 +2,256 @@
 <html lang="en">
 
 <head>
+
+<!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; frame-src 'self'; script-src 'self' https://www.google.com/maps/*; "> -->
+
+  <link rel="shortcut icon" href="#">
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="https://kit.fontawesome.com/a93520d4f2.js" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="arch.css">
+  <link rel="stylesheet" href="portfolioGrid.css">
+  <link rel="stylesheet" href="navigationButton.css">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com"> 
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Poiret+One&display=swap" rel="stylesheet">
+
   <title>Document</title>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.js"></script> -->
+
+
+
 </head>
 
 <body>
+  <!-- *         FRONT PAGE ELEMENTS                  -->
+  <div id='splashContainer' class='frontPageElement'>
+    <h2 id='title' class="show" >Works</h2>
+  </div>
+
+  <div id='topRightTile' class='frontPageElement'>
+    <img id='topBanner' src="pics/GPM-06.png" alt="" >
+    <div class='underline'> </div>
+    <div id='myName2' class='myName'>Christopher Lauinger</div>
+  </div>
+
+  <div id='horizontalLine' class='splashLine frontPageElement'></div>
+  <div id='verticalLine' class='splashLine frontPageElement'></div>
+  <div id='lowerLeftTile' class='frontPageElement show'></div>
+
+  <div id='backgroundImageContainer' class='frontPage'>
+    <img src="pics/chair3.png" alt="">
+  </div>
+
+  <div id='archPortfolio' class='portfolioWindow frontPageElement hide'>
+    <!-- <iframe src="https://drive.google.com/file/d/0B_RBnPOErJj4SThRM2xlaFBYODg/preview" width="100%" height="100%" hidden></iframe> -->
+
+    <div class='portFolioGridContainer'>
+
+      <div class="cellItem ht3">
+          <img src="pics/Seewoon.png" alt="">
+          <div>
+            Sewoon Towers
+          </div>
+        </div>
+      <div class="cellItem ht3">
+        <img src="pics/Screen Shot GPM.png" alt="">
+        <div>
+          Grosse Pointe United Methodist Church
+        </div>
+      </div>
+      <div class="cellItem ht1">
+        <img src="pics/Screen Shot 2021-05-21 at 5.06.15 PM.png" alt="">
+        <div>Michigan Air Products</div>
+      </div>
+      <div class="cellItem ht2">
+        <img src="pics/beachHouse.png" alt="">
+        <div>
+          Private Residence
+        </div>
+      </div>
+
+      <div class="cellItem ht2">
+        <img src="pics/udong-plan.png" alt="">
+        <div>
+          Udong
+        </div>
+      </div>
+
+      <div class="cellItem ht2">
+          <img src="pics/proper-01.png" alt="">
+          <div>
+            Santa Monica Proper
+          </div>
+      </div>
+
+      <div class="cellItem ht2">
+          <img src="pics/Chipotle-HillCrest.png" alt="">
+          <div>
+            Chipotle Hillcrest
+          </div>
+      </div>
+
+      <div class="cellItem ht2">
+          <div id='picContainer'>
+              <img src="pics/magdalen-05.jpg" alt="">
+          </div>
+          <!-- <img src="pics/magdalen-05.jpg" alt=""> -->
+          <div>
+            St Mary Magdalene
+          </div>
+      </div>
+
+      <div class="cellItem ht2">
+          <img src="pics/F21-SCP-01.png" alt="">
+          <div>
+            Forever 21 South Coast Plaza
+          </div>
+      </div>
+
+      
+
+      <div class="cellItem ht2">
+          <img src="pics/sisters of mercy.png" alt="">
+          <div>
+            Sisters of Mercy Chapel
+          </div>
+      </div>
+
+      <div class="cellItem ht1">
+        <img src="pics/OlympicSoto-02.png" alt="">
+        <div>
+          Olympic & Soto Redevelopment
+        </div>
+      </div>
+
+      <div class="cellItem ht1">
+          <img src="pics/F21-Hawaii.jpg" alt="">
+          <div>
+            Forever 21 Hawaii
+          </div>
+      </div>
+
+      <div class="cellItem ht2">
+          <img src="pics/Chipole-Encino.png" alt="">
+          <div>
+            Chipotle Encino
+          </div>
+      </div>
+
+      <div class="cellItem ht2">
+          <img src="pics/Chipotle-Encinitas.png" alt="">
+          <div>
+            Chipotle Encinitas
+          </div>
+      </div>
+
+      <div class="cellItem ht1">ht1</div>
+
+    </div>
+
+
+  </div>
+
+  <div id='techPortfolio' class='portfolioWindow frontPageElement hide'>
+    <div class='portFolioGridContainer'>
+      <div id='ETF'>
+        <iframe src="https://leveraged-etf-historical-review-ezepm.ondigitalocean.app/" width="300" height="540"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div id='bottomRightTile' class='portfolioWindow frontPageElement show'></div>
+
+  <!-- *         NAVIGATION BUTTONS                  -->
+
+  <div id='exitButton2' class='navigationButton2 zeroButton'  >
+    <div class='circleButton'>
+      <i class="fas fa-home" style='margin-left:4px'></i>
+    </div>
+    <div class='navButtonLabel'>
+      <p>Exit</p> 
+    </div>
+  </div>
+
+  <div id='resumeButton2' class='navigationButton2' >
+    <div class='circleButton'>
+      <i class="fas fa-scroll" style='margin-left:4px'></i>
+    </div>
+    <div class='navButtonLabel'>
+      <p>Resume</p> 
+    </div>
+  </div>
+
+  <div id='archButton2' class='navigationButton2' >
+    <div class='circleButton'>
+      <i class="fas fa-building" style='margin-left:4px'></i>
+    </div>
+    <div class='navButtonLabel'>
+      <p>Architecture<br>Portfolio</p> 
+    </div>
+  </div>
+
+  <div id='techButton2' class='navigationButton2' >
+    <div class='circleButton'>
+      <i class="fas fa-code" style='margin-left:3px'></i>
+    </div>
+    <div class='navButtonLabel'>
+      <p>Tech<br>Portfolio</p> 
+    </div>
+  </div>
+
+
+
+  <div id='contactButton' class='navigationButton2'  >
+    <div class='circleButton'>
+      <i class="fas fa-address-book" style='margin-left:3px'></i>
+    </div>
+    <div class='navButtonLabel'>
+      <p>Contact</p> 
+    </div>
+  </div>
+
+
   <!-- *         PAGE 1                  -->
   <div id='page1' class='page'>
     <div id='topLeftCell' class='cell topMargin leftMargin '>
-      <div id='topLeftCorner' class='leftSideBar' >
+      <div id='topLeftCorner' class='leftSideBar'>
 
-        <p id='contactLabel' class='subjectLabel'>Contact</p>
-
-        <div class = 'arrowContainer shiftRight'>
-          <i id='contactToggleExpand' class="fas fa-arrow-right"> 
-        </i>
-        </div>
-
-        <div id='addressContainer' class = 'hide' >
-          
+        <div id='addressContainer' class='hide'>
           <p class='addressText'>844 2nd St., Apt D,</p>
           <p class='addressText'>Santa Monica, CA 90403</p>
           <p class='addressText'>323-697-3547</p>
           <p class='addressText'>clauinger1@gmail.com</p>
-          <div id='githubContainer' style='padding-top: 4px;'>
-            <p id='githubURL' class='addressText'>
-                <a id='gitHubLink' href="https://github.com/dub-scratch/" style='color:rgb(33, 33, 33);'>github.com/dub-scratch</a>
-            </p>
-          </div>
+          <p class='addressText'>
+            <a id='gitHubLink' href="https://github.com/dub-scratch/"
+              style='color:rgb(33, 33, 33);'>github.com/clauinger</a>
+          </p>
         </div>
       </div>
     </div>
 
     <div class='cell topMargin rightMargin'>
-      <div id='heading' style='position: relative;'>
-        <img src="pics/meth_gpum4.jpg" alt="">
+      <div id='heading'>
+        <img id='splashImage' src="pics/meth_gpum4.jpg" alt="">
         <div id='addressSlideOut'></div>
-        <div id='myName'>Christopher Lauinger</div>
+        <div id='myName' class='myName'>Christopher Lauinger</div>
       </div>
     </div>
     <div class='cell leftMargin'>
       <div class='leftSideBar full'>
         <div class='subjectLabel'>Summary</div>
-
-        <div id='summaryToggleExpandContainer' class = 'arrowContainer' >
-
-            <i id='summaryToggleExpand' class="fas fa-arrow-up" ></i>
-
+        <div id='summaryToggleExpandContainer' class='arrowContainer'>
+          <i id='summaryToggleExpand' class="fas fa-arrow-up"></i>
         </div>
-
       </div>
     </div>
-    <div id = 'summaryContent' class='cell rightMargin'>
-      <div id='summaryShadowEffect' class ='shadowEffect' hidden></div>
+    <div id='summaryContent' class='cell rightMargin'>
+      <div id='summaryShadowEffect' class='shadowEffect' hidden></div>
       <p id='summaryText' class='textContent'>
         Extensive and well rounded architectural building knowledge. Capable of turning ambitious design concepts into
         built physical environments.
@@ -68,15 +260,15 @@
     <div class='cell leftMargin'>
       <div class='leftSideBar full'>
         <div class='subjectLabel'>Experience</div>
-        <div class = 'arrowContainer'>
-            <i id='experienceToggleExpand' class="fas fa-arrow-up"></i>
+        <div class='arrowContainer'>
+          <i id='experienceToggleExpand' class="fas fa-arrow-up"></i>
         </div>
       </div>
     </div>
 
     <div class='cell rightMargin'>
 
-      <div id='experienceShadowEffect' class ='shadowEffect' hidden></div>
+      <div id='experienceShadowEffect' class='shadowEffect' hidden></div>
       <ul id='experienceList'>
         <li>
           <u> <i>Santa Monica Proper Hotel:</i> </u> facilitated construction admin for a 277 guestroom five-star hotel,
@@ -93,7 +285,8 @@
         </li>
 
         <li class='listItem'>
-          <u> <i>Sears Colonie:</i> </u> lead exterior remodel tasks, including project management, CD production & construction administration
+          <u> <i>Sears Colonie:</i> </u> lead exterior remodel tasks, including project management, CD production &
+          construction administration
         </li>
 
         <li class='listItem'>
@@ -102,7 +295,8 @@
         </li>
 
         <li class='listItem'>
-          <u> <i>U-Dong Mixed Use, Pusan Korea:</i> </u> acted as project architect running structural coordination & CDs for 105
+          <u> <i>U-Dong Mixed Use, Pusan Korea:</i> </u> acted as project architect running structural coordination &
+          CDs for 105
           unit condo/residential adaptive reuse project
         </li>
 
@@ -131,15 +325,16 @@
     <div class='cell leftMargin'>
       <div class='leftSideBar full'>
         <div class='subjectLabel'>Skills</div>
-        <div class = 'arrowContainer'>
-            <i id='skillsToggleExpand' class="fas fa-arrow-up"></i>
+        <div class='arrowContainer'>
+          <i id='skillsToggleExpand' class="fas fa-arrow-up"></i>
         </div>
       </div>
-      
+
     </div>
-    <div class='cell'>
-      <div id='skillsShadowEffect' class ='shadowEffect' hidden></div>
-      <ul id='skillsList'  class='twoColumnList'>
+    <div class='cell rightMargin'>
+      <div id='skillsShadowEffect' class='shadowEffect' hidden></div>
+
+      <ul id='skillsList' class='twoColumnList'>
         <li>Architectural design</li>
         <li>Construction documentation</li>
         <li>Type-1 construction, building codes CBC & IBC</li>
@@ -151,121 +346,127 @@
         <li>iOS/Swift, C/C++, Arduino</li>
       </ul>
     </div>
-    <div class='cell leftMargin bottomMargin'>
+    <div class='cell leftMargin'>
       <div class='leftSideBar full'>
         <div class='subjectLabel'>Education</div>
       </div>
     </div>
-    <div class='cell rightMargin bottomMargin'>
+    <div class='cell rightMargin'>
       <p id='idList' class='textContent'>
         BS in Architecture, 1997, Lawrence Technical University, Southfield, Michigan
       </p>
     </div>
 
     <!--* ADD BOTTOM LINE -->
-    <div ></div> 
-    
+    <div></div>
+
   </div>
 
   <br id='pageBreak' style='display: none'>
 
   <!-- *         PAGE 2                  -->
   <div id='page2' class='page'>
-    <div class='cell leftMargin' >
+    <div class='cell leftMargin'>
       <div class='leftSideBar full'>
         <div class='subjectLabel'> Design Portfolio</div>
       </div>
     </div>
     <div class='cell  rightMargin'>
 
-      <div id='heading' style='position: relative;'>
-        <img id = 'portfolioBackground' src="pics/Seewoon.png" alt="">
+      <div style='position: relative;'>
+        <img id='portfolioBackground' src="pics/Seewoon.png" alt="">
         <ul class='portfolioList'>
-          <li> <a href="https://tinyurl.com/yk489mta" onclick="return confirm('Open Sewoon Towers Presentation')">Sewoon Towers  </a> </li>
-          <li> <a href="https://tinyurl.com/y74994er" onclick="return confirm('Open Grosse Point United Methodest Church Presentation')">Grosse Point United Methodest Church</a> </li>
-          <li> <a href="https://tinyurl.com/52mjk7w"  onclick="return confirm('Open U-Dong Mixed Use Presentation')">U-Dong Mixed Use </a> </li>
-          <li> <a href="https://tinyurl.com/93dtsrue" onclick="return confirm('Open Chipotle Portfolio')">Chipotle</a> </li> 
-          <li> <a href="https://tinyurl.com/hus2b29h" onclick="return confirm('Open Various Project Portfolio')">Various Projects</a> </li> 
+          <li> <a href="https://tinyurl.com/yk489mta" onclick="return confirm('Open Sewoon Towers Presentation')">Sewoon
+              Towers </a> </li>
+          <li> <a href="https://tinyurl.com/y74994er"
+              onclick="return confirm('Open Grosse Point United Methodest Church Presentation')">Grosse Point United
+              Methodest Church</a> </li>
+          <li> <a href="https://tinyurl.com/52mjk7w"
+              onclick="return confirm('Open U-Dong Mixed Use Presentation')">U-Dong Mixed Use </a> </li>
+          <li> <a href="https://tinyurl.com/93dtsrue" onclick="return confirm('Open Chipotle Portfolio')">Chipotle</a>
+          </li>
+          <li> <a href="https://tinyurl.com/hus2b29h" onclick="return confirm('Open Various Project Portfolio')">Various
+              Projects</a> </li>
         </ul>
       </div>
     </div>
 
     <div class='cell leftMargin'>
       <div class='leftSideBar full'>
-        <div id = 'profesionalLabel' class='subjectLabel'>Profesional Experience</div>
-        <div class = 'arrowContainer'>
-            <i id='employerToggleExpand' class="fas fa-arrow-up"></i>
+        <div id='profesionalLabel' class='subjectLabel'>Profesional Experience</div>
+        <div class='arrowContainer'>
+          <i id='employerToggleExpand' class="fas fa-arrow-up"></i>
         </div>
-        
+
       </div>
     </div>
 
     <div class='cell rightMargin'>
-      <div id='employerShadowEffect' class ='shadowEffect' hidden ></div>
+      <div id='employerShadowEffect' class='shadowEffect' hidden></div>
 
       <div class='employer'>
         <p class='employerName'>Howard Laks Architects,<br> Santa Monica, California</p>
         <p class='jobTitle'>Project Architect <br> 3/2017 to 3/2020</p>
       </div>
-      <ul class= 'role'>
-        <li > Construction administration </li>
-        <li > Schematic design </li>
-        <li > Consultaint coordination </li>
+      <ul class='role'>
+        <li> Construction administration </li>
+        <li> Schematic design </li>
+        <li> Consultaint coordination </li>
       </ul>
 
       <div class='employer'>
         <p class='employerName'>JTNAA, <br> Los Angeles, California</p>
         <p class='jobTitle'>Senior Architect <br>9/2009 to 3/2017</p>
       </div>
-      <ul class= 'role'>
-        <li > Project management </li>
-        <li > Construction administration </li>
-        <li > Retail storefront design </li>
-        <li > Job captain </li>
+      <ul class='role'>
+        <li> Project management </li>
+        <li> Construction administration </li>
+        <li> Retail storefront design </li>
+        <li> Job captain </li>
       </ul>
 
       <div class='employer'>
         <p class='employerName'>Jerde Partnership,<br> Venice, CA</p>
         <p class='jobTitle'>Senior Designer <br>10/2006 to 12/2008</p>
       </div>
-      <ul class= 'role'>
-        <li > Retail building conceptual design </li>
-        <li > Mall renovation design </li>
-        <li > Residential/office high rise design </li>
-        <li > Site design & planning </li>
+      <ul class='role'>
+        <li> Retail building conceptual design </li>
+        <li> Mall renovation design </li>
+        <li> Residential/office high rise design </li>
+        <li> Site design & planning </li>
       </ul>
 
       <div class='employer'>
         <p class='employerName'>Don Barany Architects,<br> Santa Monica, CA</p>
         <p class='jobTitle'>Project Architect Designer <br> 5/2004 to 10/2006</p>
       </div>
-      <ul class= 'role'>
-        <li > Project manager/job captain </li>
-        <li > Designer for condo/residential adaptive reuse </li>
-        <li > Schematic design for new condo building </li>
-        <li > Site design & planning </li>
+      <ul class='role'>
+        <li> Project manager/job captain </li>
+        <li> Designer for condo/residential adaptive reuse </li>
+        <li> Schematic design for new condo building </li>
+        <li> Site design & planning </li>
       </ul>
 
       <div class='employer'>
         <p class='employerName'>Bryant Palmer Soto, Inc.,<br> Torrance, CA</p>
         <p class='jobTitle'>Job Captain, Designer <br>02/99 to 5/2004</p>
       </div>
-      <ul class= 'role'>
-        <li > Chipotle, exterior and interior design </li>
-        <li > Private residence schematic design </li>
-        <li > Site design/planning </li>
-        <li > CAD standards development & Implementation </li>
+      <ul class='role'>
+        <li> Chipotle, exterior and interior design </li>
+        <li> Private residence schematic design </li>
+        <li> Site design/planning </li>
+        <li> CAD standards development & Implementation </li>
       </ul>
 
       <div class='employer'>
         <p class='employerName'>Constantine George Pappas,<br> Troy, MI</p>
         <p class='jobTitle'>Designer <br> 05/94 to 01/99</p>
       </div>
-      <ul class= 'role twoColumnList'>
-        <li > Church design & project architect </li>
-        <li > Private residence design & CDs </li>
-        <li > Office/warehouse design, CDs </li>
-        <li > CAD standards development & Implementation </li>
+      <ul class='role twoColumnList'>
+        <li> Church design & project architect </li>
+        <li> Private residence design & CDs </li>
+        <li> Office/warehouse design, CDs </li>
+        <li> CAD standards development & Implementation </li>
 
 
       </ul>
@@ -275,14 +476,14 @@
 
 
     <div class='cell leftMargin'>
-        
+
       <div class='leftSideBar full'>
         <div class='subjectLabel'>Construction<br>Experience</div>
       </div>
     </div>
 
     <div class='cell rightMargin'>
-      <div id='constructionShadowEffect' class ='shadowEffect' hidden ></div>
+      <div id='constructionShadowEffect' class='shadowEffect' hidden></div>
       <div class='employer'>
         <p class='employerName'>Concrete Impressions Construction</p>
         <p class='jobTitle'>Carpenter/Apprentice <br> 06/89 to 01/94</p>
@@ -301,15 +502,15 @@
         <div class='subjectLabel'>Notable <br>Architectural Experiences</div>
 
 
-        <div class = 'arrowContainer'>
-            <i id='notableToggleExpand' class="fas fa-arrow-up"></i>
+        <div class='arrowContainer'>
+          <i id='notableToggleExpand' class="fas fa-arrow-up"></i>
         </div>
       </div>
     </div>
 
     <div class='cell rightMargin'>
-        <div id='notableShadowEffect' class ='shadowEffect' hidden></div>
-      <ul >
+      <div id='notableShadowEffect' class='shadowEffect' hidden></div>
+      <ul>
         <li class='listItem'>Forever 21, Mississauga, Ontario: provided interior storefront CDs, structural coordination
           & construction administration</li>
 
@@ -353,23 +554,23 @@
       </ul>
     </div>
 
-    <div class='cell leftMargin'>
+    <div class='cell leftMargin bottomMargin'>
       <div class='leftSideBar full'>
         <div class='subjectLabel'>Honors</div>
       </div>
 
     </div>
 
-    <div class='cell rightMargin'>
+    <div class='cell rightMargin bottomMargin'>
       <ul>
         <li class='listItem'>First place winner in 1994 design competition sponsored by the Masonry Institute of
           Michigan
         </li>
         <li class='listItem'>Third place winner in 1993 Freiman drawing competition
-          </li>
+        </li>
       </ul>
     </div>
-      
+
   </div>
 
 

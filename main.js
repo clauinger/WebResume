@@ -5,6 +5,9 @@
 /*jshint esversion: 6 */
 /*jshint asi: true */
 /*jshint expr: true */
+
+const ON = true, OFF = false
+const SHOW = true, HIDE = false
 const {
   log
 } = console
@@ -34,10 +37,46 @@ window.verifyDeviceAsMobileOrTablet = function() {
   return check;
 };
 
+document.body.style.overflowY = 'hidden'
+window.addEventListener('scroll',()=>{
+  const dist = Math.min(95, window.scrollY)
+  document.documentElement.style.setProperty('--user-scroll-distance', dist + 'px') 
+})
+
+function alignSplashContainer(){
+  const box = splashImage.getBoundingClientRect()
+  const rightSideX = box.x - 30
+  splashContainer.style.width = rightSideX + 'px'
+  splashContainer.style.height = (Math.round(box.height) - 30) + 'px'
+}
+
+function alignButtonRightSide(){
+  const box = splashImage.getBoundingClientRect()
+  const width = Math.round(box.x ) - 10
+}
+
+// window.addEventListener('resize',()=>{
+//   setCSSVariables()
+// })
+
+function setCSSVariables(){ return
+  const pageBox = page1.getBoundingClientRect()
+  const marginLeft = Number(getComputedStyle(document.documentElement).getPropertyValue('--left-margin').split('px')[0]);
+  const marginRight = Number(getComputedStyle(document.documentElement).getPropertyValue('--right-margin').split('px')[0]);
+  const innerwidth = pageBox.width - marginLeft - marginRight
+  document.documentElement.style.setProperty('--page-innerwidth', innerwidth + 'px')
+  const x = Math.round(pageBox.x)
+  document.documentElement.style.setProperty('--left-space', x + 'px')
+}
+
+// window.addEventListener('load', (event) => {
+//   setCSSVariables()
+// })
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
+
 //** SCROLL TO TOP OF PAGE ON LOAD */
-// window.onbeforeunload = function () { log(999999)
-//   window.scrollTo(0, 0);
-// }
 
 //** GET GRID POSITION */
 function getGridElementsPosition(index) {
@@ -73,6 +112,224 @@ function addClickEventsToGridItems() {
 }
 
 
+//bottomRightTile
+function setHomeScreenDisplay(display = SHOW){
+  if(display === SHOW) {
+    bottomRightTile.className = 'portfolioWindow frontPageElement show'
+    // bottomRightTile.className = 'portfolioWindow frontPageElement hide'
+  } else {
+    bottomRightTile.className = 'portfolioWindow frontPageElement hide'
+    // bottomRightTile.className = 'portfolioWindow frontPageElement show'
+  }
+}
+
+function setArchPortfolioDisplay(display = SHOW){
+  if(display === SHOW) {
+    archPortfolio.className = 'portfolioWindow frontPageElement show'
+    // bottomRightTile.className = 'portfolioWindow frontPageElement hide'
+  } else {
+    archPortfolio.className = 'portfolioWindow frontPageElement hide'
+    // bottomRightTile.className = 'portfolioWindow frontPageElement show'
+  }
+}
+
+function setTechPortfolioDisplay(display = SHOW){
+  if(display === SHOW) {
+    techPortfolio.className = 'portfolioWindow frontPageElement show'
+    // bottomRightTile.className = 'portfolioWindow frontPageElement hide'
+  } else {
+    techPortfolio.className = 'portfolioWindow frontPageElement hide'
+    // bottomRightTile.className = 'portfolioWindow frontPageElement show'
+  }
+}
+
+
+function setResumeDisplay (display = SHOW){ 
+  addressContainer.className = 'hide'
+  if (display){
+    const portfolioWindows = document.getElementsByClassName('portfolioWindow')
+    for (let i = 0; i < portfolioWindows.length; i++) {
+      portfolioWindows[i].className = 'portfolioWindow frontPageElement hide'
+    }
+    lowerLeftTile.className = 'frontPageElement hide'
+    page1.className = 'page show'
+    page2.className = 'page show'
+    verticalLine.className = 'splashLine frontPageElement hide'
+    // horizontalLine.className = 'splashLine frontPageElement hide'
+    document.body.className = 'resumeShow'
+    document.body.style.overflowY = 'scroll'
+    setCSSVariables()
+    topRightTile.className = 'frontPageElement resume'
+    backgroundImageContainer.className = 'resume'
+  } else {
+    log('resume hide')
+    window.scrollTo(0, 0);
+    // bottomRightTile.className = 'portfolioWindow frontPageElement show'
+    lowerLeftTile.className = 'frontPageElement show'
+    page1.className = 'page hide'
+    page2.className = 'page hide'
+    verticalLine.className = 'splashLine frontPageElement'
+    // horizontalLine.className = 'splashLine frontPageElement'
+    document.body.className = ''
+    document.body.style.overflowY = 'hidden'
+    topRightTile.className = 'frontPageElement'
+    backgroundImageContainer.className = 'frontPage'
+  }
+}
+
+function getResumeIsShown(){
+  return resumeButton2.className === 'navigationButton2 toggleOn'
+}
+
+function getArchPortFolioIsShown(){ 
+  return archButton2.className === 'navigationButton2 toggleOn'
+}
+
+function getTechPortFolioIsShown(){ 
+  return techButton2.className === 'navigationButton2 toggleOn'
+}
+
+function toggleNavigationButton2(button){
+  const isToggledOn = button.className === 'navigationButton2 toggleOn'
+  if(isToggledOn){
+    title.className = 'show'
+    button.className = 'navigationButton2'
+    return {isToggledOn:false}
+  }
+  const navigationButtons = document.getElementsByClassName('navigationButton2')
+  for (let i = 0; i < navigationButtons.length; i++) {
+    const element = navigationButtons[i];
+    if(element !== button) element.className =  'navigationButton2' 
+  }
+  title.className = 'hide'
+  const ht = button.getBoundingClientRect().y
+
+  const location = function(){
+    if(button === resumeButton2)return 'firstButton'
+    if(button === archButton2)return 'secondButton'
+    if(button === techButton2)return 'thirdButton'
+  }()
+
+  // exitButton2.style.top = ht + 'px' //button.style.top
+
+
+  button.className = 'navigationButton2 toggleOn ' + location
+  return {isToggledOn:true}
+}
+
+contactButton.addEventListener('mousedown', ()=>{ 
+  const alreadyToggledOn = contactButton.className === 'navigationButton2 toggleShowAddress2'
+  if(alreadyToggledOn) {
+    contactButton.className = 'navigationButton2'
+    addressContainer.className = 'hide'
+  } else {
+    contactButton.className = 'navigationButton2 toggleShowAddress2'
+    addressContainer.className = 'show'
+  }
+})
+
+
+resumeButton2.addEventListener('mousedown', ()=>{ 
+  const isToggledOn = toggleNavigationButton2(resumeButton2).isToggledOn
+  const otherButtons = isToggledOn ? 'navigationButton2 hideLabel' : 'navigationButton2'
+  archButton2.className = otherButtons
+  techButton2.className = otherButtons
+  contactButton.className = otherButtons
+
+  exitButton2.className = isToggledOn ? otherButtons + ' ' + 'firstButton' : otherButtons
+
+  setResumeDisplay(isToggledOn)
+  setHomeScreenDisplay(isToggledOn === false)
+})
+
+archButton2.addEventListener('mousedown', ()=>{
+  // if(getResumeIsShown())setResumeDisplay(false)
+  const isToggledOn = toggleNavigationButton2(archButton2).isToggledOn
+  setArchPortfolioDisplay(isToggledOn)
+  setTechPortfolioDisplay(HIDE)
+  setResumeDisplay(HIDE)
+  setHomeScreenDisplay(isToggledOn === false)
+
+  exitButton2.className = isToggledOn ? 'navigationButton2' + ' ' + 'secondButton' : 'navigationButton2'
+})
+
+techButton2.addEventListener('mousedown', ()=>{
+  if(getResumeIsShown())setResumeDisplay(false)
+  const isToggledOn = toggleNavigationButton2(techButton2).isToggledOn
+  setArchPortfolioDisplay(HIDE)
+  setTechPortfolioDisplay(isToggledOn)
+  setResumeDisplay(HIDE)
+  setHomeScreenDisplay(isToggledOn === false)
+  exitButton2.className = isToggledOn ? 'navigationButton2' + ' ' + 'thirdButton' : 'navigationButton2'
+})
+
+exitButton2.addEventListener('mousedown', ()=>{
+  // if(getResumeIsShown())setResumeDisplay(false)
+  if(archButton2.className !== 'navigationButton2' )archButton2.className = 'navigationButton2'
+  if(techButton2.className !== 'navigationButton2' )techButton2.className = 'navigationButton2'
+  if(resumeButton2.className !== 'navigationButton2' )resumeButton2.className = 'navigationButton2'
+  if(contactButton.className !== 'navigationButton2' )contactButton.className = 'navigationButton2'
+  setArchPortfolioDisplay(HIDE)
+  setTechPortfolioDisplay(HIDE)
+  setHomeScreenDisplay(SHOW)
+  setResumeDisplay(HIDE)
+
+  // exitButton2.style.top = ''
+  exitButton2.className = 'navigationButton2 zeroButton'
+})
+
+function toggleNavigationButton(button){
+  const isToggledOn = button.className === 'navigationButton toggleOn'
+  if(isToggledOn){
+    button.className = 'navigationButton'
+    title.className = 'show'
+    return {isToggledOn:false}
+  }
+  button.className = 'navigationButton toggleOn'
+  const navigationButtons = document.getElementsByClassName('navigationButton')
+  for (let i = 0; i < navigationButtons.length; i++) {
+    const element = navigationButtons[i];
+    if(element !== button) element.className =  'navigationButton' 
+  }
+  title.className = 'hide'
+  return {isToggledOn:true}
+}
+
+// archButton.addEventListener('mousedown', ()=>{
+//   if(getResumeIsShown())showResume(false)
+  
+
+//   if(toggleNavigationButton(archButton).isToggledOn) {
+//     hideAllNavigationSymbols(archButton)
+//     archPortfolio.className = 'portfolioWindow frontPageElement show'
+//     bottomRightTile.className = 'portfolioWindow frontPageElement hide'
+//   } else {
+//     showAllNavigationSymbols()
+//     archPortfolio.className = 'portfolioWindow frontPageElement hide'
+//     bottomRightTile.className = 'portfolioWindow frontPageElement show'
+//   }
+// })
+
+// techButton.addEventListener('mousedown', ()=>{
+//   if(getResumeIsShown())showResume(false)
+//   toggleNavigationButton(techButton)
+//   hideAllNavigationSymbols(techButton)
+// })
+
+
+
+
+// contactToggle.addEventListener('mousedown', ()=>{ 
+//   const alreadyToggledOn = contactToggle.className === 'toggleButton toggleOn'
+//   if(alreadyToggledOn) {
+//     contactToggle.className = 'toggleButton'
+//     addressContainer.className = 'hide'
+//   } else {
+//     contactToggle.className = 'toggleButton toggleOn'
+//     addressContainer.className = 'show'
+//   }
+// })
+
 window.onbeforeprint = function(event) { 
   page1.style.gridTemplateRows = page1TemplateRowsForPrint.join(' ')
   page2.style.gridTemplateRows = page2TemplateRowsDefault.join(' ')
@@ -106,7 +363,7 @@ function getCellInfo(element){
 }
 
 
-const toggleToggleExpandHide = (ToggleExpandButton, rowSpan = 1)=>{ 
+const toggleExpandHide = (ToggleExpandButton, rowSpan = 1)=>{ log('toggleExpandHide')
 
   let {row, page, shadowEffectElement} = getCellInfo(ToggleExpandButton)
   const rowIndex = []
@@ -129,14 +386,11 @@ const toggleToggleExpandHide = (ToggleExpandButton, rowSpan = 1)=>{
   const toOpen = ToggleExpandButton.className === 'fas fa-arrow-down'
 
   const iconY = toggleExpandButtonContainer.getBoundingClientRect().y + toggleExpandButtonContainerHeight
-  log(toggleExpandButtonContainerHeight)
+
   const parentY = ToggleExpandButton.parentElement.parentElement.getBoundingClientRect().y
 
   const dist = Math.round( iconY - parentY)
 
-  
-
-  // const templateRowsClone = [...templateRows]
 
   if(toOpen){ 
     ToggleExpandButton.className = 'fas fa-arrow-up'
@@ -144,7 +398,7 @@ const toggleToggleExpandHide = (ToggleExpandButton, rowSpan = 1)=>{
     rowIndex.forEach(index=>{
       templateRows[index] =  templateRowsDefault[index]
     })
-    const str = templateRows.join(" ")
+
 
     animateFold(page, row)
     shadowEffectElement.hidden = true
@@ -221,39 +475,28 @@ function animateFold(page, rowIndex, closeDistannce){
 }
 
 
-summaryToggleExpand.addEventListener('mousedown',()=>{ 
-  toggleToggleExpandHide(summaryToggleExpand)
+summaryToggleExpand.addEventListener('mousedown',()=>{
+  toggleExpandHide(summaryToggleExpand)
 })
 
 experienceToggleExpand.addEventListener('mousedown',()=>{ 
-  toggleToggleExpandHide(experienceToggleExpand )
+  toggleExpandHide(experienceToggleExpand )
 })
 
 skillsToggleExpand.addEventListener('mousedown',()=>{ 
-  toggleToggleExpandHide(skillsToggleExpand  )
+  toggleExpandHide(skillsToggleExpand  )
 })
 
 
 employerToggleExpand.addEventListener('mousedown',()=>{ 
-  toggleToggleExpandHide(employerToggleExpand,2 )
+  toggleExpandHide(employerToggleExpand,2 )
 })
 
 notableToggleExpand.addEventListener('mousedown',()=>{ 
-  toggleToggleExpandHide(notableToggleExpand )
+  toggleExpandHide(notableToggleExpand )
 })
 
 
-contactToggleExpand.addEventListener('mousedown',()=>{ 
-  const toOpen = contactToggleExpand.className === 'fas fa-arrow-right'
-  if(toOpen){ 
-    contactToggleExpand.className = 'fas fa-arrow-left'
-     addressContainer.className = 'show'
-  } else { 
-    contactToggleExpand.className = 'fas fa-arrow-right'
-    log(addressContainer.className)
-    addressContainer.className = 'hide'
-  }
-})
 
 document.addEventListener('DOMContentLoaded', function() {
   if(window.isMobileDevice()){ 
@@ -268,11 +511,38 @@ function collapseAll(){
   ].forEach(button =>
     button.className = 'fas fa-arrow-up')
 
-  toggleToggleExpandHide(summaryToggleExpand)
-  toggleToggleExpandHide(experienceToggleExpand)
-  toggleToggleExpandHide(skillsToggleExpand)
-  toggleToggleExpandHide(employerToggleExpand,2)
-  toggleToggleExpandHide(notableToggleExpand)
+  toggleExpandHide(summaryToggleExpand)
+  toggleExpandHide(experienceToggleExpand)
+  toggleExpandHide(skillsToggleExpand)
+  toggleExpandHide(employerToggleExpand,2)
+  toggleExpandHide(notableToggleExpand)
 }
 
+let archPortfolioScrollPosition = 0
+let mousePosition = null
+archPortfolio.addEventListener('mousedown',(e)=>{
+  archPortfolioScrollPosition = archPortfolio.scrollTop
+  mousePosition = e.clientY
+})
 
+archPortfolio.addEventListener('mousemove',(e)=>{
+  if(!mousePosition){
+    document.documentElement.style.setProperty('--cursor', 'hand')
+    document.documentElement.style.setProperty('--xcolor', 'red')
+    return
+  }
+  document.documentElement.style.setProperty('--xcolor', 'blue')
+  const diff = e.clientY - mousePosition
+  archPortfolio.scrollTop = archPortfolioScrollPosition - diff
+})
+
+archPortfolio.addEventListener('mouseup',()=>{
+  mousePosition = null
+})
+
+archPortfolio.addEventListener('mouseout',()=>{
+  // mousePosition = null
+  log('mouseout')
+})
+
+// archPortfolio.scrollTop

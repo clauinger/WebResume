@@ -1,0 +1,81 @@
+.card {
+  color: black;
+  padding: .5rem;
+  border: 1px solid rgb(183, 183, 183);
+}
+
+.card:hover{
+  -webkit-box-shadow: 0 0 10px rgb(176, 176, 176);
+        box-shadow: 0 0 10px rgb(106, 105, 105);
+  border: solid;
+}
+
+.cards {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: var(--condensed-format-column-layout);
+  /* grid-gap: 1rem; */
+}
+
+@media (min-width: 380px) {
+  .cards { grid-template-columns: repeat(2, 1fr); }
+}
+
+
+@media (min-width: 900px) {
+  .cards { grid-template-columns: repeat(3, 1fr); }
+}
+
+
+
+
+/**
+Each tile's image height is known in advance.  at archive.org we use backend (PHP) to fetch that height and then simply have to run a formula like this for picking which 'htX' class to use:
+  'ht' . min(7, floor($imgHT / 40));
+
+We assume 20px gutters, and we _also_ split our grid into 20px high row increments (minimum here is 2 row spans per tile).
+
+So,
+a 'row span' of 2 is  60px high,
+a 'row span' of 3 is 100px high, etc.
+ */
+ .pinterest {
+   /* fit in up to 5 columns of 180px wide tiles, 20px gutters: 5*180 + 4*20: */
+   max-width: 980px;
+   /* margin: 0 auto; */
+   display: grid;
+   grid-gap: 13px;
+   /* fit as many columns as possible, 180px wide each: */
+   grid-template-columns: repeat(auto-fill, 180px);
+   /* each row is 20px high -- we always span 2+ */
+   grid-auto-rows: minmax(5px, auto);
+   justify-content: center;
+ }
+
+.pinterest > * {
+  /* background-color: red; */
+ /* width: 180px; */
+ /* only for older non-grid browsers: */
+ float: left;  
+ /* only for older non-grid browsers: */
+ margin: 5px;
+}
+
+
+
+@supports (display: grid) {
+ .pinterest > * {
+
+   /* modern browser -- grid-gap takes care of us: */
+   margin: 1px 6px auto;
+ }
+}
+
+/* cosmetics only from here on down */
+.pinterest > * {
+ background-color: #ddd;
+}
+.pinterest > * img {
+ max-width: 100%;
+}

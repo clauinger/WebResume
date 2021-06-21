@@ -1,0 +1,207 @@
+.navigationButton2{
+  position: fixed;
+  left: 0;
+  display: flex;
+  overflow: visible;
+}
+.navigationButton2 > .circleButton{
+  position: absolute;
+  left: 3px;
+  z-index: 2;
+}
+
+.navigationButton2:hover > div > i{
+  font-size: 1.2em;  
+}
+
+.navigationButton2:hover > .circleButton{
+  background: #0c3545;
+}
+.navigationButton2:hover > div > p{
+  color: white;
+}
+.navigationButton2:hover > .navButtonLabel{
+  background: #2199c4;
+}
+
+
+.navButtonLabel{
+  text-align: right;
+  background: #12566f93;
+  background: rgba(255, 255, 255, 0.427);
+  position: absolute;
+  margin: 0;
+  height: 36px;
+  border-top-left-radius: 18px;
+  border-bottom-left-radius: 18px;
+  width: var(--left-tile-width);
+  top: -3px;
+  border: solid 1px #0c3545;
+  border: solid 1px #12566f;
+  z-index: 0;
+  animation-name: animateRollout;
+  animation-duration: .3s;
+}
+
+.navButtonLabel .rollout{
+  animation-name: animateRollout;
+  animation-duration: .3s;
+}
+
+@keyframes animateRollout {
+  0%   {
+    margin-left: -200px;
+  }
+}
+
+.navButtonLabel > p{
+  position: absolute;
+  bottom:-1px;
+  right: 0;
+  margin: 0;
+  margin-right: 5px;
+  color: #13536a;
+  width: 90px;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.navigationButton2.toggleOn {
+  animation-name: animateSlideNavButtonFromLeft;
+  animation-duration: .3s;
+}
+
+.navigationButton2.toggleOn > .circleButton {
+  animation-name: animateSlideNavButtonFromLeft;
+  animation-duration: .5s;
+}
+
+@keyframes animateSlideNavButtonFromLeft {
+  0%   {
+    margin-left: -100px;
+  }
+}
+
+.navigationButton2.toggleOn .navButtonLabel {
+  position: fixed;
+  /* top: calc( var(--top-row-height) - 17px - var(--user-scroll-distance)); */
+  top: calc(90px - var(--user-scroll-distance));
+  background: none;
+  color: white;
+  /* text-shadow: 1px 1px 1px  var(--navigation-color-01), -1px -1px 1px  gray; */
+  font-size: 20px;
+  text-align: right;
+  border: none;
+}
+
+.navigationButton2.toggleOn .circleButton{
+  position: fixed;
+  top : calc( 113px - var(--user-scroll-distance));
+  left:0;
+  border: solid #3e3e3e;
+} 
+
+.navigationButton2.toggleOn .navButtonLabel > p{
+  color:white;
+  text-align: right; 
+  width :  100%;
+  left: -2px;
+}
+
+.navigationButton2.hideLabel > .navButtonLabel {
+  visibility: hidden;
+  animation-name: animateHideLabel;
+  animation-duration: .3s;
+}
+
+@keyframes animateHideLabel {
+  0%   {
+    visibility: visible;
+  }
+  50%   {
+    border-top-right-radius: 18px;
+    border-bottom-right-radius: 18px;
+    margin-left: 0px;
+    color: rgba(0, 0, 0, 0);
+  }
+  100%   {
+    color: rgba(0, 0, 0, 0);
+    visibility: visible;
+    border-top-right-radius: 18px;
+    border-bottom-right-radius: 18px;
+    width: 36px;
+  }
+}
+
+.navigationButton2.hideLabel:hover > .navButtonLabel {
+  visibility: visible;
+}
+
+
+
+
+.navigationButton2.toggleShowAddress .navButtonLabel {
+  position: fixed;
+  top: calc( var(--top-row-height) - 17px - var(--user-scroll-distance));
+  top: 0px;
+  background: none;
+  color: white;
+  /* left : 0px; */
+  /* font-size: 20px; */
+  text-align: right;
+  border: none;
+  z-index: 200;
+}
+
+.navigationButton2.toggleShowAddress .navButtonLabel > p{
+  color:white;
+  text-align: right; 
+  width :  100%;
+  left: -2px;
+}
+
+.navigationButton2.toggleShowAddress .circleButton{
+  position: fixed;
+  top : 4px;
+  left:0;
+  border: solid #3e3e3e;
+} 
+
+
+
+#exitButton2.hide{
+  visibility: hidden;
+}
+
+#exitButton2{
+  /* top: 600px; */
+}
+
+#resumeButton2{
+  top:calc(200px - var(--user-scroll-distance));
+ 
+}
+
+#archButton2{
+  top:calc(300px - var(--user-scroll-distance));
+}
+
+#techButton2{
+  top:calc(400px - var(--user-scroll-distance));
+}
+
+#contactButton{
+  top:calc(500px - var(--user-scroll-distance));
+}
+
+
+.zeroButton{top:-100px}
+
+.firstButton{top:calc(200px - var(--user-scroll-distance));}
+
+.secondButton{ top:calc(300px - var(--user-scroll-distance));}
+
+.thirdButton{top:calc(400px - var(--user-scroll-distance));}
+
+.forthButton{ top:calc(500px - var(--user-scroll-distance));}
