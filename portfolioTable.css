@@ -1,0 +1,99 @@
+
+:root {
+  /* --portfolio-Grid-Container-width: calc(100vw - var(--page-left-width) - 60px); */
+  --vw-proportion-650px : 0;
+
+}
+
+
+
+.table-cell-container{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 50px;
+  background: azure;
+  overflow: hidden;
+}
+
+.drawing{
+  cursor: crosshair;
+}
+
+.textBlock{
+  max-width: 250px;
+  margin-right: 20px;
+  margin-left: calc(var(--left-column) - 30px);
+}
+
+.table-cell-arrow{
+  color:black;
+  margin-top : 283px;
+  margin-left : -30px;
+}
+
+.fa-arrow-up.table-cell-arrow:hover {
+  color: black;
+}
+
+.fa-arrow-down.table-cell-arrow:hover {
+  color: black;
+}
+
+.condenced-height{
+  height : 300px;
+  overflow: hidden;
+  /* background-color: blue; */
+  animation-name: animateExpandTableCell;
+  animation-duration: .6s;
+}
+
+@keyframes animateExpandTableCell {
+  0%   {
+     height : 100vh;
+  }
+} 
+
+.expandable-table-cell-container{
+  overflow: hidden;
+  margin-bottom: 50px;
+  background: white;
+}
+
+.expandable-table-cell-container.expanded{
+  animation-name: animatecolapseTableCell;
+  animation-duration: .5s;
+}
+
+
+@keyframes animatecolapseTableCell {
+  0%   {
+     height : 300px;
+  }
+  100%   {
+    height : 900px;
+ }
+} 
+
+/* .textBlock{
+  max-width: 250px;
+  margin-right: 20px;
+  margin-left: calc(var(--left-column) - 30px);
+} */
+
+@media (max-width: 700px) {
+
+  .textBlock{
+    margin-left: calc( 100vw - 465px);
+    /* margin-left: calc(var(--left-column) - 30px); */
+    margin-left: 10px;
+  }
+}
+
+/* --vw-proportion-650px */
+
+@media (max-width: 650px) {
+  .table-cell-container{
+    transform: scale(var(--vw-proportion-650px))
+  }
+ 
+}

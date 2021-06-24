@@ -283,37 +283,6 @@ iframe{
 }
 
 
-/* #exitButton2.hide{
-  visibility: hidden;
-}
-
-#resumeButton2{
-  top:calc(200px - var(--user-scroll-distance));
- 
-}
-
-#archButton2{
-  top:calc(300px - var(--user-scroll-distance));
-}
-
-#techButton2{
-  top:calc(400px - var(--user-scroll-distance));
-}
-
-#contactButton{
-  top:calc(500px - var(--user-scroll-distance));
-}
-
-
-.firstButton{top:calc(200px - var(--user-scroll-distance));}
-
-.secondButton{ top:calc(300px - var(--user-scroll-distance));}
-
-.thirdButton{top:calc(400px - var(--user-scroll-distance));}
-
-.forthButton{ top:calc(500px - var(--user-scroll-distance));} */
-
-
 
 @keyframes animateSlideNavigationButtonFromLeft {
   0%   {
@@ -345,7 +314,6 @@ iframe{
   width: var(--right-tile-width);
   /** RED */
 
-  background: red;
   z-index: 2;
   /* top: calc(var(--top-tile-height) + var(--horizontal-grid-gap))  ; */
   top: calc(var(--top-tile-height) + 8px)  ;
@@ -366,18 +334,22 @@ iframe{
 
 #techPortfolio{
   color: black;
-  background: rgb(70, 73, 143);
+  background: rgb(234, 234, 234);
   padding: 10px;
   overflow-y: scroll;
 } 
 
 .portfolioWindow.show{
+  transform: translateX( calc(var(--left-column) * -0.7 ));
+  transform:  translateX( -164px);
+  width: calc(100vw - 64px);
   animation-name: animateSlideFromRight;
   animation-duration: .3s;
 }
 @keyframes animateSlideFromRight {
   0%   {
-    transform: translateX(100vw)
+    /* transform: translateX(-100vw) */
+    width: 50px;
   }
 }
 
@@ -884,11 +856,9 @@ img {
 
 }
 
-
 .fa-arrow-up ~ .arrowContainer {
   border-bottom: dashed 1px black;
 }
-
 
 @keyframes animateArrowMoveUp {
   0%   {
@@ -920,15 +890,12 @@ img {
   z-index: var(--arrow-z-index);
 }
 
-
-
 @keyframes animateArrowMoveDown {
   0%   {
     -webkit-transform: translateY(1em)  rotate(180deg) ;
     -ms-transform: translateY(1em) rotate(180deg);
     transform: translateY(1em) rotate(180deg) ;
   }
-
   50%   {
     -webkit-transform: translateY(-5px)  ;
     -ms-transform: translateY(-5px) ;
@@ -941,10 +908,8 @@ img {
 .shiftRight{
   position: absolute;
   margin-left: calc(var(--condensed-format-left-column) - 2em);
-
   z-index: 2;
   width: 2em;
-
   -webkit-transform: translateY(-1.25em);
   -ms-transform: translateY(-1.25em);
   transform: translateY(-1.25em);
@@ -963,10 +928,8 @@ img {
     -ms-transform: scaleX(-1);
     transform:  scaleX(-1);
   }
-
   50%   {
   }
-
   100% {
   }
 }
@@ -1091,6 +1054,12 @@ img {
     top:-100px ;
   }
 
+
+  .portfolioWindow{
+
+    left : 205px;
+
+  }
 
 
   .fa-arrow-up{

@@ -3,7 +3,7 @@
 
 <head>
 
-<!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; frame-src 'self'; script-src 'self' https://www.google.com/maps/*; "> -->
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; frame-src 'self'; script-src 'self' https://www.google.com/maps/*; "> -->
 
   <link rel="shortcut icon" href="#">
 
@@ -13,12 +13,13 @@
   <script src="https://kit.fontawesome.com/a93520d4f2.js" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="main.css">
-  <link rel="stylesheet" href="arch.css">
   <link rel="stylesheet" href="portfolioGrid.css">
+  <link rel="stylesheet" href="portfolioTable.css">
   <link rel="stylesheet" href="navigationButton.css">
 
-  <link rel="preconnect" href="https://fonts.gstatic.com"> 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Poiret+One&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Poiret+One&display=swap"
+    rel="stylesheet">
 
   <title>Document</title>
   <!-- <script src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.js"></script> -->
@@ -30,11 +31,11 @@
 <body>
   <!-- *         FRONT PAGE ELEMENTS                  -->
   <div id='splashContainer' class='frontPageElement'>
-    <h2 id='title' class="show" >Works</h2>
+    <h2 id='title' class="show">Works</h2>
   </div>
 
   <div id='topRightTile' class='frontPageElement'>
-    <img id='topBanner' src="pics/GPM-06.png" alt="" >
+    <img id='topBanner' src="pics/GPM-06.png" alt="">
     <div class='underline'> </div>
     <div id='myName2' class='myName'>Christopher Lauinger</div>
   </div>
@@ -53,104 +54,189 @@
     <div class='portFolioGridContainer'>
 
       <div class="cellItem ht3">
-          <img src="pics/Seewoon.png" alt="">
-          <div>
-            Sewoon Towers
+          <div class="ht3" >
+              <img src="pics/Seewoon.png" alt="" >
           </div>
+
+        <div>
+          Sewoon Towers
         </div>
-      <div class="cellItem ht3">
-        <img src="pics/Screen Shot GPM.png" alt="">
+      </div>
+      <div class="cellItem ht4">
+        <div class="ht4" id= 'cell' >
+            <img src="pics/GPM-07.png" alt="">
+        </div>
         <div>
           Grosse Pointe United Methodist Church
         </div>
       </div>
-      <div class="cellItem ht1">
-        <img src="pics/Screen Shot 2021-05-21 at 5.06.15 PM.png" alt="">
+      <div class="cellItem ht2">
+        <div class= 'ht2'>
+            <img src="pics/MAP-01.png" alt="">
+        </div>
         <div>Michigan Air Products</div>
       </div>
       <div class="cellItem ht2">
-        <img src="pics/beachHouse.png" alt="">
+        <div class="ht2">
+            <img src="pics/beachHouse.png"  alt="">
+        </div>
+ 
         <div>
           Private Residence
         </div>
       </div>
 
       <div class="cellItem ht2">
-        <img src="pics/udong-plan.png" alt="">
+        <div class="ht2">
+          <img src="pics/udong-plan.png" alt="">
+        </div>
         <div>
           Udong
         </div>
       </div>
 
       <div class="cellItem ht2">
-          <img src="pics/proper-01.png" alt="">
-          <div>
-            Santa Monica Proper
-          </div>
+        <div class="ht2">
+            <img src="pics/proper-01.png" alt="">
+        </div>
+        <div>
+          Santa Monica Proper
+        </div>
       </div>
 
       <div class="cellItem ht2">
-          <img src="pics/Chipotle-HillCrest.png" alt="">
-          <div>
-            Chipotle Hillcrest
+          <div class="ht2">
+              <img src="pics/Chipotle-Pacific.png" alt="">
           </div>
+          <div>
+            Chipotle Pacific Beach, SD
+          </div>
+        </div>
+
+      <div class="cellItem ht2">
+          <div class="ht2">
+              <img src="pics/Santa-Fe-01.jpg" alt="">
+          </div>
+          <div>
+            Santa Fe Mexico City
+          </div>
+        </div>
+
+      <div class="cellItem ht2">
+        <div class="ht2">
+            <img src="pics/Chipotle-HillCrest.png" alt="">
+        </div>
+
+        <div>
+          Chipotle Hillcrest
+        </div>
+      </div>
+
+      <div class="cellItem ht3">
+        <div class='ht3'>
+
+          <img src="pics/magdalen-05.jpg" alt="">
+        </div>
+
+        <div>
+          St Mary Magdalene
+        </div>
+      </div>
+
+      <div class="cellItem ht3">
+          <div class="ht3">
+              <img src="pics/Chipotle-SB.png" alt="">
+          </div>
+          <div>
+            Chipotle Santa Barbara
+          </div>
+        </div>
+
+      <div class="cellItem ht2">
+        <div class="ht2">
+            <img src="pics/F21-SCP-01.png" alt="">
+        </div>
+
+        <div>
+          Forever 21 South Coast Plaza
+        </div>
       </div>
 
       <div class="cellItem ht2">
-          <div id='picContainer'>
-              <img src="pics/magdalen-05.jpg" alt="">
+          <div class="ht2">
+              <img src="pics/HopeStreetLofts.png" alt="">
           </div>
-          <!-- <img src="pics/magdalen-05.jpg" alt=""> -->
+  
           <div>
-            St Mary Magdalene
+            Hope Street Lofts
           </div>
+        </div>
+
+      <div class="cellItem ht3">
+        <div class="ht3">
+          <img src="pics/ProperLandmark-01.JPG" alt="">
+        </div>
+        <div>
+          Santa Monica Proper Landmark
+        </div>
       </div>
 
+      <!-- Chipotle-BeverlyCenter.png -->
       <div class="cellItem ht2">
-          <img src="pics/F21-SCP-01.png" alt="">
-          <div>
-            Forever 21 South Coast Plaza
+          <div class="ht2">
+              <img src="pics/Chipotle-BeverlyCenter.png" alt="">
           </div>
-      </div>
-
-      
+          <div>
+            Chipotle Beverly Center
+          </div>
+        </div>
 
       <div class="cellItem ht2">
-          <img src="pics/sisters of mercy.png" alt="">
-          <div>
-            Sisters of Mercy Chapel
-          </div>
+        <div class="ht2">
+            <img src="pics/sisters of mercy.png" alt="">
+        </div>
+        <div>
+          Sisters of Mercy Chapel
+        </div>
       </div>
 
       <div class="cellItem ht1">
-        <img src="pics/OlympicSoto-02.png" alt="">
+        <div class="ht1">
+            <img src="pics/OlympicSoto-02.png" alt="">
+        </div>
         <div>
           Olympic & Soto Redevelopment
         </div>
       </div>
 
-      <div class="cellItem ht1">
-          <img src="pics/F21-Hawaii.jpg" alt="">
-          <div>
-            Forever 21 Hawaii
-          </div>
+      <div class="cellItem ht2">
+        <div class="ht2">
+            <img src="pics/F21-Hawaii.jpg" alt="">
+        </div>
+        <div>
+          Forever 21 Hawaii
+        </div>
       </div>
 
       <div class="cellItem ht2">
+        <div class="ht2">
           <img src="pics/Chipole-Encino.png" alt="">
-          <div>
-            Chipotle Encino
-          </div>
+        </div>
+        <div>
+          Chipotle Encino
+        </div>
       </div>
 
       <div class="cellItem ht2">
+        <div class="ht2">
           <img src="pics/Chipotle-Encinitas.png" alt="">
-          <div>
-            Chipotle Encinitas
-          </div>
+        </div>
+        <div>
+          Chipotle Encinitas
+        </div>
       </div>
 
-      <div class="cellItem ht1">ht1</div>
+
 
     </div>
 
@@ -158,10 +244,118 @@
   </div>
 
   <div id='techPortfolio' class='portfolioWindow frontPageElement hide'>
-    <div class='portFolioGridContainer'>
-      <div id='ETF'>
+    <div class='portFolioFlexContainer'>
+      <!-- <div id='ETF'>
         <iframe src="https://leveraged-etf-historical-review-ezepm.ondigitalocean.app/" width="300" height="540"></iframe>
+      </div> -->
+      <div class='expandable-table-cell-container condenced-height' id='JSDrawContainer'>
+        <div class='table-cell-container'>
+          <div class='textBlock'>
+            <h2 class='tableTitle'>Composite Shape Pen</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel corrupti minus at molestias consequuntur
+              necessitatibus odio laboriosam esse, saepe deleniti velit soluta molestiae veniam aut tempore voluptatum
+              excepturi sint aliquid!</p>
+          </div>
+          <div class='drawing' id='JSDraw_01'> </div>
+          <i id='JSDrawToggleExpand' class="fas fa-arrow-down table-cell-arrow"></i>
+        </div>
+        <div class='table-cell-container'>
+          <div class='textBlock'>
+            <h2 class='tableTitle'>Line Shape Pen</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel corrupti minus at molestias consequuntur
+              necessitatibus odio laboriosam esse, saepe deleniti velit soluta molestiae veniam aut tempore voluptatum
+              excepturi sint aliquid!</p>
+          </div>
+          <div class='drawing' id='JSDraw_02'> </div>
+        </div>
+        <!-- lineSeriesPen lineCollectionPen circleSeriesPen arcLineShapePen 
+        bezierShapePen arcShapePen universalShapePen multiShapePen_01 -->
+
+        <div class='table-cell-container'>
+          <div class='textBlock'>
+            <h2 class='tableTitle'>Line Series Pen</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel corrupti minus at molestias consequuntur
+              necessitatibus odio laboriosam esse, saepe deleniti velit soluta molestiae veniam aut tempore voluptatum
+              excepturi sint aliquid!</p>
+          </div>
+          <div class='drawing' id='JSDraw_03'> </div>
+        </div>
+
+        <div class='table-cell-container'>
+          <div class='textBlock'>
+            <h2 class='tableTitle'>Line Collection Pen</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel corrupti minus at molestias consequuntur
+              necessitatibus odio laboriosam esse, saepe deleniti velit soluta molestiae veniam aut tempore voluptatum
+              excepturi sint aliquid!</p>
+          </div>
+          <div class='drawing' id='JSDraw_04'> </div>
+        </div>
+
+        <div class='table-cell-container'>
+          <div class='textBlock'>
+            <h2 class='tableTitle'>Circle Series Pen</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel corrupti minus at molestias consequuntur
+              necessitatibus odio laboriosam esse, saepe deleniti velit soluta molestiae veniam aut tempore voluptatum
+              excepturi sint aliquid!</p>
+          </div>
+          <div class='drawing' id='JSDraw_05'> </div>
+        </div>
+
+        <div class='table-cell-container'>
+          <div class='textBlock'>
+            <h2 class='tableTitle'>Arc Shape Pen V01</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel corrupti minus at molestias consequuntur
+              necessitatibus odio laboriosam esse, saepe deleniti velit soluta molestiae veniam aut tempore voluptatum
+              excepturi sint aliquid!</p>
+          </div>
+          <div class='drawing' id='JSDraw_06'> </div>
+        </div>
+
+        <div class='table-cell-container'>
+          <div class='textBlock'>
+            <h2 class='tableTitle'>Bezier Shape Pen</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel corrupti minus at molestias consequuntur
+              necessitatibus odio laboriosam esse, saepe deleniti velit soluta molestiae veniam aut tempore voluptatum
+              excepturi sint aliquid!</p>
+          </div>
+          <div class='drawing' id='JSDraw_07'> </div>
+        </div>
+
+        <div class='table-cell-container'>
+          <div class='textBlock'>
+            <h2 class='tableTitle'>Arc Shape Pen V02</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel corrupti minus at molestias consequuntur
+              necessitatibus odio laboriosam esse, saepe deleniti velit soluta molestiae veniam aut tempore voluptatum
+              excepturi sint aliquid!</p>
+          </div>
+          <div class='drawing' id='JSDraw_08'> </div>
+        </div>
+
+        <div class='table-cell-container'>
+            <div class='textBlock'>
+              <h2 class='tableTitle'>Multi Shape Pen V01</h2>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel corrupti minus at molestias consequuntur
+                necessitatibus odio laboriosam esse, saepe deleniti velit soluta molestiae veniam aut tempore voluptatum
+                excepturi sint aliquid!</p>
+            </div>
+            <div class='drawing' id='JSDraw_09'> </div>
+          </div>
+
       </div>
+
+
+      <div class='table-cell-container'>
+        <div class='textBlock'>
+          <h2>Leveraged ETF Review</h2>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel corrupti minus at molestias consequuntur
+            necessitatibus odio laboriosam esse, saepe deleniti velit soluta molestiae veniam aut tempore voluptatum
+            excepturi sint aliquid!</p>
+        </div>
+        <iframe src="https://leveraged-etf-historical-review-ezepm.ondigitalocean.app/" width="300"
+          height="540"></iframe>
+      </div>
+
+
     </div>
   </div>
 
@@ -169,50 +363,50 @@
 
   <!-- *         NAVIGATION BUTTONS                  -->
 
-  <div id='exitButton2' class='navigationButton2 zeroButton'  >
+  <div id='exitButton2' class='navigationButton2 zeroButton'>
     <div class='circleButton'>
       <i class="fas fa-home" style='margin-left:4px'></i>
     </div>
     <div class='navButtonLabel'>
-      <p>Exit</p> 
+      <p>Exit</p>
     </div>
   </div>
 
-  <div id='resumeButton2' class='navigationButton2' >
+  <div id='resumeButton2' class='navigationButton2'>
     <div class='circleButton'>
       <i class="fas fa-scroll" style='margin-left:4px'></i>
     </div>
     <div class='navButtonLabel'>
-      <p>Resume</p> 
+      <p>Resume</p>
     </div>
   </div>
 
-  <div id='archButton2' class='navigationButton2' >
+  <div id='archButton2' class='navigationButton2'>
     <div class='circleButton'>
       <i class="fas fa-building" style='margin-left:4px'></i>
     </div>
     <div class='navButtonLabel'>
-      <p>Architecture<br>Portfolio</p> 
+      <p>Architecture<br>Portfolio</p>
     </div>
   </div>
 
-  <div id='techButton2' class='navigationButton2' >
+  <div id='techButton2' class='navigationButton2'>
     <div class='circleButton'>
       <i class="fas fa-code" style='margin-left:3px'></i>
     </div>
     <div class='navButtonLabel'>
-      <p>Tech<br>Portfolio</p> 
+      <p>Tech<br>Portfolio</p>
     </div>
   </div>
 
 
 
-  <div id='contactButton' class='navigationButton2'  >
+  <div id='contactButton' class='navigationButton2'>
     <div class='circleButton'>
       <i class="fas fa-address-book" style='margin-left:3px'></i>
     </div>
     <div class='navButtonLabel'>
-      <p>Contact</p> 
+      <p>Contact</p>
     </div>
   </div>
 
@@ -574,7 +768,9 @@
   </div>
 
 
-  <script src="main.js"></script>
+  <script type="module" src="main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.js"></script>
+  <!-- <script type="module"  src="./JSDraw/WorkSpace.js"></script> -->
 </body>
 
 </html>

@@ -6,15 +6,51 @@
 /*jshint asi: true */
 /*jshint expr: true */
 
-const ON = true, OFF = false
-const SHOW = true, HIDE = false
+
+import {JSDraw} from './JSDraw/WorkSpace.js'
 const {
   log
 } = console
+
+log('loading')
+
+const pen_01 = JSDraw('JSDraw_01', 300,300)
+pen_01.currentPen = 'compositePen'
+const pen_02 = JSDraw('JSDraw_02', 300,300)
+pen_02.currentPen = 'lineShapePen'
+
+const pen_03 = JSDraw('JSDraw_03', 300,300)
+pen_03.currentPen = 'lineSeriesPen'
+
+const pen_04 = JSDraw('JSDraw_04', 300,300)
+pen_04.currentPen = 'lineCollectionPen'
+
+const pen_05 = JSDraw('JSDraw_05', 300,300)
+pen_05.currentPen = 'circleSeriesPen'
+
+const pen_06 = JSDraw('JSDraw_06', 300,300)
+pen_06.currentPen = 'arcLineShapePen'
+
+const pen_07 = JSDraw('JSDraw_07', 300,300)
+pen_07.currentPen = 'bezierShapePen'
+
+const pen_08 = JSDraw('JSDraw_08', 300,300)
+pen_08.currentPen = 'arcShapePen'
+
+const pen_09 = JSDraw('JSDraw_09', 300,300)
+pen_09.currentPen = 'multiShapePen_01'
+
+// const pen_08 = JSDraw('JSDraw_08', 300,300)
+// pen_08.currentPen = 'arcShapePen'
+//lineSeriesPen lineCollectionPen circleSeriesPen arcLineShapePen 
+//bezierShapePen arcShapePen universalShapePen multiShapePen_01
+
+const ON = true, OFF = false
+const SHOW = true, HIDE = false
+
 const page1TemplateRowsDefault = ['128px', 'auto' , 'auto', 'auto', 'auto']
 
 const page1RowHeights = window.getComputedStyle(page1).gridTemplateRows.split(' ').map(rowHt => Number(rowHt.split('px')[0]))
-
 const page2RowHeights = window.getComputedStyle(page2).gridTemplateRows.split(' ').map(rowHt => Number(rowHt.split('px')[0]))
 
 const page1TemplateRowsForPrint = [...page1TemplateRowsDefault]
@@ -38,7 +74,7 @@ window.verifyDeviceAsMobileOrTablet = function() {
 };
 
 document.body.style.overflowY = 'hidden'
-window.addEventListener('scroll',()=>{
+window.addEventListener('scroll',()=>{ 
   const dist = Math.min(95, window.scrollY)
   document.documentElement.style.setProperty('--user-scroll-distance', dist + 'px') 
 })
@@ -55,9 +91,22 @@ function alignButtonRightSide(){
   const width = Math.round(box.x ) - 10
 }
 
+
+window.addEventListener('resize',()=>{
+  // --vw-proportion-650px
+  console.log(2222)//innerwidth / 650)
+  // document.documentElement.style.setProperty('--vw-proportion-650px', innerwidth / 650 )
+})
+
+document.getElementsByClassName('portFolioGridContainer')[0].getBoundingClientRect()
+
+
 // window.addEventListener('resize',()=>{
 //   setCSSVariables()
 // })
+
+
+
 
 function setCSSVariables(){ return
   const pageBox = page1.getBoundingClientRect()
@@ -273,8 +322,6 @@ exitButton2.addEventListener('mousedown', ()=>{
   setTechPortfolioDisplay(HIDE)
   setHomeScreenDisplay(SHOW)
   setResumeDisplay(HIDE)
-
-  // exitButton2.style.top = ''
   exitButton2.className = 'navigationButton2 zeroButton'
 })
 
@@ -295,40 +342,7 @@ function toggleNavigationButton(button){
   return {isToggledOn:true}
 }
 
-// archButton.addEventListener('mousedown', ()=>{
-//   if(getResumeIsShown())showResume(false)
-  
 
-//   if(toggleNavigationButton(archButton).isToggledOn) {
-//     hideAllNavigationSymbols(archButton)
-//     archPortfolio.className = 'portfolioWindow frontPageElement show'
-//     bottomRightTile.className = 'portfolioWindow frontPageElement hide'
-//   } else {
-//     showAllNavigationSymbols()
-//     archPortfolio.className = 'portfolioWindow frontPageElement hide'
-//     bottomRightTile.className = 'portfolioWindow frontPageElement show'
-//   }
-// })
-
-// techButton.addEventListener('mousedown', ()=>{
-//   if(getResumeIsShown())showResume(false)
-//   toggleNavigationButton(techButton)
-//   hideAllNavigationSymbols(techButton)
-// })
-
-
-
-
-// contactToggle.addEventListener('mousedown', ()=>{ 
-//   const alreadyToggledOn = contactToggle.className === 'toggleButton toggleOn'
-//   if(alreadyToggledOn) {
-//     contactToggle.className = 'toggleButton'
-//     addressContainer.className = 'hide'
-//   } else {
-//     contactToggle.className = 'toggleButton toggleOn'
-//     addressContainer.className = 'show'
-//   }
-// })
 
 window.onbeforeprint = function(event) { 
   page1.style.gridTemplateRows = page1TemplateRowsForPrint.join(' ')
@@ -386,11 +400,8 @@ const toggleExpandHide = (ToggleExpandButton, rowSpan = 1)=>{ log('toggleExpandH
   const toOpen = ToggleExpandButton.className === 'fas fa-arrow-down'
 
   const iconY = toggleExpandButtonContainer.getBoundingClientRect().y + toggleExpandButtonContainerHeight
-
   const parentY = ToggleExpandButton.parentElement.parentElement.getBoundingClientRect().y
-
   const dist = Math.round( iconY - parentY)
-
 
   if(toOpen){ 
     ToggleExpandButton.className = 'fas fa-arrow-up'
@@ -398,7 +409,6 @@ const toggleExpandHide = (ToggleExpandButton, rowSpan = 1)=>{ log('toggleExpandH
     rowIndex.forEach(index=>{
       templateRows[index] =  templateRowsDefault[index]
     })
-
 
     animateFold(page, row)
     shadowEffectElement.hidden = true
@@ -409,11 +419,9 @@ const toggleExpandHide = (ToggleExpandButton, rowSpan = 1)=>{ log('toggleExpandH
     shadowEffectElement.style.transform = `translateY(${shadowOffsetY}px)`
     ToggleExpandButton.className = 'fas fa-arrow-down'
     
- 
     rowIndex.forEach((index,i)=>{
       const isTopCell = i === 0
       const collapeHeight = isTopCell ? 0 : 1
-      // templateRows[index] = isTopCell? (dist + 20) + 'px' : collapeHeight + 'px'
       templateRows[index] = isTopCell? dist + 'px' : collapeHeight + 'px'
     })
     const str = templateRows.join(" ")
@@ -421,9 +429,6 @@ const toggleExpandHide = (ToggleExpandButton, rowSpan = 1)=>{ log('toggleExpandH
     animateFold(page, row, dist)
   }
 }
-
-
-
 
 function animateFold(page, rowIndex, closeDistannce){ 
   const toClose = closeDistannce !== undefined
@@ -475,6 +480,15 @@ function animateFold(page, rowIndex, closeDistannce){
 }
 
 
+JSDrawToggleExpand.addEventListener('mousedown',()=>{
+  const isUp = JSDrawToggleExpand.className === 'fas fa-arrow-up table-cell-arrow'
+  if(isUp)JSDrawToggleExpand.className = 'fas fa-arrow-down table-cell-arrow'
+  else JSDrawToggleExpand.className = 'fas fa-arrow-up table-cell-arrow'
+ 
+  if(isUp) JSDrawContainer.className = 'expandable-table-cell-container condenced-height'
+  else {JSDrawContainer.className = 'expandable-table-cell-container expanded'}
+})
+
 summaryToggleExpand.addEventListener('mousedown',()=>{
   toggleExpandHide(summaryToggleExpand)
 })
@@ -487,7 +501,6 @@ skillsToggleExpand.addEventListener('mousedown',()=>{
   toggleExpandHide(skillsToggleExpand  )
 })
 
-
 employerToggleExpand.addEventListener('mousedown',()=>{ 
   toggleExpandHide(employerToggleExpand,2 )
 })
@@ -495,8 +508,6 @@ employerToggleExpand.addEventListener('mousedown',()=>{
 notableToggleExpand.addEventListener('mousedown',()=>{ 
   toggleExpandHide(notableToggleExpand )
 })
-
-
 
 document.addEventListener('DOMContentLoaded', function() {
   if(window.isMobileDevice()){ 
@@ -526,7 +537,7 @@ archPortfolio.addEventListener('mousedown',(e)=>{
 })
 
 archPortfolio.addEventListener('mousemove',(e)=>{
-  if(!mousePosition){
+  if(!mousePosition){ 
     document.documentElement.style.setProperty('--cursor', 'hand')
     document.documentElement.style.setProperty('--xcolor', 'red')
     return
@@ -540,9 +551,4 @@ archPortfolio.addEventListener('mouseup',()=>{
   mousePosition = null
 })
 
-archPortfolio.addEventListener('mouseout',()=>{
-  // mousePosition = null
-  log('mouseout')
-})
 
-// archPortfolio.scrollTop
