@@ -11,8 +11,7 @@ import {JSDraw} from './JSDraw/WorkSpace.js'
 const {
   log
 } = console
-
-log('loading')
+//git submodule add https://github.com/clauinger/JSDraw.git
 
 const pen_01 = JSDraw('JSDraw_01', 300,300)
 pen_01.currentPen = 'compositePen'
@@ -39,11 +38,6 @@ pen_08.currentPen = 'arcShapePen'
 
 const pen_09 = JSDraw('JSDraw_09', 300,300)
 pen_09.currentPen = 'multiShapePen_01'
-
-// const pen_08 = JSDraw('JSDraw_08', 300,300)
-// pen_08.currentPen = 'arcShapePen'
-//lineSeriesPen lineCollectionPen circleSeriesPen arcLineShapePen 
-//bezierShapePen arcShapePen universalShapePen multiShapePen_01
 
 const ON = true, OFF = false
 const SHOW = true, HIDE = false
@@ -73,54 +67,87 @@ window.verifyDeviceAsMobileOrTablet = function() {
   return check;
 };
 
+
+function detectLeftButton(evt) {
+  evt = evt || window.event;
+  if ("buttons" in evt) {
+      return evt.buttons == 1;
+  }
+  const button = evt.which || evt.button;
+  return button == 1;
+}
+
+function setUserScrollDistance (dist){
+  const newScrollDistance = Math.max( dist + scrollDistance,0)
+  const topScroll = Math.min(newScrollDistance , 75)
+  const bottomScroll = Math.max(newScrollDistance - 75, 0 )
+  document.documentElement.style.setProperty('--user-scroll-distance', topScroll + 'px')
+  techPortfolio.scrollTop = bottomScroll
+}
+
 document.body.style.overflowY = 'hidden'
-window.addEventListener('scroll',()=>{ 
-  const dist = Math.min(95, window.scrollY)
+window.addEventListener('scroll',()=>{
+  const dist = Math.min(75, window.scrollY)
   document.documentElement.style.setProperty('--user-scroll-distance', dist + 'px') 
 })
 
-function alignSplashContainer(){
-  const box = splashImage.getBoundingClientRect()
-  const rightSideX = box.x - 30
-  splashContainer.style.width = rightSideX + 'px'
-  splashContainer.style.height = (Math.round(box.height) - 30) + 'px'
+let techPortfolioMouseIsPressed = false
+let techPortfolioMousePressPoint = null
+
+let scrollDistance = 0
+function setScrollDistance(){
+  scrollDistance = techPortfolio.scrollTop + Number( document.documentElement.style.getPropertyValue('--user-scroll-distance').split('px')[0])
 }
 
-function alignButtonRightSide(){
-  const box = splashImage.getBoundingClientRect()
-  const width = Math.round(box.x ) - 10
+function getCursorLocatedOnScroll(e){
+  const classNameList = e.target.className.split(" ")
+  return classNameList.includes('table-cell-container') || 
+    classNameList.includes('portFolioFlexContainer') || 
+    classNameList.includes('expandable-table-cell-container') || 
+    classNameList.includes('tableTitle') || 
+    classNameList.includes('drawing') || 
+    false
 }
 
+techPortfolio.addEventListener('mousedown',(e)=>{ log(e.target.className)
+  techPortfolioMouseIsPressed = getCursorLocatedOnScroll(e)
+  if(!techPortfolioMouseIsPressed)return 
+  setScrollDistance()
+  techPortfolioMousePressPoint = {x:e.screenX,y:e.screenY}
+  document.body.className = 'disable-selection'
+})
 
-window.addEventListener('resize',()=>{
-  // --vw-proportion-650px
-  console.log(2222)//innerwidth / 650)
-  // document.documentElement.style.setProperty('--vw-proportion-650px', innerwidth / 650 )
+techPortfolio.addEventListener('mousemove',(e)=>{ 
+  document.documentElement.style.setProperty('--cursor', getCursorLocatedOnScroll(e) ? 'grab': 'default')
+  if(!techPortfolioMouseIsPressed)return
+
+  const leftMouseButtonIsPressed = detectLeftButton(e)
+  if(!leftMouseButtonIsPressed){
+    terminateTechPortfolioScrolling()
+    return
+  }
+  const dist =  techPortfolioMousePressPoint.y - e.screenY
+  setUserScrollDistance (dist)
+})
+
+function terminateTechPortfolioScrolling(){
+  techPortfolioMouseIsPressed = false
+  document.body.className = ''
+}
+
+techPortfolio.addEventListener('mouseup',(el)=>{ 
+  terminateTechPortfolioScrolling()
+})
+
+techPortfolio.addEventListener('wheel',(el)=>{
+  setScrollDistance()
+  const dist = el.deltaY
+  setUserScrollDistance (dist)
 })
 
 document.getElementsByClassName('portFolioGridContainer')[0].getBoundingClientRect()
 
 
-// window.addEventListener('resize',()=>{
-//   setCSSVariables()
-// })
-
-
-
-
-function setCSSVariables(){ return
-  const pageBox = page1.getBoundingClientRect()
-  const marginLeft = Number(getComputedStyle(document.documentElement).getPropertyValue('--left-margin').split('px')[0]);
-  const marginRight = Number(getComputedStyle(document.documentElement).getPropertyValue('--right-margin').split('px')[0]);
-  const innerwidth = pageBox.width - marginLeft - marginRight
-  document.documentElement.style.setProperty('--page-innerwidth', innerwidth + 'px')
-  const x = Math.round(pageBox.x)
-  document.documentElement.style.setProperty('--left-space', x + 'px')
-}
-
-// window.addEventListener('load', (event) => {
-//   setCSSVariables()
-// })
 window.onbeforeunload = function () {
   window.scrollTo(0, 0);
 }
@@ -130,68 +157,41 @@ window.onbeforeunload = function () {
 //** GET GRID POSITION */
 function getGridElementsPosition(index) {
   const gridEl = document.getElementById("grid");
-
   let offset = Number(window.getComputedStyle(gridEl.children[0]).gridColumnStart) - 1; 
-
   if (isNaN(offset)) {
     offset = 0;
   }
   const colCount = window.getComputedStyle(gridEl).gridTemplateColumns.split(" ").length;
-
   const rowPosition = Math.floor((index + offset) / colCount);
   const colPosition = (index + offset) % colCount;
-
   return { row: rowPosition, column: colPosition };
 }
 
-function getNodeIndex(elm) {
-  var c = elm.parentNode.children,
-    i = 0;
-  for (; i < c.length; i++) if (c[i] == elm) return i;
-}
-
-function addClickEventsToGridItems() {
-  let gridItems = document.getElementsByClassName("cell");
-  for (let i = 0; i < gridItems.length; i++) {
-    gridItems[i].onclick = (e) => {
-      let position = getGridElementsPosition(getNodeIndex(e.target));
-      console.log(`Node position is row ${position.row}, column ${position.column}`);
-    };
-  }
-}
-
-
-//bottomRightTile
 function setHomeScreenDisplay(display = SHOW){
   if(display === SHOW) {
     bottomRightTile.className = 'portfolioWindow frontPageElement show'
-    // bottomRightTile.className = 'portfolioWindow frontPageElement hide'
   } else {
     bottomRightTile.className = 'portfolioWindow frontPageElement hide'
-    // bottomRightTile.className = 'portfolioWindow frontPageElement show'
   }
 }
 
 function setArchPortfolioDisplay(display = SHOW){
   if(display === SHOW) {
     archPortfolio.className = 'portfolioWindow frontPageElement show'
-    // bottomRightTile.className = 'portfolioWindow frontPageElement hide'
   } else {
     archPortfolio.className = 'portfolioWindow frontPageElement hide'
-    // bottomRightTile.className = 'portfolioWindow frontPageElement show'
   }
 }
 
-function setTechPortfolioDisplay(display = SHOW){
+function setTechPortfolioDisplay(display = SHOW){ log('setTechPortfolioDisplay')
   if(display === SHOW) {
     techPortfolio.className = 'portfolioWindow frontPageElement show'
-    // bottomRightTile.className = 'portfolioWindow frontPageElement hide'
   } else {
     techPortfolio.className = 'portfolioWindow frontPageElement hide'
-    // bottomRightTile.className = 'portfolioWindow frontPageElement show'
   }
+  document.documentElement.style.setProperty('--user-scroll-distance', '0px')
+  techPortfolio.scrollTop = 0
 }
-
 
 function setResumeDisplay (display = SHOW){ 
   addressContainer.className = 'hide'
@@ -204,21 +204,17 @@ function setResumeDisplay (display = SHOW){
     page1.className = 'page show'
     page2.className = 'page show'
     verticalLine.className = 'splashLine frontPageElement hide'
-    // horizontalLine.className = 'splashLine frontPageElement hide'
     document.body.className = 'resumeShow'
     document.body.style.overflowY = 'scroll'
-    setCSSVariables()
     topRightTile.className = 'frontPageElement resume'
     backgroundImageContainer.className = 'resume'
   } else {
     log('resume hide')
     window.scrollTo(0, 0);
-    // bottomRightTile.className = 'portfolioWindow frontPageElement show'
     lowerLeftTile.className = 'frontPageElement show'
     page1.className = 'page hide'
     page2.className = 'page hide'
     verticalLine.className = 'splashLine frontPageElement'
-    // horizontalLine.className = 'splashLine frontPageElement'
     document.body.className = ''
     document.body.style.overflowY = 'hidden'
     topRightTile.className = 'frontPageElement'
@@ -227,28 +223,20 @@ function setResumeDisplay (display = SHOW){
 }
 
 function getResumeIsShown(){
-  return resumeButton2.className === 'navigationButton2 toggleOn'
+  return resumeButton2.className === 'navigationButton toggleOn'
 }
 
-function getArchPortFolioIsShown(){ 
-  return archButton2.className === 'navigationButton2 toggleOn'
-}
-
-function getTechPortFolioIsShown(){ 
-  return techButton2.className === 'navigationButton2 toggleOn'
-}
-
-function toggleNavigationButton2(button){
-  const isToggledOn = button.className === 'navigationButton2 toggleOn'
+function togglenavigationButton(button){
+  const isToggledOn = button.className === 'navigationButton toggleOn'
   if(isToggledOn){
     title.className = 'show'
-    button.className = 'navigationButton2'
+    button.className = 'navigationButton'
     return {isToggledOn:false}
   }
-  const navigationButtons = document.getElementsByClassName('navigationButton2')
+  const navigationButtons = document.getElementsByClassName('navigationButton')
   for (let i = 0; i < navigationButtons.length; i++) {
     const element = navigationButtons[i];
-    if(element !== button) element.className =  'navigationButton2' 
+    if(element !== button) element.className =  'navigationButton hideLabel' 
   }
   title.className = 'hide'
   const ht = button.getBoundingClientRect().y
@@ -258,91 +246,83 @@ function toggleNavigationButton2(button){
     if(button === archButton2)return 'secondButton'
     if(button === techButton2)return 'thirdButton'
   }()
-
-  // exitButton2.style.top = ht + 'px' //button.style.top
-
-
-  button.className = 'navigationButton2 toggleOn ' + location
+  button.className = 'navigationButton toggleOn ' + location
   return {isToggledOn:true}
 }
 
-contactButton.addEventListener('mousedown', ()=>{ 
-  const alreadyToggledOn = contactButton.className === 'navigationButton2 toggleShowAddress2'
+myName.addEventListener('mousedown', ()=>{ 
+  const alreadyToggledOn = myName.className === 'myName toggleShowAddress'
   if(alreadyToggledOn) {
-    contactButton.className = 'navigationButton2'
-    addressContainer.className = 'hide'
+    myName.className = 'myName'
+    addressScreen.className = 'hide'
+    contactButton.className = 'navigationButton' 
+    grayOutNavLables(false)
   } else {
-    contactButton.className = 'navigationButton2 toggleShowAddress2'
-    addressContainer.className = 'show'
+    myName.className = 'myName toggleShowAddress'
+    addressScreen.className = 'show'
+    contactButton.className = 'navigationButton toggleOn' 
+    grayOutNavLables(true)
   }
+})
+
+function grayOutNavLables(bool = false){
+  const cx = document.getElementsByClassName('navButtonLabel')
+  for (let i = 0; i < cx.length; i++) {
+
+    if(cx[i].textContent === 'Contact') continue
+    cx[i].className = bool ? 'navButtonLabel grayOut' : 'navButtonLabel'
+  }
+  contactLbl.className = 'navButtonLabel'
+}
+
+addressScreen.addEventListener('mousedown', ()=>{ 
+  addressScreen.className = 'hide'
+  contactButton.className = 'navigationButton'
+  grayOutNavLables(false)
 })
 
 
 resumeButton2.addEventListener('mousedown', ()=>{ 
-  const isToggledOn = toggleNavigationButton2(resumeButton2).isToggledOn
-  const otherButtons = isToggledOn ? 'navigationButton2 hideLabel' : 'navigationButton2'
+  const isToggledOn = togglenavigationButton(resumeButton2).isToggledOn
+  const otherButtons = isToggledOn ? 'navigationButton hideLabel' : 'navigationButton'
   archButton2.className = otherButtons
   techButton2.className = otherButtons
   contactButton.className = otherButtons
-
   exitButton2.className = isToggledOn ? otherButtons + ' ' + 'firstButton' : otherButtons
-
   setResumeDisplay(isToggledOn)
   setHomeScreenDisplay(isToggledOn === false)
 })
 
 archButton2.addEventListener('mousedown', ()=>{
-  // if(getResumeIsShown())setResumeDisplay(false)
-  const isToggledOn = toggleNavigationButton2(archButton2).isToggledOn
+  const isToggledOn = togglenavigationButton(archButton2).isToggledOn
   setArchPortfolioDisplay(isToggledOn)
   setTechPortfolioDisplay(HIDE)
   setResumeDisplay(HIDE)
   setHomeScreenDisplay(isToggledOn === false)
-
-  exitButton2.className = isToggledOn ? 'navigationButton2' + ' ' + 'secondButton' : 'navigationButton2'
+  exitButton2.className = isToggledOn ? 'navigationButton' + ' ' + 'secondButton' : 'navigationButton'
 })
 
 techButton2.addEventListener('mousedown', ()=>{
   if(getResumeIsShown())setResumeDisplay(false)
-  const isToggledOn = toggleNavigationButton2(techButton2).isToggledOn
+  const isToggledOn = togglenavigationButton(techButton2).isToggledOn
   setArchPortfolioDisplay(HIDE)
   setTechPortfolioDisplay(isToggledOn)
   setResumeDisplay(HIDE)
   setHomeScreenDisplay(isToggledOn === false)
-  exitButton2.className = isToggledOn ? 'navigationButton2' + ' ' + 'thirdButton' : 'navigationButton2'
+  exitButton2.className = isToggledOn ? 'navigationButton' + ' ' + 'thirdButton' : 'navigationButton'
 })
 
 exitButton2.addEventListener('mousedown', ()=>{
-  // if(getResumeIsShown())setResumeDisplay(false)
-  if(archButton2.className !== 'navigationButton2' )archButton2.className = 'navigationButton2'
-  if(techButton2.className !== 'navigationButton2' )techButton2.className = 'navigationButton2'
-  if(resumeButton2.className !== 'navigationButton2' )resumeButton2.className = 'navigationButton2'
-  if(contactButton.className !== 'navigationButton2' )contactButton.className = 'navigationButton2'
+  if(archButton2.className !== 'navigationButton' )archButton2.className = 'navigationButton'
+  if(techButton2.className !== 'navigationButton' )techButton2.className = 'navigationButton'
+  if(resumeButton2.className !== 'navigationButton' )resumeButton2.className = 'navigationButton'
+  if(contactButton.className !== 'navigationButton' )contactButton.className = 'navigationButton'
   setArchPortfolioDisplay(HIDE)
   setTechPortfolioDisplay(HIDE)
   setHomeScreenDisplay(SHOW)
   setResumeDisplay(HIDE)
-  exitButton2.className = 'navigationButton2 zeroButton'
+  exitButton2.className = 'navigationButton zeroButton'
 })
-
-function toggleNavigationButton(button){
-  const isToggledOn = button.className === 'navigationButton toggleOn'
-  if(isToggledOn){
-    button.className = 'navigationButton'
-    title.className = 'show'
-    return {isToggledOn:false}
-  }
-  button.className = 'navigationButton toggleOn'
-  const navigationButtons = document.getElementsByClassName('navigationButton')
-  for (let i = 0; i < navigationButtons.length; i++) {
-    const element = navigationButtons[i];
-    if(element !== button) element.className =  'navigationButton' 
-  }
-  title.className = 'hide'
-  return {isToggledOn:true}
-}
-
-
 
 window.onbeforeprint = function(event) { 
   page1.style.gridTemplateRows = page1TemplateRowsForPrint.join(' ')
@@ -372,13 +352,11 @@ function getCellInfo(element){
     const element = cells[i];
     if(element === cellElement)index = i
   }
-
   return {index, row : index / 2, column : index % 2 ,page , shadowEffectElement: cells[index + 1 ].children[0] }
 }
 
 
 const toggleExpandHide = (ToggleExpandButton, rowSpan = 1)=>{ log('toggleExpandHide')
-
   let {row, page, shadowEffectElement} = getCellInfo(ToggleExpandButton)
   const rowIndex = []
   let i = 0
@@ -386,7 +364,6 @@ const toggleExpandHide = (ToggleExpandButton, rowSpan = 1)=>{ log('toggleExpandH
     rowIndex.push(row + i)
     i++
   }
-
   let templateRows,templateRowsDefault
   if(page === page1){
     templateRowsDefault = page1TemplateRowsDefault
@@ -424,8 +401,6 @@ const toggleExpandHide = (ToggleExpandButton, rowSpan = 1)=>{ log('toggleExpandH
       const collapeHeight = isTopCell ? 0 : 1
       templateRows[index] = isTopCell? dist + 'px' : collapeHeight + 'px'
     })
-    const str = templateRows.join(" ")
-
     animateFold(page, row, dist)
   }
 }
@@ -552,3 +527,19 @@ archPortfolio.addEventListener('mouseup',()=>{
 })
 
 
+let preventTouchDrag = false
+
+function preventTouchMoveOnElement(e) { if(preventTouchDrag) e.preventDefault()}
+
+document.addEventListener("touchmove", preventTouchMoveOnElement, {passive: false});
+
+function preventElementTouchMoveIfIsDrawScreen (e){
+  preventTouchDrag = e.target.className === 'p5Canvas'
+}
+
+document.addEventListener("touchstart", preventElementTouchMoveIfIsDrawScreen)
+
+function resetPreventTouchDrag(){
+  preventTouchDrag = false
+}
+document.addEventListener("touchend", resetPreventTouchDrag)

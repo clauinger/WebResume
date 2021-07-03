@@ -3,8 +3,6 @@
 
 <head>
 
-  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; frame-src 'self'; script-src 'self' https://www.google.com/maps/*; "> -->
-
   <link rel="shortcut icon" href="#">
 
   <meta charset="UTF-8">
@@ -20,12 +18,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Poiret+One&display=swap"
     rel="stylesheet">
-
   <title>Document</title>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.js"></script> -->
-
-
-
 </head>
 
 <body>
@@ -37,7 +30,7 @@
   <div id='topRightTile' class='frontPageElement'>
     <img id='topBanner' src="pics/GPM-06.png" alt="">
     <div class='underline'> </div>
-    <div id='myName2' class='myName'>Christopher Lauinger</div>
+    <div id='myName' class='myName'>Christopher Lauinger</div>
   </div>
 
   <div id='horizontalLine' class='splashLine frontPageElement'></div>
@@ -193,7 +186,7 @@
 
       <div class="cellItem ht2">
         <div class="ht2">
-            <img src="pics/sisters of mercy.png" alt="">
+            <img src="pics/sistersOfMercy-01.png" alt="">
         </div>
         <div>
           Sisters of Mercy Chapel
@@ -239,106 +232,124 @@
 
 
     </div>
-
-
   </div>
 
   <div id='techPortfolio' class='portfolioWindow frontPageElement hide'>
     <div class='portFolioFlexContainer'>
-      <!-- <div id='ETF'>
-        <iframe src="https://leveraged-etf-historical-review-ezepm.ondigitalocean.app/" width="300" height="540"></iframe>
-      </div> -->
       <div class='expandable-table-cell-container condenced-height' id='JSDrawContainer'>
         <div class='table-cell-container'>
+          <h2 class='tableTitle'>Machanized Ink</h2> 
+          <h3 >Exploring a new paradigm for graphic vector drawing UI</h3> 
+          <p >Machanized Ink is what I call an interface for users to create, edit, modify vector graphics with a pointing-device centric aproach.</p> 
           <div class='textBlock'>
-            <h2 class='tableTitle'>Composite Shape Pen</h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel corrupti minus at molestias consequuntur
-              necessitatibus odio laboriosam esse, saepe deleniti velit soluta molestiae veniam aut tempore voluptatum
-              excepturi sint aliquid!</p>
+            
+            <div id='JSDraw_01-condenced-format-container'></div>
+            <p class='table-text'> 
+              <div class='drawing' id='JSDraw_01'> </div>
+               
+              Unlike typicical drawing interfaces, which have evolved from desktop GUI systems, this system narrows user inputs to pointing device on screen
+              (mouse left mouse button click-drag-release or stylus press-drag-release). Avoided is the requirement for the "hunting & pecking" 
+              type inputs where users are to construct and manipulate vector graphics by pressing an assortment of buttons and other GUI controls. 
+              The net effect is a UI which is more natural in feel, intuitive, and in-line with traditional physical art mediums. A digitized art medium, as such, combines the properties of ink and drawing tools for a machine of graphic drawing.
+            <!-- </p> -->
+            
           </div>
-          <div class='drawing' id='JSDraw_01'> </div>
+          <div id='JSDraw_01-container'></div>
           <i id='JSDrawToggleExpand' class="fas fa-arrow-down table-cell-arrow"></i>
         </div>
         <div class='table-cell-container'>
           <div class='textBlock'>
             <h2 class='tableTitle'>Line Shape Pen</h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel corrupti minus at molestias consequuntur
-              necessitatibus odio laboriosam esse, saepe deleniti velit soluta molestiae veniam aut tempore voluptatum
-              excepturi sint aliquid!</p>
+            <div id='JSDraw_02-condenced-format-container'></div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto assumenda nam quos accusamus similique nesciunt sint harum sapiente deserunt adipisci deleniti ex, maxime ratione rem doloribus laudantium eos odit animi. </p>
           </div>
           <div class='drawing' id='JSDraw_02'> </div>
+          <div id='JSDraw_02-container'></div>
         </div>
-        <!-- lineSeriesPen lineCollectionPen circleSeriesPen arcLineShapePen 
-        bezierShapePen arcShapePen universalShapePen multiShapePen_01 -->
+
 
         <div class='table-cell-container'>
           <div class='textBlock'>
             <h2 class='tableTitle'>Line Series Pen</h2>
+            <div id='JSDraw_03-condenced-format-container'></div>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel corrupti minus at molestias consequuntur
               necessitatibus odio laboriosam esse, saepe deleniti velit soluta molestiae veniam aut tempore voluptatum
               excepturi sint aliquid!</p>
           </div>
           <div class='drawing' id='JSDraw_03'> </div>
+          <div id='JSDraw_03-container'></div>
         </div>
 
         <div class='table-cell-container'>
           <div class='textBlock'>
             <h2 class='tableTitle'>Line Collection Pen</h2>
+            <div id='JSDraw_04-condenced-format-container'></div>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel corrupti minus at molestias consequuntur
               necessitatibus odio laboriosam esse, saepe deleniti velit soluta molestiae veniam aut tempore voluptatum
               excepturi sint aliquid!</p>
           </div>
           <div class='drawing' id='JSDraw_04'> </div>
+          <div id='JSDraw_04-container'></div>
         </div>
 
         <div class='table-cell-container'>
           <div class='textBlock'>
             <h2 class='tableTitle'>Circle Series Pen</h2>
+            <div id='JSDraw_05-condenced-format-container'></div>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel corrupti minus at molestias consequuntur
               necessitatibus odio laboriosam esse, saepe deleniti velit soluta molestiae veniam aut tempore voluptatum
               excepturi sint aliquid!</p>
           </div>
           <div class='drawing' id='JSDraw_05'> </div>
+          <div id='JSDraw_05-container'></div>
         </div>
 
         <div class='table-cell-container'>
           <div class='textBlock'>
             <h2 class='tableTitle'>Arc Shape Pen V01</h2>
+            <div id='JSDraw_06-condenced-format-container'></div>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel corrupti minus at molestias consequuntur
               necessitatibus odio laboriosam esse, saepe deleniti velit soluta molestiae veniam aut tempore voluptatum
               excepturi sint aliquid!</p>
           </div>
           <div class='drawing' id='JSDraw_06'> </div>
+          <div id='JSDraw_06-container'></div>
         </div>
 
         <div class='table-cell-container'>
           <div class='textBlock'>
             <h2 class='tableTitle'>Bezier Shape Pen</h2>
+            <div id='JSDraw_07-condenced-format-container'></div>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel corrupti minus at molestias consequuntur
               necessitatibus odio laboriosam esse, saepe deleniti velit soluta molestiae veniam aut tempore voluptatum
               excepturi sint aliquid!</p>
           </div>
           <div class='drawing' id='JSDraw_07'> </div>
+          <div id='JSDraw_07-container'></div>
         </div>
 
         <div class='table-cell-container'>
           <div class='textBlock'>
             <h2 class='tableTitle'>Arc Shape Pen V02</h2>
+            <div id='JSDraw_08-condenced-format-container'></div>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel corrupti minus at molestias consequuntur
               necessitatibus odio laboriosam esse, saepe deleniti velit soluta molestiae veniam aut tempore voluptatum
               excepturi sint aliquid!</p>
           </div>
           <div class='drawing' id='JSDraw_08'> </div>
+          <div id='JSDraw_08-container'></div>
         </div>
 
         <div class='table-cell-container'>
             <div class='textBlock'>
               <h2 class='tableTitle'>Multi Shape Pen V01</h2>
+              <div id='JSDraw_09-condenced-format-container'></div>
               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel corrupti minus at molestias consequuntur
                 necessitatibus odio laboriosam esse, saepe deleniti velit soluta molestiae veniam aut tempore voluptatum
                 excepturi sint aliquid!</p>
             </div>
             <div class='drawing' id='JSDraw_09'> </div>
+            <div id='JSDraw_09-container'></div>
           </div>
 
       </div>
@@ -347,6 +358,7 @@
       <div class='table-cell-container'>
         <div class='textBlock'>
           <h2>Leveraged ETF Review</h2>
+          
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel corrupti minus at molestias consequuntur
             necessitatibus odio laboriosam esse, saepe deleniti velit soluta molestiae veniam aut tempore voluptatum
             excepturi sint aliquid!</p>
@@ -354,8 +366,22 @@
         <iframe src="https://leveraged-etf-historical-review-ezepm.ondigitalocean.app/" width="300"
           height="540"></iframe>
       </div>
+    </div>
+    
+  </div>
 
 
+
+  <div id = 'addressScreen' class = 'hide'>
+    <div>
+      <p class='addressText'>844 2nd St., Apt D,</p>
+      <p class='addressText'>Santa Monica, CA 90403</p>
+      <p class='addressText'>323-697-3547</p>
+      <p class='addressText'>clauinger1@gmail.com</p>
+      <p class='addressText'>
+        <a href="https://github.com/clauinger/"
+          style='color:rgb(33, 33, 33);'>github.com/clauinger</a>
+      </p>
     </div>
   </div>
 
@@ -363,7 +389,7 @@
 
   <!-- *         NAVIGATION BUTTONS                  -->
 
-  <div id='exitButton2' class='navigationButton2 zeroButton'>
+  <div id='exitButton2' class='navigationButton zeroButton'>
     <div class='circleButton'>
       <i class="fas fa-home" style='margin-left:4px'></i>
     </div>
@@ -372,7 +398,7 @@
     </div>
   </div>
 
-  <div id='resumeButton2' class='navigationButton2'>
+  <div id='resumeButton2' class='navigationButton'>
     <div class='circleButton'>
       <i class="fas fa-scroll" style='margin-left:4px'></i>
     </div>
@@ -381,7 +407,7 @@
     </div>
   </div>
 
-  <div id='archButton2' class='navigationButton2'>
+  <div id='archButton2' class='navigationButton'>
     <div class='circleButton'>
       <i class="fas fa-building" style='margin-left:4px'></i>
     </div>
@@ -390,7 +416,7 @@
     </div>
   </div>
 
-  <div id='techButton2' class='navigationButton2'>
+  <div id='techButton2' class='navigationButton'>
     <div class='circleButton'>
       <i class="fas fa-code" style='margin-left:3px'></i>
     </div>
@@ -401,11 +427,11 @@
 
 
 
-  <div id='contactButton' class='navigationButton2'>
+  <div id='contactButton' class='navigationButton'>
     <div class='circleButton'>
       <i class="fas fa-address-book" style='margin-left:3px'></i>
     </div>
-    <div class='navButtonLabel'>
+    <div class='navButtonLabel' id= 'contactLbl' >
       <p>Contact</p>
     </div>
   </div>
@@ -422,7 +448,7 @@
           <p class='addressText'>323-697-3547</p>
           <p class='addressText'>clauinger1@gmail.com</p>
           <p class='addressText'>
-            <a id='gitHubLink' href="https://github.com/dub-scratch/"
+            <a id='gitHubLink' href="https://github.com/clauinger/"
               style='color:rgb(33, 33, 33);'>github.com/clauinger</a>
           </p>
         </div>
@@ -433,7 +459,7 @@
       <div id='heading'>
         <img id='splashImage' src="pics/meth_gpum4.jpg" alt="">
         <div id='addressSlideOut'></div>
-        <div id='myName' class='myName'>Christopher Lauinger</div>
+        <div  class='myName'>Christopher Lauinger</div>
       </div>
     </div>
     <div class='cell leftMargin'>
@@ -768,9 +794,10 @@
   </div>
 
 
+
+
   <script type="module" src="main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.js"></script>
-  <!-- <script type="module"  src="./JSDraw/WorkSpace.js"></script> -->
 </body>
 
 </html>
