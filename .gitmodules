@@ -1,0 +1,3 @@
+[submodule "JSDraw"]
+  path = JSDraw
+  url = https://github.com/clauinger/JSDraw
