@@ -79,8 +79,6 @@
 }
 
 .cellItem>div {
-  /* position: absolute; */
-  /* bottom: 0; */
   width: calc(var(--cell-width) + 5px);
   vertical-align: bottom;
   background: rgb(191, 190, 190);

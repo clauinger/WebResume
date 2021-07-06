@@ -74,7 +74,6 @@
   animation-duration: .5s;
 }
 
-
 @keyframes animatecolapseTableCell {
   0%   {
      height : var(--table-cell-collapsed-height);
@@ -172,7 +171,6 @@
 
 @media (max-width: 510px) {
   .drawing{
-    /* cursor: crosshair; */
     float: left;
     margin-left: 0;
   }

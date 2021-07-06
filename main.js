@@ -284,7 +284,6 @@ function getCellInfo(element){
   return {index, row : index / 2, column : index % 2 ,page , shadowEffectElement: cells[index + 1 ].children[0] }
 }
 
-
 const toggleExpandHide = (ToggleExpandButton, rowSpan = 1)=>{ 
   let {row, page, shadowEffectElement} = getCellInfo(ToggleExpandButton)
   const rowIndex = []
