@@ -62,9 +62,9 @@
   margin-right: 5px;
   color: #13536a;
   width: 90px;
-  -moz-user-select: none;
+  /* -moz-user-select: none;
   -webkit-user-select: none;
-  user-select: none;
+  user-select: none; */
 }
 
 .navigationButton.toggleOn {
@@ -171,19 +171,19 @@
   border: solid #3e3e3e;
 } 
 
-#exitButton2.hide{
+#exitButton.hide{
   visibility: hidden;
 }
 
-#resumeButton2{
+#resumeButton{
   top:calc(200px - var(--user-scroll-distance));
 }
 
-#archButton2{
+#archButton{
   top:calc(300px - var(--user-scroll-distance));
 }
 
-#techButton2{
+#techButton{
   top:calc(400px - var(--user-scroll-distance));
 }
 

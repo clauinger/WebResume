@@ -72,6 +72,11 @@ html, body {
   max-width: 100%;
 }
 
+/* body {
+  position: fixed;
+  overflow: hidden;
+} */
+
 body.disable-selection{
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -83,6 +88,10 @@ body.disable-selection{
 
 body.disable-selection:hover{
   background: #12566f;
+}
+
+#bottomRightTile{
+  pointer-events: none;
 }
 
 iframe{
@@ -158,6 +167,7 @@ iframe{
   overflow: hidden;
   z-index: 0;
   pointer-events: none;
+
 }
 
 #backgroundImageContainer img{
@@ -299,7 +309,9 @@ iframe{
   color: black;
   background: white;
   padding: 10px;
-  overflow-y: scroll;
+  margin-top: calc(var(--user-scroll-distance)* -1);
+  height: calc( var(--bottom-row-height) + var(--user-scroll-distance) );
+  /* overflow-y: scroll; */
 } 
 
 #techPortfolio{

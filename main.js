@@ -11,7 +11,6 @@ import {JSDraw} from './JSDraw/WorkSpace.js'
 const {
   log
 } = console
-//git submodule add https://github.com/clauinger/JSDraw.git
 
 const pen_01 = JSDraw('JSDraw_01', 300,300)
 pen_01.currentPen = 'compositePen'
@@ -77,75 +76,6 @@ function detectLeftButton(evt) {
   return button == 1;
 }
 
-function setUserScrollDistance (dist){
-  const newScrollDistance = Math.max( dist + scrollDistance,0)
-  const topScroll = Math.min(newScrollDistance , 75)
-  const bottomScroll = Math.max(newScrollDistance - 75, 0 )
-  document.documentElement.style.setProperty('--user-scroll-distance', topScroll + 'px')
-  techPortfolio.scrollTop = bottomScroll
-}
-
-document.body.style.overflowY = 'hidden'
-window.addEventListener('scroll',()=>{
-  const dist = Math.min(75, window.scrollY)
-  document.documentElement.style.setProperty('--user-scroll-distance', dist + 'px') 
-})
-
-let techPortfolioMouseIsPressed = false
-let techPortfolioMousePressPoint = null
-
-let scrollDistance = 0
-function setScrollDistance(){
-  scrollDistance = techPortfolio.scrollTop + Number( document.documentElement.style.getPropertyValue('--user-scroll-distance').split('px')[0])
-}
-
-function getCursorLocatedOnScroll(e){
-  const classNameList = e.target.className.split(" ")
-  return classNameList.includes('table-cell-container') || 
-    classNameList.includes('portFolioFlexContainer') || 
-    classNameList.includes('expandable-table-cell-container') || 
-    classNameList.includes('tableTitle') || 
-    classNameList.includes('drawing') || 
-    false
-}
-
-techPortfolio.addEventListener('mousedown',(e)=>{ log(e.target.className)
-  techPortfolioMouseIsPressed = getCursorLocatedOnScroll(e)
-  if(!techPortfolioMouseIsPressed)return 
-  setScrollDistance()
-  techPortfolioMousePressPoint = {x:e.screenX,y:e.screenY}
-  document.body.className = 'disable-selection'
-})
-
-techPortfolio.addEventListener('mousemove',(e)=>{ 
-  document.documentElement.style.setProperty('--cursor', getCursorLocatedOnScroll(e) ? 'grab': 'default')
-  if(!techPortfolioMouseIsPressed)return
-
-  const leftMouseButtonIsPressed = detectLeftButton(e)
-  if(!leftMouseButtonIsPressed){
-    terminateTechPortfolioScrolling()
-    return
-  }
-  const dist =  techPortfolioMousePressPoint.y - e.screenY
-  setUserScrollDistance (dist)
-})
-
-function terminateTechPortfolioScrolling(){
-  techPortfolioMouseIsPressed = false
-  document.body.className = ''
-}
-
-techPortfolio.addEventListener('mouseup',(el)=>{ 
-  terminateTechPortfolioScrolling()
-})
-
-techPortfolio.addEventListener('wheel',(el)=>{
-  setScrollDistance()
-  const dist = el.deltaY
-  setUserScrollDistance (dist)
-})
-
-document.getElementsByClassName('portFolioGridContainer')[0].getBoundingClientRect()
 
 
 window.onbeforeunload = function () {
@@ -183,7 +113,7 @@ function setArchPortfolioDisplay(display = SHOW){
   }
 }
 
-function setTechPortfolioDisplay(display = SHOW){ log('setTechPortfolioDisplay')
+function setTechPortfolioDisplay(display = SHOW){ 
   if(display === SHOW) {
     techPortfolio.className = 'portfolioWindow frontPageElement show'
   } else {
@@ -209,7 +139,6 @@ function setResumeDisplay (display = SHOW){
     topRightTile.className = 'frontPageElement resume'
     backgroundImageContainer.className = 'resume'
   } else {
-    log('resume hide')
     window.scrollTo(0, 0);
     lowerLeftTile.className = 'frontPageElement show'
     page1.className = 'page hide'
@@ -223,7 +152,7 @@ function setResumeDisplay (display = SHOW){
 }
 
 function getResumeIsShown(){
-  return resumeButton2.className === 'navigationButton toggleOn'
+  return resumeButton.className === 'navigationButton toggleOn'
 }
 
 function togglenavigationButton(button){
@@ -242,15 +171,15 @@ function togglenavigationButton(button){
   const ht = button.getBoundingClientRect().y
 
   const location = function(){
-    if(button === resumeButton2)return 'firstButton'
-    if(button === archButton2)return 'secondButton'
-    if(button === techButton2)return 'thirdButton'
+    if(button === resumeButton)return 'firstButton'
+    if(button === archButton)return 'secondButton'
+    if(button === techButton)return 'thirdButton'
   }()
   button.className = 'navigationButton toggleOn ' + location
   return {isToggledOn:true}
 }
 
-myName.addEventListener('mousedown', ()=>{ 
+myName.addEventListener('mousedown', ()=>{ log('myname')
   const alreadyToggledOn = myName.className === 'myName toggleShowAddress'
   if(alreadyToggledOn) {
     myName.className = 'myName'
@@ -282,46 +211,46 @@ addressScreen.addEventListener('mousedown', ()=>{
 })
 
 
-resumeButton2.addEventListener('mousedown', ()=>{ 
-  const isToggledOn = togglenavigationButton(resumeButton2).isToggledOn
+resumeButton.addEventListener('mousedown', ()=>{ 
+  const isToggledOn = togglenavigationButton(resumeButton).isToggledOn
   const otherButtons = isToggledOn ? 'navigationButton hideLabel' : 'navigationButton'
-  archButton2.className = otherButtons
-  techButton2.className = otherButtons
+  archButton.className = otherButtons
+  techButton.className = otherButtons
   contactButton.className = otherButtons
-  exitButton2.className = isToggledOn ? otherButtons + ' ' + 'firstButton' : otherButtons
+  exitButton.className = isToggledOn ? otherButtons + ' ' + 'firstButton' : otherButtons
   setResumeDisplay(isToggledOn)
   setHomeScreenDisplay(isToggledOn === false)
 })
 
-archButton2.addEventListener('mousedown', ()=>{
-  const isToggledOn = togglenavigationButton(archButton2).isToggledOn
+archButton.addEventListener('mousedown', ()=>{
+  const isToggledOn = togglenavigationButton(archButton).isToggledOn
   setArchPortfolioDisplay(isToggledOn)
   setTechPortfolioDisplay(HIDE)
   setResumeDisplay(HIDE)
   setHomeScreenDisplay(isToggledOn === false)
-  exitButton2.className = isToggledOn ? 'navigationButton' + ' ' + 'secondButton' : 'navigationButton'
+  exitButton.className = isToggledOn ? 'navigationButton' + ' ' + 'secondButton' : 'navigationButton'
 })
 
-techButton2.addEventListener('mousedown', ()=>{
+techButton.addEventListener('mousedown', ()=>{
   if(getResumeIsShown())setResumeDisplay(false)
-  const isToggledOn = togglenavigationButton(techButton2).isToggledOn
+  const isToggledOn = togglenavigationButton(techButton).isToggledOn
   setArchPortfolioDisplay(HIDE)
   setTechPortfolioDisplay(isToggledOn)
   setResumeDisplay(HIDE)
   setHomeScreenDisplay(isToggledOn === false)
-  exitButton2.className = isToggledOn ? 'navigationButton' + ' ' + 'thirdButton' : 'navigationButton'
+  exitButton.className = isToggledOn ? 'navigationButton' + ' ' + 'thirdButton' : 'navigationButton'
 })
 
-exitButton2.addEventListener('mousedown', ()=>{
-  if(archButton2.className !== 'navigationButton' )archButton2.className = 'navigationButton'
-  if(techButton2.className !== 'navigationButton' )techButton2.className = 'navigationButton'
-  if(resumeButton2.className !== 'navigationButton' )resumeButton2.className = 'navigationButton'
+exitButton.addEventListener('mousedown', ()=>{
+  if(archButton.className !== 'navigationButton' )archButton.className = 'navigationButton'
+  if(techButton.className !== 'navigationButton' )techButton.className = 'navigationButton'
+  if(resumeButton.className !== 'navigationButton' )resumeButton.className = 'navigationButton'
   if(contactButton.className !== 'navigationButton' )contactButton.className = 'navigationButton'
   setArchPortfolioDisplay(HIDE)
   setTechPortfolioDisplay(HIDE)
   setHomeScreenDisplay(SHOW)
   setResumeDisplay(HIDE)
-  exitButton2.className = 'navigationButton zeroButton'
+  exitButton.className = 'navigationButton zeroButton'
 })
 
 window.onbeforeprint = function(event) { 
@@ -356,7 +285,7 @@ function getCellInfo(element){
 }
 
 
-const toggleExpandHide = (ToggleExpandButton, rowSpan = 1)=>{ log('toggleExpandHide')
+const toggleExpandHide = (ToggleExpandButton, rowSpan = 1)=>{ 
   let {row, page, shadowEffectElement} = getCellInfo(ToggleExpandButton)
   const rowIndex = []
   let i = 0
@@ -504,42 +433,134 @@ function collapseAll(){
   toggleExpandHide(notableToggleExpand)
 }
 
-let archPortfolioScrollPosition = 0
-let mousePosition = null
-archPortfolio.addEventListener('mousedown',(e)=>{
-  archPortfolioScrollPosition = archPortfolio.scrollTop
-  mousePosition = e.clientY
-})
 
-archPortfolio.addEventListener('mousemove',(e)=>{
-  if(!mousePosition){ 
-    document.documentElement.style.setProperty('--cursor', 'hand')
-    document.documentElement.style.setProperty('--xcolor', 'red')
-    return
+function setupPortfolioScrollEvents (portfolio,classNameList = []){
+  let portfolioScrollValuesAtMousePress = null
+  let mousePressPoint = null
+  function getPortfolioScroll (){
+    const topScroll = Number(document.documentElement.style.getPropertyValue('--user-scroll-distance').split('px')[0])
+    const bottomScroll = portfolio.scrollTop
+    return {
+      topScroll,
+      bottomScroll,
+      total : topScroll +  bottomScroll
+    }
   }
-  document.documentElement.style.setProperty('--xcolor', 'blue')
-  const diff = e.clientY - mousePosition
-  archPortfolio.scrollTop = archPortfolioScrollPosition - diff
-})
+  function setPortfolioScroll (val){
+    const topScroll = Math.max(Math.min(val,75),0)
+    const bottomScroll = topScroll === 75 ? val - 75 : 0
+    //** SET TOP SCROLL */
+    document.documentElement.style.setProperty('--user-scroll-distance', topScroll + 'px')
+    //** SET BOTTOM SCROLL */
+    portfolio.scrollTop = bottomScroll
+  }
 
-archPortfolio.addEventListener('mouseup',()=>{
-  mousePosition = null
-})
+  portfolio.addEventListener('touchstart',(e)=>{ log(e.target.className)
+    const targetClassName = e.target.className.split(' ')[0]
+    const proceed =  e.target === portfolio || classNameList.includes( targetClassName) || false
+    if(!proceed)return 
+    const y = e.changedTouches[0].screenY
+    const x = e.changedTouches[0].screenX
+    mousePressPoint = {x,y}
+    portfolioScrollValuesAtMousePress = getPortfolioScroll()
+  })  
+  
+  portfolio.addEventListener('touchmove',(e)=>{ 
+    if(!portfolioScrollValuesAtMousePress){
+      document.body.className = ''
+      return
+    }
+    document.body.className = 'disable-selection'
+    const screenY = e.changedTouches[0].screenY
+    const dragTravelDist = mousePressPoint.y - screenY
+    const newScrollVal = portfolioScrollValuesAtMousePress.total + dragTravelDist
+    setPortfolioScroll(newScrollVal)
+  })
 
+  portfolio.addEventListener('touchend',()=>{  
+    document.body.className = ''
+    portfolioScrollValuesAtMousePress = null
+  })
 
-let preventTouchDrag = false
+  portfolio.addEventListener('mousedown',(e)=>{ 
+    const targetClassName = e.target.className.split(' ')[0]
+    const proceed = e.target === portfolio || classNameList.includes( targetClassName) || false
+    if(!proceed)return 
+    const y = e.screenY
+    const x = e.screenX
+    mousePressPoint = {x,y}
+    portfolioScrollValuesAtMousePress = getPortfolioScroll()
+  })
 
-function preventTouchMoveOnElement(e) { if(preventTouchDrag) e.preventDefault()}
+  portfolio.addEventListener('mousemove',(e)=>{ 
+    if(detectLeftButton(e) === false) portfolioScrollValuesAtMousePress = null
+    if(!portfolioScrollValuesAtMousePress) {
+      document.body.className = ''
+      return
+    }
 
-document.addEventListener("touchmove", preventTouchMoveOnElement, {passive: false});
+    document.body.className = 'disable-selection'
+    const dragTravelDist = mousePressPoint.y - e.screenY
+    const newScrollVal = portfolioScrollValuesAtMousePress.total + dragTravelDist
+    setPortfolioScroll(newScrollVal)
+  })
 
-function preventElementTouchMoveIfIsDrawScreen (e){
-  preventTouchDrag = e.target.className === 'p5Canvas'
+  portfolio.addEventListener('mouseup',()=>{
+    document.body.className = ''
+    portfolioScrollValuesAtMousePress = null
+  })
+
+  portfolio.addEventListener('wheel',(el)=>{ 
+    const newScrollVal = getPortfolioScroll().total + el.deltaY
+    setPortfolioScroll(newScrollVal)
+  })
+
 }
 
-document.addEventListener("touchstart", preventElementTouchMoveIfIsDrawScreen)
+setupPortfolioScrollEvents(archPortfolio, ['portFolioGridContainer', 'cellItem'])
 
-function resetPreventTouchDrag(){
-  preventTouchDrag = false
+setupPortfolioScrollEvents(techPortfolio, ['tableTitle', 'table-cell-container','portFolioFlexContainer'])
+
+
+function setupPageScrollEvents (pageContainer,classNameList = []){
+  pageContainer.addEventListener('wheel',(el)=>{
+    const topScroll = Math.max(Math.min(document.documentElement.scrollTop, 75),0)
+        //** SET TOP SCROLL */
+        document.documentElement.style.setProperty('--user-scroll-distance', topScroll + 'px')
+  })
+  
+  pageContainer.addEventListener('touchmove',(el)=>{
+    const topScroll = Math.max(Math.min(document.documentElement.scrollTop, 75),0)
+    //** SET TOP SCROLL */
+    document.documentElement.style.setProperty('--user-scroll-distance', topScroll + 'px')
+  })
+  
+  pageContainer.addEventListener('mousemove',(e)=>{
+    const topScroll = Math.max(Math.min(document.documentElement.scrollTop, 75),0)
+    //** SET TOP SCROLL */
+    document.documentElement.style.setProperty('--user-scroll-distance', topScroll + 'px')
+    if(!detectLeftButton(e)) mousedownY = null
+    if(!mousedownY)return
+    const dragTravelDist = e.screenY - mousedownY 
+    const newscrollTop = Math.max(documentScrollTopAtMouseDown - dragTravelDist, 0)
+    document.documentElement.scrollTop = newscrollTop
+  })
+  
+  let mousedownY = null
+  let documentScrollTopAtMouseDown = null
+  pageContainer.addEventListener('mousedown',(e)=>{
+    mousedownY = null
+    const className = e.target.className.split(' ')[0]
+    if(className === 'leftSideBar'){
+      mousedownY = e.screenY
+      documentScrollTopAtMouseDown = document.documentElement.scrollTop
+    }
+  })
+  
+  pageContainer.addEventListener('mouseup',(e)=>{ log('mouseup')
+    mousedownY = null
+  })
+  
 }
-document.addEventListener("touchend", resetPreventTouchDrag)
+setupPageScrollEvents(page1)
+setupPageScrollEvents(page2)
