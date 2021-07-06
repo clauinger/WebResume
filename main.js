@@ -452,6 +452,7 @@ function setupPortfolioScrollEvents (portfolio,classNameList = []){
     document.documentElement.style.setProperty('--user-scroll-distance', topScroll + 'px')
     //** SET BOTTOM SCROLL */
     portfolio.scrollTop = bottomScroll
+    portfolio.style.overflowY = topScroll === 75 ? 'scroll' : '';
   }
 
   portfolio.addEventListener('touchstart',(e)=>{ log(e.target.className)
@@ -532,13 +533,19 @@ function setupPageScrollEvents (pageContainer,classNameList = []){
     const topScroll = Math.max(Math.min(document.documentElement.scrollTop, 75),0)
     //** SET TOP SCROLL */
     document.documentElement.style.setProperty('--user-scroll-distance', topScroll + 'px')
+    document.body.className = 'disable-selection'
   })
-  
+  pageContainer.addEventListener('touchend',(el)=>{
+    document.body.className = ''
+  })
   pageContainer.addEventListener('mousemove',(e)=>{
     const topScroll = Math.max(Math.min(document.documentElement.scrollTop, 75),0)
     //** SET TOP SCROLL */
     document.documentElement.style.setProperty('--user-scroll-distance', topScroll + 'px')
-    if(!detectLeftButton(e)) mousedownY = null
+    if(!detectLeftButton(e)) {
+      mousedownY = null
+      document.body.className = ''
+    }
     if(!mousedownY)return
     const dragTravelDist = e.screenY - mousedownY 
     const newscrollTop = Math.max(documentScrollTopAtMouseDown - dragTravelDist, 0)
@@ -553,10 +560,12 @@ function setupPageScrollEvents (pageContainer,classNameList = []){
     if(className === 'leftSideBar'){
       mousedownY = e.screenY
       documentScrollTopAtMouseDown = document.documentElement.scrollTop
+      document.body.className = 'disable-selection'
     }
   })
   
   pageContainer.addEventListener('mouseup',(e)=>{ log('mouseup')
+    document.body.className = ''
     mousedownY = null
   })
   
