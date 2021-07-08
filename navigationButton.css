@@ -70,6 +70,7 @@
   z-index: 10;
   margin-left: var(--navigation-button-offset);
   margin-left: -10px;
+  pointer-events: none;
 }
 
 .navigationButton.toggleOn > .circleButton {
