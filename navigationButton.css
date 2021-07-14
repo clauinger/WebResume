@@ -34,7 +34,7 @@
   height: 36px;
   border-top-left-radius: 18px;
   border-bottom-left-radius: 18px;
-  width: calc( var(--left-tile-width) + calc(var(--navigation-button-offset) * -1))  ;
+  width: calc( var(--left-tile-width) + calc(var(--navigation-button-offset) * -1 - 1px))  ;
   top: -3px;
   border: solid 1px #0c3545;
   border: solid 1px #12566f;
@@ -134,6 +134,7 @@
     border-top-right-radius: 18px;
     border-bottom-right-radius: 18px;
     width: 36px;
+    opacity: 0;
   }
 }
 
@@ -199,3 +200,38 @@
 .thirdButton{top:calc(400px - var(--user-scroll-distance));}
 
 .forthButton{ top:calc(500px - var(--user-scroll-distance));}
+
+
+#exitButton:hover  > .navButtonLabel{
+  visibility: hidden;
+}
+
+#exitButton.navButtonLabel{
+  visibility: hidden;
+}
+
+#exitButton.toggleOn {
+  visibility: hidden;
+}
+
+#exitButton > .circleButton > p{
+  margin-top:2px; 
+  color:#12566f;
+  user-select: none;
+}
+
+#exitButton > .circleButton {
+
+  color:#12566f;
+  background: white;
+
+}
+
+#exitButton:hover > .circleButton{
+  background:#0c3545;
+  color: white;
+}
+
+#exitButton:hover  > .circleButton > p{
+  color: white;
+}

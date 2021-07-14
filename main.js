@@ -10,11 +10,24 @@
 import {
   JSDraw
 } from './JSDraw/WorkSpace.js'
+
+import { MechanizedInkDemos } from './MechanizedInkDemos.js'
+
+
 const {
   log
 } = console
 
-const pen_01 = JSDraw('JSDraw_01', 300, 300)
+
+
+
+
+const setBg = () => {
+  const randomColor = Math.floor(Math.random()*16777215).toString(16);
+  document.body.style.backgroundColor = "#" + randomColor;
+}
+
+const pen_01 = JSDraw('JSDraw_00', 300, 300)
 pen_01.currentPen = 'compositePen'
 const pen_02 = JSDraw('JSDraw_02', 300, 300)
 pen_02.currentPen = 'lineShapePen'
@@ -39,6 +52,18 @@ pen_08.currentPen = 'arcShapePen'
 
 const pen_09 = JSDraw('JSDraw_09', 300, 300)
 pen_09.currentPen = 'multiShapePen_01'
+
+
+//mechanizedInkDisplayScreen
+const penDisplay = JSDraw('mechanizedInkDisplayScreen', 300, 300)
+penDisplay.backgroundColor = '#23a6d5'
+
+penDisplay.playBackRecord(MechanizedInkDemos.pattern_01)
+
+const penDisplay2 = JSDraw('JSDraw_01', 300, 300)
+penDisplay2.backgroundColor = '#23a6d5'
+
+penDisplay2.playBackRecord(MechanizedInkDemos.pattern_01)
 
 const ON = true,
   OFF = false
@@ -84,8 +109,6 @@ function detectLeftButton(evt) {
   return button == 1;
 }
 
-
-
 window.onbeforeunload = function () {
   window.scrollTo(0, 0);
 }
@@ -108,11 +131,17 @@ function getGridElementsPosition(index) {
   };
 }
 
-function setHomeScreenDisplay(display = SHOW) {
+function setHomeScreenDisplay(display = SHOW) {  
+  // if (display === SHOW) {
+  //   bottomRightTile.className = 'portfolioWindow frontPageElement show'
+  // } else {
+  //   bottomRightTile.className = 'portfolioWindow frontPageElement hide'
+  // }
   if (display === SHOW) {
-    bottomRightTile.className = 'portfolioWindow frontPageElement show'
+    penDisplay.playBackRecord(MechanizedInkDemos.pattern_01)
+    bottomRightTile.className = 'frontPageElement show'
   } else {
-    bottomRightTile.className = 'portfolioWindow frontPageElement hide'
+    bottomRightTile.className = 'frontPageElement hide'
   }
 }
 
@@ -164,13 +193,13 @@ function setResumeDisplay(display = SHOW) {
     PDFButton.className = 'fas fa-file-pdf'
   }
 }
-PDFButton.addEventListener('mousedown',()=>{log('click')})
+
 
 function getResumeIsShown() {
   return resumeButton.className === 'navigationButton toggleOn'
 }
 
-function togglenavigationButton(button) {
+function toggleNavigationButton(button) {
   const isToggledOn = button.className === 'navigationButton toggleOn'
   if (isToggledOn) {
     title.className = 'show'
@@ -185,7 +214,7 @@ function togglenavigationButton(button) {
     if (element !== button) element.className = 'navigationButton hideLabel'
   }
   title.className = 'hide'
-  const ht = button.getBoundingClientRect().y
+  // const ht = button.getBoundingClientRect().y
 
   const location = function () {
     if (button === resumeButton) return 'firstButton'
@@ -232,33 +261,33 @@ addressScreen.addEventListener('mousedown', () => {
 
 
 resumeButton.addEventListener('mousedown', () => {
-  const isToggledOn = togglenavigationButton(resumeButton).isToggledOn
+  const isToggledOn = toggleNavigationButton(resumeButton).isToggledOn
   const otherButtons = isToggledOn ? 'navigationButton hideLabel' : 'navigationButton'
   archButton.className = otherButtons
   techButton.className = otherButtons
   contactButton.className = otherButtons
-  exitButton.className = isToggledOn ? otherButtons + ' ' + 'firstButton' : otherButtons
+  exitButton.className = isToggledOn ? 'navigationButton hideLabel' + ' ' + 'firstButton' : otherButtons
   setResumeDisplay(isToggledOn)
   setHomeScreenDisplay(isToggledOn === false)
 })
 
 archButton.addEventListener('mousedown', () => {
-  const isToggledOn = togglenavigationButton(archButton).isToggledOn
+  const isToggledOn = toggleNavigationButton(archButton).isToggledOn
   setArchPortfolioDisplay(isToggledOn)
   setTechPortfolioDisplay(HIDE)
   setResumeDisplay(HIDE)
   setHomeScreenDisplay(isToggledOn === false)
-  exitButton.className = isToggledOn ? 'navigationButton' + ' ' + 'secondButton' : 'navigationButton'
+  exitButton.className = isToggledOn ? 'navigationButton hideLabel' + ' ' + 'secondButton' : 'navigationButton'
 })
 
 techButton.addEventListener('mousedown', () => {
   if (getResumeIsShown()) setResumeDisplay(false)
-  const isToggledOn = togglenavigationButton(techButton).isToggledOn
+  const isToggledOn = toggleNavigationButton(techButton).isToggledOn
   setArchPortfolioDisplay(HIDE)
   setTechPortfolioDisplay(isToggledOn)
   setResumeDisplay(HIDE)
   setHomeScreenDisplay(isToggledOn === false)
-  exitButton.className = isToggledOn ? 'navigationButton' + ' ' + 'thirdButton' : 'navigationButton'
+  exitButton.className = isToggledOn ? 'navigationButton hideLabel' + ' ' + 'thirdButton' : 'navigationButton'
 })
 
 exitButton.addEventListener('mousedown', () => {
@@ -270,7 +299,8 @@ exitButton.addEventListener('mousedown', () => {
   setTechPortfolioDisplay(HIDE)
   setHomeScreenDisplay(SHOW)
   setResumeDisplay(HIDE)
-  exitButton.className = 'navigationButton zeroButton'
+  exitButton.className = 'navigationButton hideLabel zeroButton'
+  resetScroll()
 })
 
 window.onbeforeprint = function (event) {
@@ -413,7 +443,6 @@ function animateFold(page, rowIndex, closeDistannce) {
   }
 }
 
-
 JSDrawToggleExpand.addEventListener('mousedown', () => {
   const isUp = JSDrawToggleExpand.className === 'fas fa-arrow-up table-cell-arrow'
   if (isUp) JSDrawToggleExpand.className = 'fas fa-arrow-down table-cell-arrow'
@@ -466,116 +495,47 @@ function collapseAll() {
 }
 
 
-function setupPortfolioScrollEvents(portfolio, classNameList = []) {
-  let portfolioScrollValuesAtMousePress = null
-  let mousePressPoint = null
 
-  function getPortfolioScroll(touchStart = false) {
-    const topScroll = Number(document.documentElement.style.getPropertyValue('--user-scroll-distance').split('px')[0])
-    const bottomScroll = portfolio.scrollTop
-    const whileTopScrollIsFullOpen = topScroll === 75
-    
-    return {
-      topScroll,
-      bottomScroll,
-      total: topScroll + bottomScroll,
-      whileTopScrollIsFullOpen,
-      touchStart
-    }
-  }
 
-  function setPortfolioScroll(val) {
-    const topScroll = Math.max(Math.min(val, 75), 0)
-    const bottomScroll = topScroll === 75 ? val - 75 : 0
-    //** SET TOP SCROLL */
+function setupPortfolioScrollEvents(portfolio) { 
+  function scrollTop(){ 
+    const topScroll = Math.max(Math.min(portfolio.scrollTop, 75), 0)
     document.documentElement.style.setProperty('--user-scroll-distance', topScroll + 'px')
-    portfolio.style.overflowY = topScroll === 75 ? 'scroll' : '';
-    if(!portfolioScrollValuesAtMousePress){}  
-    else if (portfolioScrollValuesAtMousePress.touchStart === false) {} 
-    else if (portfolioScrollValuesAtMousePress.whileTopScrollIsFullOpen) return
-    //** SET BOTTOM SCROLL */
-    portfolio.scrollTop = bottomScroll
   }
-
-  portfolio.addEventListener('touchstart', (e) => {
-    const targetClassName = e.target.className.split(' ')[0]
-    const classNameIsMember = classNameList.includes(targetClassName)
-    const hitPartfolioElement = e.target === portfolio
-    portfolio.style.overflowY = classNameIsMember || hitPartfolioElement ? 'scroll' : ''
-    const proceed = e.target === portfolio || classNameList.includes(targetClassName) || false
-    if (!proceed) return
-    const y = e.changedTouches[0].screenY
-    const x = e.changedTouches[0].screenX
-    mousePressPoint = {
-      x,
-      y
-    }
-    portfolioScrollValuesAtMousePress = getPortfolioScroll(true)
-  })
-
-  portfolio.addEventListener('touchmove', (e) => {
-    if (!portfolioScrollValuesAtMousePress) {
-      document.body.className = ''
-      return
-    }
-    document.body.className = 'disable-selection'
-    const screenY = e.changedTouches[0].screenY
-    const dragTravelDist = mousePressPoint.y - screenY
-    const newScrollVal = portfolioScrollValuesAtMousePress.total + dragTravelDist
-    setPortfolioScroll(newScrollVal)
-  })
-
-  portfolio.addEventListener('touchend', () => {
-    document.body.className = ''
-    portfolioScrollValuesAtMousePress = null
-  })
-
-  portfolio.addEventListener('mousedown', (e) => {
-    const targetClassName = e.target.className.split(' ')[0]
-    log(targetClassName)
-    const proceed = e.target === portfolio || classNameList.includes(targetClassName) || false
-    if (!proceed) return
-    const y = e.screenY
-    const x = e.screenX
-    mousePressPoint = {
-      x,
-      y
-    }
-    portfolioScrollValuesAtMousePress = getPortfolioScroll()
-  })
-
-  portfolio.addEventListener('mousemove', (e) => {
-    if (detectLeftButton(e) === false) portfolioScrollValuesAtMousePress = null
-    if (!portfolioScrollValuesAtMousePress) {
-      document.body.className = ''
-      return
-    }
-    if (portfolioScrollValuesAtMousePress.whileTopScrollIsFullOpen &&
-      Number(document.documentElement.style.getPropertyValue('--user-scroll-distance').split('px')[0]) === 75 && 
-      portfolioScrollValuesAtMousePress.touchStart
-    ) return
-
-    document.body.className = 'disable-selection'
-    const dragTravelDist = mousePressPoint.y - e.screenY
-    const newScrollVal = portfolioScrollValuesAtMousePress.total + dragTravelDist
-    setPortfolioScroll(newScrollVal)
-  })
-
-  portfolio.addEventListener('mouseup', () => {
-    document.body.className = ''
-    portfolioScrollValuesAtMousePress = null
-  })
-
-  portfolio.addEventListener('wheel', (el) => {
-    const newScrollVal = getPortfolioScroll().total + el.deltaY
-    setPortfolioScroll(newScrollVal)
-  })
-
+  portfolio.addEventListener('scroll', scrollTop)
 }
 
-setupPortfolioScrollEvents(archPortfolio, ['portFolioGridContainer', 'cellItem'])
+let portfolioClassNameArchive = null
+techPortfolio.addEventListener('touchstart', (e)=>{ 
+  if(e.target.className === 'p5Canvas'){ 
+    log('touchstart')
+    setBg()
+    portfolioClassNameArchive = techPortfolio.className
+    techPortfolio.className = portfolioClassNameArchive + ' stop-scrolling'
+  }
+})
 
-setupPortfolioScrollEvents(techPortfolio, ['tableTitle', 'table-cell-container', 'portFolioFlexContainer', 'expandable-table-cell-container'])
+techPortfolio.addEventListener('touchmove', function(e) {
+  if(e.target.className === 'p5Canvas'){
+    log('hit')
+    e.preventDefault();
+  }
+}, false);
+
+  // portfolioClassNameArchive = archPortfolio.className
+  // archPortfolio.className = portfolioClassNameArchive  + ' stop-scrolling'
+  // log('touchstart')
+
+techPortfolio.addEventListener('touchend', (e)=>{ log('touchend')
+  techPortfolio.className = portfolioClassNameArchive
+  // archPortfolio.className = portfolioClassNameArchive
+})
+
+
+
+setupPortfolioScrollEvents(archPortfolio)//, ['portFolioGridContainer', 'cellItem'])
+
+setupPortfolioScrollEvents(techPortfolio)//, ['tableTitle', 'table-cell-container', 'portFolioFlexContainer', 'expandable-table-cell-container'])
 
 
 function setupPageScrollEvents(pageContainer, classNameList = []) {
@@ -629,3 +589,10 @@ function setupPageScrollEvents(pageContainer, classNameList = []) {
 }
 setupPageScrollEvents(page1)
 setupPageScrollEvents(page2)
+
+
+function resetScroll(){
+  archPortfolio.scrollTop = 0
+  techPortfolio.scrollTop = 0
+  document.documentElement.style.setProperty('--user-scroll-distance', '0px')
+}

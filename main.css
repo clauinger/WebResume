@@ -69,6 +69,7 @@ html, body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   max-width: 100%;
+  overflow: hidden;
 }
 
 /* body {
@@ -91,6 +92,26 @@ body.disable-selection:hover{
 
 #bottomRightTile{
   pointer-events: none;
+  position: absolute;
+  /* visibility: hidden; */
+  opacity: .6;
+  background:var(--gradient-02);
+  width: var(--right-tile-width);
+  margin-left: calc( var(--left-tile-width) + 2px);
+  margin-top: calc(var(--top-tile-height) + 8px);
+  height: var(--bottom-row-height);
+  padding: auto;
+}
+
+#mechanizedInkDisplayScreen{
+  margin: auto;
+  width: 300px;
+  height: 300px;
+  /* background: #76b7ce; */
+}
+
+#bottomRightTile.hide{
+  visibility: hidden; 
 }
 
 iframe{
@@ -296,36 +317,44 @@ iframe{
 
 .portfolioWindow{
   position: fixed;
-  height: var(--bottom-row-height);
-  width: var(--right-tile-width);
   /** RED */
 
   z-index: 2;
-  top: calc(var(--top-tile-height) + 8px)  ;
-  left : calc(var(--left-tile-width) + var(--vertical-grid-gap));
-  opacity: 1;
-}
+  top: calc(var(--top-tile-height) + 8px - 75px)  ;
 
+  padding-top: 85px;
+  padding-left: auto;
+  padding-right: auto;
+  left : 45px;
+  opacity: 1;
+  background: white;
+  z-index: 0;
+  /* overflow:auto; */
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  height: calc( var(--bottom-row-height) + 0px );
+  /* width: calc( 100vw - 500px );
+  border: solid red; */
+  /* padding-bottom: 150px; */
+}
+/* 
 #bottomRightTile{
   opacity: .6;
+} */
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+  /* border: solid red; */
 }
 
+
 #archPortfolio{
-  color: black;
-  background: white;
-  padding: 10px;
-  margin-top: calc(var(--user-scroll-distance)* -1);
-  height: calc( var(--bottom-row-height) + var(--user-scroll-distance) );
-  /* overflow-y: scroll; */
+  overflow-y: scroll;
 } 
 
 #techPortfolio{
-  color: black;
-  background: rgb(234, 234, 234);
-  padding: 10px;
-  overflow: hidden;
-  margin-top: calc(var(--user-scroll-distance)* -1);
-  height: calc( var(--bottom-row-height) + var(--user-scroll-distance) );
+  overflow-y: scroll;
 } 
 
 #techPortfolio:hover{
@@ -333,9 +362,7 @@ iframe{
 }
 
 .portfolioWindow.show{
-  transform: translateX( calc(var(--left-column) * -0.7 ));
-  transform:  translateX( -164px);
-  width: calc(100vw - 64px);
+  width: calc(100vw - 45px);
   animation-name: animateSlideFromRight;
   animation-duration: .3s;
 }
@@ -369,6 +396,11 @@ iframe{
   top: calc(var(--top-tile-height) - var(--user-scroll-distance));
   width:100vw;
   height: 8px;
+  z-index: 1;
+}
+
+#splashContainer{
+  z-index: 1;
 }
 
 #horizontalLine.hide{
@@ -452,21 +484,6 @@ iframe{
   background: white;
 }
 
-#topBanner3{
-  /* position: absolute;
-  bottom: -300px; */
-  opacity: .3;
-  
-  /* position: absolute; */
-  position: relative;
-  bottom: 240px;
-  left: -310px;
-  object-fit: cover;
-  width: 180%;
-  /* zoom: 30%; */
-  /* height : 60px; */
-
-}
 #splashImage{
   width: 100%;
   height: auto;
@@ -1055,7 +1072,6 @@ li {
 
 /*                      */
 
-
 #addressScreen {
   position: fixed;
   background: linear-gradient(20deg, rgba(255, 255, 255, .4) 0%, rgba(230, 230, 230, .2) 100%);
@@ -1076,7 +1092,6 @@ li {
     backdrop-filter: blur(0px);
   }
 }
-
 
 #addressScreen.hide {
   visibility: hidden;
@@ -1120,14 +1135,11 @@ li {
   text-align: left;
 }
 
-
-
 @media (max-width: 800px) {
   :root{
     --testcolor:blue;
     --page-full-width : 100vw;
   }
-
   #backgroundImageContainer{
     margin-left : var(--left-margin) ;
   }
@@ -1168,8 +1180,6 @@ li {
   margin-left: 0;
 }
 
-
-
 @media (max-width: 550px) {
   :root{
     --left-margin : 15px;
@@ -1188,12 +1198,6 @@ li {
 
   .navigationButton.hide {
     top:-100px ;
-  }
-
-
-  .portfolioWindow{
-    left : 205px;
-    /* touch-action: pan-y; */
   }
 
   .fa-file-pdf{
@@ -1234,6 +1238,7 @@ li {
   #contactShow {
     display: inline;
   }
+
   #githubContainer {
     color: black;
     width: 100%;
@@ -1310,7 +1315,6 @@ li {
   }
 
   #page2 {
-    /* gap: var(--gap-small-format); */
     background-color: black;
     margin-left: 0px;
     grid-template-columns: var(--condensed-format-column-layout);
@@ -1330,11 +1334,6 @@ li {
   .navigationButton{
     display: none;
   }
-  /* .toggleButton{
-    display: none;
-  } */
-  
-
 
   #addressContainer{
     visibility: visible;
@@ -1354,10 +1353,6 @@ li {
     opacity: 0;
   }
 
-  /* .cell.rightMargin{
-    padding-bottom: 20px;
-  } */
-
   #backgroundImageContainer{
     margin-left : calc( var(--left-margin)  -5px);
     width: calc( 100vw + 25px);
@@ -1365,7 +1360,6 @@ li {
     margin-top: 0;
   }
 
-  /* <div class = 'print-space-block-left'></div><div class = 'print-space-block-right'></div> */
   .print-space-block-left{
     height: 30px;
     visibility: visible;
@@ -1420,19 +1414,10 @@ li {
     columns: 2;
     width : 50vw;
     -webkit-columns: 2;
-    /* -moz-columns: 2; */
   }
   .page {
-    /* width: 140vw; */
     margin-left: -15px;
   }
-  /* body {
-    padding-left: 0;
-    background-color: #23a6d5;
-  } */
-  /* .cell {
-    padding-left: 0;
-  } */
 
   #page1 {
     grid-template-columns: 165px 1fr;
@@ -1454,10 +1439,3 @@ li {
   }
 }
 
-/* @media (max-width: 540px) {
-  #splashContainer{
-
-    border: solid;
-    transform: scale(1)
-  }
-} */

@@ -13,9 +13,10 @@
   padding-left: 160px;
 }
 
+
+
 .drawing{
   margin-left: 10px;
-
   float: right;
 }
 
@@ -126,6 +127,10 @@
   .table-cell-container h3 {
     margin-left: 20px;
   }
+}
+
+#MI_TopCell{
+  background: var(--gradient-02);
 }
 
 @media (max-width: 600px) {
