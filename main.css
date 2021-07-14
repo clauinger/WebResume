@@ -72,10 +72,9 @@ html, body {
   overflow: hidden;
 }
 
-/* body {
-  position: fixed;
+body.resumeShow {
   overflow: hidden;
-} */
+}
 
 body.disable-selection{
   -webkit-touch-callout: none;
@@ -151,6 +150,8 @@ iframe{
     transform: translateY(100vh)
   }
 } 
+
+
 
 /** CUSTOM SCROLLBAR */
 /* width */
@@ -438,6 +439,7 @@ iframe{
   max-width: 800px;
   display: none;
   visibility: hidden;
+
   z-index: 1;
 }
 

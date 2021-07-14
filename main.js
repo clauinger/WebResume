@@ -175,19 +175,20 @@ function setResumeDisplay(display = SHOW) {
     page2.className = 'page show'
     verticalLine.className = 'splashLine frontPageElement hide'
     document.body.className = 'resumeShow'
-    document.body.style.overflowY = 'scroll'
+    // document.body.style.overflowY = 'scroll'
     topRightTile.className = 'frontPageElement resume'
     backgroundImageContainer.className = 'resume'
-
+    document.body.className = 'resume'
     PDFButton.className = 'fas fa-file-pdf show'
   } else {
     window.scrollTo(0, 0);
     lowerLeftTile.className = 'frontPageElement show'
     page1.className = 'page hide'
     page2.className = 'page hide'
+    document.body.className = ''
     verticalLine.className = 'splashLine frontPageElement'
     document.body.className = ''
-    document.body.style.overflowY = 'hidden'
+    // document.body.style.overflowY = 'hidden'
     topRightTile.className = 'frontPageElement'
     backgroundImageContainer.className = 'frontPage'
     PDFButton.className = 'fas fa-file-pdf'
@@ -522,9 +523,7 @@ techPortfolio.addEventListener('touchmove', function(e) {
   }
 }, false);
 
-  // portfolioClassNameArchive = archPortfolio.className
-  // archPortfolio.className = portfolioClassNameArchive  + ' stop-scrolling'
-  // log('touchstart')
+
 
 techPortfolio.addEventListener('touchend', (e)=>{ log('touchend')
   techPortfolio.className = portfolioClassNameArchive
@@ -571,6 +570,16 @@ function setupPageScrollEvents(pageContainer, classNameList = []) {
   let mousedownY = null
   let documentScrollTopAtMouseDown = null
   pageContainer.addEventListener('mousedown', (e) => {
+    mousedownY = null
+    const className = e.target.className.split(' ')[0]
+    if (className === 'leftSideBar') {
+      mousedownY = e.screenY
+      documentScrollTopAtMouseDown = document.documentElement.scrollTop
+      document.body.className = 'disable-selection'
+    }
+  })
+
+  pageContainer.addEventListener('touchstart', (e) => {
     mousedownY = null
     const className = e.target.className.split(' ')[0]
     if (className === 'leftSideBar') {
