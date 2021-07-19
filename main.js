@@ -18,10 +18,6 @@ const {
   log
 } = console
 
-
-
-
-
 const setBg = () => {
   const randomColor = Math.floor(Math.random()*16777215).toString(16);
   document.body.style.backgroundColor = "#" + randomColor;
@@ -137,6 +133,7 @@ function setHomeScreenDisplay(display = SHOW) {
   // } else {
   //   bottomRightTile.className = 'portfolioWindow frontPageElement hide'
   // }
+  
   if (display === SHOW) {
     penDisplay.playBackRecord(MechanizedInkDemos.pattern_01)
     bottomRightTile.className = 'frontPageElement show'
@@ -175,23 +172,21 @@ function setResumeDisplay(display = SHOW) {
     page2.className = 'page show'
     verticalLine.className = 'splashLine frontPageElement hide'
     document.body.className = 'resumeShow'
-    // document.body.style.overflowY = 'scroll'
     topRightTile.className = 'frontPageElement resume'
     backgroundImageContainer.className = 'resume'
-    document.body.className = 'resume'
     PDFButton.className = 'fas fa-file-pdf show'
+    document.documentElement.style.setProperty('--navigation-button-offset', '-10px')
   } else {
     window.scrollTo(0, 0);
     lowerLeftTile.className = 'frontPageElement show'
     page1.className = 'page hide'
     page2.className = 'page hide'
-    document.body.className = ''
     verticalLine.className = 'splashLine frontPageElement'
     document.body.className = ''
-    // document.body.style.overflowY = 'hidden'
     topRightTile.className = 'frontPageElement'
     backgroundImageContainer.className = 'frontPage'
     PDFButton.className = 'fas fa-file-pdf'
+    document.documentElement.style.setProperty('--navigation-button-offset', '0px')
   }
 }
 
@@ -200,10 +195,11 @@ function getResumeIsShown() {
   return resumeButton.className === 'navigationButton toggleOn'
 }
 
-function toggleNavigationButton(button) {
+function toggleNavigationButton(button) { 
   const isToggledOn = button.className === 'navigationButton toggleOn'
   if (isToggledOn) {
     title.className = 'show'
+
     button.className = 'navigationButton'
     return {
       isToggledOn: false
@@ -215,7 +211,6 @@ function toggleNavigationButton(button) {
     if (element !== button) element.className = 'navigationButton hideLabel'
   }
   title.className = 'hide'
-  // const ht = button.getBoundingClientRect().y
 
   const location = function () {
     if (button === resumeButton) return 'firstButton'
@@ -278,6 +273,8 @@ archButton.addEventListener('mousedown', () => {
   setTechPortfolioDisplay(HIDE)
   setResumeDisplay(HIDE)
   setHomeScreenDisplay(isToggledOn === false)
+
+  verticalLine.className = HIDE ? '' : 'clear-bottom'
   exitButton.className = isToggledOn ? 'navigationButton hideLabel' + ' ' + 'secondButton' : 'navigationButton'
 })
 
@@ -288,6 +285,7 @@ techButton.addEventListener('mousedown', () => {
   setTechPortfolioDisplay(isToggledOn)
   setResumeDisplay(HIDE)
   setHomeScreenDisplay(isToggledOn === false)
+  verticalLine.className = HIDE ? '' : 'clear-bottom'
   exitButton.className = isToggledOn ? 'navigationButton hideLabel' + ' ' + 'thirdButton' : 'navigationButton'
 })
 
@@ -475,7 +473,10 @@ notableToggleExpand.addEventListener('mousedown', () => {
   toggleExpandHide(notableToggleExpand)
 })
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () { log('DOMContentLoaded')
+resetScroll()
+//   document.documentElement.style.setProperty('--user-scroll-distance', 0 + 'px')
+
   if (window.isMobileDevice()) {
     setTimeout(collapseAll, 300);
   }
@@ -504,31 +505,29 @@ function setupPortfolioScrollEvents(portfolio) {
     document.documentElement.style.setProperty('--user-scroll-distance', topScroll + 'px')
   }
   portfolio.addEventListener('scroll', scrollTop)
+
 }
 
 let portfolioClassNameArchive = null
-techPortfolio.addEventListener('touchstart', (e)=>{ 
-  if(e.target.className === 'p5Canvas'){ 
-    log('touchstart')
-    setBg()
-    portfolioClassNameArchive = techPortfolio.className
-    techPortfolio.className = portfolioClassNameArchive + ' stop-scrolling'
-  }
-})
+// techPortfolio.addEventListener('touchstart', (e)=>{ 
+//   if(e.target.className === 'p5Canvas'){ 
+//     portfolioClassNameArchive = techPortfolio.className
+//     techPortfolio.className = portfolioClassNameArchive + ' stop-scrolling'
+//   }
+// })
 
 techPortfolio.addEventListener('touchmove', function(e) {
   if(e.target.className === 'p5Canvas'){
-    log('hit')
     e.preventDefault();
   }
 }, false);
 
 
 
-techPortfolio.addEventListener('touchend', (e)=>{ log('touchend')
-  techPortfolio.className = portfolioClassNameArchive
-  // archPortfolio.className = portfolioClassNameArchive
-})
+// techPortfolio.addEventListener('touchend', (e)=>{ log('touchend')
+//   techPortfolio.className = portfolioClassNameArchive
+//   // archPortfolio.className = portfolioClassNameArchive
+// })
 
 
 
@@ -548,7 +547,7 @@ function setupPageScrollEvents(pageContainer, classNameList = []) {
     const topScroll = Math.max(Math.min(document.documentElement.scrollTop, 75), 0)
     //** SET TOP SCROLL */
     document.documentElement.style.setProperty('--user-scroll-distance', topScroll + 'px')
-    document.body.className = 'disable-selection'
+    document.body.className = 'disable-selection' 
   })
   pageContainer.addEventListener('touchend', (el) => {
     document.body.className = ''
@@ -559,7 +558,7 @@ function setupPageScrollEvents(pageContainer, classNameList = []) {
     document.documentElement.style.setProperty('--user-scroll-distance', topScroll + 'px')
     if (!detectLeftButton(e)) {
       mousedownY = null
-      document.body.className = ''
+      document.body.className = '' 
     }
     if (!mousedownY) return
     const dragTravelDist = e.screenY - mousedownY
@@ -579,13 +578,14 @@ function setupPageScrollEvents(pageContainer, classNameList = []) {
     }
   })
 
-  pageContainer.addEventListener('touchstart', (e) => {
+  pageContainer.addEventListener('touchstart', (e) => { log('touchstart')
     mousedownY = null
     const className = e.target.className.split(' ')[0]
     if (className === 'leftSideBar') {
       mousedownY = e.screenY
       documentScrollTopAtMouseDown = document.documentElement.scrollTop
       document.body.className = 'disable-selection'
+      
     }
   })
 
@@ -596,12 +596,45 @@ function setupPageScrollEvents(pageContainer, classNameList = []) {
   })
 
 }
-setupPageScrollEvents(page1)
-setupPageScrollEvents(page2)
-
 
 function resetScroll(){
   archPortfolio.scrollTop = 0
   techPortfolio.scrollTop = 0
   document.documentElement.style.setProperty('--user-scroll-distance', '0px')
 }
+
+
+document.addEventListener('scroll', function(e) {
+  // setBg()
+  if(document.body.className !== 'resumeShow') return
+  const topScroll = Math.max(Math.min(document.documentElement.scrollTop, 75), 0)
+  document.documentElement.style.setProperty('--user-scroll-distance', topScroll + 'px')
+});
+
+
+
+// function cellExpand(e){
+//   // log(e.target.className)
+//   const classNames = e.target.className.split(' ')
+//   // log(classNames.includes('enlarge'))
+//   const isEnlarged = classNames.includes('enlarged')
+//   const newClassName = isEnlarged ? classNames[0] + ' ' + classNames[1] : classNames[0] + ' ' + classNames[1]  + ' enlarged'
+//   e.target.className = newClassName
+//   e.target.style.zIndex =  isEnlarged ? 1 : 10
+// }
+
+function cellExpand(e){
+  const classNames = e.target.className.split(' ')
+  const isEnlarged = classNames.includes('slideShow')
+  const newClassName = isEnlarged ? classNames[0] + ' ' + classNames[1] : classNames[0] + ' ' + classNames[1]  + ' slideShow'
+  e.target.className = newClassName
+  e.target.style.zIndex =  isEnlarged ? 1 : 10
+}
+
+const cells = document.getElementsByClassName('cellItem')
+for (let i = 0; i < cells.length; i++) {
+  const element = cells[i];
+  element.addEventListener('click',cellExpand)
+  
+}
+

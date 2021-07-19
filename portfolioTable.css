@@ -7,7 +7,7 @@
 .table-cell-container{
   display: flex;
   flex-direction: column;
-  margin-bottom: 50px;
+  margin-bottom: 150px;
   background: azure;
   overflow: hidden;
   padding-left: 160px;

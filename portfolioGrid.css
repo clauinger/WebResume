@@ -6,6 +6,7 @@
   --column-count: 4;
   --cell-width: calc(calc(var(--portfolio-Grid-Container-width) - var(--grid-gap) - calc(calc(var(--column-count) - 1)) * var(--grid-gap)) / var(--column-count));
   --grid-gap: 5px;
+  --grid-gap-horizontal: 10px;
 }
 
 .ht1 {
@@ -45,11 +46,15 @@
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(12, 1fr);
   grid-gap: var(--grid-gap);
+
+  grid-row-gap: var(--grid-gap-horizontal);
   cursor: grab;
   margin: 0 auto;
-  margin-bottom: 50px;
+  margin-bottom: 150px;
   font-size: small;
 }
+
+
 
 .cellItem {
   display: flex;
@@ -59,11 +64,17 @@
   pointer-events: all;
   cursor: pointer;
   color: rgba(0, 0, 0, 0.602);
+  transform: scaleX(1.001) scaleY(1.001);
 }
 
 .cellItem>div {
-  background: rgba(240, 255, 255, 0.502);
+  background: rgba(255, 255, 255, 0.802);
   user-select: none;
+  border: solid 1px rgba(31, 31, 31, 0.1);
+}
+
+.cellItem.enlarged {
+  transform: scaleX(3) scaleY(3);
 }
 
 .portfolio-image {
@@ -72,9 +83,13 @@
   min-height: 100%;
 }
 
+
+
 .project-info{
-  width: var(--cell-width);
+  width: calc( var(--cell-width) - 1px);
   position: absolute; 
+  position: fixed; 
+  bottom: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -84,7 +99,6 @@
   -webkit-box-shadow: 0 0 10px rgb(176, 176, 176);
   box-shadow: 0 0 10px rgb(106, 105, 105);
   border: solid 1px;
-  transform: scaleX(1.05) scaleY(1.05);
 }
 
 
@@ -98,6 +112,7 @@
 @media (max-width: 1000px) {
   :root {
     --portfolio-Grid-Container-height: calc(var(--portfolio-Grid-Container-width) * 1.33);
+    --portfolio-Grid-Container-height: calc(var(--portfolio-Grid-Container-width) * 2);
     --column-count: 3;
   }
 
@@ -136,12 +151,14 @@
 @media (max-width: 650px) {
   :root {
     --portfolio-Grid-Container-height: calc(var(--portfolio-Grid-Container-width) * 2.66);
+    --portfolio-Grid-Container-height: calc(var(--portfolio-Grid-Container-width) * 3);
     --column-count: 2;
   }
   .portFolioGridContainer {
     grid-template-columns: repeat(2, 1fr);
     height: var(--portfolio-Grid-Container-height)
   }
+
   .cellItem>div {
     font-size: smaller;
   }
@@ -149,9 +166,6 @@
     min-height: 160px;
   }
 }
-
-
-
 
 @media (max-width: 500px) {
   :root {
@@ -167,13 +181,14 @@
     margin-left : auto;
     margin-right : auto;
   }
-
+ 
   .cellItem {
     width: 200px;
     margin-bottom: 5px;
+    margin-top: 10px;
   }
   .cellItem.ht1{
-    min-height: 50px;
+    min-height: 70px;
   }
   .cellItem.ht2{
     min-height: 100px;
@@ -187,7 +202,75 @@
   .cellItem>div {
     width: 200px;
   }
-  .ht12>img {
-    height: 35px;
+  .ht1>img {
+    height: 55px;
   }
+}
+
+
+
+
+/* #chipotleSantaBarbaraCell{
+  display: flex;
+  flex-direction: row;
+  border: none;
+  flex-grow: 3;
+  z-index: 0;
+  background: black;
+}
+
+#chipotleSantaBarbaraCell > img{
+  max-height: 200px;
+  margin-right: 2px;
+  object-fit: cover;
+  min-height: 100%;
+  vertical-align: bottom;
+}
+
+#chipotleSantaBarbaraCell  > img:first-child{
+  min-width : 150px; 
+} */
+
+#hopeStreetLoftsImg{
+  object-position: 100% 0; 
+}
+#UniqloImg{
+  object-position: 100% 0; 
+}
+
+#SantaFeImg{
+  object-position: 0 80%;
+}
+
+
+.slideShow{
+  /* width : 400px; */
+  margin-right: -50px;
+  margin-left: -50px;
+  margin-bottom : -100px;
+  padding: 20px;
+  background: white;
+}
+
+.slideViewer{
+  position: fixed;
+  bottom: 0;
+  /* width: 200px; */
+  /* height : 200px; */
+  background: white;
+  z-index: 20;
+  /* width: 90%; */
+  width : calc(100vw - 100px);
+  max-width: 500px;
+  /* max-width: 400px; */
+  /* margin: 0px 10px auto 40px; */
+  /* margin: auto auto auto 50px; */
+
+  padding: 20px;
+}
+
+.slideViewer > img{
+  /* min-height: 900px; */
+  max-height: calc(100vh - 90px);
+  /* max-height: 400px; */
 }

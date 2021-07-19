@@ -3,12 +3,55 @@
   left: 0;
   display: flex;
   overflow: visible;
-  margin-left: var(--navigation-button-offset);
+  /* margin-left: var(--navigation-button-offset); */
+  /* animation-name: animateRollout2;
+  animation-duration: .1s; */
 }
+
+@keyframes animateRollout2 {
+  0%   {
+    margin-left: -200px;
+  }
+  75%   {
+    margin-left: 50px;
+  }
+}
+
+
+
 .navigationButton > .circleButton{
   position: absolute;
   left: 3px;
   z-index: 2;
+  /* animation-name: animateRollout3;
+  animation-duration: 1s; */
+}
+
+.navigationButton > .circleButton.first{
+
+  animation-name: animateRollout3;
+  animation-duration: .3s;
+}
+
+.navigationButton > .circleButton.second{
+
+  animation-name: animateRollout3;
+  animation-duration: .6s;
+}
+
+.navigationButton > .circleButton.third{
+
+  animation-name: animateRollout3;
+  animation-duration: .9s;
+}
+
+@keyframes animateRollout3 {
+  0%   {
+    margin-left: -300px;
+  }
+  75%   {
+    margin-left: 5px;
+  }
 }
 
 .navigationButton:hover > div > i{
@@ -27,20 +70,23 @@
 
 .navButtonLabel{
   text-align: right;
-  background: #12566f93;
-  background: rgba(255, 255, 255, 0.427);
+  background: #e3e3e3a8;
+  /* background: rgba(255, 255, 255, 0.427); */
+  /* color : gray; */
   position: absolute;
   margin: 0;
   height: 36px;
   border-top-left-radius: 18px;
   border-bottom-left-radius: 18px;
   width: calc( var(--left-tile-width) + calc(var(--navigation-button-offset) * -1 - 1px))  ;
+  width: var(--left-tile-width) ;
   top: -3px;
   border: solid 1px #0c3545;
-  border: solid 1px #12566f;
+  /* border: solid 2px #ffffff; */
   z-index: 0;
-  animation-name: animateRollout;
-  animation-duration: .3s;
+  animation-name: animateLabelFadeIn;
+  animation-duration: 2s;
+  
 }
 
 .navButtonLabel .rollout{
@@ -54,22 +100,31 @@
   }
 }
 
+@keyframes animateLabelFadeIn {
+  0%   {
+    opacity: 0;
+  }
+}
+
 .navButtonLabel > p{
   position: absolute;
-  bottom:-1px;
+  bottom:9px;
   right: 0;
   margin: 0;
   margin-right: 5px;
   color: #13536a;
-  width: 90px;
+  color : gray;
+  /* width  */
+  width: 190px;
 }
 
 .navigationButton.toggleOn {
   animation-name: animateSlideNavButtonFromLeft;
   animation-duration: .3s;
   z-index: 10;
-  margin-left: var(--navigation-button-offset);
-  margin-left: -10px;
+  /* margin-left: var(--navigation-button-offset);
+  margin-left: -10px; */
+  /* margin-left: 20px;  */
   pointer-events: none;
 }
 
@@ -86,7 +141,7 @@
 
 .navigationButton.toggleOn .navButtonLabel {
   position: fixed;
-  top: calc(90px - var(--user-scroll-distance));
+  top: calc(100px - var(--user-scroll-distance));
   background: none;
   font-size: 20px;
   text-align: right;
@@ -100,7 +155,7 @@
 .navigationButton.toggleOn .circleButton{
   position: fixed;
   top : calc( 113px - var(--user-scroll-distance));
-  margin-left: var(--navigation-button-offset);
+  /* margin-left: var(--navigation-button-offset); */
   left:0;
   border: solid #3e3e3e;
 } 
@@ -108,8 +163,10 @@
 .navigationButton.toggleOn .navButtonLabel > p{
   color:white;
   text-align: right; 
-  width :  100%;
-  left: -2px;
+  /* width :  100%; */
+  width : 130px;
+  /* left: -2px; */
+  /* background: red; */
 }
 
 .navigationButton.hideLabel > .navButtonLabel {
@@ -141,9 +198,6 @@
 .navigationButton.hideLabel:hover > .navButtonLabel {
   visibility: visible;
 }
-
-
-
 
 .navigationButton.toggleShowAddress .navButtonLabel {
   position: fixed;
@@ -190,7 +244,6 @@
   top:-100px;
 }
 
-
 .zeroButton{top:-100px}
 
 .firstButton{top:calc(200px - var(--user-scroll-distance));}
@@ -223,7 +276,7 @@
 #exitButton > .circleButton {
 
   color:#12566f;
-  background: white;
+  background: none;
 
 }
 
@@ -234,4 +287,40 @@
 
 #exitButton:hover  > .circleButton > p{
   color: white;
+}
+
+@media (max-width: 550px) {
+  .navigationButton {
+    margin-left: var(--navigation-button-offset);
+  }
+
+  .navigationButton .navButtonLabel > p{
+    width : 90px;
+  }
+  #archButton .navButtonLabel > p span {
+    display:none;
+  }
+
+  #archButton .navButtonLabel > p:before {
+    content:"Arch Portfolio";
+  }
+
+  #archButton .navButtonLabel > p {
+    bottom: 0;
+  }
+
+  #techButton .navButtonLabel > p {
+    bottom: 0;
+  }
+
+  #techButton.toggleOn .navButtonLabel > p {
+    width : 90px;
+    bottom: 10px;
+  }
+
+  #archButton.toggleOn .navButtonLabel > p {
+    width : 90px;
+    bottom: 10px;
+  }
+
 }
