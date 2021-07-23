@@ -13,8 +13,6 @@
   padding-left: 160px;
 }
 
-
-
 .drawing{
   margin-left: 10px;
   float: right;
@@ -181,6 +179,5 @@
   }
   .table-text {
     max-width: 300px;
-    color:red;
   }
 }

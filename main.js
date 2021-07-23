@@ -473,10 +473,8 @@ notableToggleExpand.addEventListener('mousedown', () => {
   toggleExpandHide(notableToggleExpand)
 })
 
-document.addEventListener('DOMContentLoaded', function () { log('DOMContentLoaded')
-resetScroll()
-//   document.documentElement.style.setProperty('--user-scroll-distance', 0 + 'px')
-
+document.addEventListener('DOMContentLoaded', function () { 
+  resetScroll()
   if (window.isMobileDevice()) {
     setTimeout(collapseAll, 300);
   }
@@ -522,80 +520,71 @@ techPortfolio.addEventListener('touchmove', function(e) {
   }
 }, false);
 
-
-
-// techPortfolio.addEventListener('touchend', (e)=>{ log('touchend')
-//   techPortfolio.className = portfolioClassNameArchive
-//   // archPortfolio.className = portfolioClassNameArchive
-// })
-
-
-
 setupPortfolioScrollEvents(archPortfolio)//, ['portFolioGridContainer', 'cellItem'])
 
 setupPortfolioScrollEvents(techPortfolio)//, ['tableTitle', 'table-cell-container', 'portFolioFlexContainer', 'expandable-table-cell-container'])
 
 
-function setupPageScrollEvents(pageContainer, classNameList = []) {
-  pageContainer.addEventListener('wheel', (el) => {
-    const topScroll = Math.max(Math.min(document.documentElement.scrollTop, 75), 0)
-    //** SET TOP SCROLL */
-    document.documentElement.style.setProperty('--user-scroll-distance', topScroll + 'px')
-  })
+// function setupPageScrollEvents(pageContainer, classNameList = []) {
+//   pageContainer.addEventListener('wheel', (el) => {
+//     const topScroll = Math.max(Math.min(document.documentElement.scrollTop, 75), 0)
+//     //** SET TOP SCROLL */
+//     document.documentElement.style.setProperty('--user-scroll-distance', topScroll + 'px')
+//   })
 
-  pageContainer.addEventListener('touchmove', (el) => {
-    const topScroll = Math.max(Math.min(document.documentElement.scrollTop, 75), 0)
-    //** SET TOP SCROLL */
-    document.documentElement.style.setProperty('--user-scroll-distance', topScroll + 'px')
-    document.body.className = 'disable-selection' 
-  })
-  pageContainer.addEventListener('touchend', (el) => {
-    document.body.className = ''
-  })
-  pageContainer.addEventListener('mousemove', (e) => {
-    const topScroll = Math.max(Math.min(document.documentElement.scrollTop, 75), 0)
-    //** SET TOP SCROLL */
-    document.documentElement.style.setProperty('--user-scroll-distance', topScroll + 'px')
-    if (!detectLeftButton(e)) {
-      mousedownY = null
-      document.body.className = '' 
-    }
-    if (!mousedownY) return
-    const dragTravelDist = e.screenY - mousedownY
-    const newscrollTop = Math.max(documentScrollTopAtMouseDown - dragTravelDist, 0)
-    document.documentElement.scrollTop = newscrollTop
-  })
+//   pageContainer.addEventListener('touchmove', (el) => {
+//     const topScroll = Math.max(Math.min(document.documentElement.scrollTop, 75), 0)
+//     //** SET TOP SCROLL */
+//     document.documentElement.style.setProperty('--user-scroll-distance', topScroll + 'px')
+//     document.body.className = 'disable-selection' 
+//   })
+//   pageContainer.addEventListener('touchend', (el) => {
+//     document.body.className = ''
+//   })
+//   pageContainer.addEventListener('mousemove', (e) => {
+//     const topScroll = Math.max(Math.min(document.documentElement.scrollTop, 75), 0)
+//     //** SET TOP SCROLL */
+//     document.documentElement.style.setProperty('--user-scroll-distance', topScroll + 'px')
+//     if (!detectLeftButton(e)) {
+//       mousedownY = null
+//       document.body.className = '' 
+//     }
+//     if (!mousedownY) return
+//     const dragTravelDist = e.screenY - mousedownY
+//     const newscrollTop = Math.max(documentScrollTopAtMouseDown - dragTravelDist, 0)
+//     document.documentElement.scrollTop = newscrollTop
+//   })
 
-  let mousedownY = null
-  let documentScrollTopAtMouseDown = null
-  pageContainer.addEventListener('mousedown', (e) => {
-    mousedownY = null
-    const className = e.target.className.split(' ')[0]
-    if (className === 'leftSideBar') {
-      mousedownY = e.screenY
-      documentScrollTopAtMouseDown = document.documentElement.scrollTop
-      document.body.className = 'disable-selection'
-    }
-  })
+//   let mousedownY = null
+//   let documentScrollTopAtMouseDown = null
+//   pageContainer.addEventListener('mousedown', (e) => {
+//     mousedownY = null
+//     const className = e.target.className.split(' ')[0]
+//     if (className === 'leftSideBar') {
+//       mousedownY = e.screenY
+//       documentScrollTopAtMouseDown = document.documentElement.scrollTop
+//       document.body.className = 'disable-selection'
+//     }
+//   })
 
-  pageContainer.addEventListener('touchstart', (e) => { log('touchstart')
-    mousedownY = null
-    const className = e.target.className.split(' ')[0]
-    if (className === 'leftSideBar') {
-      mousedownY = e.screenY
-      documentScrollTopAtMouseDown = document.documentElement.scrollTop
-      document.body.className = 'disable-selection'
+//   pageContainer.addEventListener('touchstart', (e) => { log('touchstart')
+//     mousedownY = null
+//     const className = e.target.className.split(' ')[0]
+//     if (className === 'leftSideBar') {
+//       mousedownY = e.screenY
+//       documentScrollTopAtMouseDown = document.documentElement.scrollTop
+//       document.body.className = 'disable-selection'
       
-    }
-  })
+//     }
+//   })
 
-  pageContainer.addEventListener('mouseup', (e) => {
-    log('mouseup')
-    document.body.className = ''
-    mousedownY = null
-  })
+//   pageContainer.addEventListener('mouseup', (e) => {
+//     log('mouseup')
+//     document.body.className = ''
+//     mousedownY = null
+//   })
 
-}
+// }
 
 function resetScroll(){
   archPortfolio.scrollTop = 0
@@ -605,36 +594,136 @@ function resetScroll(){
 
 
 document.addEventListener('scroll', function(e) {
-  // setBg()
   if(document.body.className !== 'resumeShow') return
   const topScroll = Math.max(Math.min(document.documentElement.scrollTop, 75), 0)
   document.documentElement.style.setProperty('--user-scroll-distance', topScroll + 'px')
 });
 
+magdalenCell.addEventListener('click',()=>{
+  showSlides(1, "magdalen")
+  magdalenSlideViewer.className =  'slideContainer show' 
+})
+
+GPMCell.addEventListener('click',()=>{ 
+  showSlides(1, "GPM")
+  GPMSlideViewer.className =  'slideContainer show' 
+})
+
+UDONGCell.addEventListener('click',()=>{ 
+  showSlides(1, "UDONG")
+  UDONGSlideViewer.className =  'slideContainer show' 
+})
+
+SewoonCell.addEventListener('click',()=>{ 
+  showSlides(1, "Sewoon")
+  SewoonSlideViewer.className =  'slideContainer show' 
+})
+
+MAPCell.addEventListener('click',()=>{ 
+  showSlides(1, "MAP")
+  MAPSlideViewer.className =  'slideContainer show' 
+})
+
+BiscuitCell.addEventListener('click',()=>{ 
+  showSlides(1, "Biscuit")
+  BiscuitSlideViewer.className =  'slideContainer show' 
+})
+
+F21_SCPCell.addEventListener('click',()=>{ 
+  showSlides(1, "F21_SCP")
+  F21_SCPSlideViewer.className =  'slideContainer show' 
+})
+
+Chipotle_SBCell.addEventListener('click',()=>{ 
+  showSlides(1, "Chipotle_SB")
+  Chipotle_SBSlideViewer.className =  'slideContainer show' 
+})
+
+ChipotleEncinitasCell.addEventListener('click',()=>{ 
+  showSlides(1, "ChipotleEncinitas")
+  ChipotleEncinitasSlideViewer.className =  'slideContainer show' 
+})
+
+Chipotle_HillcrestCell.addEventListener('click',()=>{ 
+  showSlides(1, "Chipotle_Hillcrest")
+  Chipotle_HillcrestSlideViewer.className =  'slideContainer show' 
+})
+
+SOMCell.addEventListener('click',()=>{ 
+  showSlides(1, "SOM")
+  SOMSlideViewer.className =  'slideContainer show' 
+})
+
+UniqloCell.addEventListener('click',()=>{ 
+  showSlides(1, "Uniqlo")
+  UniqloSlideViewer.className =  'slideContainer show' 
+})
+
+F21_HawaiiCell.addEventListener('click',()=>{ 
+  showSlides(1, "F21_Hawaii")
+  F21_HawaiiSlideViewer.className =  'slideContainer show' 
+})
+
+BeachHouseCell.addEventListener('click',()=>{ 
+  showSlides(1, "BeachHouse")
+  BeachHouseSlideViewer.className =  'slideContainer show' 
+})
+
+Chipotle_EncinoCell.addEventListener('click',()=>{ 
+  showSlides(1, "Chipotle_Encino")
+  Chipotle_EncinoSlideViewer.className =  'slideContainer show' 
+})
+
+ChipotleBevCenCell.addEventListener('click',()=>{ 
+  showSlides(1, "ChipotleBevCen")
+  ChipotleBevCenSlideViewer.className =  'slideContainer show' 
+})
+
+ChipotlePacificCell.addEventListener('click',()=>{ 
+  showSlides(1, "ChipotlePacific")
+  ChipotlePacificSlideViewer.className =  'slideContainer show' 
+})
+
+HopeCell.addEventListener('click',()=>{ 
+  showSlides(1, "Hope")
+  HopeSlideViewer.className =  'slideContainer show' 
+})
+
+OlympicCell.addEventListener('click',()=>{ 
+  showSlides(1, "Olympic")
+  OlympicSlideViewer.className =  'slideContainer show' 
+})
+
+SMPCell.addEventListener('click',()=>{ 
+  showSlides(1, "SMP")
+  SMPSlideViewer.className =  'slideContainer show' 
+})
 
 
-// function cellExpand(e){
-//   // log(e.target.className)
-//   const classNames = e.target.className.split(' ')
-//   // log(classNames.includes('enlarge'))
-//   const isEnlarged = classNames.includes('enlarged')
-//   const newClassName = isEnlarged ? classNames[0] + ' ' + classNames[1] : classNames[0] + ' ' + classNames[1]  + ' enlarged'
-//   e.target.className = newClassName
-//   e.target.style.zIndex =  isEnlarged ? 1 : 10
-// }
+LandmarkCell.addEventListener('click',()=>{ 
+  showSlides(1, "Landmark")
+  LandmarkSlideViewer.className =  'slideContainer show' 
+})
 
-function cellExpand(e){
-  const classNames = e.target.className.split(' ')
-  const isEnlarged = classNames.includes('slideShow')
-  const newClassName = isEnlarged ? classNames[0] + ' ' + classNames[1] : classNames[0] + ' ' + classNames[1]  + ' slideShow'
-  e.target.className = newClassName
-  e.target.style.zIndex =  isEnlarged ? 1 : 10
+ProperCell.addEventListener('click',()=>{ 
+  showSlides(1, "Proper")
+  ProperSlideViewer.className =  'slideContainer show' 
+})
+
+const slideContainers = document.getElementsByClassName('slideContainer')
+for (let i = 0; i < slideContainers.length; i++) {
+  const element = slideContainers[i];
+
+  element.addEventListener('click',(e)=>{
+    if(e.target.className !== 'slideContainer show')return
+    element.className = 'slideContainer'
+  })
 }
 
-const cells = document.getElementsByClassName('cellItem')
-for (let i = 0; i < cells.length; i++) {
-  const element = cells[i];
-  element.addEventListener('click',cellExpand)
-  
+function getContainerLeft (container){
+  return container.getBoundingClientRect().left
 }
+
+
+
 

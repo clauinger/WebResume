@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="portfolioGrid.css">
   <link rel="stylesheet" href="portfolioTable.css">
   <link rel="stylesheet" href="navigationButton.css">
+  <link rel="stylesheet" href="slideViewer.css">
 
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Poiret+One&display=swap"
@@ -23,6 +24,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+
+<!-- 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet"> -->
+
 
   <title>Document</title>
 
@@ -49,187 +58,166 @@
   <div id='lowerLeftTile' class='frontPageElement show'></div>
 
   <div id='backgroundImageContainer' class='frontPage'>
-    <img src="pics/chair3.PNG" alt="">
+    <img src="pics/chair3.png" alt="">
   </div>
-  <div id='bottomRightTile' class='frontPageElement' >
+  <div id='bottomRightTile' class='frontPageElement'>
 
     <div id='mechanizedInkDisplayScreen'></div>
   </div>
 
   <div id='archPortfolio' class='portfolioWindow frontPageElement hide'>
-    <!-- <iframe src="https://drive.google.com/file/d/0B_RBnPOErJj4SThRM2xlaFBYODg/preview" width="100%" height="100%" hidden></iframe> -->
 
     <div class='portFolioGridContainer'>
-      <div class="cellItem ht3">
-        <!-- <div class="ht3">
-          <img src="pics/Seewoon.png" alt="">
-        </div> -->
+      <div id='SewoonCell' class="cellItem ht3">
         <img src="pics/Seewoon.png" alt="" class='portfolio-image'>
-
         <div class='project-info'>
           Sewoon Towers
         </div>
       </div>
-      <div class="cellItem ht4">
-        <!-- <div class="ht4" id='cell'>
-          <img src="pics/GPM-07.png" alt="">
-        </div> -->
+      <div id='GPMCell' class="cellItem ht4">
         <img src="pics/GPM-02.jpg" alt="" class='portfolio-image'>
         <div class='project-info'>
           Grosse Pointe United Methodist Church
         </div>
       </div>
-      <div class="cellItem ht1">
+
+      <div id='MAPCell' class="cellItem ht1">
         <img src="pics/MAP-01.png" alt="" class='portfolio-image'>
         <div class='project-info'>Michigan Air Products</div>
       </div>
-      <div class="cellItem ht2">
+      <div id='BeachHouseCell' class="cellItem ht2">
         <img src="pics/beachHouse.png" alt="" class='portfolio-image'>
-        <div class='project-info' >
+        <div class='project-info'>
           Private Residence
         </div>
       </div>
 
-      <div class="cellItem ht2">
-        <img src="pics/udong-plan.png" alt="" class='portfolio-image'>
+      <div id='UDONGCell' class="cellItem ht2">
+        <img src="pics/Udong-plan.png" alt="" class='portfolio-image'>
         <div class='project-info'>
           Udong Mixed Use Development
         </div>
       </div>
 
-      <div class="cellItem ht2">
-        <img src="pics/proper-01.png" alt="" class='portfolio-image'>
+      <div id='ProperCell' class="cellItem ht2">
+        <img src="pics/Proper-01.png" alt="" class='portfolio-image'>
         <div class='project-info'>
           Santa Monica Proper
         </div>
       </div>
 
-      <div class="cellItem ht2">
+      <div id='ChipotlePacificCell' class="cellItem ht2">
         <img src="pics/Chipotle-Pacific.png" alt="" class='portfolio-image'>
         <div class='project-info'>
           Chipotle Pacific Beach, SD
         </div>
       </div>
 
-      <div id = 'SantaFeCell' class="cellItem ht1">
-        <img id ='SantaFeImg' src="pics/Santa-Fe-01.jpg" alt="" class='portfolio-image'>
+      <div id='SMPCell' class="cellItem ht1">
+        <img src="pics/SMP-02.png" alt="" class='portfolio-image'>
         <div class='project-info'>
-          Santa Fe Mexico City
+          Santa Monica Place
         </div>
       </div>
 
-      <div class="cellItem ht2">
+      <div id='Chipotle_HillcrestCell' class="cellItem ht2">
         <img src="pics/Chipotle-HillCrest.png" alt="" class='portfolio-image'>
-
         <div class='project-info'>
           Chipotle Hillcrest
         </div>
       </div>
 
-      <div class="cellItem ht2">
+      <div id='magdalenCell' class="cellItem ht2">
         <img src="pics/magdalen-05.jpg" alt="" class='portfolio-image'>
         <div class='project-info'>
-          St Mary Magdalene
+          St Mary Magdalene, Pleasant Ridge MI
         </div>
       </div>
 
-      <div class="cellItem ht2">
+      <div id='BiscuitCell' class="cellItem ht2">
         <img src="pics/Biscuit-05.jpg" alt="" class='portfolio-image'>
         <div class='project-info'>
           Biscuit Lofts, Los Angeles
         </div>
       </div>
 
-      <!-- <div class="cellItem ht1" >
-        <div id ='chipotleSantaBarbaraCell' class="cellItem ht1">
-            <img src="pics/chipotle-SB-01.JPG" alt=""  >
-            <img src="pics/chipotle-SB-03.png" alt=""  >
-            <img src="pics/chipotle-SB-02.JPG" alt="" >
-        </div >
-
-        <div class='project-info' >
+      <div id='Chipotle_SBCell' class="cellItem ht2">
+        <img src="pics/chipotle-SB-01.jpg" alt="" class='portfolio-image'>
+        <div class='project-info'>
           Chipotle Santa Barbara
         </div>
-      </div> -->
+      </div>
 
-      <div class="cellItem ht2">
-          <img src="pics/chipotle-SB-01.JPG"  alt="" class='portfolio-image'>
-          <!-- <img src="pics/chipotle-SB-01.JPG" alt=""  > -->
-          <div class='project-info'>
-              Chipotle Santa Barbara
-          </div>
-        </div>
-
-      <div class="cellItem ht2">
+      <div id='F21_SCPCell' class="cellItem ht2">
         <img src="pics/F21-SCP-01.png" alt="" class='portfolio-image'>
         <div class='project-info'>
           Forever 21 South Coast Plaza
         </div>
       </div>
 
-      <div id = 'hopeStreetLoftsCell'  class="cellItem ht2">
-          <img id = 'hopeStreetLoftsImg' src="pics/HopeStreetLofts.png" alt="" class='portfolio-image' >
+      <div id='HopeCell' class="cellItem ht2">
+        <img id='hopeStreetLoftsImg' src="pics/HopeStreetLofts.png" alt="" class='portfolio-image'>
         <div class='project-info'>
           Hope Street Lofts
         </div>
       </div>
 
-      <div class="cellItem ht3">
-        <img src="pics/ProperLandmark-01.JPG" alt="" class='portfolio-image'>
+      <div id='LandmarkCell' class="cellItem ht3">
+        <img src="pics/Landmark-06.jpg" alt="" class='portfolio-image'>
         <div class='project-info'>
           Santa Monica Proper Landmark
         </div>
       </div>
 
-      <div class="cellItem ht2">
-        <img src="pics/Chipotle-BeverlyCenter.png" alt="" class='portfolio-image'>
+      <div id='ChipotleBevCenCell' class="cellItem ht2">
+        <img src="pics/Chipotle-BevCen-02.png" alt="" class='portfolio-image'>
         <div class='project-info'>
           Chipotle Beverly Center
         </div>
       </div>
 
-      <div class="cellItem ht2">
+      <div id='SOMCell' class="cellItem ht2">
         <img src="pics/sistersOfMercy-01.png" alt="" class='portfolio-image'>
         <div class='project-info'>
-          Sisters of Mercy Chapel
+          Sisters of Mercy Addition
         </div>
       </div>
 
-      <div id = 'UniqloCell' class="cellItem ht2">
-          <img id = 'UniqloImg' src="pics/chi-Uniqlo-04.png" alt="" class='portfolio-image'>
-          <div class='project-info'>
-            Uniqlo Exterior, Chicago
-          </div>
+      <div id='UniqloCell' class="cellItem ht2">
+        <img src="pics/Uniqlo-06.png" alt="" class='portfolio-image'>
+        <div class='project-info'>
+          Uniqlo Exterior, Chicago
         </div>
+      </div>
 
 
-      <div class="cellItem ht2">
+      <div id='F21_HawaiiCell' class="cellItem ht2">
         <img src="pics/F21-Hawaii.jpg" alt="" class='portfolio-image'>
         <div class='project-info'>
           Forever 21 Hawaii
         </div>
       </div>
 
-      <div class="cellItem ht3">
+      <div id='Chipotle_EncinoCell' class="cellItem ht2">
         <img src="pics/Chipole-Encino.png" alt="" class='portfolio-image'>
         <div class='project-info'>
           Chipotle Encino
         </div>
       </div>
 
-      <div class="cellItem ht3">
+      <div id='ChipotleEncinitasCell' class="cellItem ht3">
         <img src="pics/Chipotle-Encinitas.png" alt="" class='portfolio-image'>
         <div class='project-info'>
           Chipotle Encinitas
         </div>
       </div>
 
-      <div class="cellItem ht2">
-          <img src="pics/OlympicSoto-02.png" alt="" class='portfolio-image'>
-          <div class='project-info'>
-            Olympic & Soto Redevelopment
-          </div>
+      <div id='OlympicCell' class="cellItem ht2">
+        <img src="pics/OlympicSoto-02.png" alt="" class='portfolio-image'>
+        <div class='project-info'>
+          Olympic & Soto Redevelopment
         </div>
+      </div>
 
 
     </div>
@@ -238,12 +226,12 @@
   <div id='techPortfolio' class='portfolioWindow frontPageElement hide'>
     <div class='portFolioFlexContainer'>
       <div class='expandable-table-cell-container condenced-height' id='JSDrawContainer'>
-        <div class='table-cell-container' id='MI_TopCell' >
+        <div class='table-cell-container' id='MI_TopCell'>
           <h2 class='tableTitle'>Machanized Ink</h2>
           <h3>Exploring a new paradigm for graphic vector drawing UI</h3>
           <p>Machanized Ink is what I call an interface for users to create, edit, modify vector graphics with a
             pointing-device centric aproach.</p>
-          <div class='textBlock' >
+          <div class='textBlock'>
 
             <!-- <div ></div> -->
             <p class='table-text'>
@@ -268,7 +256,7 @@
         <div class='table-cell-container'>
           <div class='textBlock'>
             <h2 class='tableTitle'>Composite Shape Pen</h2>
-            <div ></div>
+            <div></div>
             <p>This pen is a means to draw complex shapes with a composite of shapes </p>
           </div>
           <div class='drawing' id='JSDraw_00'> </div>
@@ -378,7 +366,8 @@
         <div class='textBlock'>
           <h2>Leveraged ETF Review Web App</h2>
 
-          <p>Evplore the risk/profit potential of Leveraged ETFs by reviewing past performine of a varaiety of names. </p>
+          <p>Explore the risk/profit potential of Leveraged ETFs by reviewing past performine of a varaiety of names.
+          </p>
         </div>
         <iframe src="https://leveraged-etf-historical-review-ezepm.ondigitalocean.app/" width="300"
           height="540"></iframe>
@@ -624,7 +613,7 @@
           <li> <a href="https://tinyurl.com/yk489mta" onclick="return confirm('Open Sewoon Towers Presentation')">Sewoon
               Towers </a> </li>
           <li> <a href="https://tinyurl.com/y74994er"
-              onclick="return confirm('Open Grosse Point United Methodest Church Presentation')">Grosse Point United
+              onclick="return confirm('Open Grosse Point United Methodest Church Presentation')">Grosse Pointe United
               Methodest Church</a> </li>
           <li> <a href="https://tinyurl.com/52mjk7w"
               onclick="return confirm('Open U-Dong Mixed Use Presentation')">U-Dong Mixed Use </a> </li>
@@ -818,12 +807,1138 @@
       </ul>
     </div>
   </div>
-  <!-- <div class= 'slideViewer cellItem'>
-      <img src="pics/magdalen-05.jpg" alt="" class='portfolio-image'>
-      <div class='project-info'>
-        St Mary Magdalene
+
+  <div id='magdalenSlideViewer' class='slideContainer'>
+    <div class='slidePanel'>
+      <div class="slideshow-container">
+        <div class="mySlides magdalen fade" onclick="plusSlides(1,'magdalen')">
+          <div class="numbertext">1 / 3</div>
+          <img src="pics/magdalen-05.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides magdalen fade" onclick="plusSlides(1,'magdalen')">
+          <div class="numbertext">2 / 3</div>
+          <img src="pics/magdalen-01.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides magdalen fade" onclick="plusSlides(1,'magdalen')">
+          <div class="numbertext">3 / 3</div>
+          <img src="pics/magdalen-02.jpg" style="width:100%" alt=''>
+        </div>
+
+
       </div>
-  </div> -->
+      <div class='slide-title'>St Mary Magdalene, Pleasant Ridge MI</div>
+      <a class="prev" onclick="plusSlides(-1,'magdalen')">&#10094;</a>
+      <a class="next" onclick="plusSlides(1,'magdalen')">&#10095;</a>
+      <br>
+      <div style="text-align:center">
+        <span class="dot magdalen" onclick="currentSlide(1,'magdalen')"></span>
+        <span class="dot magdalen" onclick="currentSlide(2,'magdalen')"></span>
+        <span class="dot magdalen" onclick="currentSlide(3,'magdalen')"></span>
+      </div>
+
+    </div>
+
+  </div>
+  <a href="#" class="close-icon" onclick="magdalenSlideViewer.className = 'slideContainer'"></a>
+  </div>
+
+  <div id='MAPSlideViewer' class='slideContainer'>
+    <div class='slidePanel'>
+      <div class="slideshow-container">
+
+        <div class="mySlides MAP fade" onclick="plusSlides(1,'MAP')">
+          <div class="numbertext">1 / 2</div>
+          <img src="pics/MAP-02.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides MAP fade" onclick="plusSlides(1,'MAP')">
+          <div class="numbertext">2 / 2</div>
+          <img src="pics/MAP-03.jpg" style="width:100%" alt=''>
+        </div>
+
+
+      </div>
+
+      <div class='slide-title'>Michigan Air Products, Troy MI</div>
+      <a class="prev" onclick="plusSlides(-1,'MAP')">&#10094;</a>
+      <a class="next" onclick="plusSlides(1,'MAP')">&#10095;</a>
+
+      <br>
+
+      <div style="text-align:center">
+        <span class="dot MAP" onclick="currentSlide(1,'MAP')"></span>
+        <span class="dot MAP" onclick="currentSlide(2,'MAP')"></span>
+      </div>
+
+    </div>
+    <a href="#" class="close-icon" onclick="MAPSlideViewer.className = 'slideContainer'"></a>
+  </div>
+
+  <div id='F21_HawaiiSlideViewer' class='slideContainer'>
+    <div class='slidePanel'>
+      <div class="slideshow-container">
+
+        <div class="mySlides F21_Hawaii fade" onclick="currentSlide(1,'F21_Hawaii')">
+          <div class="numbertext">1 / 2</div>
+          <img src="pics/F21-Hawaii.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides F21_Hawaii fade" onclick="currentSlide(1,'F21_Hawaii')">
+          <div class="numbertext">2 / 2</div>
+          <img src="pics/F21-Hawaii-01.jpg" style="width:100%" alt=''>
+        </div>
+
+
+      </div>
+      <div class='slide-title'>Forever 21, Royal Hawaiian Center</div>
+      <a class="prev" onclick="plusSlides(-1,'F21_Hawaii')">&#10094;</a>
+      <a class="next" onclick="plusSlides(1,'F21_Hawaii')">&#10095;</a>
+      <br>
+
+      <div style="text-align:center">
+        <span class="dot F21_Hawaii" onclick="currentSlide(1,'F21_Hawaii')"></span>
+        <span class="dot F21_Hawaii" onclick="currentSlide(2,'F21_Hawaii')"></span>
+      </div>
+
+    </div>
+    <a href="#" class="close-icon" onclick="F21_HawaiiSlideViewer.className = 'slideContainer'"></a>
+  </div>
+
+  <div id='LandmarkSlideViewer' class='slideContainer'>
+    <div class='slidePanel'>
+      <div class="slideshow-container">
+
+        <div class="mySlides Landmark fade" onclick="plusSlides(1,'Landmark')">
+          <div class="numbertext">1 / 5</div>
+          <img src="pics/Landmark-05.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Landmark fade" onclick="plusSlides(1,'Landmark')">
+          <div class="numbertext">2 / 5</div>
+          <img src="pics/Landmark-02.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Landmark fade" onclick="plusSlides(1,'Landmark')">
+          <div class="numbertext">3 / 5</div>
+          <img src="pics/Landmark-01.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Landmark fade" onclick="plusSlides(1,'Landmark')">
+          <div class="numbertext">4 / 5</div>
+          <img src="pics/Landmark-06.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Landmark fade" onclick="plusSlides(1,'Landmark')">
+          <div class="numbertext">5 / 5</div>
+          <img src="pics/Landmark-03.jpg" style="width:100%" alt=''>
+        </div>
+
+
+      </div>
+
+      <div class='slide-title'>Santa Monica Proper Landmark</div>
+      <a class="prev" onclick="plusSlides(-1,'Landmark')">&#10094;</a>
+      <a class="next" onclick="plusSlides(1,'Landmark')">&#10095;</a>
+
+      <br>
+      <div style="text-align:center">
+        <span class="dot Landmark" onclick="currentSlide(1,'Landmark')"></span>
+        <span class="dot Landmark" onclick="currentSlide(2,'Landmark')"></span>
+        <span class="dot Landmark" onclick="currentSlide(3,'Landmark')"></span>
+        <span class="dot Landmark" onclick="currentSlide(4,'Landmark')"></span>
+        <span class="dot Landmark" onclick="currentSlide(5,'Landmark')"></span>
+      </div>
+
+    </div>
+    <a href="#" class="close-icon" onclick="LandmarkSlideViewer.className = 'slideContainer'"></a>
+  </div>
+
+
+  <div id='GPMSlideViewer' class='slideContainer'>
+    <div class='slidePanel'>
+      <div class="slideshow-container">
+        <div class="mySlides GPM fade" onclick="plusSlides(1 , 'GPM')">
+          <div class="numbertext">1 / 10</div>
+          <img src="pics/GPM-02.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides GPM fade" onclick="plusSlides(1 , 'GPM')">
+          <div class="numbertext">2 / 10</div>
+          <img src="pics/GPM-08.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides GPM fade" onclick="plusSlides(1 , 'GPM')">
+          <div class="numbertext">3 / 10</div>
+          <img src="pics/GPM-05.jpg" style="width:100%" alt=''>
+        </div>
+
+
+        <div class="mySlides GPM fade" onclick="plusSlides(1 , 'GPM')">
+          <div class="numbertext">4 / 10</div>
+          <img src="pics/GPM-09.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides GPM fade" onclick="plusSlides(1 , 'GPM')">
+          <div class="numbertext">5 / 10</div>
+          <img src="pics/GPM-10.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides GPM fade" onclick="plusSlides(1 , 'GPM')">
+          <div class="numbertext">6 / 10</div>
+          <img src="pics/GPM-04.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides GPM fade" onclick="plusSlides(1 , 'GPM')">
+          <div class="numbertext">7 / 10</div>
+          <img src="pics/GPM-01.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides GPM fade" onclick="plusSlides(1 , 'GPM')">
+          <div class="numbertext">9 / 10</div>
+          <img src="pics/GPM-10.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides GPM fade" onclick="plusSlides(1 , 'GPM')">
+          <div class="numbertext">10 / 10</div>
+          <img src="pics/GPM-11.png" style="width:100%" alt=''>
+        </div>
+
+
+      </div>
+      <div class='slide-title'>Grosse Pointe United Methodest Church</div>
+      <a class="prev" onclick="plusSlides(-1 , 'GPM')">&#10094;</a>
+      <a class="next" onclick="plusSlides(1 , 'GPM')">&#10095;</a>
+      <br>
+
+      <div style="text-align:center">
+        <span class="dot GPM" onclick="currentSlide(1, 'GPM')"></span>
+        <span class="dot GPM" onclick="currentSlide(2, 'GPM')"></span>
+        <span class="dot GPM" onclick="currentSlide(3, 'GPM')"></span>
+        <span class="dot GPM" onclick="currentSlide(4, 'GPM')"></span>
+        <span class="dot GPM" onclick="currentSlide(5, 'GPM')"></span>
+        <span class="dot GPM" onclick="currentSlide(6, 'GPM')"></span>
+        <span class="dot GPM" onclick="currentSlide(7, 'GPM')"></span>
+        <span class="dot GPM" onclick="currentSlide(8, 'GPM')"></span>
+        <span class="dot GPM" onclick="currentSlide(9, 'GPM')"></span>
+      </div>
+
+    </div>
+    <a href="#" class="close-icon" onclick="GPMSlideViewer.className = 'slideContainer'"></a>
+  </div>
+
+  <div id='ProperSlideViewer' class='slideContainer'>
+    <div class='slidePanel'>
+      <div class="slideshow-container">
+
+        <div class="mySlides Proper fade" onclick="plusSlides(1,'Proper')">
+          <div class="numbertext">1 / 6</div>
+          <img src="pics/Proper-03.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Proper fade" onclick="plusSlides(1,'Proper')">
+          <div class="numbertext">2 / 6</div>
+          <img src="pics/Proper-02.png" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Proper fade" onclick="plusSlides(1,'Proper')">
+          <div class="numbertext">3 / 6</div>
+          <img src="pics/Proper-01.png" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Proper fade" onclick="plusSlides(1,'Proper')">
+          <div class="numbertext">4 / 6</div>
+          <img src="pics/Proper-05.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Proper fade" onclick="plusSlides(1,'Proper')">
+          <div class="numbertext">5 / 6</div>
+          <img src="pics/Proper-06.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Proper fade" onclick="plusSlides(1,'Proper')">
+          <div class="numbertext">6 / 6</div>
+          <img src="pics/Proper-06.jpg" style="width:100%" alt=''>
+        </div>
+
+
+      </div>
+
+      <div class='slide-title'>Santa Monica Proper</div>
+      <a class="prev" onclick="plusSlides(-1,'Proper')">&#10094;</a>
+      <a class="next" onclick="plusSlides(1,'Proper')">&#10095;</a>
+
+      <br>
+      <div style="text-align:center">
+        <span class="dot Proper" onclick="currentSlide(1,'Proper')"></span>
+        <span class="dot Proper" onclick="currentSlide(2,'Proper')"></span>
+        <span class="dot Proper" onclick="currentSlide(3,'Proper')"></span>
+        <span class="dot Proper" onclick="currentSlide(4,'Proper')"></span>
+        <span class="dot Proper" onclick="currentSlide(5,'Proper')"></span>
+        <span class="dot Proper" onclick="currentSlide(6,'Proper')"></span>
+      </div>
+
+    </div>
+    <a href="#" class="close-icon" onclick="ProperSlideViewer.className = 'slideContainer'"></a>
+  </div>
+
+
+  <div id='UDONGSlideViewer' class='slideContainer'>
+    <div class='slidePanel'>
+      <div class="slideshow-container">
+        <div class="mySlides UDONG fade" onclick="plusSlides(1 , 'UDONG')">
+          <div class="numbertext">1 / 18</div>
+          <img src="pics/UDONG-02.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides UDONG fade" onclick="plusSlides(1 , 'UDONG')">
+          <div class="numbertext">2 / 18</div>
+          <img src="pics/UDONG-03.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides UDONG fade" onclick="plusSlides(1 , 'UDONG')">
+          <div class="numbertext">3 / 18</div>
+          <img src="pics/UDONG-04.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides UDONG fade" onclick="plusSlides(1 , 'UDONG')">
+          <div class="numbertext">4 / 18</div>
+          <img src="pics/UDONG-05.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides UDONG fade" onclick="plusSlides(1 , 'UDONG')">
+          <div class="numbertext">5 / 18</div>
+          <img src="pics/UDONG-06.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides UDONG fade" onclick="plusSlides(1 , 'UDONG')">
+          <div class="numbertext">6 / 18</div>
+          <img src="pics/UDONG-07.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides UDONG fade" onclick="plusSlides(1 , 'UDONG')">
+          <div class="numbertext">7 / 18</div>
+          <img src="pics/UDONG-08.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides UDONG fade" onclick="plusSlides(1 , 'UDONG')">
+          <div class="numbertext">8 / 18</div>
+          <img src="pics/UDONG-09.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides UDONG fade" onclick="plusSlides(1 , 'UDONG')">
+          <div class="numbertext">9 / 18</div>
+          <img src="pics/UDONG-10.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides UDONG fade" onclick="plusSlides(1 , 'UDONG')">
+          <div class="numbertext">10 / 18</div>
+          <img src="pics/UDONG-11.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides UDONG fade" onclick="plusSlides(1 , 'UDONG')">
+          <div class="numbertext">11 / 18</div>
+          <img src="pics/UDONG-12.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides UDONG fade" onclick="plusSlides(1 , 'UDONG')">
+          <div class="numbertext">12 / 18</div>
+          <img src="pics/UDONG-13.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides UDONG fade" onclick="plusSlides(1 , 'UDONG')">
+          <div class="numbertext">13 / 18</div>
+          <img src="pics/UDONG-14.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides UDONG fade" onclick="plusSlides(1 , 'UDONG')">
+          <div class="numbertext">14 / 18</div>
+          <img src="pics/UDONG-15.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides UDONG fade" onclick="plusSlides(1 , 'UDONG')">
+          <div class="numbertext">15 / 18</div>
+          <img src="pics/UDONG-16.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides UDONG fade" onclick="plusSlides(1 , 'UDONG')">
+          <div class="numbertext">16 / 18</div>
+          <img src="pics/UDONG-17.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides UDONG fade" onclick="plusSlides(1 , 'UDONG')">
+          <div class="numbertext">17 / 18</div>
+          <img src="pics/UDONG-18.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides UDONG fade" onclick="plusSlides(1 , 'UDONG')">
+          <div class="numbertext">18 / 18</div>
+          <img src="pics/UDONG-19.jpg" style="width:100%" alt=''>
+        </div>
+      </div>
+      <div class='slide-title'>Udong Mixed Use, Busan S. Korea</div>
+      <a class="prev" onclick="plusSlides(-1 , 'UDONG')">&#10094;</a>
+      <a class="next" onclick="plusSlides(1 , 'UDONG')">&#10095;</a>
+      <br>
+      <div style="text-align:center">
+        <span class="dot UDONG" onclick="currentSlide(1, 'UDONG')"></span>
+        <span class="dot UDONG" onclick="currentSlide(2, 'UDONG')"></span>
+        <span class="dot UDONG" onclick="currentSlide(3, 'UDONG')"></span>
+        <span class="dot UDONG" onclick="currentSlide(4, 'UDONG')"></span>
+        <span class="dot UDONG" onclick="currentSlide(5, 'UDONG')"></span>
+        <span class="dot UDONG" onclick="currentSlide(6, 'UDONG')"></span>
+        <span class="dot UDONG" onclick="currentSlide(7, 'UDONG')"></span>
+        <span class="dot UDONG" onclick="currentSlide(8, 'UDONG')"></span>
+        <span class="dot UDONG" onclick="currentSlide(9, 'UDONG')"></span>
+        <span class="dot UDONG" onclick="currentSlide(10, 'UDONG')"></span>
+        <span class="dot UDONG" onclick="currentSlide(11, 'UDONG')"></span>
+        <span class="dot UDONG" onclick="currentSlide(12, 'UDONG')"></span>
+
+      </div>
+
+    </div>
+    <a href="#" class="close-icon" onclick="UDONGSlideViewer.className = 'slideContainer'"></a>
+  </div>
+
+  <div id='BiscuitSlideViewer' class='slideContainer'>
+    <div class='slidePanel'>
+      <div class="slideshow-container">
+        <div class="mySlides Biscuit fade" onclick="plusSlides(1,'Biscuit')">
+          <div class="numbertext">1 / 3</div>
+          <img src="pics/Biscuit-05.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Biscuit fade" onclick="plusSlides(1,'Biscuit')">
+          <div class="numbertext">2 / 3</div>
+          <img src="pics/Biscuit-04.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Biscuit fade" onclick="plusSlides(1,'Biscuit')">
+          <div class="numbertext">3 / 3</div>
+          <img src="pics/Biscuit-02.jpg" style="width:100%" alt=''>
+        </div>
+
+
+      </div>
+      <div class='slide-title'>Biscuit Lofts, Los Angeles</div>
+      <a class="prev" onclick="plusSlides(-1,'Biscuit')">&#10094;</a>
+      <a class="next" onclick="plusSlides(1,'Biscuit')">&#10095;</a>
+      <br>
+
+      <div style="text-align:center">
+        <span class="dot Biscuit" onclick="currentSlide(1,'Biscuit')"></span>
+        <span class="dot Biscuit" onclick="currentSlide(2,'Biscuit')"></span>
+        <span class="dot Biscuit" onclick="currentSlide(3,'Biscuit')"></span>
+      </div>
+
+    </div>
+    <a href="#" class="close-icon" onclick="BiscuitSlideViewer.className = 'slideContainer'"></a>
+  </div>
+
+  <div id='F21_SCPSlideViewer' class='slideContainer'>
+    <div class='slidePanel'>
+      <div class="slideshow-container">
+        <div class="mySlides F21_SCP fade" onclick="plusSlides(1,'F21_SCP')">
+          <div class="numbertext">1 / 4</div>
+          <img src="pics/F21-SCP-01.png" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides F21_SCP fade" onclick="plusSlides(1,'F21_SCP')">
+          <div class="numbertext">2 / 4</div>
+          <img src="pics/F21-SCP-02.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides F21_SCP fade" onclick="plusSlides(1,'F21_SCP')">
+          <div class="numbertext">3 / 4</div>
+          <img src="pics/F21-SCP-03.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides F21_SCP fade" onclick="plusSlides(1,'F21_SCP')">
+          <div class="numbertext">4 / 4</div>
+          <img src="pics/F21-SCP-06.jpg" style="width:100%" alt=''>
+        </div>
+
+      </div>
+
+      <div class='slide-title'>Forever 21, South Coast Plaza</div>
+      <a class="prev" onclick="plusSlides(-1,'F21_SCP')">&#10094;</a>
+      <a class="next" onclick="plusSlides(1,'F21_SCP')">&#10095;</a>
+      <br>
+
+      <div style="text-align:center">
+        <span class="dot F21_SCP" onclick="currentSlide(1,'F21_SCP')"></span>
+        <span class="dot F21_SCP" onclick="currentSlide(2,'F21_SCP')"></span>
+        <span class="dot F21_SCP" onclick="currentSlide(3,'F21_SCP')"></span>
+        <span class="dot F21_SCP" onclick="currentSlide(4,'F21_SCP')"></span>
+      </div>
+
+    </div>
+    <a href="#" class="close-icon" onclick="F21_SCPSlideViewer.className = 'slideContainer'"></a>
+  </div>
+
+  <div id='Chipotle_SBSlideViewer' class='slideContainer'>
+    <div class='slidePanel'>
+      <div class="slideshow-container">
+
+        <div class="mySlides Chipotle_SB fade" onclick="plusSlides(1,'Chipotle_SB')">
+          <div class="numbertext">1 / 4</div>
+          <img src="pics/Chipotle-SB-01.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Chipotle_SB fade" onclick="plusSlides(1,'Chipotle_SB')">
+          <div class="numbertext">2 / 4</div>
+          <img src="pics/Chipotle-SB-02.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Chipotle_SB fade" onclick="plusSlides(1,'Chipotle_SB')">
+          <div class="numbertext">3 / 4</div>
+          <img src="pics/Chipotle-SB-03.png" style="width:100% ; max-height: 500px; object-fit:contain" alt=''>
+        </div>
+
+        <div class="mySlides Chipotle_SB fade" onclick="plusSlides(1,'Chipotle_SB')">
+          <div class="numbertext">4 / 4</div>
+          <img src="pics/Chipotle-SB.png" alt='' style="width:100% ; max-height: 500px; object-fit:contain">
+        </div>
+
+
+      </div>
+      <div class='slide-title'>Chipotle, Santa Barbara</div>
+      <a class="prev" onclick="plusSlides(-1,'Chipotle_SB')">&#10094;</a>
+      <a class="next" onclick="plusSlides(1,'Chipotle_SB')">&#10095;</a>
+      <br>
+
+      <div style="text-align:center">
+        <span class="dot Chipotle_SB" onclick="currentSlide(1,'Chipotle_SB')"></span>
+        <span class="dot Chipotle_SB" onclick="currentSlide(2,'Chipotle_SB')"></span>
+        <span class="dot Chipotle_SB" onclick="currentSlide(3,'Chipotle_SB')"></span>
+        <span class="dot Chipotle_SB" onclick="currentSlide(4,'Chipotle_SB')"></span>
+      </div>
+
+    </div>
+    <a href="#" class="close-icon" onclick="Chipotle_SBSlideViewer.className = 'slideContainer'"></a>
+  </div>
+
+  <div id='SewoonSlideViewer' class='slideContainer'>
+    <div class='slidePanel'>
+      <div class="slideshow-container">
+        <div class="mySlides Sewoon fade" onclick="plusSlides(1,'Sewoon')">
+          <div class="numbertext">1 / 14</div>
+          <img src="pics/Seewoon.png" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Sewoon fade" onclick="plusSlides(1,'Sewoon')">
+          <div class="numbertext">2 / 14</div>
+          <img src="pics/Sewoon-02.png" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Sewoon fade" onclick="plusSlides(1,'Sewoon')">
+          <div class="numbertext">3 / 14</div>
+          <img src="pics/Sewoon-03.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Sewoon fade" onclick="plusSlides(1,'Sewoon')">
+          <div class="numbertext">4 / 14</div>
+          <img src="pics/Sewoon-04.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Sewoon fade" onclick="plusSlides(1,'Sewoon')">
+          <div class="numbertext">5 / 14</div>
+          <img src="pics/Sewoon-05.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Sewoon fade" onclick="plusSlides(1,'Sewoon')">
+          <div class="numbertext">6 / 14</div>
+          <img src="pics/Sewoon-06.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Sewoon fade" onclick="plusSlides(1,'Sewoon')">
+          <div class="numbertext">7 / 14</div>
+          <img src="pics/Sewoon-07.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Sewoon fade" onclick="plusSlides(1,'Sewoon')">
+          <div class="numbertext">8 / 13</div>
+          <img src="pics/Sewoon-08.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Sewoon fade" onclick="plusSlides(1,'Sewoon')">
+          <div class="numbertext">9 / 14</div>
+          <img src="pics/Sewoon-09.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Sewoon fade" onclick="plusSlides(1,'Sewoon')">
+          <div class="numbertext">10 / 14</div>
+          <img src="pics/Sewoon-10.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Sewoon fade" onclick="plusSlides(1,'Sewoon')">
+          <div class="numbertext">11 / 14</div>
+          <img src="pics/Sewoon-11.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Sewoon fade" onclick="plusSlides(1,'Sewoon')">
+          <div class="numbertext">12 / 14</div>
+          <img src="pics/Sewoon-12.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Sewoon fade" onclick="plusSlides(1,'Sewoon')">
+          <div class="numbertext">13 / 14</div>
+          <img src="pics/Sewoon-13.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Sewoon fade">
+          <div class="numbertext">14 / 14</div>
+          <img src="pics/Sewoon-14.jpg" style="width:100%" alt=''>
+        </div>
+      </div>
+      <div class='slide-title'>Sewoon Towers, Seoul S. Korea</div>
+      <a class="prev" onclick="plusSlides(-1,'Sewoon')">&#10094;</a>
+      <a class="next" onclick="plusSlides(1,'Sewoon')">&#10095;</a>
+      <br>
+
+      <div style="text-align:center">
+        <span class="dot Sewoon" onclick="currentSlide(1,'Sewoon')"></span>
+        <span class="dot Sewoon" onclick="currentSlide(2,'Sewoon')"></span>
+        <span class="dot Sewoon" onclick="currentSlide(3,'Sewoon')"></span>
+        <span class="dot Sewoon" onclick="currentSlide(4,'Sewoon')"></span>
+        <span class="dot Sewoon" onclick="currentSlide(5,'Sewoon')"></span>
+        <span class="dot Sewoon" onclick="currentSlide(6,'Sewoon')"></span>
+        <span class="dot Sewoon" onclick="currentSlide(7,'Sewoon')"></span>
+        <span class="dot Sewoon" onclick="currentSlide(8,'Sewoon')"></span>
+        <span class="dot Sewoon" onclick="currentSlide(9,'Sewoon')"></span>
+        <span class="dot Sewoon" onclick="currentSlide(10,'Sewoon')"></span>
+        <span class="dot Sewoon" onclick="currentSlide(11,'Sewoon')"></span>
+        <span class="dot Sewoon" onclick="currentSlide(12,'Sewoon')"></span>
+        <span class="dot Sewoon" onclick="currentSlide(13,'Sewoon')"></span>
+        <span class="dot Sewoon" onclick="currentSlide(14,'Sewoon')"></span>
+      </div>
+
+    </div>
+    <a href="#" class="close-icon" onclick="SewoonSlideViewer.className = 'slideContainer'"></a>
+  </div>
+
+  <div id='ChipotlePacificSlideViewer' class='slideContainer'>
+    <div class='slidePanel'>
+      <div class="slideshow-container">
+
+        <div class="mySlides ChipotlePacific fade" onclick="plusSlides(1,'ChipotlePacific')">
+          <div class="numbertext">1 / 3</div>
+          <img src="pics/Chipotle-Pacific-01.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides ChipotlePacific fade" onclick="plusSlides(1,'ChipotlePacific')">
+          <div class="numbertext">2 / 3</div>
+          <img src="pics/Chipotle-Pacific-02.png" style="width:100%" alt=''>
+        </div>
+        <div class="mySlides ChipotlePacific fade" onclick="plusSlides(1,'ChipotlePacific')">
+          <div class="numbertext">3 / 3</div>
+          <img src="pics/Chipotle-Pacific-03.png" style="width:100%" alt=''>
+        </div>
+
+
+      </div>
+      <div class='slide-title'>Chipotle, Pacific Beach</div>
+      <a class="prev" onclick="plusSlides(-1,'ChipotlePacific')">&#10094;</a>
+      <a class="next" onclick="plusSlides(1,'ChipotlePacific')">&#10095;</a>
+      <br>
+      <div style="text-align:center">
+        <span class="dot ChipotlePacific" onclick="currentSlide(1,'ChipotlePacific')"></span>
+        <span class="dot ChipotlePacific" onclick="currentSlide(2,'ChipotlePacific')"></span>
+        <span class="dot ChipotlePacific" onclick="currentSlide(3,'ChipotlePacific')"></span>
+      </div>
+
+    </div>
+    <a href="#" class="close-icon" onclick="ChipotlePacificSlideViewer.className = 'slideContainer'"></a>
+  </div>
+
+  <div id='ChipotleBevCenSlideViewer' class='slideContainer'>
+    <div class='slidePanel'>
+      <div class="slideshow-container">
+
+        <div class="mySlides ChipotleBevCen fade" onclick="plusSlides(1,'ChipotleBevCen')">
+          <div class="numbertext">1 / 2</div>
+          <img src="pics/Chipotle-BevCen-01.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides ChipotleBevCen fade" onclick="plusSlides(1,'ChipotleBevCen')">
+          <div class="numbertext">2 / 2</div>
+          <img src="pics/Chipotle-BevCen-02.png" style="width:100%" alt=''>
+        </div>
+
+      </div>
+
+      <div class='slide-title'>Chipotle, Beverly Center</div>
+      <a class="prev" onclick="plusSlides(-1,'ChipotleBevCen')">&#10094;</a>
+      <a class="next" onclick="plusSlides(1,'ChipotleBevCen')">&#10095;</a>
+
+      <br>
+      <div style="text-align:center">
+        <span class="dot ChipotleBevCen" onclick="currentSlide(1,'ChipotleBevCen')"></span>
+        <span class="dot ChipotleBevCen" onclick="currentSlide(2,'ChipotleBevCen')"></span>
+      </div>
+
+    </div>
+    <a href="#" class="close-icon" onclick="ChipotleBevCenSlideViewer.className = 'slideContainer'"></a>
+  </div>
+
+  <div id='ChipotleEncinitasSlideViewer' class='slideContainer'>
+    <div class='slidePanel'>
+      <div class="slideshow-container">
+
+        <div class="mySlides ChipotleEncinitas fade" onclick="plusSlides(1,'ChipotleEncinitas')">
+          <div class="numbertext">1 / 4</div>
+          <img src="pics/Chipotle-Encinitas-01.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides ChipotleEncinitas fade" onclick="plusSlides(1,'ChipotleEncinitas')">
+          <div class="numbertext">2 / 4</div>
+          <img src="pics/Chipotle-Encinitas-02.png" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides ChipotleEncinitas fade" onclick="plusSlides(1,'ChipotleEncinitas')">
+          <div class="numbertext">3 / 4</div>
+          <img src="pics/Chipotle-Encinitas-03.png" alt='' style="width:100% ; max-height: 500px; object-fit:contain">
+        </div>
+
+        <div class="mySlides ChipotleEncinitas fade" onclick="plusSlides(1,'ChipotleEncinitas')">
+          <div class="numbertext">4 / 4</div>
+          <img src="pics/Chipotle-Encinitas.png" style="width:100%" alt=''>
+        </div>
+
+
+      </div>
+      <div class='slide-title'>Chipotle, Encinitas</div>
+      <a class="prev" onclick="plusSlides(-1,'ChipotleEncinitas')">&#10094;</a>
+      <a class="next" onclick="plusSlides(1,'ChipotleEncinitas')">&#10095;</a>
+      <br>
+
+      <div style="text-align:center">
+        <span class="dot ChipotleEncinitas" onclick="currentSlide(1,'ChipotleEncinitas')"></span>
+        <span class="dot ChipotleEncinitas" onclick="currentSlide(2,'ChipotleEncinitas')"></span>
+        <span class="dot ChipotleEncinitas" onclick="currentSlide(3,'ChipotleEncinitas')"></span>
+        <span class="dot ChipotleEncinitas" onclick="currentSlide(4,'ChipotleEncinitas')"></span>
+
+      </div>
+
+    </div>
+    <a href="#" class="close-icon" onclick="ChipotleEncinitasSlideViewer.className = 'slideContainer'"></a>
+  </div>
+
+  <div id='SOMSlideViewer' class='slideContainer'>
+    <div class='slidePanel'>
+      <div class="slideshow-container">
+
+        <div class="mySlides SOM fade" onclick="plusSlides(-1,'SOM')">
+          <div class="numbertext">1 / 7</div>
+          <img src="pics/SOM-08.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides SOM fade" onclick="plusSlides(-1,'SOM')">
+          <div class="numbertext">2 / 7</div>
+          <img src="pics/SOM-02.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides SOM fade" onclick="plusSlides(-1,'SOM')">
+          <div class="numbertext">3 / 7</div>
+          <img src="pics/SOM-03.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides SOM fade" onclick="plusSlides(-1,'SOM')">
+          <div class="numbertext">4 / 7</div>
+          <img src="pics/SOM-04.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides SOM fade" onclick="plusSlides(-1,'SOM')">
+          <div class="numbertext">5 / 7</div>
+          <img src="pics/SOM-05.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides SOM fade" onclick="plusSlides(-1,'SOM')">
+          <div class="numbertext">6 / 7</div>
+          <img src="pics/SOM-06.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides SOM fade" onclick="plusSlides(-1,'SOM')">
+          <div class="numbertext">7 / 7</div>
+          <img src="pics/SOM-07.jpg" style="width:100%" alt=''>
+        </div>
+
+
+      </div>
+      <div class='slide-title'>Sisters of Mercy Addition, Farmington Hills, MI</div>
+      <a class="prev" onclick="plusSlides(-1,'SOM')">&#10094;</a>
+      <a class="next" onclick="plusSlides(1,'SOM')">&#10095;</a>
+      <br>
+
+      <div style="text-align:center">
+        <span class="dot SOM" onclick="currentSlide(1,'SOM')"></span>
+        <span class="dot SOM" onclick="currentSlide(2,'SOM')"></span>
+        <span class="dot SOM" onclick="currentSlide(3,'SOM')"></span>
+        <span class="dot SOM" onclick="currentSlide(4,'SOM')"></span>
+        <span class="dot SOM" onclick="currentSlide(5,'SOM')"></span>
+        <span class="dot SOM" onclick="currentSlide(6,'SOM')"></span>
+        <span class="dot SOM" onclick="currentSlide(7,'SOM')"></span>
+
+      </div>
+
+    </div>
+    <a href="#" class="close-icon" onclick="SOMSlideViewer.className = 'slideContainer'"></a>
+  </div>
+
+  <div id='OlympicSlideViewer' class='slideContainer'>
+    <div class='slidePanel'>
+      <div class="slideshow-container">
+
+        <div class="mySlides Olympic fade" onclick="plusSlides(1,'Olympic')">
+          <div class="numbertext">1 / 4</div>
+          <img src="pics/Olympic-02.jpg" style="width:100%" alt=''>
+          <img src="pics/Olympic-01.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Olympic fade" onclick="plusSlides(1,'Olympic')">
+          <div class="numbertext">2 / 4</div>
+          <img src="pics/Olympic-04.jpg" style="width:100%" alt=''>
+        </div>
+        <div class="mySlides Olympic fade" onclick="plusSlides(1,'Olympic')">
+          <div class="numbertext">2 / 4</div>
+          <img src="pics/OlympicSoto-01.png" style="width:100%" alt=''>
+        </div>
+      </div>
+      <div class='slide-title'>Olympic & Soto Redevelopment, Los Angeles</div>
+      <a class="prev" onclick="plusSlides(-1,'Olympic')">&#10094;</a>
+      <a class="next" onclick="plusSlides(1,'Olympic')">&#10095;</a>
+      <br>
+      <div style="text-align:center">
+        <span class="dot Olympic" onclick="currentSlide(1,'Olympic')"></span>
+        <span class="dot Olympic" onclick="currentSlide(2,'Olympic')"></span>
+        <span class="dot Olympic" onclick="currentSlide(3,'Olympic')"></span>
+      </div>
+
+    </div>
+    <a href="#" class="close-icon" onclick="OlympicSlideViewer.className = 'slideContainer'"></a>
+  </div>
+
+  <div id='SMPSlideViewer' class='slideContainer'>
+    <div class='slidePanel'>
+      <div class="slideshow-container">
+
+        <div class="mySlides SMP fade" onclick="plusSlides(1,'SMP')">
+          <div class="numbertext">1 / 2</div>
+          <img src="pics/SMP-01.png" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides SMP fade" onclick="plusSlides(1,'SMP')">
+          <div class="numbertext">1 / 2</div>
+          <img src="pics/SMP-02.png" style="width:100%" alt=''>
+        </div>
+
+
+      </div>
+      <div class='slide-title'>Santa Monica Place</div>
+      <a class="prev" onclick="plusSlides(-1,'SMP')">&#10094;</a>
+      <a class="next" onclick="plusSlides(1,'SMP')">&#10095;</a>
+      <br>
+      <div style="text-align:center">
+        <span class="dot SMP" onclick="currentSlide(1,'SMP')"></span>
+        <span class="dot SMP" onclick="currentSlide(2,'SMP')"></span>
+      </div>
+
+    </div>
+    <a href="#" class="close-icon" onclick="SMPSlideViewer.className = 'slideContainer'"></a>
+  </div>
+
+  <div id='HopeSlideViewer' class='slideContainer'>
+    <div class='slidePanel'>
+      <div class="slideshow-container">
+
+        <div class="mySlides Hope fade" onclick="plusSlides(1,'Hope')">
+          <div class="numbertext">1 / 13</div>
+          <img src="pics/Hope-01.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Hope fade" onclick="plusSlides(1,'Hope')">
+          <div class="numbertext">2 / 13</div>
+          <img src="pics/Hope-02.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Hope fade" onclick="plusSlides(1,'Hope')">
+          <div class="numbertext">3 / 13</div>
+          <img src="pics/Hope-03.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Hope fade" onclick="plusSlides(1,'Hope')">
+          <div class="numbertext">4 / 13</div>
+          <img src="pics/Hope-04.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Hope fade" onclick="plusSlides(1,'Hope')">
+          <div class="numbertext">5 / 13</div>
+          <img src="pics/Hope-06.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Hope fade" onclick="plusSlides(1,'Hope')">
+          <div class="numbertext">6 / 4</div>
+          <img src="pics/Hope-07.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Hope fade" onclick="plusSlides(1,'Hope')">
+          <div class="numbertext">7 / 4</div>
+          <img src="pics/Hope-08.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Hope fade" onclick="plusSlides(1,'Hope')">
+          <div class="numbertext">8 / 13</div>
+          <img src="pics/Hope-09.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Hope fade" onclick="plusSlides(1,'Hope')">
+          <div class="numbertext">9 / 13</div>
+          <img src="pics/Hope-10.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Hope fade" onclick="plusSlides(1,'Hope')">
+          <div class="numbertext">10 / 13</div>
+          <img src="pics/Hope-11.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Hope fade" onclick="plusSlides(1,'Hope')">
+          <div class="numbertext">11 / 13</div>
+          <img src="pics/Hope-12.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Hope fade" onclick="plusSlides(1,'Hope')">
+          <div class="numbertext">12 / 13</div>
+          <img src="pics/Hope-13.jpg" style="width:100%" alt=''>
+        </div>
+
+
+        <div class="mySlides Hope fade" onclick="plusSlides(1,'Hope')">
+          <div class="numbertext">13 / 13</div>
+          <img src="pics/Hope-14.jpg" style="width:100%" alt=''>
+        </div>
+      </div>
+      <div class='slide-title'>Hope Street Lofts, Los Angeles</div>
+      <a class="prev" onclick="plusSlides(-1,'Hope')">&#10094;</a>
+      <a class="next" onclick="plusSlides(1,'Hope')">&#10095;</a>
+      <br>
+
+      <div style="text-align:center">
+        <span class="dot Hope" onclick="currentSlide(1,'Hope')"></span>
+        <span class="dot Hope" onclick="currentSlide(2,'Hope')"></span>
+        <span class="dot Hope" onclick="currentSlide(3,'Hope')"></span>
+        <span class="dot Hope" onclick="currentSlide(4,'Hope')"></span>
+        <span class="dot Hope" onclick="currentSlide(5,'Hope')"></span>
+        <span class="dot Hope" onclick="currentSlide(6,'Hope')"></span>
+        <span class="dot Hope" onclick="currentSlide(7,'Hope')"></span>
+        <span class="dot Hope" onclick="currentSlide(8,'Hope')"></span>
+        <span class="dot Hope" onclick="currentSlide(9,'Hope')"></span>
+        <span class="dot Hope" onclick="currentSlide(10,'Hope')"></span>
+        <span class="dot Hope" onclick="currentSlide(11,'Hope')"></span>
+        <span class="dot Hope" onclick="currentSlide(12,'Hope')"></span>
+        <span class="dot Hope" onclick="currentSlide(13,'Hope')"></span>
+      </div>
+
+    </div>
+    <a href="#" class="close-icon" onclick="HopeSlideViewer.className = 'slideContainer'"></a>
+  </div>
+
+  <div id='Chipotle_EncinoSlideViewer' class='slideContainer'>
+    <div class='slidePanel'>
+      <div class="slideshow-container">
+
+        <div class="mySlides Chipotle_Encino fade" onclick="plusSlides(1,'Chipotle_Encino')">
+          <div class="numbertext">1 / 3</div>
+
+          <img src="pics/Chipotle-Encino-05.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Chipotle_Encino fade" onclick="plusSlides(1,'Chipotle_Encino')">
+          <div class="numbertext">2 / 3</div>
+          <img src="pics/Chipotle-Encino-01.png" style="width:100%" alt=''>
+          <img src="pics/Chipotle-Encino-02.png" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Chipotle_Encino fade" onclick="plusSlides(1,'Chipotle_Encino')">
+          <div class="numbertext">3 / 3</div>
+          <img src="pics/Chipotle-Encino-06.png" style="width:100%" alt=''>
+        </div>
+
+      </div>
+      <div class='slide-title'>Chipotle, Encino</div>
+      <a class="prev" onclick="plusSlides(-1,'Chipotle_Encino')">&#10094;</a>
+      <a class="next" onclick="plusSlides(1,'Chipotle_Encino')">&#10095;</a>
+      <br>
+
+      <div style="text-align:center">
+        <span class="dot Chipotle_Encino" onclick="currentSlide(1,'Chipotle_Encino')"></span>
+        <span class="dot Chipotle_Encino" onclick="currentSlide(2,'Chipotle_Encino')"></span>
+        <span class="dot Chipotle_Encino" onclick="currentSlide(3,'Chipotle_Encino')"></span>
+      </div>
+
+    </div>
+    <a href="#" class="close-icon" onclick="Chipotle_EncinoSlideViewer.className = 'slideContainer'"></a>
+  </div>
+
+  <div id='BeachHouseSlideViewer' class='slideContainer'>
+    <div class='slidePanel'>
+      <div class="slideshow-container">
+
+        <div class="mySlides BeachHouse fade" onclick="plusSlides(1,'BeachHouse')">
+          <div class="numbertext">1 / 5</div>
+          <img src="pics/BeachHouse-03.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides BeachHouse fade" onclick="plusSlides(1,'BeachHouse')">
+          <div class="numbertext">2 / 5</div>
+          <img src="pics/BeachHouse-02.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides BeachHouse fade" onclick="plusSlides(1,'BeachHouse')">
+          <div class="numbertext">3 / 5</div>
+          <img src="pics/BeachHouse-05.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides BeachHouse fade" onclick="plusSlides(1,'BeachHouse')">
+          <div class="numbertext">4 / 5</div>
+          <img src="pics/BeachHouse-06.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides BeachHouse fade" onclick="plusSlides(1,'BeachHouse')">
+          <div class="numbertext">5 / 5</div>
+          <img src="pics/BeachHouse-07.jpg" style="width:100%" alt=''>
+        </div>
+
+
+      </div>
+      <div class='slide-title'>Private Residence, Seal Beach CA</div>
+      <a class="prev" onclick="plusSlides(-1,'BeachHouse')">&#10094;</a>
+      <a class="next" onclick="plusSlides(1,'BeachHouse')">&#10095;</a>
+      <br>
+
+      <div style="text-align:center">
+        <span class="dot BeachHouse" onclick="currentSlide(1,'BeachHouse')"></span>
+        <span class="dot BeachHouse" onclick="currentSlide(2,'BeachHouse')"></span>
+        <span class="dot BeachHouse" onclick="currentSlide(3,'BeachHouse')"></span>
+        <span class="dot BeachHouse" onclick="currentSlide(4,'BeachHouse')"></span>
+        <span class="dot BeachHouse" onclick="currentSlide(5,'BeachHouse')"></span>
+      </div>
+
+    </div>
+    <a href="#" class="close-icon" onclick="BeachHouseSlideViewer.className = 'slideContainer'"></a>
+  </div>
+
+  <div id='UniqloSlideViewer' class='slideContainer'>
+    <div class='slidePanel'>
+      <div class="slideshow-container">
+
+        <div class="mySlides Uniqlo fade" onclick="plusSlides(1,'Uniqlo')">
+          <div class="numbertext">1 / 3</div>
+          <img src="pics/Uniqlo-07.png" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Uniqlo fade" onclick="plusSlides(1,'Uniqlo')">
+          <div class="numbertext">2 / 3</div>
+          <img src="pics/Uniqlo-03.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Uniqlo fade" onclick="plusSlides(1,'Uniqlo')">
+          <div class="numbertext">3 / 3</div>
+          <img src="pics/Uniqlo-02.jpg" style="width:100%" alt=''>
+        </div>
+
+
+      </div>
+      <div class='slide-title'>Uniqlo, Chicago</div>
+      <a class="prev" onclick="plusSlides(-1,'Uniqlo')">&#10094;</a>
+      <a class="next" onclick="plusSlides(1,'Uniqlo')">&#10095;</a>
+      <br>
+
+      <div style="text-align:center">
+        <span class="dot Uniqlo" onclick="currentSlide(1,'Uniqlo')"></span>
+        <span class="dot Uniqlo" onclick="currentSlide(2,'Uniqlo')"></span>
+        <span class="dot Uniqlo" onclick="currentSlide(3,'Uniqlo')"></span>
+      </div>
+
+    </div>
+    <a href="#" class="close-icon" onclick="UniqloSlideViewer.className = 'slideContainer'"></a>
+  </div>
+
+  <div id='Chipotle_HillcrestSlideViewer' class='slideContainer'>
+    <div class='slidePanel'>
+      <div class="slideshow-container">
+
+        <div class="mySlides Chipotle_Hillcrest fade" onclick="plusSlides(1,'Chipotle_Hillcrest')">
+          <div class="numbertext">1 / 4</div>
+          <img src="pics/Chipotle-Hillcrest-01.png" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Chipotle_Hillcrest fade" onclick="plusSlides(1,'Chipotle_Hillcrest')">
+          <div class="numbertext">2 / 4</div>
+          <img src="pics/Chipotle-Hillcrest-02.png" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Chipotle_Hillcrest fade" onclick="plusSlides(1,'Chipotle_Hillcrest')">
+          <div class="numbertext">3 / 4</div>
+          <img src="pics/Chipotle-Hillcrest-03.png" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Chipotle_Hillcrest fade" onclick="plusSlides(1,'Chipotle_Hillcrest')">
+          <div class="numbertext">4 / 4</div>
+          <img src="pics/Chipotle-Hillcrest-04.png" style="width:100%" alt=''>
+        </div>
+
+
+      </div>
+      <div class='slide-title'>Chipotle, Hillcrest</div>
+      <a class="prev" onclick="plusSlides(-1,'Chipotle_Hillcrest')">&#10094;</a>
+      <a class="next" onclick="plusSlides(1,'Chipotle_Hillcrest')">&#10095;</a>
+      <br>
+
+      <div style="text-align:center">
+        <span class="dot Chipotle_Hillcrest" onclick="currentSlide(1,'Chipotle_Hillcrest')"></span>
+        <span class="dot Chipotle_Hillcrest" onclick="currentSlide(2,'Chipotle_Hillcrest')"></span>
+        <span class="dot Chipotle_Hillcrest" onclick="currentSlide(3,'Chipotle_Hillcrest')"></span>
+        <span class="dot Chipotle_Hillcrest" onclick="currentSlide(4,'Chipotle_Hillcrest')"></span>
+      </div>
+
+    </div>
+    <a href="#" class="close-icon" onclick="Chipotle_HillcrestSlideViewer.className = 'slideContainer'"></a>
+  </div>
+
+  <script>
+    let slideIndex = 1;
+
+    function plusSlides(n, key) {
+      showSlides(slideIndex += n, key);
+    }
+
+    function currentSlide(n, key) {
+      showSlides(slideIndex = n, key);
+    }
+
+    function showSlides(n, key) {
+      slideIndex = n
+      let i;
+      const slides = document.getElementsByClassName("mySlides " + key); // document.getElementsByClassName('dot GPM')
+      const dots = document.getElementsByClassName("dot " + key);
+      if (n > slides.length) {
+        slideIndex = 1
+      }
+      if (n < 1) {
+        slideIndex = slides.length
+      }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+
+      if (dots.length) dots[slideIndex - 1].className += " active";
+    }
+  </script>
 
   <script type="module" src="main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.js"></script>
