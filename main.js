@@ -724,6 +724,6 @@ function getContainerLeft (container){
   return container.getBoundingClientRect().left
 }
 
+// log(document.getElementsByClassName('mySlides').length)
 
-
-
+// const slides = document.getElementsByClassName('mySlides')
