@@ -4,7 +4,7 @@
 <head>
 
   <link rel="shortcut icon" href="#">
-
+  <!-- <meta name="viewport"  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -1283,12 +1283,12 @@
 
         <div class="mySlides Chipotle_SB fade" onclick="plusSlides(1,'Chipotle_SB')">
           <div class="numbertext">1 / 4</div>
-          <img src="pics/chipotle-SB-01.jpg" style="width:100%" alt=''>
+          <img src="pics/chipotle-SB-01.JPG" style="width:100%" alt=''>
         </div>
 
         <div class="mySlides Chipotle_SB fade" onclick="plusSlides(1,'Chipotle_SB')">
           <div class="numbertext">2 / 4</div>
-          <img src="pics/chipotle-SB-02.jpg" style="width:100%" alt=''>
+          <img src="pics/chipotle-SB-02.JPG" style="width:100%" alt=''>
         </div>
 
         <div class="mySlides Chipotle_SB fade" onclick="plusSlides(1,'Chipotle_SB')">
@@ -1633,7 +1633,6 @@
           <img src="pics/SMP-02.png" style="width:100%" alt=''>
         </div>
 
-
       </div>
       <div class='slide-title'>Santa Monica Place</div>
       <a class="prev" onclick="plusSlides(-1,'SMP')">&#10094;</a>
@@ -1847,7 +1846,6 @@
           <img src="pics/Uniqlo-02.jpg" style="width:100%" alt=''>
         </div>
 
-
       </div>
       <div class='slide-title'>Uniqlo, Chicago</div>
       <a class="prev" onclick="plusSlides(-1,'Uniqlo')">&#10094;</a>
@@ -1888,7 +1886,6 @@
           <img src="pics/Chipotle-Hillcrest-04.png" style="width:100%" alt=''>
         </div>
 
-
       </div>
       <div class='slide-title'>Chipotle, Hillcrest</div>
       <a class="prev" onclick="plusSlides(-1,'Chipotle_Hillcrest')">&#10094;</a>
@@ -1914,11 +1911,11 @@
       showSlides(slideIndex += n, key);
     }
 
-    function currentSlide(n, key) {
+    function currentSlide(n, key) { 
       showSlides(slideIndex = n, key);
     }
 
-    function showSlides(n, key) {
+    function showSlides(n, key) { 
       slideIndex = n
       let i;
       const slides = document.getElementsByClassName("mySlides " + key); // document.getElementsByClassName('dot GPM')
@@ -1936,7 +1933,6 @@
         dots[i].className = dots[i].className.replace(" active", "");
       }
       slides[slideIndex - 1].style.display = "block";
-
       if (dots.length) dots[slideIndex - 1].className += " active";
     }
   </script>

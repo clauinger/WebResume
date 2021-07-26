@@ -506,85 +506,17 @@ function setupPortfolioScrollEvents(portfolio) {
 
 }
 
-let portfolioClassNameArchive = null
-// techPortfolio.addEventListener('touchstart', (e)=>{ 
-//   if(e.target.className === 'p5Canvas'){ 
-//     portfolioClassNameArchive = techPortfolio.className
-//     techPortfolio.className = portfolioClassNameArchive + ' stop-scrolling'
-//   }
-// })
-
 techPortfolio.addEventListener('touchmove', function(e) {
   if(e.target.className === 'p5Canvas'){
     e.preventDefault();
   }
 }, false);
 
-setupPortfolioScrollEvents(archPortfolio)//, ['portFolioGridContainer', 'cellItem'])
+setupPortfolioScrollEvents(archPortfolio)
 
-setupPortfolioScrollEvents(techPortfolio)//, ['tableTitle', 'table-cell-container', 'portFolioFlexContainer', 'expandable-table-cell-container'])
+setupPortfolioScrollEvents(techPortfolio)
 
 
-// function setupPageScrollEvents(pageContainer, classNameList = []) {
-//   pageContainer.addEventListener('wheel', (el) => {
-//     const topScroll = Math.max(Math.min(document.documentElement.scrollTop, 75), 0)
-//     //** SET TOP SCROLL */
-//     document.documentElement.style.setProperty('--user-scroll-distance', topScroll + 'px')
-//   })
-
-//   pageContainer.addEventListener('touchmove', (el) => {
-//     const topScroll = Math.max(Math.min(document.documentElement.scrollTop, 75), 0)
-//     //** SET TOP SCROLL */
-//     document.documentElement.style.setProperty('--user-scroll-distance', topScroll + 'px')
-//     document.body.className = 'disable-selection' 
-//   })
-//   pageContainer.addEventListener('touchend', (el) => {
-//     document.body.className = ''
-//   })
-//   pageContainer.addEventListener('mousemove', (e) => {
-//     const topScroll = Math.max(Math.min(document.documentElement.scrollTop, 75), 0)
-//     //** SET TOP SCROLL */
-//     document.documentElement.style.setProperty('--user-scroll-distance', topScroll + 'px')
-//     if (!detectLeftButton(e)) {
-//       mousedownY = null
-//       document.body.className = '' 
-//     }
-//     if (!mousedownY) return
-//     const dragTravelDist = e.screenY - mousedownY
-//     const newscrollTop = Math.max(documentScrollTopAtMouseDown - dragTravelDist, 0)
-//     document.documentElement.scrollTop = newscrollTop
-//   })
-
-//   let mousedownY = null
-//   let documentScrollTopAtMouseDown = null
-//   pageContainer.addEventListener('mousedown', (e) => {
-//     mousedownY = null
-//     const className = e.target.className.split(' ')[0]
-//     if (className === 'leftSideBar') {
-//       mousedownY = e.screenY
-//       documentScrollTopAtMouseDown = document.documentElement.scrollTop
-//       document.body.className = 'disable-selection'
-//     }
-//   })
-
-//   pageContainer.addEventListener('touchstart', (e) => { log('touchstart')
-//     mousedownY = null
-//     const className = e.target.className.split(' ')[0]
-//     if (className === 'leftSideBar') {
-//       mousedownY = e.screenY
-//       documentScrollTopAtMouseDown = document.documentElement.scrollTop
-//       document.body.className = 'disable-selection'
-      
-//     }
-//   })
-
-//   pageContainer.addEventListener('mouseup', (e) => {
-//     log('mouseup')
-//     document.body.className = ''
-//     mousedownY = null
-//   })
-
-// }
 
 function resetScroll(){
   archPortfolio.scrollTop = 0
@@ -617,6 +549,10 @@ UDONGCell.addEventListener('click',()=>{
 SewoonCell.addEventListener('click',()=>{ 
   showSlides(1, "Sewoon")
   SewoonSlideViewer.className =  'slideContainer show' 
+
+  const slidePanel= SewoonSlideViewer.children[0]
+  const box = slidePanel.getBoundingClientRect()
+  // log(box)
 })
 
 MAPCell.addEventListener('click',()=>{ 
@@ -696,6 +632,7 @@ OlympicCell.addEventListener('click',()=>{
 
 SMPCell.addEventListener('click',()=>{ 
   showSlides(1, "SMP")
+
   SMPSlideViewer.className =  'slideContainer show' 
 })
 
@@ -724,6 +661,46 @@ function getContainerLeft (container){
   return container.getBoundingClientRect().left
 }
 
-// log(document.getElementsByClassName('mySlides').length)
 
-// const slides = document.getElementsByClassName('mySlides')
+// *** TOUCH SWIPE DETECTION AND FUNCTIONALITY**** ///
+document.addEventListener('touchstart', handleTouchStart, false);        
+document.addEventListener('touchmove', handleTouchMove, false);
+document.addEventListener('touchend', handleTouchEnd, false);
+
+let xDown = null;                                                        
+let yDown = null;
+let yDiff = null
+
+function getTouches(evt) {
+  return evt.touches ||             // browser API
+         evt.originalEvent.touches; // jQuery
+}                                                     
+
+function handleTouchStart(e) {
+    const firstTouch = getTouches(e)[0];                                      
+    xDown = firstTouch.clientX;                                      
+    yDown = firstTouch.clientY;                                      
+}      
+
+function handleTouchEnd(e) { 
+  document.documentElement.style.setProperty('--slide-down-offset', 0 + 'px')
+  if(yDiff > 100){
+    const parent = e.target.parentElement
+    const grandParent = parent.parentElement
+    const greatGrandParent = grandParent.parentElement
+    greatGrandParent.className = 'slideContainer hide'
+  }                             
+  xDown = null
+  yDown = null
+  yDiff = null
+  document.documentElement.style.setProperty('--slide-down-offset', 0 + 'px')
+}  
+
+function handleTouchMove(e) {
+  if(!yDown) return
+  if(e.target.className.split(' ')[0] !== 'mySlides') return
+  if ( ! xDown || ! yDown )return
+  const yUp = e.touches[0].clientY;
+  yDiff = yUp - yDown;
+  document.documentElement.style.setProperty('--slide-down-offset', yDiff + 'px')
+}

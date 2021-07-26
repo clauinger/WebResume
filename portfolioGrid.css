@@ -5,8 +5,8 @@
   --ht-unit-550px: calc(550px / 12);
   --column-count: 4;
   --cell-width: calc(calc(var(--portfolio-Grid-Container-width) - var(--grid-gap) - calc(calc(var(--column-count) - 1)) * var(--grid-gap)) / var(--column-count));
-  --grid-gap: 5px;
-  --grid-gap-horizontal: 10px;
+  --grid-gap: 10px;
+  --grid-gap-horizontal: 15px;
 }
 
 .ht1 {
@@ -81,16 +81,16 @@
   min-height: 100%;
 }
 
-
-
 .project-info{
-  width: calc( var(--cell-width) - 1px);
+  width: calc( var(--cell-width) + 1px);
+  /* width : var(--cell-width); */
   position: absolute; 
   position: fixed; 
   bottom: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  opacity: .7;
 }
 
 .cellItem:hover {
@@ -119,9 +119,7 @@
     height: var(--portfolio-Grid-Container-height)
   }
 
-  .cellItem>div {
-    /* font-size: smaller; */
-  }
+
   .ht2>img {
     height: 69px;
   }
@@ -148,23 +146,16 @@
 
 @media (max-width: 650px) {
   :root {
-    --portfolio-Grid-Container-height: calc(var(--portfolio-Grid-Container-width) * 2.66);
-    --portfolio-Grid-Container-height: calc(var(--portfolio-Grid-Container-width) * 3);
+    /* --portfolio-Grid-Container-height: calc(var(--portfolio-Grid-Container-width) * 2.66);
+    --portfolio-Grid-Container-height: calc(var(--portfolio-Grid-Container-width) * 3); */
+    --portfolio-Grid-Container-height: calc(var(--portfolio-Grid-Container-width) * 4);
     --column-count: 2;
   }
   .portFolioGridContainer {
     grid-template-columns: repeat(2, 1fr);
-    height: var(--portfolio-Grid-Container-height)
-  }
-
-  .cellItem>div {
-    font-size: large;
-  }
-  .ht3>img {
-    min-height: 160px;
+    height: var(--portfolio-Grid-Container-height);
   }
 }
-
 
 
 @media (max-width: 500px) {
@@ -181,11 +172,13 @@
     margin-left : auto;
     margin-right : auto;
   }
- 
+  .cellItem>div {
+    font-size: larger;
+  }
   .cellItem {
     width: 200px;
     margin-bottom: 5px;
-    margin-top: 10px;
+    margin-top: 20px;
   }
   .cellItem.ht1{
     min-height: 70px;
@@ -256,8 +249,6 @@
 }
 
 .slideViewer > div {
-  background: red;
   margin-top: -10px;
-
   text-align: center;
 }
