@@ -647,6 +647,16 @@ ProperCell.addEventListener('click',()=>{
   ProperSlideViewer.className =  'slideContainer show' 
 })
 
+ChipotleCell.addEventListener('click',()=>{ 
+  showSlides(1, "Chipotle")
+  ChipotleSlideViewer.className =  'slideContainer show' 
+})
+
+OfficeCell.addEventListener('click',()=>{ 
+  showSlides(1, "Office")
+  OfficeSlideViewer.className =  'slideContainer show' 
+})
+
 const slideContainers = document.getElementsByClassName('slideContainer')
 for (let i = 0; i < slideContainers.length; i++) {
   const element = slideContainers[i];
@@ -671,7 +681,7 @@ let xDown = null;
 let yDown = null;
 let yDiff = null
 
-function getTouches(evt) {
+function getTouches(evt) { log(999)
   return evt.touches ||             // browser API
          evt.originalEvent.touches; // jQuery
 }                                                     

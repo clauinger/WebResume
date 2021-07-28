@@ -5,7 +5,15 @@
   --min-slide-height : 400px;
 }
 
-.mySlides {display: none}
+.mySlides {
+  display: none;
+  /* position: absolute; */
+  position: fixed;
+  position: absolute;
+  /* bottom: -120px;
+  top:0; */
+}
+
 img {vertical-align: middle;}
 
 /* Slideshow container */
@@ -64,10 +72,18 @@ img {vertical-align: middle;}
   position: absolute;
   bottom: -80px;
   left: calc(50% - 20px);
-
-
 }
 
+.page-count{
+  position: absolute;
+  bottom: 5px;
+  width: calc(100% - 20px);
+  font-size: 9px;
+  text-align: center;
+  user-select: none;
+  pointer-events: none;
+  /* background: blue; */
+}
 /* The dots/bullets/indicators */
 .dot {
 
@@ -80,6 +96,16 @@ img {vertical-align: middle;}
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
+}
+
+.dot-container {
+  text-align:center; 
+  /* background:red; */
+  position : absolute;
+  bottom: 12px;
+  left:0;
+  width : 100%;
+  /* pointer-events: none; */
 }
 
 .active, .dot:hover {
@@ -120,7 +146,8 @@ img {vertical-align: middle;}
   user-select: none;
   /* z-index: 11; */
   position: fixed;
-  bottom: calc(20px - var(--slide-down-offset))   ;
+  bottom: calc(20px - var(--slide-down-offset));
+
   left: 50%;
   transform: translate(-50%);
   background: white;
@@ -129,6 +156,7 @@ img {vertical-align: middle;}
   width : calc(100vw - 60px);
   max-width: var(--max-slide-width);
   min-height: var(--min-slide-height);
+  height: calc(100vh - 150px);
 
   overflow: hidden;
   padding: 10px;
@@ -182,8 +210,8 @@ img {vertical-align: middle;}
 
 .slide-title{
   /* /* position: absolute; */
-  /* position: absolute; */
-  bottom: 0; 
+  position: absolute;
+  bottom: 50px; 
   text-align: center;
   height:1.5em;
   background: hsl(36, 20%, 95%);
