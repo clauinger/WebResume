@@ -6,13 +6,27 @@
 }
 
 .mySlides {
+  /* border: solid red; */
   display: none;
   /* position: absolute; */
   position: fixed;
   position: absolute;
+  width: 100%;
+  max-height: 300px;
+  /* margin-left; */
+  /* align-content: center; */
   /* bottom: -120px;
   top:0; */
 }
+.mySlides > img{
+  /* max-height: 500px;
+  display:block;
+  margin:auto; */
+  /* margin-left: 300px; */
+  vertical-align: middle;
+
+}
+
 
 img {vertical-align: middle;}
 

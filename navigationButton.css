@@ -81,7 +81,7 @@
   width: calc( var(--left-tile-width) + calc(var(--navigation-button-offset) * -1 - 1px))  ;
   width: var(--left-tile-width) ;
   top: -3px;
-  border: solid 1px #0c3545;
+  border: solid 1px #0c35455c;
   /* border: solid 2px #ffffff; */
   z-index: 0;
   animation-name: animateLabelFadeIn;

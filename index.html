@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="portfolioTable.css">
   <link rel="stylesheet" href="navigationButton.css">
   <link rel="stylesheet" href="slideViewer.css">
+  <link rel="stylesheet" href="splashDisplay.css">
 
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Poiret+One&display=swap"
@@ -28,7 +29,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap" rel="stylesheet">
 
-<!-- 
+  <!-- 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet"> -->
 
@@ -55,14 +56,45 @@
 
   <div id='horizontalLine' class='splashLine frontPageElement'></div>
   <div id='verticalLine' class='splashLine frontPageElement'></div>
-  <div id='lowerLeftTile' class='frontPageElement show'></div>
+  <div id='bottomLeftTile' class='frontPageElement show'></div>
 
   <div id='backgroundImageContainer' class='frontPage'>
     <img src="pics/chair3.PNG" alt="">
   </div>
   <div id='bottomRightTile' class='frontPageElement'>
 
-    <div id='mechanizedInkDisplayScreen'></div>
+    <div id='archSplashContainer' class='splashSubjectContainer'>
+      <div class='center'>
+        <h3 class='splashHeading'> Architectural Design</h3>
+      </div>
+      <div class='subject-display'>
+        <img class='background-image' src="pics/sky-01.jpg" alt="">
+        <img id='backdrop' class='background-image-2' src="pics/backdrop-03.png" alt="">
+        <img id='pilotHouseImage'   src="pics/pilotHouse-01.png" alt="">
+      </div>
+      <!-- <p class='description'> Pilot House Concept </p> -->
+    </div>
+
+    <div id='techSplashContainer' class='splashSubjectContainer'>
+      <div class='center'>
+        <h3 class='splashHeading'> Software Design</h3>
+      </div>
+      <div id='mechanizedInkDisplayScreen'> </div>
+      <p class='description'>Mechanized Ink: A new vector drawing paradigm </p>
+    </div>
+
+    <div id='furnitureSplashContainer' class='splashSubjectContainer'>
+      <div class='center'>
+        <h3 class='splashHeading'> Furniture Design</h3>
+      </div>
+      <div class='subject-display'>
+        <img class='background-image' src="pics/sand-01.png" alt="" style='opacity: .3 ;'>
+        <!-- <img id = 'chairImage'  src="pics/chair-03.jpg" alt=""> -->
+        <img id = 'chairImage'  src="pics/F-01.jpg" alt="">
+      </div>
+      <p id = 'furnitureLabel' class='description'> Stack Chair Concept </p>
+    </div>
+
   </div>
 
   <div id='archPortfolio' class='portfolioWindow frontPageElement hide'>
@@ -100,7 +132,7 @@
       </div>
 
       <div id='ProperCell' class="cellItem ht2">
-        <img src="pics/proper-01.png" alt="" class='portfolio-image'>
+        <img src="pics/proper-09.jpg" alt="" class='portfolio-image'>
         <div class='project-info'>
           Santa Monica Proper
         </div>
@@ -245,8 +277,6 @@
           <p>Machanized Ink is what I call an interface for users to create, edit, modify vector graphics with a
             pointing-device centric aproach.</p>
           <div class='textBlock'>
-
-            <!-- <div ></div> -->
             <p class='table-text'>
               <div class='drawing' id='JSDraw_01'> </div>
 
@@ -554,7 +584,7 @@
 
         <li class='listItem'>
           <u> <i>Chipotle Restaurants: </i> </u> provided various services, e.g. schematic designs and/or directed CD
-          production & construction admin for 35 restaurants in six states
+          production & construction admin for 25 restaurants in five states
         </li>
 
         <li class='listItem'>
@@ -600,7 +630,7 @@
     </div>
     <div class='cell rightMargin'>
       <p id='idList' class='textContent'>
-        BS in Architecture, 1997, Lawrence Technical University, Southfield, Michigan
+        BS in Architecture, 1996, Lawrence Technical University, Southfield, Michigan
       </p>
     </div>
 
@@ -623,13 +653,19 @@
       <div style='position: relative;'>
         <img id='portfolioBackground' src="pics/Seewoon.png" alt="">
         <ul class='portfolioList' style='padding-top: 15px; '>
-          <li> <a href="https://tinyurl.com/yk489mta" onclick="return confirm('Open Sewoon Towers Presentation')">Sewoon
-              Towers </a> </li>
+          <!-- <li> <a href="https://tinyurl.com/yk489mta" onclick="return confirm('Open Sewoon Towers Presentation')">Sewoon
+              Towers </a> </li> -->
+
+          <li> <a href="https://clauinger.github.io/WebResume/"
+              onclick="return confirm('Open Sewoon Towers Presentation')">
+              Full Portfolio </a> </li>
+
+
           <li> <a href="https://tinyurl.com/y74994er"
               onclick="return confirm('Open Grosse Point United Methodest Church Presentation')">Grosse Pointe United
               Methodest Church</a> </li>
-          <li> <a href="https://tinyurl.com/52mjk7w"
-              onclick="return confirm('Open U-Dong Mixed Use Presentation')">U-Dong Mixed Use </a> </li>
+          <!-- <li> <a href="https://tinyurl.com/52mjk7w"
+              onclick="return confirm('Open U-Dong Mixed Use Presentation')">U-Dong Mixed Use </a> </li> -->
           <li> <a href="https://tinyurl.com/93dtsrue" onclick="return confirm('Open Chipotle Portfolio')">Chipotle</a>
           </li>
           <li> <a href="https://tinyurl.com/hus2b29h" onclick="return confirm('Open Various Project Portfolio')">Various
@@ -725,7 +761,7 @@
       <div id='constructionShadowEffect' class='shadowEffect' hidden></div>
       <div class='employer'>
         <p class='employerName'>Concrete Impressions Construction</p>
-        <p class='jobTitle'>Carpenter/Apprentice <br> 06/89 to 01/94</p>
+        <p class='jobTitle'>Carpenter/Apprentice <br> 06/86 to 01/94</p>
       </div>
       <ul class='role'>
         <li> Wood & metal framing </li>
@@ -830,7 +866,7 @@
         </div>
       </div>
       <div class='slide-title'>St Mary Magdalene, Pleasant Ridge MI</div>
-      <div class = 'dot-container' >
+      <div class='dot-container'>
         <span class="dot magdalen" onclick="currentSlide(1,'magdalen')"></span>
         <span class="dot magdalen" onclick="currentSlide(2,'magdalen')"></span>
         <span class="dot magdalen" onclick="currentSlide(3,'magdalen')"></span>
@@ -838,7 +874,7 @@
 
       <a class="prev" onclick="plusSlides(-1,'magdalen')">&#10094;</a>
       <a class="next" onclick="plusSlides(1,'magdalen')">&#10095;</a>
-      <div class = 'page-count'>1 / 1</div>
+      <div class='page-count'>1 / 1</div>
     </div>
   </div>
 
@@ -853,13 +889,13 @@
         </div>
       </div>
       <div class='slide-title'>Michigan Air Products, Troy MI</div>
-      <div class = 'dot-container'>
+      <div class='dot-container'>
         <span class="dot MAP" onclick="currentSlide(1,'MAP')"></span>
         <span class="dot MAP" onclick="currentSlide(2,'MAP')"></span>
       </div>
       <a class="prev" onclick="plusSlides(-1,'MAP')">&#10094;</a>
       <a class="next" onclick="plusSlides(1,'MAP')">&#10095;</a>
-      <div class = 'page-count'>1 / 1</div>
+      <div class='page-count'>1 / 1</div>
     </div>
     <a href="#" class="close-icon" onclick="MAPSlideViewer.className = 'slideContainer'"></a>
   </div>
@@ -877,13 +913,13 @@
         </div>
       </div>
       <div class='slide-title'>Forever 21, Royal Hawaiian Center</div>
-      <div class = 'dot-container'>
+      <div class='dot-container'>
         <span class="dot F21_Hawaii" onclick="currentSlide(1,'F21_Hawaii')"></span>
         <span class="dot F21_Hawaii" onclick="currentSlide(2,'F21_Hawaii')"></span>
       </div>
       <a class="prev" onclick="plusSlides(-1,'F21_Hawaii')">&#10094;</a>
       <a class="next" onclick="plusSlides(1,'F21_Hawaii')">&#10095;</a>
-      <div class = 'page-count'>1 / 1</div>
+      <div class='page-count'>1 / 1</div>
     </div>
     <a href="#" class="close-icon" onclick="F21_HawaiiSlideViewer.className = 'slideContainer'"></a>
   </div>
@@ -915,9 +951,7 @@
 
       <div class='slide-title'>Santa Monica Proper Landmark</div>
 
-
-      <br>
-      <div class = 'dot-container'>
+      <div class='dot-container'>
         <span class="dot Landmark" onclick="currentSlide(1,'Landmark')"></span>
         <span class="dot Landmark" onclick="currentSlide(2,'Landmark')"></span>
         <span class="dot Landmark" onclick="currentSlide(3,'Landmark')"></span>
@@ -926,7 +960,7 @@
       </div>
       <a class="prev" onclick="plusSlides(-1,'Landmark')">&#10094;</a>
       <a class="next" onclick="plusSlides(1,'Landmark')">&#10095;</a>
-      <div class = 'page-count'>1 / 1</div>
+      <div class='page-count'>1 / 1</div>
     </div>
     <a href="#" class="close-icon" onclick="LandmarkSlideViewer.className = 'slideContainer'"></a>
   </div>
@@ -976,7 +1010,7 @@
       <div class='slide-title'>Grosse Pointe United Methodest Church</div>
 
 
-      <div class = 'dot-container'>
+      <div class='dot-container'>
         <span class="dot GPM" onclick="currentSlide(1, 'GPM')"></span>
         <span class="dot GPM" onclick="currentSlide(2, 'GPM')"></span>
         <span class="dot GPM" onclick="currentSlide(3, 'GPM')"></span>
@@ -989,7 +1023,7 @@
       </div>
       <a class="prev" onclick="plusSlides(-1 , 'GPM')">&#10094;</a>
       <a class="next" onclick="plusSlides(1 , 'GPM')">&#10095;</a>
-      <div class = 'page-count'>1 / 1</div>
+      <div class='page-count'>1 / 1</div>
     </div>
     <a href="#" class="close-icon" onclick="GPMSlideViewer.className = 'slideContainer'"></a>
   </div>
@@ -1017,7 +1051,7 @@
         </div>
       </div>
       <div class='slide-title'>Santa Monica Proper</div>
-      <div class = 'dot-container'>
+      <div class='dot-container'>
         <span class="dot Proper" onclick="currentSlide(1,'Proper')"></span>
         <span class="dot Proper" onclick="currentSlide(2,'Proper')"></span>
         <span class="dot Proper" onclick="currentSlide(3,'Proper')"></span>
@@ -1027,7 +1061,7 @@
       </div>
       <a class="prev" onclick="plusSlides(-1,'Proper')">&#10094;</a>
       <a class="next" onclick="plusSlides(1,'Proper')">&#10095;</a>
-      <div class = 'page-count'>1 / 1</div>
+      <div class='page-count'>1 / 1</div>
     </div>
     <a href="#" class="close-icon" onclick="ProperSlideViewer.className = 'slideContainer'"></a>
   </div>
@@ -1098,7 +1132,7 @@
         </div>
       </div>
       <div class='slide-title'>Udong Mixed Use, Busan S. Korea</div>
-      <div class = 'dot-container'>
+      <div class='dot-container'>
         <span class="dot UDONG" onclick="currentSlide(1, 'UDONG')"></span>
         <span class="dot UDONG" onclick="currentSlide(2, 'UDONG')"></span>
         <span class="dot UDONG" onclick="currentSlide(3, 'UDONG')"></span>
@@ -1115,7 +1149,7 @@
       </div>
       <a class="prev" onclick="plusSlides(-1 , 'UDONG')">&#10094;</a>
       <a class="next" onclick="plusSlides(1 , 'UDONG')">&#10095;</a>
-      <div class = 'page-count'>1 / 1</div>
+      <div class='page-count'>1 / 1</div>
     </div>
     <a href="#" class="close-icon" onclick="UDONGSlideViewer.className = 'slideContainer'"></a>
   </div>
@@ -1137,7 +1171,7 @@
         </div>
       </div>
       <div class='slide-title'>Biscuit Lofts, Los Angeles</div>
-      <div class = 'dot-container'>
+      <div class='dot-container'>
         <span class="dot Biscuit" onclick="currentSlide(1,'Biscuit')"></span>
         <span class="dot Biscuit" onclick="currentSlide(2,'Biscuit')"></span>
         <span class="dot Biscuit" onclick="currentSlide(3,'Biscuit')"></span>
@@ -1145,7 +1179,7 @@
       </div>
       <a class="prev" onclick="plusSlides(-1,'Biscuit')">&#10094;</a>
       <a class="next" onclick="plusSlides(1,'Biscuit')">&#10095;</a>
-      <div class = 'page-count'>1 / 1</div>
+      <div class='page-count'>1 / 1</div>
     </div>
     <a href="#" class="close-icon" onclick="BiscuitSlideViewer.className = 'slideContainer'"></a>
   </div>
@@ -1169,7 +1203,7 @@
 
       <div class='slide-title'>Forever 21, South Coast Plaza</div>
 
-      <div class = 'dot-container'>
+      <div class='dot-container'>
         <span class="dot F21_SCP" onclick="currentSlide(1,'F21_SCP')"></span>
         <span class="dot F21_SCP" onclick="currentSlide(2,'F21_SCP')"></span>
         <span class="dot F21_SCP" onclick="currentSlide(3,'F21_SCP')"></span>
@@ -1177,7 +1211,7 @@
       </div>
       <a class="prev" onclick="plusSlides(-1,'F21_SCP')">&#10094;</a>
       <a class="next" onclick="plusSlides(1,'F21_SCP')">&#10095;</a>
-      <div class = 'page-count'>1 / 1</div>
+      <div class='page-count'>1 / 1</div>
     </div>
     <a href="#" class="close-icon" onclick="F21_SCPSlideViewer.className = 'slideContainer'"></a>
   </div>
@@ -1204,7 +1238,7 @@
       </div>
       <div class='slide-title'>Chipotle, Santa Barbara</div>
 
-      <div class = 'dot-container'>
+      <div class='dot-container'>
         <span class="dot Chipotle_SB" onclick="currentSlide(1,'Chipotle_SB')"></span>
         <span class="dot Chipotle_SB" onclick="currentSlide(2,'Chipotle_SB')"></span>
         <span class="dot Chipotle_SB" onclick="currentSlide(3,'Chipotle_SB')"></span>
@@ -1212,7 +1246,7 @@
       </div>
       <a class="prev" onclick="plusSlides(-1,'Chipotle_SB')">&#10094;</a>
       <a class="next" onclick="plusSlides(1,'Chipotle_SB')">&#10095;</a>
-      <div class = 'page-count'>1 / 1</div>
+      <div class='page-count'>1 / 1</div>
     </div>
     <a href="#" class="close-icon" onclick="Chipotle_SBSlideViewer.className = 'slideContainer'"></a>
   </div>
@@ -1278,7 +1312,7 @@
       </div>
       <div class='slide-title'>Sewoon Towers, Seoul S. Korea</div>
 
-      <div class = 'dot-container'>
+      <div class='dot-container'>
         <span class="dot Sewoon" onclick="currentSlide(1,'Sewoon')"></span>
         <span class="dot Sewoon" onclick="currentSlide(2,'Sewoon')"></span>
         <span class="dot Sewoon" onclick="currentSlide(3,'Sewoon')"></span>
@@ -1296,7 +1330,7 @@
       </div>
       <a class="prev" onclick="plusSlides(-1,'Sewoon')">&#10094;</a>
       <a class="next" onclick="plusSlides(1,'Sewoon')">&#10095;</a>
-      <div class = 'page-count'>1 / 1</div>
+      <div class='page-count'>1 / 1</div>
     </div>
     <a href="#" class="close-icon" onclick="SewoonSlideViewer.className = 'slideContainer'"></a>
   </div>
@@ -1318,14 +1352,14 @@
       </div>
       <div class='slide-title'>Chipotle, Pacific Beach</div>
 
-      <div class = 'dot-container'>
+      <div class='dot-container'>
         <span class="dot ChipotlePacific" onclick="currentSlide(1,'ChipotlePacific')"></span>
         <span class="dot ChipotlePacific" onclick="currentSlide(2,'ChipotlePacific')"></span>
         <span class="dot ChipotlePacific" onclick="currentSlide(3,'ChipotlePacific')"></span>
       </div>
       <a class="prev" onclick="plusSlides(-1,'ChipotlePacific')">&#10094;</a>
       <a class="next" onclick="plusSlides(1,'ChipotlePacific')">&#10095;</a>
-      <div class = 'page-count'>1 / 1</div>
+      <div class='page-count'>1 / 1</div>
     </div>
     <a href="#" class="close-icon" onclick="ChipotlePacificSlideViewer.className = 'slideContainer'"></a>
   </div>
@@ -1342,13 +1376,13 @@
       </div>
 
       <div class='slide-title'>Chipotle, Beverly Center</div>
-      <div class = 'dot-container'>
+      <div class='dot-container'>
         <span class="dot ChipotleBevCen" onclick="currentSlide(1,'ChipotleBevCen')"></span>
         <span class="dot ChipotleBevCen" onclick="currentSlide(2,'ChipotleBevCen')"></span>
       </div>
       <a class="prev" onclick="plusSlides(-1,'ChipotleBevCen')">&#10094;</a>
       <a class="next" onclick="plusSlides(1,'ChipotleBevCen')">&#10095;</a>
-      <div class = 'page-count'>1 / 1</div>
+      <div class='page-count'>1 / 1</div>
     </div>
     <a href="#" class="close-icon" onclick="ChipotleBevCenSlideViewer.className = 'slideContainer'"></a>
   </div>
@@ -1375,7 +1409,7 @@
 
       </div>
       <div class='slide-title'>Chipotle, Encinitas</div>
-      <div class = 'dot-container'>
+      <div class='dot-container'>
         <span class="dot ChipotleEncinitas" onclick="currentSlide(1,'ChipotleEncinitas')"></span>
         <span class="dot ChipotleEncinitas" onclick="currentSlide(2,'ChipotleEncinitas')"></span>
         <span class="dot ChipotleEncinitas" onclick="currentSlide(3,'ChipotleEncinitas')"></span>
@@ -1383,7 +1417,7 @@
       </div>
       <a class="prev" onclick="plusSlides(-1,'ChipotleEncinitas')">&#10094;</a>
       <a class="next" onclick="plusSlides(1,'ChipotleEncinitas')">&#10095;</a>
-      <div class = 'page-count'>1 / 1</div>
+      <div class='page-count'>1 / 1</div>
     </div>
     <a href="#" class="close-icon" onclick="ChipotleEncinitasSlideViewer.className = 'slideContainer'"></a>
   </div>
@@ -1392,41 +1426,41 @@
     <div class='slidePanel'>
       <div class="slideshow-container">
 
-        <div class="mySlides SOM fade" onclick="plusSlides(-1,'SOM')">
+        <div class="mySlides SOM fade" onclick="plusSlides(1,'SOM')">
           <img src="pics/SOM-08.jpg" style="width:100%" alt=''>
         </div>
 
-        <div class="mySlides SOM fade" onclick="plusSlides(-1,'SOM')">
+        <div class="mySlides SOM fade" onclick="plusSlides(1,'SOM')">
           <img src="pics/SOM-02.jpg" style="width:100%" alt=''>
         </div>
 
-        <div class="mySlides SOM fade" onclick="plusSlides(-1,'SOM')">
+        <div class="mySlides SOM fade" onclick="plusSlides(1,'SOM')">
           <img src="pics/SOM-03.jpg" style="width:100%" alt=''>
         </div>
 
-        <div class="mySlides SOM fade" onclick="plusSlides(-1,'SOM')">
+        <div class="mySlides SOM fade" onclick="plusSlides(1,'SOM')">
           <img src="pics/SOM-04.jpg" style="width:100%" alt=''>
         </div>
 
-        <div class="mySlides SOM fade" onclick="plusSlides(-1,'SOM')">
+        <div class="mySlides SOM fade" onclick="plusSlides(1,'SOM')">
           <img src="pics/SOM-05.jpg" style="width:100%" alt=''>
         </div>
 
-        <div class="mySlides SOM fade" onclick="plusSlides(-1,'SOM')">
+        <div class="mySlides SOM fade" onclick="plusSlides(1,'SOM')">
           <img src="pics/SOM-06.jpg" style="width:100%" alt=''>
         </div>
 
-        <div class="mySlides SOM fade" onclick="plusSlides(-1,'SOM')">
+        <div class="mySlides SOM fade" onclick="plusSlides(1,'SOM')">
           <img src="pics/SOM-07.jpg" style="width:100%" alt=''>
         </div>
 
       </div>
       <div class='slide-title'>Sisters of Mercy Addition, Farmington Hills, MI</div>
 
-      <div class = 'dot-container'>
-        <span class="dot SOM" onclick="currentSlide(1,'SOM')"></span>
-        <span class="dot SOM" onclick="currentSlide(2,'SOM')"></span>
-        <span class="dot SOM" onclick="currentSlide(3,'SOM')"></span>
+      <div class='dot-container'>
+        <span class="dot SOM" onmouseover="currentSlide(1,'SOM')"></span>
+        <span class="dot SOM" onmouseover="currentSlide(2,'SOM')"></span>
+        <span class="dot SOM" onmouseover="currentSlide(3,'SOM')"></span>
         <span class="dot SOM" onclick="currentSlide(4,'SOM')"></span>
         <span class="dot SOM" onclick="currentSlide(5,'SOM')"></span>
         <span class="dot SOM" onclick="currentSlide(6,'SOM')"></span>
@@ -1435,7 +1469,7 @@
       </div>
       <a class="prev" onclick="plusSlides(-1,'SOM')">&#10094;</a>
       <a class="next" onclick="plusSlides(1,'SOM')">&#10095;</a>
-      <div class = 'page-count'>1 / 1</div>
+      <div class='page-count'>1 / 1</div>
     </div>
     <a href="#" class="close-icon" onclick="SOMSlideViewer.className = 'slideContainer'"></a>
   </div>
@@ -1458,14 +1492,14 @@
       </div>
       <div class='slide-title'>Olympic & Soto Redevelopment, Los Angeles</div>
 
-      <div class = 'dot-container'>
+      <div class='dot-container'>
         <span class="dot Olympic" onclick="currentSlide(1,'Olympic')"></span>
         <span class="dot Olympic" onclick="currentSlide(2,'Olympic')"></span>
         <span class="dot Olympic" onclick="currentSlide(3,'Olympic')"></span>
       </div>
       <a class="prev" onclick="plusSlides(-1,'Olympic')">&#10094;</a>
       <a class="next" onclick="plusSlides(1,'Olympic')">&#10095;</a>
-      <div class = 'page-count'>1 / 1</div>
+      <div class='page-count'>1 / 1</div>
     </div>
     <a href="#" class="close-icon" onclick="OlympicSlideViewer.className = 'slideContainer'"></a>
   </div>
@@ -1485,13 +1519,13 @@
       </div>
       <div class='slide-title'>Santa Monica Place</div>
 
-      <div class = 'dot-container'>
+      <div class='dot-container'>
         <span class="dot SMP" onclick="currentSlide(1,'SMP')"></span>
         <span class="dot SMP" onclick="currentSlide(2,'SMP')"></span>
       </div>
       <a class="prev" onclick="plusSlides(-1,'SMP')">&#10094;</a>
       <a class="next" onclick="plusSlides(1,'SMP')">&#10095;</a>
-      <div class = 'page-count'>1 / 1</div>
+      <div class='page-count'>1 / 1</div>
     </div>
     <a href="#" class="close-icon" onclick="SMPSlideViewer.className = 'slideContainer'"></a>
   </div>
@@ -1554,7 +1588,7 @@
       </div>
       <div class='slide-title'>Hope Street Lofts, Los Angeles</div>
 
-      <div class = 'dot-container'>
+      <div class='dot-container'>
         <span class="dot Hope" onclick="currentSlide(1,'Hope')"></span>
         <span class="dot Hope" onclick="currentSlide(2,'Hope')"></span>
         <span class="dot Hope" onclick="currentSlide(3,'Hope')"></span>
@@ -1571,7 +1605,7 @@
       </div>
       <a class="prev" onclick="plusSlides(-1,'Hope')">&#10094;</a>
       <a class="next" onclick="plusSlides(1,'Hope')">&#10095;</a>
-      <div class = 'page-count'>1 / 1</div>
+      <div class='page-count'>1 / 1</div>
     </div>
     <a href="#" class="close-icon" onclick="HopeSlideViewer.className = 'slideContainer'"></a>
   </div>
@@ -1596,14 +1630,14 @@
       </div>
       <div class='slide-title'>Chipotle, Encino</div>
 
-      <div class = 'dot-container'>
+      <div class='dot-container'>
         <span class="dot Chipotle_Encino" onclick="currentSlide(1,'Chipotle_Encino')"></span>
         <span class="dot Chipotle_Encino" onclick="currentSlide(2,'Chipotle_Encino')"></span>
         <span class="dot Chipotle_Encino" onclick="currentSlide(3,'Chipotle_Encino')"></span>
       </div>
       <a class="prev" onclick="plusSlides(-1,'Chipotle_Encino')">&#10094;</a>
       <a class="next" onclick="plusSlides(1,'Chipotle_Encino')">&#10095;</a>
-      <div class = 'page-count'>1 / 1</div>
+      <div class='page-count'>1 / 1</div>
     </div>
     <a href="#" class="close-icon" onclick="Chipotle_EncinoSlideViewer.className = 'slideContainer'"></a>
   </div>
@@ -1632,7 +1666,7 @@
       </div>
       <div class='slide-title'>Private Residence, Seal Beach CA</div>
 
-      <div class = 'dot-container'>
+      <div class='dot-container'>
         <span class="dot BeachHouse" onclick="currentSlide(1,'BeachHouse')"></span>
         <span class="dot BeachHouse" onclick="currentSlide(2,'BeachHouse')"></span>
         <span class="dot BeachHouse" onclick="currentSlide(3,'BeachHouse')"></span>
@@ -1641,7 +1675,7 @@
       </div>
       <a class="prev" onclick="plusSlides(-1,'BeachHouse')">&#10094;</a>
       <a class="next" onclick="plusSlides(1,'BeachHouse')">&#10095;</a>
-      <div class = 'page-count'>1 / 1</div>
+      <div class='page-count'>1 / 1</div>
     </div>
     <a href="#" class="close-icon" onclick="BeachHouseSlideViewer.className = 'slideContainer'"></a>
   </div>
@@ -1665,14 +1699,14 @@
       </div>
       <div class='slide-title'>Uniqlo, Chicago</div>
 
-      <div class = 'dot-container'>
+      <div class='dot-container'>
         <span class="dot Uniqlo" onclick="currentSlide(1,'Uniqlo')"></span>
         <span class="dot Uniqlo" onclick="currentSlide(2,'Uniqlo')"></span>
         <span class="dot Uniqlo" onclick="currentSlide(3,'Uniqlo')"></span>
       </div>
       <a class="prev" onclick="plusSlides(-1,'Uniqlo')">&#10094;</a>
       <a class="next" onclick="plusSlides(1,'Uniqlo')">&#10095;</a>
-      <div class = 'page-count'>1 / 1</div>
+      <div class='page-count'>1 / 1</div>
     </div>
     <a href="#" class="close-icon" onclick="UniqloSlideViewer.className = 'slideContainer'"></a>
   </div>
@@ -1700,7 +1734,7 @@
       </div>
       <div class='slide-title'>Chipotle, Hillcrest</div>
 
-      <div class = 'dot-container'>
+      <div class='dot-container'>
         <span class="dot Chipotle_Hillcrest" onclick="currentSlide(1,'Chipotle_Hillcrest')"></span>
         <span class="dot Chipotle_Hillcrest" onclick="currentSlide(2,'Chipotle_Hillcrest')"></span>
         <span class="dot Chipotle_Hillcrest" onclick="currentSlide(3,'Chipotle_Hillcrest')"></span>
@@ -1708,7 +1742,7 @@
       </div>
       <a class="prev" onclick="plusSlides(-1,'Chipotle_Hillcrest')">&#10094;</a>
       <a class="next" onclick="plusSlides(1,'Chipotle_Hillcrest')">&#10095;</a>
-      <div class = 'page-count'>1 / 1</div>
+      <div class='page-count'>1 / 1</div>
     </div>
     <a href="#" class="close-icon" onclick="Chipotle_HillcrestSlideViewer.className = 'slideContainer'"></a>
   </div>
@@ -1723,16 +1757,16 @@
           <img src="pics/Office-02.png" style="width:100%" alt=''>
         </div>
       </div>
-  
+
       <div class='slide-title'>CGP Office Conference RM</div>
 
-      <div class = 'dot-container'>
+      <div class='dot-container'>
         <span class="dot Office" onclick="currentSlide(1,'Office')"></span>
         <span class="dot Office" onclick="currentSlide(2,'Office')"></span>
       </div>
       <a class="prev" onclick="plusSlides(-1,'Office')">&#10094;</a>
       <a class="next" onclick="plusSlides(1,'Office')">&#10095;</a>
-      <div class = 'page-count'>1 / 1</div>
+      <div class='page-count'>1 / 1</div>
     </div>
     <a href="#" class="close-icon" onclick="OfficeSlideViewer.className = 'slideContainer'"></a>
   </div>
@@ -1740,31 +1774,31 @@
   <div id='ChipotleSlideViewer' class='slideContainer'>
     <div class='slidePanel'>
       <div class="slideshow-container">
-  
+
         <div class="mySlides Chipotle fade" onclick="plusSlides(1,'Chipotle')">
           <img src="pics/Chipotle-Various-01.png" style="width:100%" alt=''>
         </div>
-  
+
         <div class="mySlides Chipotle fade" onclick="plusSlides(1,'Chipotle')">
           <img src="pics/Chipotle-Various-02.png" style="width:100%" alt=''>
         </div>
-  
+
         <div class="mySlides Chipotle fade" onclick="plusSlides(1,'Chipotle')">
           <img src="pics/Chipotle-Various-03.png" style="width:100%" alt=''>
         </div>
-  
+
       </div>
-  
+
       <div class='slide-title'>Chipotle, Various Locations</div>
 
-      <div class = 'dot-container'>
+      <div class='dot-container'>
         <span class="dot Chipotle" onclick="currentSlide(1,'Chipotle')"></span>
         <span class="dot Chipotle" onclick="currentSlide(2,'Chipotle')"></span>
         <span class="dot Chipotle" onclick="currentSlide(3,'Chipotle')"></span>
       </div>
       <a class="prev" onclick="plusSlides(-1,'Chipotle')">&#10094;</a>
       <a class="next" onclick="plusSlides(1,'Chipotle')">&#10095;</a>
-      <div class = 'page-count'>1 / 1</div>
+      <div class='page-count'>1 / 1</div>
     </div>
     <a href="#" class="close-icon" onclick="ChipotleSlideViewer.className = 'slideContainer'"></a>
   </div>
@@ -1777,20 +1811,16 @@
       showSlides(slideIndex += n, key);
     }
 
-    function currentSlide(n, key) { 
-      // const numberOfSlides = 
- 
+    function currentSlide(n, key) {
       showSlides(slideIndex = n, key);
     }
 
-    function showSlides(n, key) {      // console.log(key)
+    function showSlides(n, key) {
       const mainContainerID = key + 'SlideViewer'
-
       const textElement = document.getElementById(mainContainerID).children[0].children[5]
-
       slideIndex = n
       let i;
-      const slides = document.getElementsByClassName("mySlides " + key); // document.getElementsByClassName('dot GPM')
+      const slides = document.getElementsByClassName("mySlides " + key);
       const dots = document.getElementsByClassName("dot " + key);
       if (n > slides.length) {
         slideIndex = 1
@@ -1807,6 +1837,9 @@
       slides[slideIndex - 1].style.display = "block";
       if (dots.length) dots[slideIndex - 1].className += " active";
       textElement.innerHTML = slideIndex + ' / ' + slides.length
+      // const slidePanel = document.getElementById(mainContainerID).children[0]
+      // console.log(slidePanel)
+      // const box = slides[slideIndex - 1].getBoundingClientRect()
     }
   </script>
 

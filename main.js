@@ -167,7 +167,7 @@ function setResumeDisplay(display = SHOW) {
     for (let i = 0; i < portfolioWindows.length; i++) {
       portfolioWindows[i].className = 'portfolioWindow frontPageElement hide'
     }
-    lowerLeftTile.className = 'frontPageElement hide'
+    bottomLeftTile.className = 'frontPageElement hide'
     page1.className = 'page show'
     page2.className = 'page show'
     verticalLine.className = 'splashLine frontPageElement hide'
@@ -178,7 +178,7 @@ function setResumeDisplay(display = SHOW) {
     document.documentElement.style.setProperty('--navigation-button-offset', '-10px')
   } else {
     window.scrollTo(0, 0);
-    lowerLeftTile.className = 'frontPageElement show'
+    bottomLeftTile.className = 'frontPageElement show'
     page1.className = 'page hide'
     page2.className = 'page hide'
     verticalLine.className = 'splashLine frontPageElement'
@@ -625,7 +625,7 @@ HopeCell.addEventListener('click',()=>{
   HopeSlideViewer.className =  'slideContainer show' 
 })
 
-OlympicCell.addEventListener('click',()=>{ 
+OlympicCell.addEventListener('click',()=>{  log(9999)
   showSlides(1, "Olympic")
   OlympicSlideViewer.className =  'slideContainer show' 
 })
@@ -714,3 +714,66 @@ function handleTouchMove(e) {
   yDiff = yUp - yDown;
   document.documentElement.style.setProperty('--slide-down-offset', yDiff + 'px')
 }
+
+// pilotHouseImage.addEventListener('mouseover', ()=>{log('mouseenter')})
+// bottomRightTile.addEventListener('click', ()=>{log('mouseenter')})
+// bottomRightTile.addEventListener('mousedown', ()=>{log('mouseenter')})
+
+let pilotHouseSlideNumber = 1
+
+
+function pilotHouseSlideShow (){
+  setTimeout( ()=>{
+    pilotHouseSlideNumber++ 
+    if(pilotHouseSlideNumber > 5)pilotHouseSlideNumber = 1
+    if(pilotHouseSlideNumber !== 5) pilotHouseImage.className = 'fade'//= pilotHouseSlideNumber === 5 ? 'kenBurnsEffect' : 'fade'
+
+    setTimeout(()=>{
+      // if(pilotHouseSlideNumber === 2)backdrop.className = 'background-image-2 eye-level'
+
+      backdrop.className = [2,4].includes(pilotHouseSlideNumber)? 'background-image-2 eye-level' : 'background-image-2'
+
+      pilotHouseImage.src = 'pics/pilotHouse-0' + pilotHouseSlideNumber + '.png'
+      if(pilotHouseSlideNumber === 5 ) pilotHouseImage.className = 'kenBurnsEffect'
+      pilotHouseSlideShow ()
+    },1000)
+    setTimeout(()=>{
+
+      if(pilotHouseSlideNumber !== 5)pilotHouseImage.className = ''
+    },  3000)
+  }, 6000 );
+}
+
+pilotHouseSlideShow ()
+
+
+let chairSlideNumber = 1
+
+
+function chairHouseSlideShow (){
+  setTimeout( ()=>{
+    chairSlideNumber++ 
+    if(chairSlideNumber > 9)chairSlideNumber = 1
+
+    chairImage.className = 'fade'
+    setTimeout(()=>{
+      chairImage.src = chairSlideNumber === 5 ? 'pics/F-05.png' : 'pics/F-0' + chairSlideNumber + '.jpg'
+      // furnitureLabel.textContent= chairSlideNumber < 5 ? "Stack Chair Concept"
+      if(chairSlideNumber < 6 ){
+        furnitureLabel.textContent=  "Stack Chair Concept"
+      } else if(chairSlideNumber === 9){
+        furnitureLabel.textContent=  "Light Fixture Panel"
+      } else {
+        furnitureLabel.textContent=  "High Table"
+      }
+
+      // chairImage.src = chairSlideNumber === 1 ? 'pics/chair-06.png' : 'pics/chair-0' + chairSlideNumber + '.jpg'
+    },1000)
+    setTimeout(()=>{
+      chairImage.className = ''
+    },3000)
+    chairHouseSlideShow ()
+  }, 6000 );
+}
+
+chairHouseSlideShow ()
