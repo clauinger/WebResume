@@ -747,7 +747,7 @@ function pilotHouseSlideShow (){
 pilotHouseSlideShow ()
 
 
-let chairSlideNumber = 1
+let chairSlideNumber = 4
 
 
 function chairHouseSlideShow (){
@@ -757,8 +757,7 @@ function chairHouseSlideShow (){
 
     chairImage.className = 'fade'
     setTimeout(()=>{
-      chairImage.src = chairSlideNumber === 5 ? 'pics/F-05.png' : 'pics/F-0' + chairSlideNumber + '.jpg'
-      // furnitureLabel.textContent= chairSlideNumber < 5 ? "Stack Chair Concept"
+      chairImage.src = 'pics/F-0' + chairSlideNumber + '.jpg'
       if(chairSlideNumber < 6 ){
         furnitureLabel.textContent=  "Stack Chair Concept"
       } else if(chairSlideNumber === 9){
@@ -766,8 +765,6 @@ function chairHouseSlideShow (){
       } else {
         furnitureLabel.textContent=  "High Table"
       }
-
-      // chairImage.src = chairSlideNumber === 1 ? 'pics/chair-06.png' : 'pics/chair-0' + chairSlideNumber + '.jpg'
     },1000)
     setTimeout(()=>{
       chairImage.className = ''

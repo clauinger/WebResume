@@ -62,11 +62,12 @@
   background: #0c3545;
 }
 .navigationButton:hover > div > p{
-  color: white;
+  color: black;
 }
-.navigationButton:hover > .navButtonLabel{
+
+/* .navigationButton:hover > .navButtonLabel{
   background: #2199c4;
-}
+} */
 
 .navButtonLabel{
   text-align: right;

@@ -68,8 +68,9 @@
 
 @keyframes animateBackdropMidlevel {
   0% {
+    opacity: 0;
     /* opacity: .2; */
-    bottom:-100px;
+    /* bottom:-100px; */
   }
   20%{
     opacity: .2;
@@ -84,8 +85,9 @@
 
 @keyframes animateBackdropEyelevel {
   0% {
+    opacity: 0;
     /* opacity: .2; */
-    bottom:-60px;
+    /* bottom:-60px; */
   }
   20%{
     opacity: .2;
@@ -112,6 +114,18 @@
   padding-right: 20px;
   color:#12566f;
 }
+
+#githubSymbol2 {
+  margin-left: 20px;
+  color: inherit;
+}
+
+#githubSymbol2 > a {
+  font-family: 'Quicksand', sans-serif;
+  font-size: smaller;
+  color: inherit;
+}
+
 .splashHeading {
   font-family: 'Montserrat', sans-serif;
   color: rgba(255, 255, 255, 0.482);
@@ -145,28 +159,17 @@
 } 
 
 #pilotHouseImage.kenBurnsEffect {
-  /* animation-name: animateKenBurnsEffect;
-  animation-duration: 4s; */
   position: absolute;
   left: 0;
-  /* animation: move 4s ease; */
   height : 100%;
   object-fit: cover;
-  /* position: relative; */
-  /* left: 100px; */
-  /* Add infinite to loop. */
   object-position: 0%;
   animation-name: animateKenBurnsEffect;
   animation-duration: 6s;
   opacity: 0;
-  /* -ms-animation: move 4s ease;
-  -webkit-animation: move 4s ease; */
-  /* -0-animation: move 40s ease; */
-  /* -moz-animation: move 4s ease; */
-
 }
 
-@keyframes animateKenBurnsEffect {
+@keyframes animateKenBurnsEffect2 {
   0% {
     opacity: 0;
   }
@@ -175,7 +178,6 @@
   }
   50%   {
     object-position: 70%;
-    /* transform: translateX(100px); */
   }
   80%{
     opacity: 1;
@@ -183,7 +185,21 @@
   100%   {
     object-position: 0%;
     opacity: 0;
-    /* transform: translateX(100px); */
+  }
+} 
+
+@keyframes animateKenBurnsEffect {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    object-position: 0%;
+    opacity: 1;
+  }
+  
+  100%   {
+    object-position: 60%;
+    opacity: 1;
   }
 } 
 
