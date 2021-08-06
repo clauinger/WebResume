@@ -18,6 +18,9 @@ const {
   log
 } = console
 
+
+
+
 const setBg = () => {
   const randomColor = Math.floor(Math.random()*16777215).toString(16);
   document.body.style.backgroundColor = "#" + randomColor;
@@ -128,12 +131,6 @@ function getGridElementsPosition(index) {
 }
 
 function setHomeScreenDisplay(display = SHOW) {  
-  // if (display === SHOW) {
-  //   bottomRightTile.className = 'portfolioWindow frontPageElement show'
-  // } else {
-  //   bottomRightTile.className = 'portfolioWindow frontPageElement hide'
-  // }
-  
   if (display === SHOW) {
     penDisplay.playBackRecord(MechanizedInkDemos.pattern_01)
     bottomRightTile.className = 'frontPageElement show'
@@ -516,8 +513,6 @@ setupPortfolioScrollEvents(archPortfolio)
 
 setupPortfolioScrollEvents(techPortfolio)
 
-
-
 function resetScroll(){
   archPortfolio.scrollTop = 0
   techPortfolio.scrollTop = 0
@@ -529,7 +524,7 @@ document.addEventListener('scroll', function(e) {
   if(document.body.className !== 'resumeShow') return
   const topScroll = Math.max(Math.min(document.documentElement.scrollTop, 75), 0)
   document.documentElement.style.setProperty('--user-scroll-distance', topScroll + 'px')
-});
+})
 
 magdalenCell.addEventListener('click',()=>{
   showSlides(1, "magdalen")
@@ -625,7 +620,7 @@ HopeCell.addEventListener('click',()=>{
   HopeSlideViewer.className =  'slideContainer show' 
 })
 
-OlympicCell.addEventListener('click',()=>{  log(9999)
+OlympicCell.addEventListener('click',()=>{
   showSlides(1, "Olympic")
   OlympicSlideViewer.className =  'slideContainer show' 
 })
@@ -657,14 +652,23 @@ OfficeCell.addEventListener('click',()=>{
   OfficeSlideViewer.className =  'slideContainer show' 
 })
 
-const slideContainers = document.getElementsByClassName('slideContainer')
-for (let i = 0; i < slideContainers.length; i++) {
-  const element = slideContainers[i];
-
+function setSlideClickShow (element){
   element.addEventListener('click',(e)=>{
     if(e.target.className !== 'slideContainer show')return
     element.className = 'slideContainer'
+    imageViewer.clear()
   })
+}
+
+const slideContainers = document.getElementsByClassName('slideContainer')
+for (let i = 0; i < slideContainers.length; i++) {
+  const element = slideContainers[i];
+  setSlideClickShow (element)
+  // element.addEventListener('click',(e)=>{
+  //   if(e.target.className !== 'slideContainer show')return
+  //   element.className = 'slideContainer'
+  //   imageViewer.clear()
+  // })
 }
 
 function getContainerLeft (container){
@@ -681,12 +685,12 @@ let xDown = null;
 let yDown = null;
 let yDiff = null
 
-function getTouches(evt) { log(999)
+function getTouches(evt) {
   return evt.touches ||             // browser API
          evt.originalEvent.touches; // jQuery
 }                                                     
 
-function handleTouchStart(e) {
+function handleTouchStart(e) { //log('handleTouchStart')
     const firstTouch = getTouches(e)[0];                                      
     xDown = firstTouch.clientX;                                      
     yDown = firstTouch.clientY;                                      
@@ -774,3 +778,351 @@ function chairHouseSlideShow (){
 }
 
 chairHouseSlideShow ()
+
+
+//** ARCHIVE AND REMOVE BELOW */
+let currentSlideContainer
+document.body.slideIndex = 1
+document.body.slideView =  (n, key )=> {
+  const mainContainerID = key + 'SlideViewer'
+  const textElement = document.getElementById(mainContainerID).children[0].children[5]
+  document.body.slideIndex = n
+  let i;
+  const slides = document.getElementsByClassName("mySlides " + key);
+  const dots = document.getElementsByClassName("dot " + key);
+  if (n > slides.length) {
+    document.body.slideIndex = 1
+  }
+  if (n < 1) {
+    document.body.slideIndex = slides.length
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[document.body.slideIndex - 1].style.display = "block";
+
+// log(slides[document.body.slideIndex - 1].getBoundingClientRect())
+// const bbox = slides[document.body.slideIndex - 1].getBoundingClientRect()
+// myName.textContent = Math.round(bbox.width) + " X " + Math.round(bbox.height)
+// currentSlideContainer = slides[document.body.slideIndex - 1]
+  imageViewer.setImageElement(slides[document.body.slideIndex - 1].children[0])
+
+  if (dots.length) dots[document.body.slideIndex - 1].className += " active";
+  textElement.innerHTML = document.body.slideIndex + ' / ' + slides.length
+
+
+
+  // log(currentSlideContainer)
+}
+
+const imageViewer = function(){ 
+  let _imageElement = null ,box = null 
+  let viewContainer
+  let imageElementCopy = document.createElement('img')
+  imageElementCopy.className = 'fit-width'
+
+  function makeViewer (){ return
+    if(!viewContainer){
+      viewContainer = document.createElement('div')
+      viewContainer.appendChild(imageElementCopy)
+      viewContainer.className = 'viewContainer'
+      document.body.appendChild(viewContainer)
+      viewContainer.style.position = 'absolute'
+      viewContainer.style.top = '0px'
+      viewContainer.style.left = 0
+      // viewContainer.style.background = 'rgba(0,0,255,.3)'
+      viewContainer.style.zIndex = 10
+      viewContainer.style.pointerEvents = 'none'
+    }
+
+    function place(){ log('place')
+      const maxWidthValue = getComputedStyle(_imageElement).getPropertyValue('max-width').split('px')[0]
+      const maxWidth = maxWidthValue !== 'none' ? Number(maxWidthValue) : null
+  
+      const imageWidthToHeightRatio =imageElementCopy.width / imageElementCopy.height
+      const imageHeightToWidthRatio = 1 / imageWidthToHeightRatio
+      const slideContainer = _imageElement.parentElement.parentElement.parentElement
+      const slideContainerBox = slideContainer.getBoundingClientRect()
+      let ht = slideContainerBox.bottom - 100
+      let wid = imageWidthToHeightRatio * ht
+      // ** CORRECT FOR OVERFLOW TOP BOTTOM
+      const widthIsTooWide = wid > window.innerWidth - 80
+      wid = Math.min(wid, window.innerWidth - 80)
+      ht = widthIsTooWide ? imageHeightToWidthRatio * wid : ht
+      // ** CORRECT FOR OVERFLOW LEFT RIGHT
+      const heightIsTooTall = ht > window.innerHeight - 180
+      ht = Math.min(ht, window.innerHeight - 180)
+      wid = heightIsTooTall ? imageWidthToHeightRatio * ht : wid
+  
+      if(maxWidth){
+        wid = maxWidth
+        ht = imageHeightToWidthRatio * wid
+      }
+  
+      viewContainer.style.width = wid + 'px'
+      viewContainer.style.height =  ht + 'px'
+      const maxSlideWidth = Number(getComputedStyle(document.documentElement).getPropertyValue('--max-slide-width').split('px')[0])
+      const imageIsNarrow = wid < maxSlideWidth
+  
+      imageElementCopy.className = imageIsNarrow ? 'fit-height' : 'fit-width'
+      viewContainer.style.opacity = 0
+      setTimeout(function() {
+        // viewContainer.style.left  = ((window.innerWidth - imageElementCopy.width - 20 )/ 2) + 'px'
+        // viewContainer.style.top  = (window.innerHeight - 130 - imageElementCopy.height ) + 'px'
+        // viewContainer.style.opacity = 1
+        // viewContainer.className = 'viewContainer'
+        // viewContainer.className = 'viewContainer fade'
+        // document.body.style.background = 'red'
+      }, 1000)
+      viewContainer.style.left  = ((window.innerWidth - imageElementCopy.width - 20 )/ 2) + 'px'
+      viewContainer.style.top  = (window.innerHeight - 130 - imageElementCopy.height ) + 'px'
+      viewContainer.style.opacity = 1
+      // log('place')
+    }
+    place()
+    // place()
+    return
+
+    const maxWidthValue = getComputedStyle(_imageElement).getPropertyValue('max-width').split('px')[0]
+    const maxWidth = maxWidthValue !== 'none' ? Number(maxWidthValue) : null
+
+    const imageWidthToHeightRatio =imageElementCopy.width / imageElementCopy.height
+    const imageHeightToWidthRatio = 1 / imageWidthToHeightRatio
+    const slideContainer = _imageElement.parentElement.parentElement.parentElement
+    const slideContainerBox = slideContainer.getBoundingClientRect()
+    let ht = slideContainerBox.bottom - 100
+    let wid = imageWidthToHeightRatio * ht
+    // ** CORRECT FOR OVERFLOW TOP BOTTOM
+    const widthIsTooWide = wid > window.innerWidth - 80
+    wid = Math.min(wid, window.innerWidth - 80)
+    ht = widthIsTooWide ? imageHeightToWidthRatio * wid : ht
+    // ** CORRECT FOR OVERFLOW LEFT RIGHT
+    const heightIsTooTall = ht > window.innerHeight - 180
+    ht = Math.min(ht, window.innerHeight - 180)
+    wid = heightIsTooTall ? imageWidthToHeightRatio * ht : wid
+
+    if(maxWidth){
+      wid = maxWidth
+      ht = imageHeightToWidthRatio * wid
+    }
+
+    viewContainer.style.width = wid + 'px'
+    viewContainer.style.height =  ht + 'px'
+    const maxSlideWidth = Number(getComputedStyle(document.documentElement).getPropertyValue('--max-slide-width').split('px')[0])
+    const imageIsNarrow = wid < maxSlideWidth
+
+    imageElementCopy.className = imageIsNarrow ? 'fit-height' : 'fit-width'
+    viewContainer.style.opacity = 0
+    setTimeout(function() {
+      // viewContainer.style.left  = ((window.innerWidth - imageElementCopy.width - 20 )/ 2) + 'px'
+      // viewContainer.style.top  = (window.innerHeight - 130 - imageElementCopy.height ) + 'px'
+      // viewContainer.style.opacity = 1
+      // viewContainer.className = 'viewContainer'
+      // viewContainer.className = 'viewContainer fade'
+      // document.body.style.background = 'red'
+    }, 1000)
+    viewContainer.style.left  = ((window.innerWidth - imageElementCopy.width - 20 )/ 2) + 'px'
+    viewContainer.style.top  = (window.innerHeight - 130 - imageElementCopy.height ) + 'px'
+    viewContainer.style.opacity = 1
+  }
+
+  return {
+    setImageElement : (imageElement)=>{  //log(getComputedStyle(imageElement).getPropertyValue('max-width'))
+      if(window.innerWidth <= 540)return
+      _imageElement = imageElement
+      box = _imageElement.getBoundingClientRect()
+      imageElementCopy.src= imageElement.src
+      imageElementCopy.hidden = false
+      if(viewContainer)viewContainer.hidden = false
+      makeViewer()
+      // imageElementCopy.hidden = false
+      // if(viewContainer)viewContainer.hidden = false
+    },
+    clear : ()=>{ 
+      imageElementCopy.hidden = true
+      if(viewContainer)viewContainer.hidden = true
+      _imageElement = null
+    },
+    show : ()=>{},
+    hide : ()=>{},
+  }
+}()
+
+
+//** ARCHIVE AND REMOVE ABOVE */
+
+
+
+
+const slidePanels = document.getElementsByClassName('slidePanel')
+let slidePanelMousePoint , slidePanelWidthAtStart
+
+// const getSlidePanelEdgeMouseClick = (e)=>{
+//   slidePanelMousePoint = null
+//   const slidePanel = e.target
+//   const box = slidePanel.getBoundingClientRect()
+//   const beginPoint = {x: box.x + box.width, y: box.y }
+//   const endPoint = {x: box.x + box.width, y: box.y + box.height }
+//   const mousePressEvent = e.type === 'touchstart' ? getTouches(e)[0] : e;                                      
+//   const mousePoint = {x: mousePressEvent.clientX, y: mousePressEvent.clientY}
+//   const rightSideDistance = getPerpendicularDistance (mousePoint,beginPoint,endPoint)
+//   if(rightSideDistance < 20) {
+//     slidePanelMousePoint = mousePoint
+//     slidePanelWidthAtStart = Number(getComputedStyle(document.documentElement).getPropertyValue('--max-slide-width').split('px')[0])
+//   }
+// }
+
+function setMouseDownFunction(slidePanel) {
+  const func = (e) => { log(e.type)
+    // if(e.type === 'touchstart') return
+    const mousePressEvent = e.type === 'touchstart' ? getTouches(e)[0] : e;
+    // const firstTouch = getTouches(e)[0];                                      
+    const mousePoint = {x: mousePressEvent.clientX, y: mousePressEvent.clientY}
+
+
+    slidePanelMousePoint = null
+    const box = slidePanel.getBoundingClientRect()
+    const beginPoint = {
+      x: box.x + box.width,
+      y: box.y
+    }
+    const endPoint = {
+      x: box.x + box.width,
+      y: box.y + box.height
+    }
+
+    const rightSideDistance = getPerpendicularDistance(mousePoint, beginPoint, endPoint)
+    if (rightSideDistance < 20) {
+      slidePanelMousePoint = mousePoint
+      slidePanelWidthAtStart = Number(getComputedStyle(document.documentElement).getPropertyValue('--max-slide-width').split('px')[0])
+      slidePanel.style.border = 'solid 5px red'
+    }
+  }
+  slidePanel.addEventListener ('mousedown', func ) 
+  // log(999)
+  slidePanel.addEventListener ('touchstart', func ) 
+}
+function setMouseReleaseFunction (slidePanel){
+  const func = (e)=>{
+    slidePanelMousePoint = null
+    slidePanel.style.border = ''
+  }
+  slidePanel.addEventListener ('mouseup', func ) 
+  slidePanel.addEventListener ('touchend', func ) 
+  document.addEventListener('mouseup',func)
+}
+
+for (let i = 0; i < slidePanels.length; i++) {
+  const slidePanel = slidePanels[i];
+  setMouseDownFunction(slidePanel)
+  setMouseReleaseFunction(slidePanel)
+
+}
+
+document.addEventListener('mousemove',(ev)=>{
+  if(!slidePanelMousePoint)return
+  const mousePoint = {x: ev.clientX, y: ev.clientY}
+  const xDist = ( mousePoint.x - slidePanelMousePoint.x ) * 2
+  const newMaxWid = Math.max(450, slidePanelWidthAtStart + xDist)
+  document.documentElement.style.setProperty('--max-slide-width', newMaxWid + 'px' )
+})
+
+// document.addEventListener('mouseup',setMouseReleaseFunction)
+
+document.addEventListener('touchmove', (ev)=>{
+  if(!slidePanelMousePoint)return
+  const firstTouch = getTouches(ev)[0];                                      
+  const mousePoint = {x: firstTouch.clientX, y: firstTouch.clientY}
+  const xDist = ( mousePoint.x - slidePanelMousePoint.x ) * 2
+  const newMaxWid = Math.max(450, slidePanelWidthAtStart + xDist)
+  document.documentElement.style.setProperty('--max-slide-width', newMaxWid + 'px' )
+}, false);
+
+
+const getPerpendicularDistance =  (point, beginPoint, endPoint) => { //formerly pDistance
+  const {
+    x,
+    y
+  } = point
+  const {
+    x: x1,
+    y: y1
+  } = beginPoint
+  const {
+    x: x2,
+    y: y2
+  } = endPoint
+  let A = x - x1;
+  let B = y - y1;
+  let C = x2 - x1;
+  let D = y2 - y1;
+  let dot = A * C + B * D;
+  let len_sq = C * C + D * D;
+  let param = -1;
+  if (len_sq != 0) //in case of 0 length line
+    param = dot / len_sq;
+  let xx, yy;
+
+  if (param < 0) {
+    xx = x1;
+    yy = y1;
+  } else if (param > 1) {
+    xx = x2;
+    yy = y2;
+  } else {
+    xx = x1 + param * C;
+    yy = y1 + param * D;
+  }
+  let dx = x - xx;
+  let dy = y - yy;
+  return Math.sqrt(dx * dx + dy * dy);
+}
+
+//**SCROLLING ROW FUNCTIONS AND IMPLIMENTATION */
+
+
+// let scrollingRowScrollLeft = null
+// subjectContainer.addEventListener('mousedown',()=>{
+//   log(subjectContainer)
+// subjectContainer.scrollRight = 100
+// subjectContainer.scrollLeft = 100;
+// })
+
+
+// function scrollingRow (){
+//   function pointerDown(ev) {
+//     scrollInner.addEventListener("pointermove", pointerMove);
+//     scrollInner.addEventListener("pointerup", pointerUp);
+  
+//     dragStartX = ev.pageX; dragStartY = ev.pageY;
+//   }
+  
+//   function pointerMove(ev) {
+//     handle.style.transform = "translate3d(" +
+//       (x + ev.pageX - dragStartX) + "px, " +
+//       (y + ev.pageY - dragStartY) + "px, 0)";
+//   }
+  
+//   function pointerUp(ev) {
+//     scrollInner.removeEventListener("pointermove", pointerMove);
+//     scrollInner.removeEventListener("pointerup", pointerUp);
+  
+//     x = x + ev.pageX - dragStartX;
+//     y = y + ev.pageY - dragStartY;
+//   }
+  
+//   let x = 0;
+//   let y = 0;
+//   let dragStartX = 0;
+//   let dragStartY = 0;
+  
+//   let handle = document.getElementById("handle");
+//   let scrollInner = document.getElementById("scroll-inner");
+//   handle.addEventListener("pointerdown", pointerDown);
+//   return {
+
+//   }
+// }

@@ -8,6 +8,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
   <script src="https://kit.fontawesome.com/a93520d4f2.js" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="main.css">
@@ -62,42 +63,49 @@
     <img src="pics/chair3.PNG" alt="">
   </div>
   <div id='bottomRightTile' class='frontPageElement'>
+    <div id='subjectContainer'>
 
-    <div id='archSplashContainer' class='splashSubjectContainer'>
-      <div class='center'>
-        <h3 class='splashHeading'> Architectural Design</h3>
+
+      <div id='techSplashContainer' class='splashSubjectContainer'>
+        <div class='center'>
+          <h3 class='splashHeading'> Mechanized Ink:</h3>
+        </div>
+        <div id='mechanizedInkDisplayScreen'> </div>
+        <p class='description'> A new vector drawing paradigm based limiting the UI to pointing device on draw screen.
+          There are to be no GUI buttons for determining shape. </p>
+        <i id=githubSymbol2 class="fab fa-github">
+          <a href="https://github.com/clauinger/JSDraw/" target="_blank" style=' pointer-events: all;'>Git
+            Repository</a>
+
+        </i>
       </div>
-      <div class='subject-display'>
-        <img class='background-image' src="pics/sky-01.jpg" alt="">
-        <img id='backdrop' class='background-image-2' src="pics/backdrop-03.png" alt="">
-        <img id='pilotHouseImage'   src="pics/pilotHouse-01.png" alt="">
+
+      <div id='furnitureSplashContainer' class='splashSubjectContainer'>
+        <div class='center'>
+          <h3 class='splashHeading'> Woodwork:</h3>
+        </div>
+        <div class='subject-display'>
+          <img class='background-image' src="pics/sand-01.png" alt="" style='opacity: .3 ;'>
+          <img id='chairImage' src="pics/F-01.jpg" alt="">
+        </div>
+        <p id='furnitureLabel' class='description'> Stack Chair Concept </p>
       </div>
-      <!-- <p class='description'> Pilot House Concept </p> -->
+
+      <div id='archSplashContainer' class='splashSubjectContainer'>
+        <div class='center'>
+          <h3 class='splashHeading'> Pilot House:</h3>
+        </div>
+
+        <div class='subject-display'>
+          <img class='background-image' src="pics/sky-01.jpg" alt="">
+          <img id='backdrop' class='background-image-2' src="pics/backdrop-03.png" alt="">
+          <img id='pilotHouseImage' src="pics/pilotHouse-01.png" alt="">
+        </div>
+        <p class='description'> This is the use of Revit design model image with html5 composition.</p>
+      </div>
     </div>
 
-    <div id='techSplashContainer' class='splashSubjectContainer'>
-      <div class='center'>
-        <h3 class='splashHeading'> Software Design</h3>
-      </div>
-      <div id='mechanizedInkDisplayScreen'> </div>
-      <p class='description'>Mechanized Ink: A new vector drawing paradigm </p>
-      <i id = githubSymbol2 class="fab fa-github">
-          <a href="https://github.com/clauinger/JSDraw/" target="_blank" style=' pointer-events: all;'>Git Repository</a>
-
-      </i>
-    </div>
-
-    <div id='furnitureSplashContainer' class='splashSubjectContainer'>
-      <div class='center'>
-        <h3 class='splashHeading'> Furniture Design</h3>
-      </div>
-      <div class='subject-display'>
-        <img class='background-image' src="pics/sand-01.png" alt="" style='opacity: .3 ;'>
-        <!-- <img id = 'chairImage'  src="pics/chair-03.jpg" alt=""> -->
-        <img id = 'chairImage'  src="pics/F-01.jpg" alt="">
-      </div>
-      <p id = 'furnitureLabel' class='description'> Stack Chair Concept </p>
-    </div>
+    
 
   </div>
 
@@ -273,7 +281,7 @@
   </div>
 
   <div id='techPortfolio' class='portfolioWindow frontPageElement hide'>
-    <i id = githubSymbol class="fab fa-github"> My Github </i>
+    <i id=githubSymbol class="fab fa-github"> My Github </i>
     <div class='portFolioFlexContainer'>
       <div class='expandable-table-cell-container condenced-height' id='JSDrawContainer'>
         <div class='table-cell-container' id='MI_TopCell'>
@@ -1007,7 +1015,8 @@
         </div>
 
         <div class="mySlides GPM fade" onclick="plusSlides(1 , 'GPM')">
-          <img src="pics/GPM-11.png" style="width:100%" alt=''>
+          <img src="pics/GPM-11.png" style="width:100%; max-width: 500px;" alt=''>
+
         </div>
 
 
@@ -1337,6 +1346,7 @@
       <a class="next" onclick="plusSlides(1,'Sewoon')">&#10095;</a>
       <div class='page-count'>1 / 1</div>
     </div>
+
     <a href="#" class="close-icon" onclick="SewoonSlideViewer.className = 'slideContainer'"></a>
   </div>
 
@@ -1484,8 +1494,11 @@
       <div class="slideshow-container">
 
         <div class="mySlides Olympic fade" onclick="plusSlides(1,'Olympic')">
-          <img src="pics/Olympic-02.jpg" style="width:100%" alt=''>
           <img src="pics/Olympic-01.jpg" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Olympic fade" onclick="plusSlides(1,'Olympic')">
+          <img src="pics/Olympic-02.jpg" style="width:100%" alt=''>
         </div>
 
         <div class="mySlides Olympic fade" onclick="plusSlides(1,'Olympic')">
@@ -1501,6 +1514,7 @@
         <span class="dot Olympic" onclick="currentSlide(1,'Olympic')"></span>
         <span class="dot Olympic" onclick="currentSlide(2,'Olympic')"></span>
         <span class="dot Olympic" onclick="currentSlide(3,'Olympic')"></span>
+        <span class="dot Olympic" onclick="currentSlide(4,'Olympic')"></span>
       </div>
       <a class="prev" onclick="plusSlides(-1,'Olympic')">&#10094;</a>
       <a class="next" onclick="plusSlides(1,'Olympic')">&#10095;</a>
@@ -1625,6 +1639,9 @@
 
         <div class="mySlides Chipotle_Encino fade" onclick="plusSlides(1,'Chipotle_Encino')">
           <img src="pics/Chipotle-Encino-01.png" style="width:100%" alt=''>
+        </div>
+
+        <div class="mySlides Chipotle_Encino fade" onclick="plusSlides(1,'Chipotle_Encino')">
           <img src="pics/Chipotle-Encino-02.png" style="width:100%" alt=''>
         </div>
 
@@ -1639,6 +1656,7 @@
         <span class="dot Chipotle_Encino" onclick="currentSlide(1,'Chipotle_Encino')"></span>
         <span class="dot Chipotle_Encino" onclick="currentSlide(2,'Chipotle_Encino')"></span>
         <span class="dot Chipotle_Encino" onclick="currentSlide(3,'Chipotle_Encino')"></span>
+        <span class="dot Chipotle_Encino" onclick="currentSlide(4,'Chipotle_Encino')"></span>
       </div>
       <a class="prev" onclick="plusSlides(-1,'Chipotle_Encino')">&#10094;</a>
       <a class="next" onclick="plusSlides(1,'Chipotle_Encino')">&#10095;</a>
@@ -1809,42 +1827,20 @@
   </div>
 
   <script>
-    let slideIndex = 1;
+    document.body.slideView = () => {}
 
 
     function plusSlides(n, key) {
-      showSlides(slideIndex += n, key);
+      showSlides(document.body.slideIndex += n, key);
     }
 
     function currentSlide(n, key) {
-      showSlides(slideIndex = n, key);
+      showSlides(document.body.slideIndex = n, key);
     }
 
     function showSlides(n, key) {
-      const mainContainerID = key + 'SlideViewer'
-      const textElement = document.getElementById(mainContainerID).children[0].children[5]
-      slideIndex = n
-      let i;
-      const slides = document.getElementsByClassName("mySlides " + key);
-      const dots = document.getElementsByClassName("dot " + key);
-      if (n > slides.length) {
-        slideIndex = 1
-      }
-      if (n < 1) {
-        slideIndex = slides.length
-      }
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex - 1].style.display = "block";
-      if (dots.length) dots[slideIndex - 1].className += " active";
-      textElement.innerHTML = slideIndex + ' / ' + slides.length
-      // const slidePanel = document.getElementById(mainContainerID).children[0]
-      // console.log(slidePanel)
-      // const box = slides[slideIndex - 1].getBoundingClientRect()
+      //** BELOW IS SET IN MAIN JS FILE
+      document.body.slideView(n, key, document.body.slideIndex)
     }
   </script>
 

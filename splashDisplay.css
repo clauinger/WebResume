@@ -77,6 +77,17 @@
   }
 } 
 
+#subjectContainer{
+  pointer-events: all;
+  touch-action: pan-right pinch-zoom;
+
+  display: flex;
+  overflow: hidden;
+  cursor: grab;
+  width:calc(var(--right-tile-width) - 30px);
+  /* border: solid 5px red; */
+}
+
 .subject-display >  .background-image-2.eye-level{
   bottom:-100px;
   animation-name: animateBackdropEyelevel;
@@ -113,6 +124,7 @@
   padding-left: 20px;
   padding-right: 20px;
   color:#12566f;
+
 }
 
 #githubSymbol2 {
