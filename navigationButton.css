@@ -55,11 +55,13 @@
 }
 
 .navigationButton:hover > div > i{
+  color: white;
   font-size: 1.2em;  
 }
 
 .navigationButton:hover > .circleButton{
   background: #0c3545;
+
 }
 .navigationButton:hover > div > p{
   color: black;
@@ -113,7 +115,7 @@
   right: 0;
   margin: 0;
   margin-right: 5px;
-  color: #13536a;
+  /* color: #13536a; */
   color : gray;
   /* width  */
   width: 190px;

@@ -1,0 +1,93 @@
+//VARIABLES 
+$gray: #555;
+$yellow: #f2e968;
+$white: #efefef;
+
+
+.grid-container ::-webkit-scrollbar {
+  display: none;
+}
+.grid-container {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none; 
+  // margin: 100px auto;
+  // padding-right : 40px;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 3px;
+}
+
+//ENABLE CSS GRID FOR LIFT OFF  
+@supports(display: grid) {
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    cursor: grab;
+    padding-right : 30px;
+  }
+
+  .grid-item {
+    padding: 3.5em 1em;
+    font-size: 1em;
+    font-weight: 700;
+  }
+  
+  .main {
+    grid-area: main;
+    padding: 0;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  
+  .items {
+    position: relative;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    transition: all 0.2s;
+    will-change: transform;
+    user-select: none;
+  }
+
+  .items.active {
+    background: rgba(255,255,255,0.3);
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+    transform: scale(1);
+  }
+
+  .item {
+    display: inline-block;
+    white-space:normal;
+    min-height: 250px;
+    min-width: 320px;
+    height: 580px;
+    align-content: center;
+    background: rgba(255, 255, 255, 0.111);
+    border-radius: 20px;
+    margin: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: monospace;
+    overflow: hidden;
+    max-width: 320px;
+    // margin: 2em 1em;
+    @media screen and (max-width: 500px) {
+      min-height: 200px;
+      min-width: 200px;
+    }
+  }
+}
+
+.invisible{
+  opacity: 0
+}
+
+@media (max-width: 550px) {
+  .invisible{
+    visibility: hidden;
+    min-width: 0;
+  }
+}

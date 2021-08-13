@@ -18,6 +18,10 @@
   <link rel="stylesheet" href="slideViewer.css">
   <link rel="stylesheet" href="splashDisplay.css">
 
+
+  <!-- <link rel="stylesheet" href="scrollingRowList.scss"> -->
+  <link rel="stylesheet" type="text/css" href="scrollingRowList.css" />
+
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Poiret+One&display=swap"
     rel="stylesheet">
@@ -63,49 +67,145 @@
     <img src="pics/chair3.PNG" alt="">
   </div>
   <div id='bottomRightTile' class='frontPageElement'>
-    <div id='subjectContainer'>
 
 
-      <div id='techSplashContainer' class='splashSubjectContainer'>
-        <div class='center'>
-          <h3 class='splashHeading'> Mechanized Ink:</h3>
+    <!-- <div class='description2' style='width:100px;'> 
+          <p>
+            This is a new vector drawing paradigm based limiting the UI to pointing device on draw screen. There are to be no GUI buttons for determining shape.
+          </p>
+        </div> -->
+    <div class="grid-container">
+
+      <main class="grid-item main">
+        <div class="items">
+          <div class="item splashSubjectContainer">
+            <div class='center'>
+              <h3 class='splashHeading'> Mechanized Ink:</h3>
+            </div>
+            <div id='mechanizedInkDisplayScreen'> </div>
+            <p class='description'>
+              This is a new vector drawing paradigm based limiting the UI to pointing device on draw screen. There are
+              to be no GUI buttons for determining shape.
+            </p>
+            <ul> 
+              <li>Javascript</li>
+              <li>p5*js | drawing canvas dependency </li>
+            </ul>
+
+            <i id=githubSymbol2 class="fab fa-github">
+              <a href="https://github.com/clauinger/JSDraw/" target="_blank" style=' pointer-events: all;'>Git
+                Repository</a>
+            </i>
+          </div>
+          <div class="item furnitureSplashContainer">
+            <div class='center'>
+              <h3 class='splashHeading'> Stack Chair Concept</h3>
+            </div>
+            <div class='subject-display'>
+              <img class='background-image' src="pics/sand-01.png" alt="" style='opacity: .3 ;'>
+              <img class='top-fit' id='chairImage' src="pics/F-01.jpg" alt="">
+            </div>
+            <p id='furnitureLabel' class='description'> 
+              <!-- This chair design explores a process to turn 2D plywood sheets into very expresive 3D forms. This is accomplished by utilizing the control and precision of a CNC machine. <i>Stacking</i> is not only a feature 
+              of this end product chair set, it is the principle for the 2D CNC cut path pattern 
+              as means to maximize efficeincy. -->
+
+
+              2D plywood sheets are turned into expressive 3D forms by way of CNC machine. <i>Stacking</i> is a feature 
+              of the end product (chair set) as it is the principle for the 2D CNC cut path pattern.
+            </p>
+            <ul> 
+              <li>CNC Cutter</li>
+              <li>AutoCad (for pattern drawing)</li>
+              <li>Power & hand woodworking tools </li>
+            </ul>
+          </div>
+          <div class="item splashSubjectContainer">
+            <div class='center'>
+              <h3 class='splashHeading'> High Table</h3>
+            </div>
+            <div class='subject-display'>
+              <img class='background-image' src="pics/sand-01.png" alt="" style='opacity: .3 ;'>
+              <img class='top-fit' id='highTableImage' src="pics/F-06.jpg" alt="">
+            </div>
+            <p class='description'> This birch plywood and maple wood table was inspired by japaneese woodworking. <br>
+              Its all jointery, with no metal fasteners. 
+            </p>
+            <ul> 
+              <li>Hand drafted shop drawings</li>
+              <li>Power & hand woodworking tools </li>
+              <li>Wood jointery techniques with no metal fasteners </li>
+            </ul>
+          </div>
+          <div class="item splashSubjectContainer">
+            <div class='center'>
+              <h3 class='splashHeading'> Pilot Web Sketch Rendering</h3>
+            </div>
+
+            <div class='subject-display'>
+              <img class='background-image' src="pics/sky-01.jpg" alt="">
+              <img id='backdrop' class='background-image-2' src="pics/backdrop-03.png" alt="">
+              <img id='pilotHouseImage' src="pics/pilotHouse-01.png" alt="">
+            </div>
+            <p class='description'> This is an initial effort to take a simple 3d model image and compose it with html5
+              elements.
+              The intent here is to develope a quick light-weight rendering system for web based documents. 
+            </p>
+            <ul> 
+              <li>Revit 3D Model Shaded Rendering</li>
+              <li>Javascript</li>
+              <li>HTML & CSS </li>
+            </ul>
+
+          </div>
+          <div class="item">
+            <div class='center'>
+              <h3 class='splashHeading'> SVG View w/ Pan & Zoom:</h3>
+            </div>
+    
+            <div class='subject-display'>
+              <div id='testSVG' class='subject-display2'>
+                <img id='SVG3rdFloor' src="pics/House-3rd-Floor.svg" alt="" class='background-image-2'>
+                <svg id="svgOverlay" xmlns="http://www.w3.org/2000/svg" width="1000" height="1000">
+                  <circle cx="100" cy="100" r="3" fill="red" id="VPCenter" />
+                </svg>
+              </div>
+            </div>
+            <p class='description'> Pan & zoom features added to SVG drawing <br>  * Pan with mouse button or finger press & drag <br> * Zoom by mouse wheel or two
+              finger pinch. 
+            </p>
+
+            <ul> 
+              <li>PDF vector document converted to SVG for web optimiztion</li>
+              <li>Javascript</li>
+              <li>HTML & CSS </li>
+            </ul>
+
+          </div>
+          <div class="item">
+            <div class='center'>
+                <h3 class='splashHeading'> Layered Panel Light Diffuser </h3>
+              </div>
+              <div class='subject-display'>
+                <img class='background-image' src="pics/sand-01.png" alt="" style='opacity: .3 ;'>
+                <img class='top-fit'  src="pics/F-09.jpg" alt="">
+              </div>
+              <p class='description'> Make from birch plywood scrap, this panel prototype is to house 4 Philips Hue munti-color LED lamps. 
+              </p>
+          </div>
+          <div id="endRowSpace" class="item invisible" >
+
+          </div>
         </div>
-        <div id='mechanizedInkDisplayScreen'> </div>
-        <p class='description'> A new vector drawing paradigm based limiting the UI to pointing device on draw screen.
-          There are to be no GUI buttons for determining shape. </p>
-        <i id=githubSymbol2 class="fab fa-github">
-          <a href="https://github.com/clauinger/JSDraw/" target="_blank" style=' pointer-events: all;'>Git
-            Repository</a>
-
-        </i>
-      </div>
-
-      <div id='furnitureSplashContainer' class='splashSubjectContainer'>
-        <div class='center'>
-          <h3 class='splashHeading'> Woodwork:</h3>
-        </div>
-        <div class='subject-display'>
-          <img class='background-image' src="pics/sand-01.png" alt="" style='opacity: .3 ;'>
-          <img id='chairImage' src="pics/F-01.jpg" alt="">
-        </div>
-        <p id='furnitureLabel' class='description'> Stack Chair Concept </p>
-      </div>
-
-      <div id='archSplashContainer' class='splashSubjectContainer'>
-        <div class='center'>
-          <h3 class='splashHeading'> Pilot House:</h3>
-        </div>
-
-        <div class='subject-display'>
-          <img class='background-image' src="pics/sky-01.jpg" alt="">
-          <img id='backdrop' class='background-image-2' src="pics/backdrop-03.png" alt="">
-          <img id='pilotHouseImage' src="pics/pilotHouse-01.png" alt="">
-        </div>
-        <p class='description'> This is the use of Revit design model image with html5 composition.</p>
-      </div>
+      </main>
     </div>
 
-    
+
+
+
+
+
+
 
   </div>
 
@@ -323,9 +423,7 @@
           <div class='textBlock'>
             <h2 class='tableTitle'>Line Shape Pen</h2>
             <div id='JSDraw_02-condenced-format-container'></div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto assumenda nam quos accusamus
-              similique nesciunt sint harum sapiente deserunt adipisci deleniti ex, maxime ratione rem doloribus
-              laudantium eos odit animi. </p>
+            <p>This is the primary shape, used to develope other more complex shapes. </p>
           </div>
           <div class='drawing' id='JSDraw_02'> </div>
           <div id='JSDraw_02-container'></div>
@@ -336,9 +434,7 @@
           <div class='textBlock'>
             <h2 class='tableTitle'>Line Series Pen</h2>
             <div id='JSDraw_03-condenced-format-container'></div>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel corrupti minus at molestias consequuntur
-              necessitatibus odio laboriosam esse, saepe deleniti velit soluta molestiae veniam aut tempore voluptatum
-              excepturi sint aliquid!</p>
+            <p>This is an early, more complex pen. It's to draw lines in series, with editing features.  </p>
           </div>
           <div class='drawing' id='JSDraw_03'> </div>
           <div id='JSDraw_03-container'></div>
@@ -348,9 +444,7 @@
           <div class='textBlock'>
             <h2 class='tableTitle'>Line Collection Pen</h2>
             <div id='JSDraw_04-condenced-format-container'></div>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel corrupti minus at molestias consequuntur
-              necessitatibus odio laboriosam esse, saepe deleniti velit soluta molestiae veniam aut tempore voluptatum
-              excepturi sint aliquid!</p>
+            <p>This Line Series Pen variant enables multiple unconnected lines to be drawn. </p>
           </div>
           <div class='drawing' id='JSDraw_04'> </div>
           <div id='JSDraw_04-container'></div>
@@ -360,9 +454,8 @@
           <div class='textBlock'>
             <h2 class='tableTitle'>Circle Series Pen</h2>
             <div id='JSDraw_05-condenced-format-container'></div>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel corrupti minus at molestias consequuntur
-              necessitatibus odio laboriosam esse, saepe deleniti velit soluta molestiae veniam aut tempore voluptatum
-              excepturi sint aliquid!</p>
+            <p>This is an early circle multiple pen. It has since been discontinued 
+              as the design of the code base has been refined.</p>
           </div>
           <div class='drawing' id='JSDraw_05'> </div>
           <div id='JSDraw_05-container'></div>
@@ -372,9 +465,11 @@
           <div class='textBlock'>
             <h2 class='tableTitle'>Arc Shape Pen V01</h2>
             <div id='JSDraw_06-condenced-format-container'></div>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel corrupti minus at molestias consequuntur
-              necessitatibus odio laboriosam esse, saepe deleniti velit soluta molestiae veniam aut tempore voluptatum
-              excepturi sint aliquid!</p>
+            <p>
+              This is the initial version of the simple ark drawing pen, 
+              that really works well, and has a good feel. But it's been since 
+              discontinued due to it's dependencies making for convoluted code.
+            </p>
           </div>
           <div class='drawing' id='JSDraw_06'> </div>
           <div id='JSDraw_06-container'></div>
@@ -384,9 +479,9 @@
           <div class='textBlock'>
             <h2 class='tableTitle'>Bezier Shape Pen</h2>
             <div id='JSDraw_07-condenced-format-container'></div>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel corrupti minus at molestias consequuntur
-              necessitatibus odio laboriosam esse, saepe deleniti velit soluta molestiae veniam aut tempore voluptatum
-              excepturi sint aliquid!</p>
+            <p>
+              This is the current bezier shape drawing pen.
+            </p>
           </div>
           <div class='drawing' id='JSDraw_07'> </div>
           <div id='JSDraw_07-container'></div>
@@ -396,9 +491,9 @@
           <div class='textBlock'>
             <h2 class='tableTitle'>Arc Shape Pen V02</h2>
             <div id='JSDraw_08-condenced-format-container'></div>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel corrupti minus at molestias consequuntur
-              necessitatibus odio laboriosam esse, saepe deleniti velit soluta molestiae veniam aut tempore voluptatum
-              excepturi sint aliquid!</p>
+            <p>
+              This is the new arc shape pen, which has been completly rewritten from scratch.
+            </p>
           </div>
           <div class='drawing' id='JSDraw_08'> </div>
           <div id='JSDraw_08-container'></div>
@@ -408,9 +503,11 @@
           <div class='textBlock'>
             <h2 class='tableTitle'>Multi Shape Pen V01</h2>
             <div id='JSDraw_09-condenced-format-container'></div>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel corrupti minus at molestias consequuntur
-              necessitatibus odio laboriosam esse, saepe deleniti velit soluta molestiae veniam aut tempore voluptatum
-              excepturi sint aliquid!</p>
+            <p>
+              This multi shape pen enables the user to transform line into bezier or arch. 
+              In future, there will be ellipse shape option as well as possible array of 
+              user constructed or customized shapes. That is when this really will become a powerful approach.
+            </p>
           </div>
           <div class='drawing' id='JSDraw_09'> </div>
           <div id='JSDraw_09-container'></div>
@@ -869,13 +966,13 @@
     <div class='slidePanel'>
       <div class="slideshow-container">
         <div class="mySlides magdalen fade" onclick="plusSlides(1,'magdalen')">
-          <img src="pics/magdalen-05.jpg" style="width:100%" alt=''>
+          <img src="pics/magdalen-05.jpg" alt=''>
         </div>
         <div class="mySlides magdalen fade" onclick="plusSlides(1,'magdalen')">
-          <img src="pics/magdalen-01.jpg" style="width:100%" alt=''>
+          <img src="pics/magdalen-01.jpg" alt=''>
         </div>
         <div class="mySlides magdalen fade" onclick="plusSlides(1,'magdalen')">
-          <img src="pics/magdalen-02.jpg" style="width:100%" alt=''>
+          <img src="pics/magdalen-02.jpg" alt=''>
         </div>
       </div>
       <div class='slide-title'>St Mary Magdalene, Pleasant Ridge MI</div>
@@ -895,10 +992,10 @@
     <div class='slidePanel'>
       <div class="slideshow-container">
         <div class="mySlides MAP fade" onclick="plusSlides(1,'MAP')">
-          <img src="pics/MAP-02.jpg" style="width:100%" alt=''>
+          <img src="pics/MAP-02.png" alt=''>
         </div>
         <div class="mySlides MAP fade" onclick="plusSlides(1,'MAP')">
-          <img src="pics/MAP-03.jpg" style="width:100%" alt=''>
+          <img src="pics/MAP-03.png" alt=''>
         </div>
       </div>
       <div class='slide-title'>Michigan Air Products, Troy MI</div>
@@ -918,11 +1015,11 @@
       <div class="slideshow-container">
 
         <div class="mySlides F21_Hawaii fade" onclick="currentSlide(1,'F21_Hawaii')">
-          <img src="pics/F21-Hawaii.jpg" style="width:100%" alt=''>
+          <img src="pics/F21-Hawaii.jpg" alt=''>
         </div>
 
         <div class="mySlides F21_Hawaii fade" onclick="currentSlide(1,'F21_Hawaii')">
-          <img src="pics/F21-Hawaii-01.jpg" style="width:100%" alt=''>
+          <img src="pics/F21-Hawaii-01.jpg" alt=''>
         </div>
       </div>
       <div class='slide-title'>Forever 21, Royal Hawaiian Center</div>
@@ -942,23 +1039,23 @@
       <div class="slideshow-container">
 
         <div class="mySlides Landmark fade" onclick="plusSlides(1,'Landmark')">
-          <img src="pics/Landmark-05.jpg" style="width:100%" alt=''>
+          <img src="pics/Landmark-05.jpg" alt=''>
         </div>
 
         <div class="mySlides Landmark fade" onclick="plusSlides(1,'Landmark')">
-          <img src="pics/Landmark-02.jpg" style="width:100%" alt=''>
+          <img src="pics/Landmark-02.jpg" alt=''>
         </div>
 
         <div class="mySlides Landmark fade" onclick="plusSlides(1,'Landmark')">
-          <img src="pics/Landmark-01.jpg" style="width:100%" alt=''>
+          <img src="pics/Landmark-01.jpg" alt=''>
         </div>
 
         <div class="mySlides Landmark fade" onclick="plusSlides(1,'Landmark')">
-          <img src="pics/Landmark-06.jpg" style="width:100%" alt=''>
+          <img src="pics/Landmark-06.jpg" alt=''>
         </div>
 
         <div class="mySlides Landmark fade" onclick="plusSlides(1,'Landmark')">
-          <img src="pics/Landmark-03.jpg" style="width:100%" alt=''>
+          <img src="pics/Landmark-03.jpg" alt=''>
         </div>
       </div>
 
@@ -982,43 +1079,50 @@
     <div class='slidePanel'>
       <div class="slideshow-container">
         <div class="mySlides GPM fade" onclick="plusSlides(1 , 'GPM')">
-          <img src="pics/GPM-02.jpg" style="width:100%" alt=''>
+          <img src="pics/GPM-22.png" alt=''>
+          <img src="pics/GPM-23.png" alt=''>
         </div>
 
         <div class="mySlides GPM fade" onclick="plusSlides(1 , 'GPM')">
-          <img src="pics/GPM-08.jpg" style="width:100%" alt=''>
+          <img src="pics/GPM-05.jpg" alt=''>
         </div>
 
         <div class="mySlides GPM fade" onclick="plusSlides(1 , 'GPM')">
-          <img src="pics/GPM-05.jpg" style="width:100%" alt=''>
+          <img src="pics/GPM-08.jpg" alt=''>
+        </div>
+
+        <div class="mySlides GPM fade" onclick="plusSlides(1 , 'GPM')">
+          <img src="pics/GPM-02.jpg" alt=''>
         </div>
 
 
         <div class="mySlides GPM fade" onclick="plusSlides(1 , 'GPM')">
-          <img src="pics/GPM-09.jpg" style="width:100%" alt=''>
+          <img src="pics/GPM-09.jpg" alt=''>
         </div>
 
         <div class="mySlides GPM fade" onclick="plusSlides(1 , 'GPM')">
-          <img src="pics/GPM-10.jpg" style="width:100%" alt=''>
+          <img src="pics/GPM-10.jpg" alt=''>
         </div>
 
         <div class="mySlides GPM fade" onclick="plusSlides(1 , 'GPM')">
-          <img src="pics/GPM-04.jpg" style="width:100%" alt=''>
+          <img src="pics/GPM-04.jpg" alt=''>
         </div>
 
         <div class="mySlides GPM fade" onclick="plusSlides(1 , 'GPM')">
-          <img src="pics/GPM-01.jpg" style="width:100%" alt=''>
+          <img src="pics/GPM-01.jpg" alt=''>
         </div>
 
         <div class="mySlides GPM fade" onclick="plusSlides(1 , 'GPM')">
-          <img src="pics/GPM-10.jpg" style="width:100%" alt=''>
+          <img src="pics/GPM-10.jpg" alt=''>
         </div>
 
         <div class="mySlides GPM fade" onclick="plusSlides(1 , 'GPM')">
-          <img src="pics/GPM-11.png" style="width:100%; max-width: 500px;" alt=''>
-
+          <img src="pics/GPM-13.png" style="width:100%; max-width: 500px;" alt=''>
         </div>
 
+        <div class="mySlides GPM fade" onclick="plusSlides(1 , 'GPM')">
+          <img src="pics/GPM-14.png" style="width:100%; max-width: 500px;" alt=''>
+        </div>
 
       </div>
       <div class='slide-title'>Grosse Pointe United Methodest Church</div>
@@ -1034,6 +1138,8 @@
         <span class="dot GPM" onclick="currentSlide(7, 'GPM')"></span>
         <span class="dot GPM" onclick="currentSlide(8, 'GPM')"></span>
         <span class="dot GPM" onclick="currentSlide(9, 'GPM')"></span>
+        <span class="dot GPM" onclick="currentSlide(10, 'GPM')"></span>
+        <span class="dot GPM" onclick="currentSlide(11, 'GPM')"></span>
       </div>
       <a class="prev" onclick="plusSlides(-1 , 'GPM')">&#10094;</a>
       <a class="next" onclick="plusSlides(1 , 'GPM')">&#10095;</a>
@@ -1046,22 +1152,22 @@
     <div class='slidePanel'>
       <div class="slideshow-container">
         <div class="mySlides Proper fade" onclick="plusSlides(1,'Proper')">
-          <img src="pics/Proper-03.jpg" style="width:100%" alt=''>
+          <img src="pics/Proper-03.jpg" alt=''>
         </div>
         <div class="mySlides Proper fade" onclick="plusSlides(1,'Proper')">
-          <img src="pics/proper-02.png" style="width:100%" alt=''>
+          <img src="pics/proper-02.png" alt=''>
         </div>
         <div class="mySlides Proper fade" onclick="plusSlides(1,'Proper')">
-          <img src="pics/Proper-08.jpg" style="width:100%" alt=''>
+          <img src="pics/Proper-08.jpg" alt=''>
         </div>
         <div class="mySlides Proper fade" onclick="plusSlides(1,'Proper')">
-          <img src="pics/Proper-05.jpg" style="width:100%" alt=''>
+          <img src="pics/Proper-05.jpg" alt=''>
         </div>
         <div class="mySlides Proper fade" onclick="plusSlides(1,'Proper')">
-          <img src="pics/Proper-04.jpg" style="width:100%" alt=''>
+          <img src="pics/Proper-04.jpg" alt=''>
         </div>
         <div class="mySlides Proper fade" onclick="plusSlides(1,'Proper')">
-          <img src="pics/Proper-06.jpg" style="width:100%" alt=''>
+          <img src="pics/Proper-06.jpg" alt=''>
         </div>
       </div>
       <div class='slide-title'>Santa Monica Proper</div>
@@ -1084,65 +1190,65 @@
     <div class='slidePanel'>
       <div class="slideshow-container">
         <div class="mySlides UDONG fade" onclick="plusSlides(1 , 'UDONG')">
-          <img src="pics/UDONG-02.jpg" style="width:100%" alt=''>
+          <img src="pics/UDONG-02.jpg" alt=''>
         </div>
         <div class="mySlides UDONG fade" onclick="plusSlides(1 , 'UDONG')">
-          <img src="pics/UDONG-03.jpg" style="width:100%" alt=''>
+          <img src="pics/UDONG-03.jpg" alt=''>
         </div>
         <div class="mySlides UDONG fade" onclick="plusSlides(1 , 'UDONG')">
-          <img src="pics/UDONG-04.jpg" style="width:100%" alt=''>
+          <img src="pics/UDONG-04.jpg" alt=''>
         </div>
         <div class="mySlides UDONG fade" onclick="plusSlides(1 , 'UDONG')">
-          <img src="pics/UDONG-05.jpg" style="width:100%" alt=''>
+          <img src="pics/UDONG-05.jpg" alt=''>
         </div>
         <div class="mySlides UDONG fade" onclick="plusSlides(1 , 'UDONG')">
-          <img src="pics/UDONG-06.jpg" style="width:100%" alt=''>
+          <img src="pics/UDONG-06.jpg" alt=''>
         </div>
         <div class="mySlides UDONG fade" onclick="plusSlides(1 , 'UDONG')">
-          <img src="pics/UDONG-07.jpg" style="width:100%" alt=''>
+          <img src="pics/UDONG-07.jpg" alt=''>
         </div>
         <div class="mySlides UDONG fade" onclick="plusSlides(1 , 'UDONG')">
-          <img src="pics/UDONG-08.jpg" style="width:100%" alt=''>
+          <img src="pics/UDONG-08.jpg" alt=''>
         </div>
         <div class="mySlides UDONG fade" onclick="plusSlides(1 , 'UDONG')">
-          <img src="pics/UDONG-09.jpg" style="width:100%" alt=''>
+          <img src="pics/UDONG-09.jpg" alt=''>
         </div>
         <div class="mySlides UDONG fade" onclick="plusSlides(1 , 'UDONG')">
-          <img src="pics/UDONG-10.jpg" style="width:100%" alt=''>
+          <img src="pics/UDONG-10.jpg" alt=''>
         </div>
         <div class="mySlides UDONG fade" onclick="plusSlides(1 , 'UDONG')">
-          <img src="pics/UDONG-11.jpg" style="width:100%" alt=''>
+          <img src="pics/UDONG-11.jpg" alt=''>
         </div>
         <div class="mySlides UDONG fade" onclick="plusSlides(1 , 'UDONG')">
-          <img src="pics/UDONG-12.jpg" style="width:100%" alt=''>
-        </div>
-
-        <div class="mySlides UDONG fade" onclick="plusSlides(1 , 'UDONG')">
-          <img src="pics/UDONG-13.jpg" style="width:100%" alt=''>
+          <img src="pics/UDONG-12.jpg" alt=''>
         </div>
 
         <div class="mySlides UDONG fade" onclick="plusSlides(1 , 'UDONG')">
-          <img src="pics/UDONG-14.jpg" style="width:100%" alt=''>
+          <img src="pics/UDONG-13.jpg" alt=''>
         </div>
 
         <div class="mySlides UDONG fade" onclick="plusSlides(1 , 'UDONG')">
-          <img src="pics/UDONG-15.jpg" style="width:100%" alt=''>
+          <img src="pics/UDONG-14.jpg" alt=''>
         </div>
 
         <div class="mySlides UDONG fade" onclick="plusSlides(1 , 'UDONG')">
-          <img src="pics/UDONG-16.jpg" style="width:100%" alt=''>
+          <img src="pics/UDONG-15.jpg" alt=''>
         </div>
 
         <div class="mySlides UDONG fade" onclick="plusSlides(1 , 'UDONG')">
-          <img src="pics/UDONG-17.jpg" style="width:100%" alt=''>
+          <img src="pics/UDONG-16.jpg" alt=''>
         </div>
 
         <div class="mySlides UDONG fade" onclick="plusSlides(1 , 'UDONG')">
-          <img src="pics/UDONG-18.jpg" style="width:100%" alt=''>
+          <img src="pics/UDONG-17.jpg" alt=''>
         </div>
 
         <div class="mySlides UDONG fade" onclick="plusSlides(1 , 'UDONG')">
-          <img src="pics/UDONG-19.jpg" style="width:100%" alt=''>
+          <img src="pics/UDONG-18.jpg" alt=''>
+        </div>
+
+        <div class="mySlides UDONG fade" onclick="plusSlides(1 , 'UDONG')">
+          <img src="pics/UDONG-19.jpg" alt=''>
         </div>
       </div>
       <div class='slide-title'>Udong Mixed Use, Busan S. Korea</div>
@@ -1159,6 +1265,12 @@
         <span class="dot UDONG" onclick="currentSlide(10, 'UDONG')"></span>
         <span class="dot UDONG" onclick="currentSlide(11, 'UDONG')"></span>
         <span class="dot UDONG" onclick="currentSlide(12, 'UDONG')"></span>
+        <span class="dot UDONG" onclick="currentSlide(13, 'UDONG')"></span>
+        <span class="dot UDONG" onclick="currentSlide(14, 'UDONG')"></span>
+        <span class="dot UDONG" onclick="currentSlide(15, 'UDONG')"></span>
+        <span class="dot UDONG" onclick="currentSlide(16, 'UDONG')"></span>
+        <span class="dot UDONG" onclick="currentSlide(17, 'UDONG')"></span>
+        <span class="dot UDONG" onclick="currentSlide(18, 'UDONG')"></span>
 
       </div>
       <a class="prev" onclick="plusSlides(-1 , 'UDONG')">&#10094;</a>
@@ -1172,16 +1284,16 @@
     <div class='slidePanel'>
       <div class="slideshow-container">
         <div class="mySlides Biscuit fade" onclick="plusSlides(1,'Biscuit')">
-          <img src="pics/Biscuit-05.jpg" style="width:100%" alt=''>
+          <img src="pics/Biscuit-05.jpg" alt=''>
         </div>
         <div class="mySlides Biscuit fade" onclick="plusSlides(1,'Biscuit')">
-          <img src="pics/Biscuit-04.jpg" style="width:100%" alt=''>
+          <img src="pics/Biscuit-04.jpg" alt=''>
         </div>
         <div class="mySlides Biscuit fade" onclick="plusSlides(1,'Biscuit')">
-          <img src="pics/Biscuit-02.jpg" style="width:100%" alt=''>
+          <img src="pics/Biscuit-02.jpg" alt=''>
         </div>
         <div class="mySlides Biscuit fade" onclick="plusSlides(1,'Biscuit')">
-          <img src="pics/Biscuit-03.jpg" style="width:100%" alt=''>
+          <img src="pics/Biscuit-03.jpg" alt=''>
         </div>
       </div>
       <div class='slide-title'>Biscuit Lofts, Los Angeles</div>
@@ -1202,16 +1314,16 @@
     <div class='slidePanel'>
       <div class="slideshow-container">
         <div class="mySlides F21_SCP fade" onclick="plusSlides(1,'F21_SCP')">
-          <img src="pics/F21-SCP-01.png" style="width:100%" alt=''>
+          <img src="pics/F21-SCP-01.png" alt=''>
         </div>
         <div class="mySlides F21_SCP fade" onclick="plusSlides(1,'F21_SCP')">
-          <img src="pics/F21-SCP-02.jpg" style="width:100%" alt=''>
+          <img src="pics/F21-SCP-02.jpg" alt=''>
         </div>
         <div class="mySlides F21_SCP fade" onclick="plusSlides(1,'F21_SCP')">
-          <img src="pics/F21-SCP-03.jpg" style="width:100%" alt=''>
+          <img src="pics/F21-SCP-03.jpg" alt=''>
         </div>
         <div class="mySlides F21_SCP fade" onclick="plusSlides(1,'F21_SCP')">
-          <img src="pics/F21-SCP-06.jpg" style="width:100%" alt=''>
+          <img src="pics/F21-SCP-06.jpg" alt=''>
         </div>
       </div>
 
@@ -1235,20 +1347,21 @@
       <div class="slideshow-container">
 
         <div class="mySlides Chipotle_SB fade" onclick="plusSlides(1,'Chipotle_SB')">
-          <img src="pics/chipotle-SB-01.JPG" style="width:100%" alt=''>
+          <img src="pics/Chipotle-SB-04.png" alt=''>
+        </div>
+        <div class="mySlides Chipotle_SB fade" onclick="plusSlides(1,'Chipotle_SB')">
+          <img src="pics/chipotle-SB-01.JPG" alt=''>
         </div>
 
         <div class="mySlides Chipotle_SB fade" onclick="plusSlides(1,'Chipotle_SB')">
-          <img src="pics/chipotle-SB-02.JPG" style="width:100%" alt=''>
+          <img src="pics/chipotle-SB-02.JPG" alt=''>
         </div>
 
         <div class="mySlides Chipotle_SB fade" onclick="plusSlides(1,'Chipotle_SB')">
           <img src="pics/chipotle-SB-03.png" style="width:100% ; max-height: 500px; object-fit:contain" alt=''>
         </div>
 
-        <div class="mySlides Chipotle_SB fade" onclick="plusSlides(1,'Chipotle_SB')">
-          <img src="pics/chipotle-SB.png" alt='' style="width:100% ; max-height: 500px; object-fit:contain">
-        </div>
+
       </div>
       <div class='slide-title'>Chipotle, Santa Barbara</div>
 
@@ -1269,59 +1382,59 @@
     <div class='slidePanel'>
       <div class="slideshow-container">
         <div class="mySlides Sewoon fade" onclick="plusSlides(1,'Sewoon')">
-          <img src="pics/Seewoon.png" style="width:100%" alt=''>
+          <img src="pics/Seewoon.png" alt=''>
         </div>
 
         <div class="mySlides Sewoon fade" onclick="plusSlides(1,'Sewoon')">
-          <img src="pics/Sewoon-02.png" style="width:100%" alt=''>
+          <img src="pics/Sewoon-02.png" alt=''>
         </div>
 
         <div class="mySlides Sewoon fade" onclick="plusSlides(1,'Sewoon')">
-          <img src="pics/Sewoon-03.jpg" style="width:100%" alt=''>
+          <img src="pics/Sewoon-03.jpg" alt=''>
         </div>
 
         <div class="mySlides Sewoon fade" onclick="plusSlides(1,'Sewoon')">
-          <img src="pics/Sewoon-04.jpg" style="width:100%" alt=''>
+          <img src="pics/Sewoon-04.jpg" alt=''>
         </div>
 
         <div class="mySlides Sewoon fade" onclick="plusSlides(1,'Sewoon')">
-          <img src="pics/Sewoon-05.jpg" style="width:100%" alt=''>
+          <img src="pics/Sewoon-05.jpg" alt=''>
         </div>
 
         <div class="mySlides Sewoon fade" onclick="plusSlides(1,'Sewoon')">
-          <img src="pics/Sewoon-06.jpg" style="width:100%" alt=''>
+          <img src="pics/Sewoon-06.jpg" alt=''>
         </div>
 
         <div class="mySlides Sewoon fade" onclick="plusSlides(1,'Sewoon')">
-          <img src="pics/Sewoon-07.jpg" style="width:100%" alt=''>
+          <img src="pics/Sewoon-07.jpg" alt=''>
         </div>
 
         <div class="mySlides Sewoon fade" onclick="plusSlides(1,'Sewoon')">
-          <img src="pics/Sewoon-08.jpg" style="width:100%" alt=''>
+          <img src="pics/Sewoon-08.jpg" alt=''>
         </div>
 
         <div class="mySlides Sewoon fade" onclick="plusSlides(1,'Sewoon')">
-          <img src="pics/Sewoon-09.jpg" style="width:100%" alt=''>
+          <img src="pics/Sewoon-09.jpg" alt=''>
         </div>
 
         <div class="mySlides Sewoon fade" onclick="plusSlides(1,'Sewoon')">
-          <img src="pics/Sewoon-10.jpg" style="width:100%" alt=''>
+          <img src="pics/Sewoon-10.jpg" alt=''>
         </div>
 
         <div class="mySlides Sewoon fade" onclick="plusSlides(1,'Sewoon')">
-          <img src="pics/Sewoon-11.jpg" style="width:100%" alt=''>
+          <img src="pics/Sewoon-11.jpg" alt=''>
         </div>
 
         <div class="mySlides Sewoon fade" onclick="plusSlides(1,'Sewoon')">
-          <img src="pics/Sewoon-12.jpg" style="width:100%" alt=''>
+          <img src="pics/Sewoon-12.jpg" alt=''>
         </div>
 
         <div class="mySlides Sewoon fade" onclick="plusSlides(1,'Sewoon')">
-          <img src="pics/Sewoon-13.jpg" style="width:100%" alt=''>
+          <img src="pics/Sewoon-13.jpg" alt=''>
         </div>
 
         <div class="mySlides Sewoon fade">
-          <img src="pics/Sewoon-14.jpg" style="width:100%" alt=''>
+          <img src="pics/Sewoon-14.jpg" alt=''>
         </div>
       </div>
       <div class='slide-title'>Sewoon Towers, Seoul S. Korea</div>
@@ -1355,14 +1468,14 @@
       <div class="slideshow-container">
 
         <div class="mySlides ChipotlePacific fade" onclick="plusSlides(1,'ChipotlePacific')">
-          <img src="pics/Chipotle-Pacific-01.jpg" style="width:100%" alt=''>
+          <img src="pics/Chipotle-Pacific-01.png" alt=''>
         </div>
 
         <div class="mySlides ChipotlePacific fade" onclick="plusSlides(1,'ChipotlePacific')">
-          <img src="pics/Chipotle-Pacific-02.png" style="width:100%" alt=''>
+          <img src="pics/Chipotle-Pacific-02.png" alt=''>
         </div>
         <div class="mySlides ChipotlePacific fade" onclick="plusSlides(1,'ChipotlePacific')">
-          <img src="pics/Chipotle-Pacific-03.png" style="width:100%" alt=''>
+          <img src="pics/Chipotle-Pacific-03.png" alt=''>
         </div>
       </div>
       <div class='slide-title'>Chipotle, Pacific Beach</div>
@@ -1383,10 +1496,10 @@
     <div class='slidePanel'>
       <div class="slideshow-container">
         <div class="mySlides ChipotleBevCen fade" onclick="plusSlides(1,'ChipotleBevCen')">
-          <img src="pics/Chipotle-BevCen-01.jpg" style="width:100%" alt=''>
+          <img src="pics/Chipotle-BevCen-01.png" alt=''>
         </div>
         <div class="mySlides ChipotleBevCen fade" onclick="plusSlides(1,'ChipotleBevCen')">
-          <img src="pics/Chipotle-BevCen-02.png" style="width:100%" alt=''>
+          <img src="pics/Chipotle-BevCen-02.png" alt=''>
         </div>
       </div>
 
@@ -1407,11 +1520,11 @@
       <div class="slideshow-container">
 
         <div class="mySlides ChipotleEncinitas fade" onclick="plusSlides(1,'ChipotleEncinitas')">
-          <img src="pics/Chipotle-Encinitas-01.jpg" style="width:100%" alt=''>
+          <img src="pics/Chipotle-Encinitas-01.png" alt=''>
         </div>
 
         <div class="mySlides ChipotleEncinitas fade" onclick="plusSlides(1,'ChipotleEncinitas')">
-          <img src="pics/Chipotle-Encinitas-02.png" style="width:100%" alt=''>
+          <img src="pics/Chipotle-Encinitas-02.png" alt=''>
         </div>
 
         <div class="mySlides ChipotleEncinitas fade" onclick="plusSlides(1,'ChipotleEncinitas')">
@@ -1419,7 +1532,7 @@
         </div>
 
         <div class="mySlides ChipotleEncinitas fade" onclick="plusSlides(1,'ChipotleEncinitas')">
-          <img src="pics/Chipotle-Encinitas.png" style="width:100%" alt=''>
+          <img src="pics/Chipotle-Encinitas.png" alt=''>
         </div>
 
       </div>
@@ -1442,31 +1555,31 @@
       <div class="slideshow-container">
 
         <div class="mySlides SOM fade" onclick="plusSlides(1,'SOM')">
-          <img src="pics/SOM-08.jpg" style="width:100%" alt=''>
+          <img src="pics/SOM-08.jpg" alt=''>
         </div>
 
         <div class="mySlides SOM fade" onclick="plusSlides(1,'SOM')">
-          <img src="pics/SOM-02.jpg" style="width:100%" alt=''>
+          <img src="pics/SOM-02.jpg" alt=''>
         </div>
 
         <div class="mySlides SOM fade" onclick="plusSlides(1,'SOM')">
-          <img src="pics/SOM-03.jpg" style="width:100%" alt=''>
+          <img src="pics/SOM-03.jpg" alt=''>
         </div>
 
         <div class="mySlides SOM fade" onclick="plusSlides(1,'SOM')">
-          <img src="pics/SOM-04.jpg" style="width:100%" alt=''>
+          <img src="pics/SOM-04.jpg" alt=''>
         </div>
 
         <div class="mySlides SOM fade" onclick="plusSlides(1,'SOM')">
-          <img src="pics/SOM-05.jpg" style="width:100%" alt=''>
+          <img src="pics/SOM-05.jpg" alt=''>
         </div>
 
         <div class="mySlides SOM fade" onclick="plusSlides(1,'SOM')">
-          <img src="pics/SOM-06.jpg" style="width:100%" alt=''>
+          <img src="pics/SOM-06.jpg" alt=''>
         </div>
 
         <div class="mySlides SOM fade" onclick="plusSlides(1,'SOM')">
-          <img src="pics/SOM-07.jpg" style="width:100%" alt=''>
+          <img src="pics/SOM-07.jpg" alt=''>
         </div>
 
       </div>
@@ -1494,18 +1607,18 @@
       <div class="slideshow-container">
 
         <div class="mySlides Olympic fade" onclick="plusSlides(1,'Olympic')">
-          <img src="pics/Olympic-01.jpg" style="width:100%" alt=''>
+          <img src="pics/Olympic-01.jpg" alt=''>
         </div>
 
         <div class="mySlides Olympic fade" onclick="plusSlides(1,'Olympic')">
-          <img src="pics/Olympic-02.jpg" style="width:100%" alt=''>
+          <img src="pics/Olympic-02.jpg" alt=''>
         </div>
 
         <div class="mySlides Olympic fade" onclick="plusSlides(1,'Olympic')">
-          <img src="pics/Olympic-04.jpg" style="width:100%" alt=''>
+          <img src="pics/Olympic-04.jpg" alt=''>
         </div>
         <div class="mySlides Olympic fade" onclick="plusSlides(1,'Olympic')">
-          <img src="pics/OlympicSoto-01.png" style="width:100%" alt=''>
+          <img src="pics/OlympicSoto-01.png" alt=''>
         </div>
       </div>
       <div class='slide-title'>Olympic & Soto Redevelopment, Los Angeles</div>
@@ -1528,11 +1641,11 @@
       <div class="slideshow-container">
 
         <div class="mySlides SMP fade" onclick="plusSlides(1,'SMP')">
-          <img src="pics/SMP-01.png" style="width:100%" alt=''>
+          <img src="pics/SMP-01.png" alt=''>
         </div>
 
         <div class="mySlides SMP fade" onclick="plusSlides(1,'SMP')">
-          <img src="pics/SMP-02.png" style="width:100%" alt=''>
+          <img src="pics/SMP-02.png" alt=''>
         </div>
 
       </div>
@@ -1554,55 +1667,55 @@
       <div class="slideshow-container">
 
         <div class="mySlides Hope fade" onclick="plusSlides(1,'Hope')">
-          <img src="pics/Hope-01.jpg" style="width:100%" alt=''>
+          <img src="pics/Hope-01.png" alt=''>
         </div>
 
         <div class="mySlides Hope fade" onclick="plusSlides(1,'Hope')">
-          <img src="pics/Hope-02.jpg" style="width:100%" alt=''>
+          <img src="pics/Hope-02.png" alt=''>
         </div>
 
         <div class="mySlides Hope fade" onclick="plusSlides(1,'Hope')">
-          <img src="pics/Hope-03.jpg" style="width:100%" alt=''>
+          <img src="pics/Hope-03.png" alt=''>
         </div>
 
         <div class="mySlides Hope fade" onclick="plusSlides(1,'Hope')">
-          <img src="pics/Hope-04.jpg" style="width:100%" alt=''>
+          <img src="pics/Hope-04.png" alt=''>
         </div>
 
         <div class="mySlides Hope fade" onclick="plusSlides(1,'Hope')">
-          <img src="pics/Hope-06.jpg" style="width:100%" alt=''>
+          <img src="pics/Hope-06.png" alt=''>
         </div>
 
         <div class="mySlides Hope fade" onclick="plusSlides(1,'Hope')">
-          <img src="pics/Hope-07.jpg" style="width:100%" alt=''>
+          <img src="pics/Hope-07.png" alt=''>
         </div>
 
         <div class="mySlides Hope fade" onclick="plusSlides(1,'Hope')">
-          <img src="pics/Hope-08.jpg" style="width:100%" alt=''>
+          <img src="pics/Hope-08.png" alt=''>
         </div>
 
         <div class="mySlides Hope fade" onclick="plusSlides(1,'Hope')">
-          <img src="pics/Hope-09.jpg" style="width:100%" alt=''>
+          <img src="pics/Hope-09.jpg" alt=''>
         </div>
 
         <div class="mySlides Hope fade" onclick="plusSlides(1,'Hope')">
-          <img src="pics/Hope-10.jpg" style="width:100%" alt=''>
+          <img src="pics/Hope-10.jpg" alt=''>
         </div>
 
         <div class="mySlides Hope fade" onclick="plusSlides(1,'Hope')">
-          <img src="pics/Hope-11.jpg" style="width:100%" alt=''>
+          <img src="pics/Hope-11.png" alt=''>
         </div>
 
         <div class="mySlides Hope fade" onclick="plusSlides(1,'Hope')">
-          <img src="pics/Hope-12.jpg" style="width:100%" alt=''>
+          <img src="pics/Hope-12.png" alt=''>
         </div>
 
         <div class="mySlides Hope fade" onclick="plusSlides(1,'Hope')">
-          <img src="pics/Hope-13.jpg" style="width:100%" alt=''>
+          <img src="pics/Hope-13.png" alt=''>
         </div>
 
         <div class="mySlides Hope fade" onclick="plusSlides(1,'Hope')">
-          <img src="pics/Hope-14.jpg" style="width:100%" alt=''>
+          <img src="pics/Hope-14.png" alt=''>
         </div>
       </div>
       <div class='slide-title'>Hope Street Lofts, Los Angeles</div>
@@ -1634,19 +1747,19 @@
       <div class="slideshow-container">
 
         <div class="mySlides Chipotle_Encino fade" onclick="plusSlides(1,'Chipotle_Encino')">
-          <img src="pics/Chipotle-Encino-05.jpg" style="width:100%" alt=''>
+          <img src="pics/Chipotle-Encino-05.png" alt=''>
         </div>
 
         <div class="mySlides Chipotle_Encino fade" onclick="plusSlides(1,'Chipotle_Encino')">
-          <img src="pics/Chipotle-Encino-01.png" style="width:100%" alt=''>
+          <img src="pics/Chipotle-Encino-01.png" alt=''>
         </div>
 
         <div class="mySlides Chipotle_Encino fade" onclick="plusSlides(1,'Chipotle_Encino')">
-          <img src="pics/Chipotle-Encino-02.png" style="width:100%" alt=''>
+          <img src="pics/Chipotle-Encino-02.png" alt=''>
         </div>
 
         <div class="mySlides Chipotle_Encino fade" onclick="plusSlides(1,'Chipotle_Encino')">
-          <img src="pics/Chipotle-Encino-06.png" style="width:100%" alt=''>
+          <img src="pics/Chipotle-Encino-06.png" alt=''>
         </div>
 
       </div>
@@ -1669,22 +1782,22 @@
     <div class='slidePanel'>
       <div class="slideshow-container">
         <div class="mySlides BeachHouse fade" onclick="plusSlides(1,'BeachHouse')">
-          <img src="pics/BeachHouse-03.jpg" style="width:100%" alt=''>
+          <img src="pics/BeachHouse-03.svg" alt=''>
         </div>
         <div class="mySlides BeachHouse fade" onclick="plusSlides(1,'BeachHouse')">
-          <img src="pics/BeachHouse-02.jpg" style="width:100%" alt=''>
-        </div>
-
-        <div class="mySlides BeachHouse fade" onclick="plusSlides(1,'BeachHouse')">
-          <img src="pics/BeachHouse-05.jpg" style="width:100%" alt=''>
+          <img src="pics/BeachHouse-04.svg" alt=''>
         </div>
 
         <div class="mySlides BeachHouse fade" onclick="plusSlides(1,'BeachHouse')">
-          <img src="pics/BeachHouse-06.jpg" style="width:100%" alt=''>
+          <img src="pics/BeachHouse-05.png" alt=''>
         </div>
 
         <div class="mySlides BeachHouse fade" onclick="plusSlides(1,'BeachHouse')">
-          <img src="pics/BeachHouse-07.jpg" style="width:100%" alt=''>
+          <img src="pics/BeachHouse-06.png" alt=''>
+        </div>
+
+        <div class="mySlides BeachHouse fade" onclick="plusSlides(1,'BeachHouse')">
+          <img src="pics/BeachHouse-07.png" alt=''>
         </div>
       </div>
       <div class='slide-title'>Private Residence, Seal Beach CA</div>
@@ -1708,15 +1821,15 @@
       <div class="slideshow-container">
 
         <div class="mySlides Uniqlo fade" onclick="plusSlides(1,'Uniqlo')">
-          <img src="pics/Uniqlo-07.png" style="width:100%" alt=''>
+          <img src="pics/Uniqlo-07.png" alt=''>
         </div>
 
         <div class="mySlides Uniqlo fade" onclick="plusSlides(1,'Uniqlo')">
-          <img src="pics/Uniqlo-03.jpg" style="width:100%" alt=''>
+          <img src="pics/Uniqlo-03.jpg" alt=''>
         </div>
 
         <div class="mySlides Uniqlo fade" onclick="plusSlides(1,'Uniqlo')">
-          <img src="pics/Uniqlo-02.jpg" style="width:100%" alt=''>
+          <img src="pics/Uniqlo-02.jpg" alt=''>
         </div>
 
       </div>
@@ -1739,19 +1852,19 @@
       <div class="slideshow-container">
 
         <div class="mySlides Chipotle_Hillcrest fade" onclick="plusSlides(1,'Chipotle_Hillcrest')">
-          <img src="pics/Chipotle-Hillcrest-01.png" style="width:100%" alt=''>
+          <img src="pics/Chipotle-Hillcrest-01.png" alt=''>
         </div>
 
         <div class="mySlides Chipotle_Hillcrest fade" onclick="plusSlides(1,'Chipotle_Hillcrest')">
-          <img src="pics/Chipotle-Hillcrest-02.png" style="width:100%" alt=''>
+          <img src="pics/Chipotle-Hillcrest-02.png" alt=''>
         </div>
 
         <div class="mySlides Chipotle_Hillcrest fade" onclick="plusSlides(1,'Chipotle_Hillcrest')">
-          <img src="pics/Chipotle-Hillcrest-03.png" style="width:100%" alt=''>
+          <img src="pics/Chipotle-Hillcrest-03.png" alt=''>
         </div>
 
         <div class="mySlides Chipotle_Hillcrest fade" onclick="plusSlides(1,'Chipotle_Hillcrest')">
-          <img src="pics/Chipotle-Hillcrest-04.png" style="width:100%" alt=''>
+          <img src="pics/Chipotle-Hillcrest-04.png" alt=''>
         </div>
 
       </div>
@@ -1774,10 +1887,10 @@
     <div class='slidePanel'>
       <div class="slideshow-container">
         <div class="mySlides Office fade" onclick="plusSlides(1,'Office')">
-          <img src="pics/Office-01.png" style="width:100%" alt=''>
+          <img src="pics/Office-01.png" alt=''>
         </div>
         <div class="mySlides Office fade" onclick="plusSlides(1,'Office')">
-          <img src="pics/Office-02.png" style="width:100%" alt=''>
+          <img src="pics/Office-02.png" alt=''>
         </div>
       </div>
 
@@ -1799,15 +1912,15 @@
       <div class="slideshow-container">
 
         <div class="mySlides Chipotle fade" onclick="plusSlides(1,'Chipotle')">
-          <img src="pics/Chipotle-Various-01.png" style="width:100%" alt=''>
+          <img src="pics/Chipotle-Various-01.png" alt=''>
         </div>
 
         <div class="mySlides Chipotle fade" onclick="plusSlides(1,'Chipotle')">
-          <img src="pics/Chipotle-Various-02.png" style="width:100%" alt=''>
+          <img src="pics/Chipotle-Various-02.png" alt=''>
         </div>
 
         <div class="mySlides Chipotle fade" onclick="plusSlides(1,'Chipotle')">
-          <img src="pics/Chipotle-Various-03.png" style="width:100%" alt=''>
+          <img src="pics/Chipotle-Various-03.png" alt=''>
         </div>
 
       </div>
@@ -1845,6 +1958,8 @@
   </script>
 
   <script type="module" src="main.js"></script>
+  <script type="module" src="SVGTools.js"></script>
+  <script type="module" src="scrollingRowList.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.js"></script>
 </body>
 
