@@ -125,9 +125,6 @@
   animation-name: animateSlideNavButtonFromLeft;
   animation-duration: .3s;
   z-index: 10;
-  /* margin-left: var(--navigation-button-offset);
-  margin-left: -10px; */
-  /* margin-left: 20px;  */
   pointer-events: none;
 }
 

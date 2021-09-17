@@ -10,8 +10,7 @@ $white: #efefef;
 .grid-container {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none; 
-  // margin: 100px auto;
-  // padding-right : 40px;
+
   display: inline-block;
   margin: 0 auto;
   padding: 3px;
@@ -74,10 +73,10 @@ $white: #efefef;
     overflow: hidden;
     max-width: 320px;
     // margin: 2em 1em;
-    @media screen and (max-width: 500px) {
-      min-height: 200px;
-      min-width: 200px;
-    }
+    // @media screen and (max-width: 500px) {
+    //   min-height: 200px;
+    //   min-width: 200px;
+    // }
   }
 }
 

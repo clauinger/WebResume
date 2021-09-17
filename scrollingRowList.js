@@ -17,11 +17,26 @@ const {
 
 const slider = document.querySelector('.items');
 let mouseIsPressed = false;
+let preventScrolling = false
 let mousePressedOnDisplay = false;
 let startX;
 let scrollLeft;
 
-slider.addEventListener('mousedown', (e) => {
+
+
+// slider.addEventListener('touchmove', (e) => { 
+//   if(preventScrolling) {
+//     e.preventDefault()
+//     rowOfSketches.style.touchAction = 'none'
+//   }
+// });
+
+
+
+slider.addEventListener('mousedown', (e) => { //log(e.target.parentElement)
+  
+  const parentId = e.target.parentElement.id
+  if(parentId === 'panelCutDisplayScreen') return
   if(mousePressedOnDisplay)return
   mouseIsPressed = true;
   slider.classList.add('active');
@@ -56,4 +71,11 @@ window.addEventListener('mouseup', () => {
   mousePressedOnDisplay = false;
 
 });
-testSVG.addEventListener('mousedown',cancelMousePress)
+// testSVG.addEventListener('mousedown',cancelMousePress)
+
+panelCutDisplayScreen.addEventListener('mousedown',cancelMousePress)
+panelCutDisplayScreen.addEventListener('touchmove',(e)=>{
+  e.preventDefault()
+    const parentId = e.target.parentElement.id
+  myName.innerHTML = 'ffdfdfd' + parentId + mouseIsPressed
+})

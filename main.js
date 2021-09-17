@@ -5,21 +5,18 @@
 /*jshint esversion: 6 */
 /*jshint asi: true */
 /*jshint expr: true */
-
+//TODO: BREAK UP FILE INTO MANY
 
 import {
   JSDraw
 } from './JSDraw/WorkSpace.js'
 
 import { MechanizedInkDemos } from './MechanizedInkDemos.js'
-
+import {Public} from './JSDraw/Public.js'
 
 const {
   log
 } = console
-
-
-
 
 const setBg = () => {
   const randomColor = Math.floor(Math.random()*16777215).toString(16);
@@ -27,35 +24,45 @@ const setBg = () => {
 }
 
 const pen_01 = JSDraw('JSDraw_00', 300, 300)
-pen_01.currentPen = 'compositePen'
+pen_01.currentPenKey = 'compositePen'
 const pen_02 = JSDraw('JSDraw_02', 300, 300)
-pen_02.currentPen = 'lineShapePen'
+pen_02.currentPenKey = 'lineShapePen'
 
 const pen_03 = JSDraw('JSDraw_03', 300, 300)
-pen_03.currentPen = 'lineSeriesPen'
+pen_03.currentPenKey = 'lineSeriesPen'
 
 const pen_04 = JSDraw('JSDraw_04', 300, 300)
-pen_04.currentPen = 'lineCollectionPen'
+pen_04.currentPenKey = 'lineCollectionPen'
 
 const pen_05 = JSDraw('JSDraw_05', 300, 300)
-pen_05.currentPen = 'circleSeriesPen'
+pen_05.currentPenKey = 'circleSeriesPen'
 
 const pen_06 = JSDraw('JSDraw_06', 300, 300)
-pen_06.currentPen = 'arcLineShapePen'
+pen_06.currentPenKey = 'arcLineShapePen'
 
 const pen_07 = JSDraw('JSDraw_07', 300, 300)
-pen_07.currentPen = 'bezierShapePen'
+pen_07.currentPenKey = 'bezierShapePen'
 
 const pen_08 = JSDraw('JSDraw_08', 300, 300)
-pen_08.currentPen = 'arcShapePen'
+pen_08.currentPenKey = 'arcShapePen'
 
 const pen_09 = JSDraw('JSDraw_09', 300, 300)
-pen_09.currentPen = 'multiShapePen_01'
+pen_09.currentPenKey = 'multiShapePen_01'
+
+// const pen_10 = JSDraw('JSDraw_10', 300, 300)
+// pen_10.currentPen = 'shapeCutLinePen'
 
 
 //mechanizedInkDisplayScreen
 const penDisplay = JSDraw('mechanizedInkDisplayScreen', 300, 300)
 penDisplay.backgroundColor = '#23a6d5'
+
+const panelCutDisplay = JSDraw('panelCutDisplayScreen', 300, 300)
+panelCutDisplay.currentPenKey = 'shapeCutLinePen'
+// panelCutDisplay.currentPen.beginPoint.xy = {x:0,y:0}
+// log(Public.whatThisIs( panelCutDisplay.currentPen))
+
+// log(panelCutDisplay)
 
 penDisplay.playBackRecord(MechanizedInkDemos.pattern_01)
 
@@ -500,7 +507,6 @@ function setupPortfolioScrollEvents(portfolio) {
     document.documentElement.style.setProperty('--user-scroll-distance', topScroll + 'px')
   }
   portfolio.addEventListener('scroll', scrollTop)
-
 }
 
 techPortfolio.addEventListener('touchmove', function(e) {
@@ -847,7 +853,6 @@ for (let i = 0; i < slidePanels.length; i++) {
   const slidePanel = slidePanels[i];
   setMouseDownFunction(slidePanel)
   setMouseReleaseFunction(slidePanel)
-
 }
 
 document.addEventListener('mousemove',(ev)=>{
@@ -857,8 +862,6 @@ document.addEventListener('mousemove',(ev)=>{
   const newMaxWid = Math.max(450, slidePanelWidthAtStart + xDist)
   document.documentElement.style.setProperty('--max-slide-width', newMaxWid + 'px' )
 })
-
-// document.addEventListener('mouseup',setMouseReleaseFunction)
 
 document.addEventListener('touchmove', (ev)=>{
   if(!slidePanelMousePoint)return
@@ -911,11 +914,6 @@ const getPerpendicularDistance =  (point, beginPoint, endPoint) => { //formerly 
 
 //**SCROLLING ROW FUNCTIONS AND IMPLIMENTATION */
 
-
-
-
-
-
 document.body.slideIndex = 1
 document.body.slideView =  (n, key )=> {
   const mainContainerID = key + 'SlideViewer'
@@ -941,27 +939,3 @@ document.body.slideView =  (n, key )=> {
   textElement.innerHTML = document.body.slideIndex + ' / ' + slides.length
 }
 
-//** SCROLL GRID ATTEMPT */
-// let subjectContainerMousePressPoint = null
-// subjectContainer.addEventListener('mousedown',(e)=>{
-//   subjectContainerMousePressPoint = {
-//       x: e.screenX,
-//      y: e.screenY, 
-//      beginScrollLeft : bottomRightTile.scrollLeft,
-//      beginScrollTop : bottomRightTile.scrollTop,
-//   }
-//   // subjectContainer.scrollTop = -300
-//   // log({x:e.clientX, y:e.clientY})
-// })
-// subjectContainer.addEventListener('mousemove',(e)=>{
-//   if(!subjectContainerMousePressPoint)return
-//   const movePoint = {x:e.screenX, y:e.screenY}
-//   log(movePoint)
-//   const deltaY = e.screenY - subjectContainerMousePressPoint.y
-//   const newScrollTop = subjectContainerMousePressPoint.beginScrollTop - deltaY
-//   const deltaX = e.screenX - subjectContainerMousePressPoint.x
-//   const newScrollLeft = subjectContainerMousePressPoint.beginScrollLeft - deltaX
-// })
-
-
-// document.addEventListener('mouseup',()=>{subjectContainerMousePressPoint = null})

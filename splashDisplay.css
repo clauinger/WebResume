@@ -22,6 +22,15 @@
   background: #41414131;
 }
 
+#panelCutDisplayScreen {
+  position: relative;
+  margin: auto;
+  width: 300px;
+  height: 300px;
+  border: solid 1px #76b7ce;
+  background: #41414131;
+}
+
 .subject-display {
   position: relative;
   margin: auto;
@@ -29,8 +38,6 @@
   height: 300px;
   border: solid 1px #76b7ce;
   background: #41414131;
-  /* margin-left: 20px;
-  margin-right: 20px; */
   overflow: hidden;
   cursor: default;
 }
@@ -51,27 +58,16 @@
   margin: auto;
   width: 300px;
   height: 300px;
-  /* border: solid 1px #76b7ce; */
-  /* background: #41414131; */
-  /* margin-left: 20px;
-  margin-right: 20px; */
   overflow: hidden;
   background: white;
   cursor: grab;
-  /* transform: translateY(-400px); */
 }
 
 .subject-display2>img {
   width: 600px;
   position: absolute;
   top: 0;
-  /* margin-top: -150px;
-  margin-left:40px; */
   overflow: hidden;
-  /* border: solid 1px red; */
-  /* margin-top: 200px; */
-
-  /* background: #12566f; */
 }
 
 #svgOverlay {
@@ -88,21 +84,14 @@
   pointer-events: all;
   top: 0;
   position: absolute;
-  /* z-index: 3; */
   opacity: .3;
   object-fit: fill;
   height: 300px;
-
 }
 
 .subject-display>.background-image-2 {
-
   bottom: -60px;
   position: absolute;
-  /* z-index: 3; */
-  /* opacity: .3; */
-  /* object-fit: fill; */
-
   filter: blur(1px);
   -webkit-filter: blur(1px);
   animation-name: animateBackdropMidlevel;
@@ -112,8 +101,6 @@
 @keyframes animateBackdropMidlevel {
   0% {
     opacity: 0;
-    /* opacity: .2; */
-    /* bottom:-100px; */
   }
 
   20% {
@@ -124,26 +111,18 @@
 #subjectContainer {
   visibility: hidden;
   pointer-events: all;
-  /* touch-action: pan-right pinch-zoom; */
   background: rgba(244, 244, 244, 0.276);
   display: grid;
   width:100%;
   grid-template-columns: repeat(3, 360px);
-  /* grid-template-columns: minmax(360px, max-content) repeat(2, 360px); */
-
   grid-template-rows: repeat(6, 1fr);
-
-  /* overflow: scroll; */
   cursor: grab;
   width: calc(var(--right-tile-width) - 30px);
 }
 
 @keyframes animateTest {
   0% {
-
     opacity: 0;
-    /* opacity: .2; */
-    /* bottom:-60px; */
   }
 
   20% {
@@ -209,7 +188,7 @@
 }
 
 
-#githubSymbol2 {
+/* #githubSymbol2 {
   margin-left: 20px;
   color: inherit;
 }
@@ -218,7 +197,19 @@
   font-family: 'Quicksand', sans-serif;
   font-size: smaller;
   color: inherit;
+} */
+
+.githubSymbol {
+  margin-left: 20px;
+  color: inherit;
 }
+
+.githubSymbol>a {
+  font-family: 'Quicksand', sans-serif;
+  font-size: smaller;
+  color: inherit;
+}
+
 
 .splashHeading {
   font-family: 'Montserrat', sans-serif;

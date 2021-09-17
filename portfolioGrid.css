@@ -46,7 +46,6 @@
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(12, 1fr);
   grid-gap: var(--grid-gap);
-
   grid-row-gap: var(--grid-gap-horizontal);
   cursor: grab;
   margin: 0 auto;

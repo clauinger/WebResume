@@ -71,12 +71,6 @@
     overflow: hidden;
     max-width: 320px;
   }
-  @media screen and (max-width: 500px) {
-    .item {
-      min-height: 200px;
-      min-width: 200px;
-    }
-  }
 }
 
 .invisible {

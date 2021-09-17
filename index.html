@@ -34,9 +34,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap" rel="stylesheet">
 
-  <!-- 
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet"> -->
+
 
 
   <title>Document</title>
@@ -68,31 +66,58 @@
   </div>
   <div id='bottomRightTile' class='frontPageElement'>
 
-
-    <!-- <div class='description2' style='width:100px;'> 
-          <p>
-            This is a new vector drawing paradigm based limiting the UI to pointing device on draw screen. There are to be no GUI buttons for determining shape.
-          </p>
-        </div> -->
     <div class="grid-container">
 
-      <main class="grid-item main">
+      <main class="grid-item main" id='rowOfSketches'>
         <div class="items">
+
           <div class="item splashSubjectContainer">
             <div class='center'>
-              <h3 class='splashHeading'> Mechanized Ink:</h3>
+              <h3 class='splashHeading'> Panel Cut Pattern Drawing</h3>
+            </div>
+            <div id='panelCutDisplayScreen' class='drawing' > </div>
+            <p class='description'>
+              This is my proof-of-concept for a web UI CNC draw path design tool.
+              It is intended to enable a designer to turn 2D oriented sheet building material into 3D
+              expressive shapes.
+              <br> <br>
+              The next step is to develop a side-by-side 3D model display via three.js.
+              <!-- <br> <br>
+              This initial entry Pen tool is intended for user to define a line cut within a
+              rectangular panel boundary, and then enable user to repeat parallel cuts in an array.
+              The parameters of a cut is for the Begin Point and End Point to be bound to perimeter
+              of defined rectangle. User can move and rotate Control Points of Cut Vector. In addition,
+              the user can make an array of parallel Vectors.
+              <br> <br>
+              The next step is to develop a side-by-side 3D model display using three.js. This will
+              mirror the user changes in real time. -->
+            </p>
+            <ul>
+              <li>Javascript</li>
+              <li>Mechanized Ink </li>
+            </ul>
+
+            <i id=githubSymbol3 class="fab fa-github githubSymbol">
+              <a href="https://github.com/clauinger/JSDraw/" target="_blank" style=' pointer-events: all;'>Git
+                Repository</a>
+            </i>
+          </div>
+
+          <div class="item splashSubjectContainer">
+            <div class='center'>
+              <h3 class='splashHeading'> Mechanized Ink</h3>
             </div>
             <div id='mechanizedInkDisplayScreen'> </div>
             <p class='description'>
               This is a new vector drawing paradigm based limiting the UI to pointing device on draw screen. There are
               to be no GUI buttons for determining shape.
             </p>
-            <ul> 
+            <ul>
               <li>Javascript</li>
               <li>p5*js | drawing canvas dependency </li>
             </ul>
 
-            <i id=githubSymbol2 class="fab fa-github">
+            <i id=githubSymbol2 class="fab fa-github githubSymbol">
               <a href="https://github.com/clauinger/JSDraw/" target="_blank" style=' pointer-events: all;'>Git
                 Repository</a>
             </i>
@@ -103,40 +128,24 @@
             </div>
             <div class='subject-display'>
               <img class='background-image' src="pics/sand-01.png" alt="" style='opacity: .3 ;'>
-              <img class='top-fit' id='chairImage' src="pics/F-01.jpg" alt="">
+              <img class='top-fit' id='chairImage' src="pics/F-02.jpg" alt="">
             </div>
-            <p id='furnitureLabel' class='description'> 
+            <p id='furnitureLabel' class='description'>
               <!-- This chair design explores a process to turn 2D plywood sheets into very expresive 3D forms. This is accomplished by utilizing the control and precision of a CNC machine. <i>Stacking</i> is not only a feature 
               of this end product chair set, it is the principle for the 2D CNC cut path pattern 
               as means to maximize efficeincy. -->
 
 
-              2D plywood sheets are turned into expressive 3D forms by way of CNC machine. <i>Stacking</i> is a feature 
+              2D plywood sheets are turned into expressive 3D forms by way of CNC machine. <i>Stacking</i> is a feature
               of the end product (chair set) as it is the principle for the 2D CNC cut path pattern.
             </p>
-            <ul> 
+            <ul>
               <li>CNC Cutter</li>
               <li>AutoCad (for pattern drawing)</li>
               <li>Power & hand woodworking tools </li>
             </ul>
           </div>
-          <div class="item splashSubjectContainer">
-            <div class='center'>
-              <h3 class='splashHeading'> High Table</h3>
-            </div>
-            <div class='subject-display'>
-              <img class='background-image' src="pics/sand-01.png" alt="" style='opacity: .3 ;'>
-              <img class='top-fit' id='highTableImage' src="pics/F-06.jpg" alt="">
-            </div>
-            <p class='description'> This birch plywood and maple wood table was inspired by japaneese woodworking. <br>
-              Its all jointery, with no metal fasteners. 
-            </p>
-            <ul> 
-              <li>Hand drafted shop drawings</li>
-              <li>Power & hand woodworking tools </li>
-              <li>Wood jointery techniques with no metal fasteners </li>
-            </ul>
-          </div>
+
           <div class="item splashSubjectContainer">
             <div class='center'>
               <h3 class='splashHeading'> Pilot Web Sketch Rendering</h3>
@@ -149,9 +158,9 @@
             </div>
             <p class='description'> This is an initial effort to take a simple 3d model image and compose it with html5
               elements.
-              The intent here is to develope a quick light-weight rendering system for web based documents. 
+              The intent here is to develope a quick light-weight rendering system for web based documents.
             </p>
-            <ul> 
+            <ul>
               <li>Revit 3D Model Shaded Rendering</li>
               <li>Javascript</li>
               <li>HTML & CSS </li>
@@ -160,9 +169,9 @@
           </div>
           <div class="item">
             <div class='center'>
-              <h3 class='splashHeading'> SVG View w/ Pan & Zoom:</h3>
+              <h3 class='splashHeading'> SVG View w/ Pan & Zoom</h3>
             </div>
-    
+
             <div class='subject-display'>
               <div id='testSVG' class='subject-display2'>
                 <img id='SVG3rdFloor' src="pics/House-3rd-Floor.svg" alt="" class='background-image-2'>
@@ -171,11 +180,12 @@
                 </svg>
               </div>
             </div>
-            <p class='description'> Pan & zoom features added to SVG drawing <br>  * Pan with mouse button or finger press & drag <br> * Zoom by mouse wheel or two
-              finger pinch. 
+            <p class='description'> Pan & zoom features added to SVG drawing <br> * Pan with mouse button or finger
+              press & drag <br> * Zoom by mouse wheel or two
+              finger pinch.
             </p>
 
-            <ul> 
+            <ul>
               <li>PDF vector document converted to SVG for web optimiztion</li>
               <li>Javascript</li>
               <li>HTML & CSS </li>
@@ -184,28 +194,40 @@
           </div>
           <div class="item">
             <div class='center'>
-                <h3 class='splashHeading'> Layered Panel Light Diffuser </h3>
+              <h3 class='splashHeading'> Layered Panel Light Diffuser </h3>
+            </div>
+            <div class='subject-display'>
+              <img class='background-image' src="pics/sand-01.png" alt="" style='opacity: .3 ;'>
+              <img class='top-fit' src="pics/F-09.jpg" alt="">
+            </div>
+            <p class='description'> Make from birch plywood scrap, this panel prototype is to house 4 Philips Hue
+              munti-color LED lamps.
+            </p>
+          </div>
+
+          <div class="item splashSubjectContainer">
+              <div class='center'>
+                <h3 class='splashHeading'> High Table</h3>
               </div>
               <div class='subject-display'>
                 <img class='background-image' src="pics/sand-01.png" alt="" style='opacity: .3 ;'>
-                <img class='top-fit'  src="pics/F-09.jpg" alt="">
+                <img class='top-fit' id='highTableImage' src="pics/F-06.jpg" alt="">
               </div>
-              <p class='description'> Make from birch plywood scrap, this panel prototype is to house 4 Philips Hue munti-color LED lamps. 
+              <p class='description'> This birch plywood and maple wood table was inspired by japaneese woodworking. <br>
+                Its all jointery, with no metal fasteners.
               </p>
-          </div>
-          <div id="endRowSpace" class="item invisible" >
+              <ul>
+                <li>Hand drafted shop drawings</li>
+                <li>Power & hand woodworking tools </li>
+                <li>Wood jointery techniques with no metal fasteners </li>
+              </ul>
+            </div>
+          <div id="endRowSpace" class="item invisible">
 
           </div>
         </div>
       </main>
     </div>
-
-
-
-
-
-
-
 
   </div>
 
@@ -434,7 +456,7 @@
           <div class='textBlock'>
             <h2 class='tableTitle'>Line Series Pen</h2>
             <div id='JSDraw_03-condenced-format-container'></div>
-            <p>This is an early, more complex pen. It's to draw lines in series, with editing features.  </p>
+            <p>This is an early, more complex pen. It's to draw lines in series, with editing features. </p>
           </div>
           <div class='drawing' id='JSDraw_03'> </div>
           <div id='JSDraw_03-container'></div>
@@ -454,7 +476,7 @@
           <div class='textBlock'>
             <h2 class='tableTitle'>Circle Series Pen</h2>
             <div id='JSDraw_05-condenced-format-container'></div>
-            <p>This is an early circle multiple pen. It has since been discontinued 
+            <p>This is an early circle multiple pen. It has since been discontinued
               as the design of the code base has been refined.</p>
           </div>
           <div class='drawing' id='JSDraw_05'> </div>
@@ -466,8 +488,8 @@
             <h2 class='tableTitle'>Arc Shape Pen V01</h2>
             <div id='JSDraw_06-condenced-format-container'></div>
             <p>
-              This is the initial version of the simple ark drawing pen, 
-              that really works well, and has a good feel. But it's been since 
+              This is the initial version of the simple ark drawing pen,
+              that really works well, and has a good feel. But it's been since
               discontinued due to it's dependencies making for convoluted code.
             </p>
           </div>
@@ -504,8 +526,8 @@
             <h2 class='tableTitle'>Multi Shape Pen V01</h2>
             <div id='JSDraw_09-condenced-format-container'></div>
             <p>
-              This multi shape pen enables the user to transform line into bezier or arch. 
-              In future, there will be ellipse shape option as well as possible array of 
+              This multi shape pen enables the user to transform line into bezier or arch.
+              In future, there will be ellipse shape option as well as possible array of
               user constructed or customized shapes. That is when this really will become a powerful approach.
             </p>
           </div>
