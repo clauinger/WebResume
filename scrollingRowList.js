@@ -7,13 +7,9 @@
 /*jshint asi: true */
 /*jshint expr: true */
 
-
 const {
   log
 } = console
-
-
-
 
 const slider = document.querySelector('.items');
 let mouseIsPressed = false;
@@ -23,20 +19,11 @@ let startX;
 let scrollLeft;
 
 
-
-// slider.addEventListener('touchmove', (e) => { 
-//   if(preventScrolling) {
-//     e.preventDefault()
-//     rowOfSketches.style.touchAction = 'none'
-//   }
-// });
-
-
-
 slider.addEventListener('mousedown', (e) => { //log(e.target.parentElement)
   
   const parentId = e.target.parentElement.id
-  if(parentId === 'panelCutDisplayScreen') return
+  if(parentId === 'panelCutDisplayScreen') return // panel3DDisplayScreen
+  if(parentId === 'panel3DDisplayScreen') return
   if(mousePressedOnDisplay)return
   mouseIsPressed = true;
   slider.classList.add('active');
@@ -54,11 +41,9 @@ slider.addEventListener('mouseup', () => {
 });
 slider.addEventListener('mousemove', (e) => {
   if(!mouseIsPressed) return;
-
   const x = e.pageX - slider.offsetLeft;
-  const walk = (x - startX) * 3; //scroll-fast
+  const walk = (x - startX) * 3;
   slider.scrollLeft = scrollLeft - walk;
-  // console.log(walk);
 });
 
 const subjectDisplays = document.getElementsByClassName('subject-display')
@@ -76,6 +61,11 @@ window.addEventListener('mouseup', () => {
 panelCutDisplayScreen.addEventListener('mousedown',cancelMousePress)
 panelCutDisplayScreen.addEventListener('touchmove',(e)=>{
   e.preventDefault()
-    const parentId = e.target.parentElement.id
-  myName.innerHTML = 'ffdfdfd' + parentId + mouseIsPressed
 })
+
+
+panel3DDisplayScreen.addEventListener('mousedown',cancelMousePress)
+panel3DDisplayScreen.addEventListener('touchmove',(e)=>{
+  e.preventDefault()
+})
+//panel3DDisplayScreen

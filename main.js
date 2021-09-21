@@ -8,7 +8,7 @@
 //TODO: BREAK UP FILE INTO MANY
 
 import {
-  JSDraw
+  JSDraw, make3DDisplay
 } from './JSDraw/WorkSpace.js'
 
 import { MechanizedInkDemos } from './MechanizedInkDemos.js'
@@ -59,6 +59,10 @@ penDisplay.backgroundColor = '#23a6d5'
 
 const panelCutDisplay = JSDraw('panelCutDisplayScreen', 300, 300)
 panelCutDisplay.currentPenKey = 'shapeCutLinePen'
+
+make3DDisplay(panel3DDisplayScreen,panelCutDisplay, 300, 300)
+
+
 // panelCutDisplay.currentPen.beginPoint.xy = {x:0,y:0}
 // log(Public.whatThisIs( panelCutDisplay.currentPen))
 
@@ -193,7 +197,6 @@ function setResumeDisplay(display = SHOW) {
     document.documentElement.style.setProperty('--navigation-button-offset', '0px')
   }
 }
-
 
 function getResumeIsShown() {
   return resumeButton.className === 'navigationButton toggleOn'
@@ -497,9 +500,6 @@ function collapseAll() {
   toggleExpandHide(employerToggleExpand, 2)
   toggleExpandHide(notableToggleExpand)
 }
-
-
-
 
 function setupPortfolioScrollEvents(portfolio) { 
   function scrollTop(){ 
