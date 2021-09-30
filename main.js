@@ -49,34 +49,28 @@ pen_08.currentPenKey = 'arcShapePen'
 const pen_09 = JSDraw('JSDraw_09', 300, 300)
 pen_09.currentPenKey = 'multiShapePen_01'
 
-// const pen_10 = JSDraw('JSDraw_10', 300, 300)
-// pen_10.currentPen = 'shapeCutLinePen'
-
-
-//mechanizedInkDisplayScreen
 const penDisplay = JSDraw('mechanizedInkDisplayScreen', 300, 300)
 penDisplay.backgroundColor = '#23a6d5'
 
-const panelCutDisplay = JSDraw('panelCutDisplayScreen', 300, 300)
-panelCutDisplay.currentPenKey = 'shapeCutLinePen'
+const panelCutDisplay = JSDraw('panelCutDisplayScreen', 300, 300) // panelCutDisplayScreen
+panelCutDisplay.currentPenKey = 'rectCutArrayPen'
 
 make3DDisplay(panel3DDisplayScreen,panelCutDisplay, 300, 300)
 
-
-// panelCutDisplay.currentPen.beginPoint.xy = {x:0,y:0}
-// log(Public.whatThisIs( panelCutDisplay.currentPen))
-
-// log(panelCutDisplay)
-
 penDisplay.playBackRecord(MechanizedInkDemos.pattern_01)
+
+panelCutDisplay.playBackRecord(MechanizedInkDemos.pattern_02)
+
+panelCutDisplayBotButton.addEventListener('click',()=>{
+  const isOn = panelCutDisplay.togglePlayBack()
+  panelCutDisplayBotButton.innerHTML = isOn ? 'STOP <i class="fas fa-robot">' : 'RUN <i class="fas fa-robot">'
+})
 
 const penDisplay2 = JSDraw('JSDraw_01', 300, 300)
 penDisplay2.backgroundColor = '#23a6d5'
 
 penDisplay2.playBackRecord(MechanizedInkDemos.pattern_01)
 
-const ON = true,
-  OFF = false
 const SHOW = true,
   HIDE = false
 

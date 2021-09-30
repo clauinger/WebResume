@@ -278,3 +278,23 @@
   }
 }
 
+#panelCutDisplayBotButton {
+  position: fixed;
+  margin-left: 258px;
+  margin-top: -18px;
+  height:16px;
+  padding-top: 0;
+  /* font-family: Georgia, 'Times New Roman', Times, serif; */
+  font-size: x-small;
+  color: #76b7ce;
+  background: #12566f;
+  border: 0in;
+  /* right: 10px; */
+  /* background: red;
+  color:red; */
+}
+
+#panelCutDisplayBotButton > i{
+  color:white;
+  color: #76b7ce;
+}

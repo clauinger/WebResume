@@ -4114,7 +4114,1673 @@ export const MechanizedInkDemos = {
         "y": 234.13333129882812
       },
       "time": 30743
-    }
-  ]
+    }],
+
+    
+    pattern_02 : [{
+      "penKey": "rectCutArrayPen"
+    }, {
+      "type": "release",
+      "time": 342
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 84,
+        "y": 406.6333312988281
+      },
+      "time": 343
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 80,
+        "y": 379.6333312988281
+      },
+      "time": 375
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 68,
+        "y": 342.6333312988281
+      },
+      "time": 409
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 51,
+        "y": 297.6333312988281
+      },
+      "time": 442
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 42,
+        "y": 259.6333312988281
+      },
+      "time": 476
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 41,
+        "y": 206.63333129882812
+      },
+      "time": 509
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 40,
+        "y": 192.63333129882812
+      },
+      "time": 542
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 41,
+        "y": 190.63333129882812
+      },
+      "time": 575
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 41,
+        "y": 186.63333129882812
+      },
+      "time": 609
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 41,
+        "y": 185.63333129882812
+      },
+      "time": 810
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 40,
+        "y": 182.63333129882812
+      },
+      "time": 842
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 32,
+        "y": 171.63333129882812
+      },
+      "time": 875
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 19,
+        "y": 155.63333129882812
+      },
+      "time": 908
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 14,
+        "y": 150.63333129882812
+      },
+      "time": 943
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 13,
+        "y": 149.63333129882812
+      },
+      "time": 975
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 13,
+        "y": 148.63333129882812
+      },
+      "time": 1009
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 13,
+        "y": 148.63333129882812
+      },
+      "time": 1041
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 13,
+        "y": 147.63333129882812
+      },
+      "time": 1143
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 12,
+        "y": 147.63333129882812
+      },
+      "time": 1310
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 13,
+        "y": 147.63333129882812
+      },
+      "time": 1343
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 14,
+        "y": 148.63333129882812
+      },
+      "time": 1375
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 15,
+        "y": 148.63333129882812
+      },
+      "time": 1410
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 16,
+        "y": 149.63333129882812
+      },
+      "time": 1442
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 17,
+        "y": 149.63333129882812
+      },
+      "time": 1476
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 17,
+        "y": 149.63333129882812
+      },
+      "time": 1508
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 18,
+        "y": 150.63333129882812
+      },
+      "time": 1543
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 18,
+        "y": 150.63333129882812
+      },
+      "time": 1575
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 19,
+        "y": 150.63333129882812
+      },
+      "time": 1609
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 20,
+        "y": 151.63333129882812
+      },
+      "time": 1676
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 20,
+        "y": 151.63333129882812
+      },
+      "time": 1683
+    }, {
+      "type": "press",
+      "mousePoint": {
+        "x": 20,
+        "y": 151.63333129882812
+      },
+      "time": 1683
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 20,
+        "y": 151.63333129882812
+      },
+      "time": 1709
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 20,
+        "y": 151.63333129882812
+      },
+      "time": 1742
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 25,
+        "y": 148.63333129882812
+      },
+      "time": 1776
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 58,
+        "y": 112.63333129882812
+      },
+      "time": 1809
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 85,
+        "y": 84.63333129882812
+      },
+      "time": 1842
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 109,
+        "y": 61.633331298828125
+      },
+      "time": 1876
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 117,
+        "y": 53.633331298828125
+      },
+      "time": 1909
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 122,
+        "y": 46.633331298828125
+      },
+      "time": 1942
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 122,
+        "y": 46.633331298828125
+      },
+      "time": 1975
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 123,
+        "y": 45.633331298828125
+      },
+      "time": 2209
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 121,
+        "y": 49.633331298828125
+      },
+      "time": 2243
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 120,
+        "y": 51.633331298828125
+      },
+      "time": 2275
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 120,
+        "y": 53.633331298828125
+      },
+      "time": 2309
+    }, {
+      "type": "release",
+      "mousePoint": {
+        "x": 120,
+        "y": 53.633331298828125
+      },
+      "time": 2519
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 120,
+        "y": 53.633331298828125
+      },
+      "time": 2642
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 141,
+        "y": 78.63333129882812
+      },
+      "time": 2676
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 171,
+        "y": 113.63333129882812
+      },
+      "time": 2710
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 171,
+        "y": 115.63333129882812
+      },
+      "time": 2909
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 171,
+        "y": 115.63333129882812
+      },
+      "time": 3010
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 169,
+        "y": 116.63333129882812
+      },
+      "time": 3043
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 167,
+        "y": 117.63333129882812
+      },
+      "time": 3076
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 165,
+        "y": 117.63333129882812
+      },
+      "time": 3109
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 164,
+        "y": 117.63333129882812
+      },
+      "time": 3142
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 164,
+        "y": 118.63333129882812
+      },
+      "time": 3210
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 163,
+        "y": 118.63333129882812
+      },
+      "time": 3241
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 162,
+        "y": 119.63333129882812
+      },
+      "time": 3275
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 161,
+        "y": 120.63333129882812
+      },
+      "time": 3309
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 158,
+        "y": 121.63333129882812
+      },
+      "time": 3343
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 156,
+        "y": 122.63333129882812
+      },
+      "time": 3376
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 153,
+        "y": 123.63333129882812
+      },
+      "time": 3410
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 153,
+        "y": 123.63333129882812
+      },
+      "time": 3609
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 153,
+        "y": 122.63333129882812
+      },
+      "time": 3642
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 153,
+        "y": 122.63333129882812
+      },
+      "time": 3676
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 154,
+        "y": 122.63333129882812
+      },
+      "time": 3685
+    }, {
+      "type": "press",
+      "mousePoint": {
+        "x": 154,
+        "y": 122.63333129882812
+      },
+      "time": 3685
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 154,
+        "y": 122.63333129882812
+      },
+      "time": 3709
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 155,
+        "y": 122.63333129882812
+      },
+      "time": 3742
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 156,
+        "y": 122.63333129882812
+      },
+      "time": 3776
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 161,
+        "y": 121.63333129882812
+      },
+      "time": 3810
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 176,
+        "y": 118.63333129882812
+      },
+      "time": 3843
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 205,
+        "y": 113.63333129882812
+      },
+      "time": 3876
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 251,
+        "y": 109.63333129882812
+      },
+      "time": 3910
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 279,
+        "y": 108.63333129882812
+      },
+      "time": 3942
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 285,
+        "y": 108.63333129882812
+      },
+      "time": 3976
+    }, {
+      "type": "release",
+      "mousePoint": {
+        "x": 285,
+        "y": 108.63333129882812
+      },
+      "time": 4417
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 285,
+        "y": 108.63333129882812
+      },
+      "time": 4475
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 285,
+        "y": 108.63333129882812
+      },
+      "time": 4510
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 278,
+        "y": 111.63333129882812
+      },
+      "time": 4543
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 274,
+        "y": 115.63333129882812
+      },
+      "time": 4576
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 265,
+        "y": 124.63333129882812
+      },
+      "time": 4609
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 228,
+        "y": 156.63333129882812
+      },
+      "time": 4641
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 211,
+        "y": 175.63333129882812
+      },
+      "time": 4676
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 210,
+        "y": 177.63333129882812
+      },
+      "time": 4709
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 210,
+        "y": 178.63333129882812
+      },
+      "time": 4743
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 210,
+        "y": 178.63333129882812
+      },
+      "time": 4809
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 210,
+        "y": 178.63333129882812
+      },
+      "time": 4842
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 209,
+        "y": 181.63333129882812
+      },
+      "time": 4876
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 196,
+        "y": 196.63333129882812
+      },
+      "time": 4909
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 186,
+        "y": 207.63333129882812
+      },
+      "time": 4943
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 185,
+        "y": 208.63333129882812
+      },
+      "time": 4976
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 185,
+        "y": 208.63333129882812
+      },
+      "time": 5076
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 185,
+        "y": 209.63333129882812
+      },
+      "time": 5110
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 184,
+        "y": 209.63333129882812
+      },
+      "time": 5143
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 184,
+        "y": 209.63333129882812
+      },
+      "time": 5176
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 184,
+        "y": 210.63333129882812
+      },
+      "time": 5210
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 184,
+        "y": 210.63333129882812
+      },
+      "time": 5243
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 184,
+        "y": 210.63333129882812
+      },
+      "time": 5276
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 183,
+        "y": 210.63333129882812
+      },
+      "time": 5309
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 183,
+        "y": 211.63333129882812
+      },
+      "time": 5343
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 182,
+        "y": 211.63333129882812
+      },
+      "time": 5376
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 181,
+        "y": 212.63333129882812
+      },
+      "time": 5409
+    }, {
+      "type": "press",
+      "mousePoint": {
+        "x": 181,
+        "y": 212.63333129882812
+      },
+      "time": 5605
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 181,
+        "y": 212.63333129882812
+      },
+      "time": 5676
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 181,
+        "y": 213.63333129882812
+      },
+      "time": 5710
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 179,
+        "y": 215.63333129882812
+      },
+      "time": 5742
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 177,
+        "y": 218.63333129882812
+      },
+      "time": 5776
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 167,
+        "y": 226.63333129882812
+      },
+      "time": 5808
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 152,
+        "y": 234.63333129882812
+      },
+      "time": 5843
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 147,
+        "y": 237.63333129882812
+      },
+      "time": 5876
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 145,
+        "y": 238.63333129882812
+      },
+      "time": 5910
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 144,
+        "y": 239.63333129882812
+      },
+      "time": 5943
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 143,
+        "y": 239.63333129882812
+      },
+      "time": 5975
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 142,
+        "y": 240.63333129882812
+      },
+      "time": 6010
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 140,
+        "y": 240.63333129882812
+      },
+      "time": 6042
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 138,
+        "y": 241.63333129882812
+      },
+      "time": 6076
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 136,
+        "y": 243.63333129882812
+      },
+      "time": 6109
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 130,
+        "y": 245.63333129882812
+      },
+      "time": 6142
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 126,
+        "y": 247.63333129882812
+      },
+      "time": 6176
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 126,
+        "y": 247.63333129882812
+      },
+      "time": 6209
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 125,
+        "y": 248.63333129882812
+      },
+      "time": 6243
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 125,
+        "y": 248.63333129882812
+      },
+      "time": 6276
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 124,
+        "y": 248.63333129882812
+      },
+      "time": 6310
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 123,
+        "y": 249.63333129882812
+      },
+      "time": 6342
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 120,
+        "y": 249.63333129882812
+      },
+      "time": 6376
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 120,
+        "y": 249.63333129882812
+      },
+      "time": 6409
+    }, {
+      "type": "release",
+      "mousePoint": {
+        "x": 119,
+        "y": 249.63333129882812
+      },
+      "time": 6616
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 119,
+        "y": 249.63333129882812
+      },
+      "time": 6676
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 119,
+        "y": 249.63333129882812
+      },
+      "time": 6710
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 119,
+        "y": 248.63333129882812
+      },
+      "time": 6809
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 121,
+        "y": 247.63333129882812
+      },
+      "time": 6842
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 121,
+        "y": 247.63333129882812
+      },
+      "time": 7009
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 121,
+        "y": 245.63333129882812
+      },
+      "time": 7043
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 127,
+        "y": 237.63333129882812
+      },
+      "time": 7076
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 138,
+        "y": 227.63333129882812
+      },
+      "time": 7109
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 138,
+        "y": 227.63333129882812
+      },
+      "time": 7309
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 138,
+        "y": 226.63333129882812
+      },
+      "time": 7343
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 139,
+        "y": 224.63333129882812
+      },
+      "time": 7376
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 139,
+        "y": 224.63333129882812
+      },
+      "time": 7642
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 149,
+        "y": 207.63333129882812
+      },
+      "time": 7676
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 157,
+        "y": 182.63333129882812
+      },
+      "time": 7709
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 159,
+        "y": 159.63333129882812
+      },
+      "time": 7742
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 159,
+        "y": 153.63333129882812
+      },
+      "time": 7776
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 159,
+        "y": 151.63333129882812
+      },
+      "time": 7808
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 159,
+        "y": 148.63333129882812
+      },
+      "time": 7843
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 160,
+        "y": 145.63333129882812
+      },
+      "time": 7876
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 160,
+        "y": 143.63333129882812
+      },
+      "time": 7908
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 161,
+        "y": 140.63333129882812
+      },
+      "time": 7943
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 161,
+        "y": 136.63333129882812
+      },
+      "time": 7976
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 161,
+        "y": 133.63333129882812
+      },
+      "time": 8010
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 161,
+        "y": 131.63333129882812
+      },
+      "time": 8042
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 160,
+        "y": 128.63333129882812
+      },
+      "time": 8076
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 158,
+        "y": 125.63333129882812
+      },
+      "time": 8109
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 155,
+        "y": 121.63333129882812
+      },
+      "time": 8143
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 153,
+        "y": 118.63333129882812
+      },
+      "time": 8176
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 151,
+        "y": 114.63333129882812
+      },
+      "time": 8210
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 149,
+        "y": 109.63333129882812
+      },
+      "time": 8243
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 149,
+        "y": 108.63333129882812
+      },
+      "time": 8276
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 149,
+        "y": 108.63333129882812
+      },
+      "time": 8309
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 150,
+        "y": 107.63333129882812
+      },
+      "time": 8341
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 150,
+        "y": 107.63333129882812
+      },
+      "time": 8408
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 150,
+        "y": 107.63333129882812
+      },
+      "time": 8443
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 150,
+        "y": 106.63333129882812
+      },
+      "time": 8476
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 151,
+        "y": 105.63333129882812
+      },
+      "time": 8509
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 151,
+        "y": 103.63333129882812
+      },
+      "time": 8542
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 151,
+        "y": 102.63333129882812
+      },
+      "time": 8575
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 151,
+        "y": 102.63333129882812
+      },
+      "time": 8608
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 151,
+        "y": 101.63333129882812
+      },
+      "time": 8642
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 151,
+        "y": 100.63333129882812
+      },
+      "time": 8675
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 151,
+        "y": 99.63333129882812
+      },
+      "time": 8709
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 151,
+        "y": 98.63333129882812
+      },
+      "time": 8743
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 150,
+        "y": 97.63333129882812
+      },
+      "time": 8776
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 150,
+        "y": 95.63333129882812
+      },
+      "time": 8809
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 150,
+        "y": 94.63333129882812
+      },
+      "time": 8843
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 151,
+        "y": 91.63333129882812
+      },
+      "time": 8876
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 151,
+        "y": 90.63333129882812
+      },
+      "time": 8909
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 151,
+        "y": 90.63333129882812
+      },
+      "time": 8943
+    }, {
+      "type": "press",
+      "mousePoint": {
+        "x": 152,
+        "y": 90.63333129882812
+      },
+      "time": 8984
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 152,
+        "y": 90.63333129882812
+      },
+      "time": 9009
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 152,
+        "y": 90.63333129882812
+      },
+      "time": 9042
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 152,
+        "y": 90.63333129882812
+      },
+      "time": 9075
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 153,
+        "y": 90.63333129882812
+      },
+      "time": 9143
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 150,
+        "y": 94.63333129882812
+      },
+      "time": 9176
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 142,
+        "y": 100.63333129882812
+      },
+      "time": 9210
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 120,
+        "y": 117.63333129882812
+      },
+      "time": 9242
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 89,
+        "y": 136.63333129882812
+      },
+      "time": 9275
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 58,
+        "y": 157.63333129882812
+      },
+      "time": 9310
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 46,
+        "y": 168.63333129882812
+      },
+      "time": 9343
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 44,
+        "y": 175.63333129882812
+      },
+      "time": 9376
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 39,
+        "y": 189.63333129882812
+      },
+      "time": 9409
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 36,
+        "y": 199.63333129882812
+      },
+      "time": 9442
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 36,
+        "y": 202.63333129882812
+      },
+      "time": 9475
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 35,
+        "y": 203.63333129882812
+      },
+      "time": 9509
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 35,
+        "y": 205.63333129882812
+      },
+      "time": 9542
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 35,
+        "y": 206.63333129882812
+      },
+      "time": 9575
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 35,
+        "y": 207.63333129882812
+      },
+      "time": 9608
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 35,
+        "y": 207.63333129882812
+      },
+      "time": 9775
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 34,
+        "y": 209.63333129882812
+      },
+      "time": 9810
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 32,
+        "y": 212.63333129882812
+      },
+      "time": 9843
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 31,
+        "y": 214.63333129882812
+      },
+      "time": 9876
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 29,
+        "y": 215.63333129882812
+      },
+      "time": 9909
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 29,
+        "y": 215.63333129882812
+      },
+      "time": 9943
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 29,
+        "y": 216.63333129882812
+      },
+      "time": 9976
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 29,
+        "y": 216.63333129882812
+      },
+      "time": 10009
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 29,
+        "y": 218.63333129882812
+      },
+      "time": 10042
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 29,
+        "y": 219.63333129882812
+      },
+      "time": 10075
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 29,
+        "y": 220.63333129882812
+      },
+      "time": 10110
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 29,
+        "y": 221.63333129882812
+      },
+      "time": 10142
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 29,
+        "y": 222.63333129882812
+      },
+      "time": 10176
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 29,
+        "y": 222.63333129882812
+      },
+      "time": 10209
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 29,
+        "y": 223.63333129882812
+      },
+      "time": 10243
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 29,
+        "y": 225.63333129882812
+      },
+      "time": 10275
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 26,
+        "y": 231.63333129882812
+      },
+      "time": 10309
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 26,
+        "y": 232.63333129882812
+      },
+      "time": 10343
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 25,
+        "y": 233.63333129882812
+      },
+      "time": 10710
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 24,
+        "y": 235.63333129882812
+      },
+      "time": 10742
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 23,
+        "y": 237.63333129882812
+      },
+      "time": 10776
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 23,
+        "y": 238.63333129882812
+      },
+      "time": 10842
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 22,
+        "y": 240.63333129882812
+      },
+      "time": 10876
+    }, {
+      "type": "drag",
+      "mousePoint": {
+        "x": 20,
+        "y": 243.63333129882812
+      },
+      "time": 10909
+    }, {
+      "type": "release",
+      "mousePoint": {
+        "x": 20,
+        "y": 243.63333129882812
+      },
+      "time": 11320
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 20,
+        "y": 243.63333129882812
+      },
+      "time": 11610
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 42,
+        "y": 257.6333312988281
+      },
+      "time": 11643
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 70,
+        "y": 288.6333312988281
+      },
+      "time": 11675
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 103,
+        "y": 349.6333312988281
+      },
+      "time": 11708
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 132,
+        "y": 391.6333312988281
+      },
+      "time": 11742
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 134,
+        "y": 392.6333312988281
+      },
+      "time": 11809
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 136,
+        "y": 392.6333312988281
+      },
+      "time": 11843
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 137,
+        "y": 393.6333312988281
+      },
+      "time": 11876
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 140,
+        "y": 393.6333312988281
+      },
+      "time": 11910
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 142,
+        "y": 393.6333312988281
+      },
+      "time": 11943
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 143,
+        "y": 393.6333312988281
+      },
+      "time": 11976
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 144,
+        "y": 393.6333312988281
+      },
+      "time": 12010
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 158,
+        "y": 395.6333312988281
+      },
+      "time": 12042
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 167,
+        "y": 396.6333312988281
+      },
+      "time": 12076
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 168,
+        "y": 396.6333312988281
+      },
+      "time": 12143
+    }, {
+      "type": "hover",
+      "mousePoint": {
+        "x": 168,
+        "y": 396.6333312988281
+      },
+      "time": 12176
+    }]
 
 }

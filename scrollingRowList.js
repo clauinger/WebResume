@@ -56,7 +56,7 @@ window.addEventListener('mouseup', () => {
   mousePressedOnDisplay = false;
 
 });
-// testSVG.addEventListener('mousedown',cancelMousePress)
+
 
 panelCutDisplayScreen.addEventListener('mousedown',cancelMousePress)
 panelCutDisplayScreen.addEventListener('touchmove',(e)=>{
@@ -68,4 +68,3 @@ panel3DDisplayScreen.addEventListener('mousedown',cancelMousePress)
 panel3DDisplayScreen.addEventListener('touchmove',(e)=>{
   e.preventDefault()
 })
-//panel3DDisplayScreen
